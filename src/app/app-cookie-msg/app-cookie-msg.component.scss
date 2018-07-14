@@ -1,0 +1,20 @@
+@import "~variables.scss";
+
+.cookies-msg {
+  background-color: $cookies-msg-bgcolor;
+  z-index: 99990;
+  width: 100%;
+  box-sizing: border-box;
+  @media (max-width: 767px) {
+    padding:0 20px;
+  }
+  p {
+    font-size: 14px;
+    color: $cookies-msg-pcolor;
+    b {
+      font-family: $font-primary-700;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}

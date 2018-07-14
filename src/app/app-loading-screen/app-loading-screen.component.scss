@@ -1,0 +1,48 @@
+.loading-oveerlay {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    z-index: 100001;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    .splash-screen {
+        background: -webkit-gradient(linear, left top, left bottom, from(#7754cc), to(#65d1fd));
+        background: -webkit-linear-gradient(top, #7754cc 0%, #65d1fd 100%);
+        background: linear-gradient(180deg, #7754cc 0%, #65d1fd 100%);
+        /* box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.5); */
+        background-size: 40vw;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        @media screen and (max-width: 768px) {
+            background-size: 100vw;
+        }
+    }
+
+    .logo-white {
+        background: url(/assets/img/lottoday-logo-white.svg) no-repeat;
+        height: 22px;
+        width: 100px;
+        transform: scale(2);
+        animation-fill-mode: both;
+        animation-duration: 1s;
+    }
+
+
+    @keyframes zoomIn {
+        0% {
+            opacity: 0;
+            transform: scale3d(.3, .3, .3);
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+}

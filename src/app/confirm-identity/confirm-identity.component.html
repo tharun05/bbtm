@@ -1,0 +1,137 @@
+<div class="wrap-confirm-identity">
+    <div class="container">
+
+        <div class="kyc-mobile mob-show">
+            <section class="back-to-previous-page">
+                <div class="cashier-back" (click)="goBack();">
+                    <button class="btc-inner">
+                        <i class="fa fa-angle-left"></i>
+                        <span>Go Back</span></button>
+                </div>
+            </section>
+            <img src="/assets/img/kyc_icon.svg">
+            <div class="Confirm-Identity-title">
+                <h2>Confirm Identity</h2>
+                <p>Update documents safely</p>
+            </div>
+            <p>To help protect our customers and to meet our legal and legislative obligations, we need to verify your identity. This ensures a high level of security and diminished risk of identity fraud. Verifying your account at Bingo69 only takes few minutes of your time.</p>
+            <br/>
+            <p class="large-font">
+                <b>Your name: <ng-container *ngIf="userDetails">{{userDetails.firstName}} {{userDetails.lastName}}</ng-container></b>
+                <br/>
+                <b>Account email: <ng-container *ngIf="userDetails">{{userDetails.email}}</ng-container></b>
+            </p><br/>
+            <p class="verify">To verify your ID, we require a copy of your photo ID and proof of residence.</p>
+            <br/>
+            <button class="btn btn-primary star-kyc" (click)="startKyc()">
+                START
+            </button>
+        </div>
+        <section class="confirm-identity device-show">
+
+            <div class="Confirm-Identity-title">
+                <h2>Confirm Identity</h2>
+                <p>Update documents securely</p>
+            </div>
+
+            <section class="back-to-previous-page">
+                <div class="cashier-back" (click)="goBack();">
+                    <button class="btc-inner">
+                        <i class="fa fa-angle-left"></i>
+                        <span>Go Back</span></button>
+                </div>
+            </section>
+            <h3 id="step1Header" class="confirm-identiy-header active" (click)="showStep('1')">1. Your photo ID</h3>
+            <div id="step1" [ngClass]="step1=='new' ? 'show': 'hide'" class="insideStep step-text">
+                <p class="intro">
+                    Please make sure the image clearly shows your name, date of birth and your photo.</p>
+                <p class="intro"> Valid forms of ID are:</p>
+                <div class="ld-col-md-4">
+                    <div class="id-proof-type">
+                        <span class="icon"><i class="icon-tick-fill"></i></span>
+                        <span class="text">
+                            <b>Passport:</b> (We need to see the photo page with all four corners visible)
+                        </span>
+                    </div>
+                    <div class="id-proof-type">
+                        <span class="icon"><i class="icon-tick-fill"></i></span>
+                        <span class="text">
+                            <b>Drivers licence:</b> (We need to see both sides with all four corners visible and cannot accept a paper drivers licence)
+                        </span>
+                    </div>
+                    <div class="id-proof-type">
+                        <span class="icon"><i class="icon-tick-fill"></i></span>
+                        <span class="text">
+                            <b>ID card:</b> (We need to see the photo sides with all four corners visible)
+                        </span>
+                    </div>
+                    <div id="step1Error" class="error-msg hide">{{errorMessage}}</div>
+                    <!-- <button id="changePassword" class="btn-new" type="button" (click)="changePassword('changePassword')" [disabled]="isButtonDisabled(changePasswordForm)"> -->
+                    <label id="step1UploadButton" class="btn-new file-upload">
+                        <input type="file" accept="image/*" (change)="uploadProof($event,'identity','step1UploadButton')" /> <span>Upload your Photo ID</span></label>
+                    <span id="step1UploadedFile"></span>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <h3 id="step2Header" class="confirm-identiy-header" (click)="showStep('2')">2. Your proof of residence</h3>
+            <div id="step2" [ngClass]="step2=='new' ? 'show': 'hide'" class="insideStep step-text">
+                <p class="intro"> Please make sure the image clearly shows your name and full residential address.</p>
+                <p class="small-text"> We cannot accept P.O. box addresses and documents must be dated within the last three months. Please cover personal information which is not relevent. </p>
+                <p class="intro">Valid documents are:</p>
+                <div class="ld-col-md-4">
+                    <div class="id-proof-type">
+                        <span class="icon">
+                            <i class="icon-tick-fill"></i>
+                        </span>
+                        <span class="text">
+                            <b>Official letter from your bank:</b> (e.g. a letter, a bank statement or a credit card statement)
+                        </span>
+                    </div>
+                    <div class="id-proof-type">
+                        <span class="icon">
+                            <i class="icon-tick-fill"></i>
+                        </span>
+                        <span class="text">
+                            <b>Official letter from the government:</b> (e.g. tax office, police or another office of government)
+                        </span>
+                    </div>
+                    <div class="id-proof-type">
+                        <span class="icon">
+                            <i class="icon-tick-fill"></i>
+                        </span>
+                        <span class="text">
+                            <b>Utility bill:</b> (We can accept water, electricity, gas, broadband or TV. We cannot accept mobile phone bill)
+                        </span>
+                    </div>
+                    <div id="step2Error" class="error-msg hide">{{errorMessage}}</div>
+                    <label id="step2UploadButton" class="btn-new file-upload">
+                        <input type="file" accept="image/*" (change)="uploadProof($event,'address','step2UploadButton')" value=""> <span>Upload proof of residence</span></label>
+                    <span id="step2UploadedFile"></span>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <h3 id="step3Header" class="confirm-identiy-header" (click)="showStep('3')">3. Signature</h3>
+            <div id="step3" [ngClass]="step3=='new' ? 'show': 'hide'" class="insideStep step-text">
+                <div class="ld-ckbox " [formGroup]="confirmForm">
+                    <input id="declaration" name="confirm" type="checkbox" value="false" formControlName="confirm" >
+                    <label for="declaration">
+                        <span class="text"> <p><b>Declaration</b>
+                                <br/>I hereby declare that the information I have provided is truthful and accurately confirms my identity and residential address. I acknowledge that I am 18 years of age or older.</p></span>
+                    </label>
+                </div>
+                <div class="verify-box">
+                    <p class="verify-msg">Tapping submit will lodge your verification request with us. Processing can take up to 3 business days.</p>
+                    <div class="ld-col-md-4">
+                        <div id="step3Error" class="error-msg hide">{{errorMessage}}</div>
+                        <div id="step3Success" class="info-box hide">
+                            <p>Proofs submitted for validation</p>
+                        </div>
+                        <button id="confirmIdentiyButton" class="btn-new" [disabled]="isButtonDisabled(confirmForm)" (click)="submitIdentiy('confirmIdentiyButton')">
+                            <span>SUBMIT</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

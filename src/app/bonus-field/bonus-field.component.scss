@@ -1,0 +1,208 @@
+@import "~variables.scss";
+@import "~mixins.scss";
+
+$reg-input-checked-bg-color: #00C333;
+$reg-input-checked-brdr-color: #00C333;
+$bonus-account-heading-clr:#384079;
+$bonus-account-heading-para:#384079;
+$select-mail-select-sms-border: #DEE2E9;
+$bonus-placeholder-clr: #384079;
+
+
+@import "~variables.scss";
+
+$register-bg: linear-gradient(180deg, #BAE5FF 0%, #EEFBFC 100%);
+$tab-bg: #F0F2F6;
+$tab-border-right:#fff;
+$tab-primary-color:#8E99BC;
+$tab-active-bg: #36A8EB;
+$left-circle:#AE9ADB;
+$circular-checked-bg: #78b348;
+
+.bonus-heading{
+    text-align: center;
+    h3{
+        margin-bottom: 20px;
+        color:  $bonus-account-heading-clr;
+        font-size: 20px;
+        letter-spacing: -0.3px;
+        font-weight: 500;
+        font-family: $main-primary-ef-reg;
+    }
+
+    p{
+        font-size: 15px;
+        letter-spacing: -0.19px;
+        line-height: 18px;
+        font-family: $main-primary-ef-reg;
+        margin-bottom: 12px;
+
+        @media screen and (max-width: 767px) {
+            margin-top:30px;
+            font-size: 16px;
+            letter-spacing: -0.18px;
+            line-height: 19px;
+            padding: 0 20px;
+        }
+    }
+}
+
+.circular-checked{
+    height: 72px;
+    width: 72px;
+    background: $circular-checked-bg;
+    border-radius: 100px;
+    margin: 25px auto;
+    text-align: center;
+    line-height: 89px;
+    display: none;
+
+    @media screen and (max-width: 767px) {
+        display: block; 
+    }
+}
+
+.center-dropdown{
+    text-align: center;
+    p{
+        margin-top:0px;
+        i{
+            font-size: 28px;
+            font-weight: 500;
+        }
+    }
+}
+
+.bonus-lisitng{
+    background: #f0f2f6;
+    padding: 20px 30px;
+    border-radius: 4px;
+
+    @media screen and (max-width: 767px) {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 0px 50px;
+        box-sizing: border-box;
+        border-radius: 0px;
+    }
+
+    .select-bonus{
+        background: $white;
+        box-shadow: 0 1px 2px 0 rgba(131,131,131,0.5);
+        padding: 5px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+
+        @media screen and (max-width: 767px) {
+            padding: 15px;
+            max-width:100%;
+            width: 100%;
+            margin: 0 auto 20px;
+            box-sizing: border-box;
+            display: block;
+            border-radius:0px;
+
+            .thumb-para {
+                max-width: 340px;
+                margin: 0 auto;
+                display: block;
+            }
+
+            .btn-new{
+                font-size: 20px;
+                max-width: 340px;
+                margin: 0 auto;
+                display: block;
+                text-transform: capitalize;
+            }
+        }
+
+        &:last-child{
+            margin-bottom: 0px;
+        }
+
+
+        .thumb-para{
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center; 
+
+            @media screen and (max-width: 767px) {
+                display: block;
+            }
+
+
+        }
+
+        .col-sm-3{
+            max-width: 150px;
+            width: 33%;
+            float: left;
+            margin-right: 2.5%;
+
+            @media screen and (max-width: 767px) {
+                max-width: 350px;
+                width: 100%;
+                margin-right: 0%;
+
+                img{
+                    width: 100%;
+                }
+            }
+        }
+
+        .col-sm-9{
+            width: 64.5%;
+            float: left;
+
+            @media screen and (max-width: 767px) {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+
+        h5{
+            font-size: 14px;
+            font-family: $main-primary-ef-bd;
+            margin-bottom: 2px;
+            letter-spacing: -0.2px;
+
+            @media screen and (max-width: 767px) {
+                text-align: center;
+                font-size: 20px;	
+                font-weight: 900;
+                margin:10px 0 7px 0;
+                letter-spacing: -0.29px;
+            }
+        }
+
+        h6{
+            font-size: 12px;
+            font-weight: 500;
+            font-family: $main-primary-ef-reg;
+            margin-bottom: 7px;
+            letter-spacing: -0.23px; 
+
+            @media screen and (max-width: 767px) {
+                text-align: center;
+                font-size: 16px;
+                letter-spacing: -0.3px;
+            }
+        }
+
+        .para{
+            font-size: 12px;
+            letter-spacing: -0.2px;
+            line-height: 14px;
+            font-family: $main-primary-ef-reg;
+
+            @media screen and (max-width: 767px) {
+                font-size: 14px;
+                letter-spacing: -0.23px;
+                line-height: 17px;
+
+            }
+        }
+    }
+}

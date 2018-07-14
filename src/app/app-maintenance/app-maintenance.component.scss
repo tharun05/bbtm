@@ -1,0 +1,68 @@
+@import "~variables.scss";
+.maintenance-overlay {
+  background: linear-gradient(161.28deg, #5E82EE 0%, #234393 100%);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 99;
+ 
+  .maintenance {
+    height: 100%;
+    position: relative;
+    overflow: auto;
+
+    img {
+      &.logo#EB03CC {
+        float: left;
+        height: 5.8%;
+        width: 17.43%;
+      }
+    }
+    .content {
+      vertical-align: top;
+      display: inline-block;
+      text-align: center;
+      width: 75%;
+      img {
+        height: 50%;
+        width: 50%;
+      }
+      h1 {
+        text-align: center;
+        font-family: $font-primary-700;
+        color: #EB03CC;
+      }
+      p {
+        text-align: center;
+        font-family: $font-primary;
+        color: $maintenance-secondary;
+        font-size: 25px;
+      }
+      button {
+        line-height: 33px;
+        text-align: center;
+        background: transparent;
+        border: 1px solid#EB03CC;
+        border-radius: 7px;
+        height: 78px;
+        width: 350px;
+        color:#EB03CC;
+        font-family: $font-primary;
+        font-size: 30px;
+      }
+      span {
+        display: block;
+        text-align: center;
+        margin-bottom: -35px;
+        margin-top: 50px;
+        font-family: $font-primary;
+        font-size: 20px;
+        color: #EB03CC;
+      }
+    }
+  }
+}

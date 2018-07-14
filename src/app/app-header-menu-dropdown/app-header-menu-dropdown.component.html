@@ -1,0 +1,59 @@
+<section class="menu-ld-cards">
+  <div class="card-container">
+    <ng-container *ngIf="results">
+      <div class="card-col" *ngFor="let i_lottery of results;let i=index ">
+        <div class="card">
+          <div class="card-head lotteryBall {{i_lottery.nameConstant}}">
+          </div>
+          <div class="card-body">
+            <h3 class="lottery-name" [ngClass]="isAustraliaPowerBallAvailable ? 'wide-heading':''">{{i_lottery.name}}</h3>
+            <p class="next-draw">{{'next_draw' | translate}}</p>
+            <h1 class="prize-money">{{i_lottery.prizeAmt > 0 ? i_lottery.currencySymbol:''}}{{i_lottery.prizeAmt > 0 ? i_lottery.prizeAmt : "not_published " | translate}} {{ i_lottery.prizeAmt > 0 ? i_lottery.prizeUnit : ''}}</h1>
+            <button class="btn btn-primary cta" (click)="playDeviceCheck(i_lottery,i_lottery.lotteryId,false);hideMenu();mixPanelEventCheck('QUICKPICKS',i_lottery.name)" *ngIf="i_lottery.standardplay">
+              <span class="btn-wrapper ">
+                  <span class="quick-pick">{{i_lottery.calculatedLinesLimit}} QUICKPICKS</span>
+              <span class="amt">{{getCurrencyFromService().currencySymbol}} {{i_lottery.calculatedLinesLimit * i_lottery.standardplay.deliveries[0].b2CLinePrices[getCurrencyFromService().currency.toLowerCase()].price | number:'1.2-2'}}</span>
+              </span>
+            </button>
+            <button class="btn btn-primary cta animated-background" *ngIf="!i_lottery.standardplay">
+              <!-- <span class="amt"><mat-spinner></mat-spinner></span> -->
+            </button>
+          </div>
+          <div class="card-footer" (click)="playDeviceCheck(i_lottery,i_lottery.lotteryId,true);hideMenu();mixPanelEventCheck('CREATE YOUR OWN',i_lottery.name)">
+            <div class="create-own">
+              CREATE YOUR OWN <i class="fa fa-angle-right" ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="!results">
+      <div class="card-col" *ngFor="let i_lottery of [0,1,2,3,4]">
+        <div class="card">
+          <div class="card-head lotteryBall  animated-background">
+          </div>
+          <div class="card-body">
+            <h3 class="lottery-name animated-background"></h3>
+            <p class="next-draw animated-background"></p>
+            <h1 class="prize-money animated-background"></h1>
+            <button class="btn btn-primary cta animated-background"></button>
+          </div>
+          <div class="card-footer">
+            <div class="create-own">
+              <div class="create-own-txt animated-background"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    
+    <div class="card-col">
+      <div class="viewall-btn" (click)="hideMenu();mixPanelEventCheck('VIEW ALL')" routerLink="/allLotteries">
+        <div class="viewall-btn-inner">
+          <i class="fa fa-angle-right"></i>
+        </div>
+        <div class="text">VIEW ALL</div>
+      </div>
+    </div>
+  </div>
+</section>

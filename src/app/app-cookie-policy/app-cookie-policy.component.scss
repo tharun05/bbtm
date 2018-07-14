@@ -1,0 +1,263 @@
+@import "~variables.scss";
+
+$cookie-policy-brand-banner: linear-gradient(304.86deg, #A6EDFF 0%, #5CD4FF 100%);
+
+.cookie-policy {
+    background-color: $cookie-policy-bgcolor;
+    padding-bottom: 40px;
+
+    .download-doc {
+        font-size: 22px;
+        font-family: $main-primary-ef-reg;
+        font-weight: 900;
+        background: #F67C7F;
+        text-transform: uppercase;
+        color: $terms-conditions-downloaddoc-color;
+        border: 0;
+        padding: 18px 10px;
+        text-align: center;
+        margin: 20px auto;
+        min-width: 300px;
+        line-height: 1;
+        border-radius: 0px;
+        position: relative;
+
+        i{
+            position: absolute;
+            left: 20px;
+        }
+
+        a {
+            color: $terms-conditions-downloaddoc-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover {
+                text-decoration: none;
+            }
+            i {
+                font-size: 24px;
+                margin-right: 20px;
+            }
+        }
+    }
+
+    .banner-wrapper {
+        overflow: hidden;
+        margin-bottom: 20px;
+        position: relative;
+        &:before{
+            content: "";
+            position: absolute;
+            right: -120px;
+            top: -370px;
+            height: 665px;
+            width: 665px;
+            background: $tc-banner-wrapper-right-bg;
+            z-index: 1;
+            border-radius: 100%;
+        }
+    }
+    .brand-banner {
+        background: $cookie-policy-brand-banner;
+        position: relative;
+        padding: 40px 0;
+
+        .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+        }
+        .text {
+            display: flex;
+            color: $main-primary-text-color;
+            flex-direction: column;
+            position: relative;
+            box-sizing: border-box;
+            justify-content: center;
+            padding-right: 30px;
+
+            h1,
+            h4 {
+                margin: 0;
+                padding: 0;
+            }
+
+            h1 {
+                font-size: 35px;
+                font-family: $main-primary-ef-reg;
+                font-weight: 900;
+                margin-bottom: 20px;
+            }
+            h4 {
+                font-size: 20px;
+                font-family: $main-primary-ef-reg;
+                letter-spacing: -0.25px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    .right-img {
+        position: relative;
+        top: 25px;
+        right: 0;
+        z-index: 1;
+        img {}
+    }
+
+    .page-text {
+        font-family: $font-primary-500;
+
+        .show-mobile {
+            display: none;
+        }
+        .back-btn {
+            font-family: $main-primary-ef-reg;
+            font-size: 16px;
+            color: $cookie-policy-page-text-color;
+            padding: 15px 20px;
+            cursor: pointer;
+            background-color: $cookie-policy-page-text-bgcolor;
+            i {
+                margin-right: 10px;
+            }
+        }
+        .content {
+            background-color: $cookie-policy-content-bgcolor;
+            h1 {
+                font-size: 36px;
+                font-family: $main-primary-ef-bd;
+            }
+
+            .sub-title {
+                font-size: 24px;
+                font-family: $main-primary-ef-bd;
+                margin: 20px 0 0 0;
+            }
+            p {
+                font-size: 16px;
+                font-family: $font-primary-500;
+            }
+
+            ul {
+                li {
+                    font-family: $main-primary-ef-reg;
+                }
+            }
+
+            .keyvalue-info-table {
+                border-radius: 4px;
+                border: 1px solid $cookie-policy-keyvalue-info-table-bordercolor;
+                margin: 20px 0;
+                width: 100%;
+                clear: both;
+
+                table {
+                    border-collapse: collapse;
+                    width: 100%;
+                    tbody {
+                        tr {
+                            &:nth-child(even) {
+                                background-color: $cookie-policy-keyvalue-info-table-bgecolor;
+                            }
+                            &:nth-child(odd) {
+                                background-color: $cookie-policy-keyvalue-info-table-bgocolor;
+                            }
+                            th,
+                            td {
+                                padding: 15px 10px;
+                                vertical-align: top;
+                            }
+                            th {
+                                font-size: 16px;
+                                font-family: $main-primary-ef-bd;
+                                margin: 0;
+                                width: 15%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .key-value-info {
+                /*border-bottom: 1px solid rgba($grey, 0.5);*/
+                p {
+                    &.info-key {
+                        font-size: 16px;
+                        font-family: $main-primary-ef-bd;
+                        margin: 0;
+                    }
+                    margin: 0 0 20px 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .cookie-policy {
+        .right-img {
+            display: none;
+        }
+
+        .banner-wrapper {
+            margin: 0;
+            padding: 0;
+        }
+        .brand-banner {
+            text-align: center;
+            border: 0;
+            height: auto;
+            background: $cookie-policy-brandbanner-bgcolor;
+            margin: 0;
+            box-sizing: border-box;
+            transform: skew(0deg);
+            left: 0;
+            padding: 0;
+            .right-img {
+                display: none;
+            }
+            .container {
+                transform: skew(0deg);
+                left: 0;
+            }
+            .text {
+                padding: 30px 20px;
+                width: 100%;
+            }
+        }
+
+        .page-text {
+            width: 100%;
+            .show-mobile {
+                display: block;
+            }
+            .content {
+                padding: 20px;
+
+                margin: 0 0 20px 0;
+                h1 {
+                    font-size: 18px;
+                    text-align: center;
+                }
+                p {
+                    font-family: $font-primary-500;
+                }
+                .sub-title {
+                    font-size: 18px;
+                }
+                .download-doc {
+                    margin: 30px auto;
+                    margin-top: 10px;
+                    display: inherit;
+                    text-align: center;
+                    min-width: 100%;
+                }
+                .table-small {
+                    overflow-x: auto;
+                }
+            }
+        }
+    }
+}

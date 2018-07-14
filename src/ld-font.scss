@@ -1,0 +1,155 @@
+
+@font-face {
+  font-family: 'ld';
+  src:  url('/assets/fonts/ld/ld.eot?j1zpx7');
+  src:  url('/assets/fonts/ld/ld.eot?j1zpx7#iefix') format('embedded-opentype'),
+    url('/assets/fonts/ld/ld.ttf?j1zpx7') format('truetype'),
+    url('/assets/fonts/ld/ld.woff?j1zpx7') format('woff'),
+    url('/assets/fonts/ld/ld.svg?j1zpx7#ld') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+[class^="ldicn-"], [class*=" ldicn-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ld' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ldicn-limits-locker:before {
+  content: "\31";
+  color: #437eb0;
+}
+.ldicn-time-check:before {
+  content: "\32";
+  color: #447fb1;
+}
+.ldicn-timer:before {
+  content: "\41";
+}
+.ldicn-check-icn:before {
+  content: "\42";
+}
+.ldicn-edit:before {
+  content: "\43";
+}
+.ldicn-trash:before {
+  content: "\44";
+}
+.ldicn-bell-cs:before {
+  content: "\45";
+}
+.ldicn-cart:before {
+  content: "\46";
+}
+.ldicn-minus:before {
+  content: "\47";
+}
+.ldicn-plus:before {
+  content: "\48";
+}
+.ldicn-bank:before {
+  content: "\49";
+}
+.ldicn-help:before {
+  content: "\4a";
+}
+.ldicn-flash:before {
+  content: "\4b";
+}
+.ldicn-home:before {
+  content: "\4c";
+}
+.ldicn-info:before {
+  content: "\4d";
+}
+.ldicn-login:before {
+  content: "\4e";
+}
+.ldicn-logout:before {
+  content: "\4f";
+}
+.ldicn-gift:before {
+  content: "\50";
+}
+.ldicn-results:before {
+  content: "\51";
+}
+.ldicn-syndicate:before {
+  content: "\52";
+}
+.ldicn-group:before {
+  content: "\53";
+}
+.ldicn-user:before {
+  content: "\54";
+}
+.ldicn-settings:before {
+  content: "\55";
+}
+.ldicn-user-fill:before {
+  content: "\56";
+}
+.ldicn-crown:before {
+  content: "\57";
+}
+.ldicn-777:before {
+  content: "\58";
+}
+.ldicn-lottery-ball:before {
+  content: "\59";
+}
+.ldicn-list-view:before {
+  content: "\5a";
+}
+.ldicn-close:before {
+  content: "\61";
+}
+.ldicn-mail:before {
+  content: "\62";
+}
+.ldicn-lock:before {
+  content: "\63";
+}
+.ldicn-sort:before {
+  content: "\64";
+}
+.ldicn-alpha-sort:before {
+  content: "\65";
+}
+.ldicn-list-view-b:before {
+  content: "\66";
+}
+.ldicn-star:before {
+  content: "\34";
+}
+.ldicn-bell:before {
+  content: "\35";
+}
+.ldicn-alert-fill:before {
+  content: "\33";
+}
+.ldicn-info-fill:before {
+  content: "\37";
+}
+.ldicn-tick-fill:before {
+  content: "\36";
+}
+.ldicn-add-cart:before {
+  content: "\39";
+}
+.ldicn-secure-payment:before {
+  content: "\38";
+}
+.ldicn-grid-view:before {
+  content: "\e909";
+}

@@ -1,0 +1,45 @@
+<section class="testimonials-sec" *ngIf="winnersList.length > 0">
+  <div class="container">
+    <div class="content">
+      <div class="testimonials">
+        <div class="ld-card-grid sliderLotteryWrap">
+          <div class="ld-card-col card-group-1 showSelectedLotteryPage testimonialCard" *ngFor="let winners of winnersList;let i = index">
+            <div class="card testimonials_card">
+              <div class="testimonials_para">
+                <h2>
+                  <span>{{winners.amountInHouseCurrency}}</span>Just Won</h2>
+  <p>{{winners.screenName}} just won {{winners.amountInHouseCurrency}} in the LONDON Bingo Room.</p>
+  <button class="btn btn-default more-info" type="button">JUMP IN</button>
+              </div>
+              <div class="testimonials_avtar">
+                <div class="t_inn_img">
+                  <img class="testimonials_pic" src="/assets/img/chat-moderator.jpg">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--                <div class="pagination">
+                      <ul>
+                          <li *ngFor="let num of [].constructor(pagination_count);let i = index" (click)="showAllLotteries(i)" [class.selected]="i === selectedPagination"></li>
+                      </ul>
+                  </div>-->
+        </div>
+
+      </div>
+      <div class="pagination">
+        <ul>
+          <li>
+            <a href="javascript:void(0);" class="go-left">
+              <i class="fa fa-angle-left"></i>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" class="go-right">
+              <i class="fa fa-angle-right"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

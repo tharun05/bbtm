@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'ld font';
+  src: url('/assets/fonts/ld-icn/ld-font.eot');
+  src: url('/assets/fonts/ld-icn/ld-font.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/ld-icn/ld-font.woff') format('woff'),
+  url('/assets/fonts/ld-icn/ld-font.ttf') format('truetype'),
+  url('/assets/fonts/ld-icn/ld-font.svg#ld-font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class*='ldicn-']:before {
+  display: inline-block;
+  font-family: 'ld font';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+
+.ldicn-timer:before{content:'\0041';}
+.ldicn-check-icn:before{content:'\0042';}
+.ldicn-edit:before{content:'\0043';}
+.ldicn-trash:before{content:'\0044';}
+.ldicn-bell-cs:before{content:'\0045';}
+.ldicn-cart:before{content:'\0046';}
+.ldicn-minus:before{content:'\0047';}
+.ldicn-plus:before{content:'\0048';}
+.ldicn-cashier:before{content:'\0049';}
+.ldicn-help:before{content:'\004a';}
+.ldicn-flash:before{content:'\004b';}
+.ldicn-home:before{content:'\004c';}
+.ldicn-info:before{content:'\004d';}
+.ldicn-login:before{content:'\004e';}
+.ldicn-logout:before{content:'\004f';}
+.ldicn-gift:before{content:'\0050';}
+.ldicn-results:before{content:'\0051';}
+.ldicn-syndicate:before{content:'\0052';}
+.ldicn-syndicate-group:before{content:'\0053';}
+.ldicn-user:before{content:'\0054';}
+.ldicn-settings:before{content:'\0055';}
+.ldicn-user-fill:before{content:'\0056';}
+.ldicn-crown:before{content:'\0057';}
+.ldicn-777:before{content:'\0058';}
+.ldicn-lottery:before{content:'\0059';}
+.ldicn-list-view:before{content:'\005a';}
+.ldicn-close:before{content:'\0061';}
+.ldicn-mail:before{content:'\0062';}
+.ldicn-lock:before{content:'\0063';}
+.ldicn-sort:before{content:'\0064';}
+.ldicn-alpha-sort:before{content:'\0065';}
+.ldicn-list-view-b:before{content:'\0066';}
+.ldicn-grid-view:before{content:'\0067';}
+.ldicn-add-cart:before{content:'\0068';}

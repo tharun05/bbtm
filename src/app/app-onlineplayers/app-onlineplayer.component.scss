@@ -1,0 +1,31 @@
+.users_online{
+    width: 20%;
+    float: left;
+    padding: 7px 5px;
+    display: block;
+    font-size: 18px;
+    margin-left: 4%;
+    letter-spacing: -0.23px;
+
+    @media only screen and (max-width: 767px) {
+        display:none; 
+    }
+    @media only screen and (min-width:768px) and (max-width:992px){
+        width: 22%; 
+        margin-left: 2%;
+    }
+
+    p{
+        line-height: 23px;
+        @media only screen and (min-width:768px) and (max-width:992px){
+            font-size: 16px;
+        }   
+    }
+
+    .online-dot{
+        width: 24px;
+        height: 24px;
+        float: left;
+
+    }
+}

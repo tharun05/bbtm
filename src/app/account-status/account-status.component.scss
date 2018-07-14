@@ -1,0 +1,152 @@
+  @import "~variables.scss";
+
+  .account-status {
+
+    .account-status-type {
+      .ld-ckbox {
+        margin-bottom: 20px;
+        @media screen and (max-width: 992px) {
+          margin-bottom: 20px;
+          &:last-child {
+            margin-bottom: 0px;
+          }
+        }
+        input {
+          position: absolute;
+          left: -9999px;
+        }
+
+        label {
+          width: 100%;
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+          user-select: none;
+          font-family: $font-primary-500;
+          box-sizing: border-box;
+          margin: 0;
+
+
+          &::before {
+            content: '';
+            display: block;
+            float: left;
+            width: 38px;
+            height: 38px;
+            border-radius: 4px;
+            background-color: $account-status-checkbox-unchecked-bgcolor;
+            transition: background-color .2s;
+            border: 1px solid $account-status-checkbox-unchecked-borderColor;
+            box-sizing: border-box;
+          }
+
+          .text {
+            width: calc(100% - 65px);
+            float: right;
+            color: $account-status-text-color;
+            margin: 0 0 0 25px;
+
+
+            p {
+              color: $account-status-p-color;
+              font-weight: normal;
+              font-size: 14px;
+              font-family: $main-primary-ef-reg;
+              line-height: 17px;
+              margin: 0px;
+              letter-spacing: -0.3px;
+
+              b {
+                font-size: 14.3px;
+                font-weight: bold;
+                line-height: 17px;
+                letter-spacing: -0.18px;
+              }
+            }
+          }
+        }
+
+        input:checked+label::before {
+          content: '\E80A';
+          font-family: 'lottoicons';
+          color: $account-status-input-color;
+          font-size: 20px;
+          font-weight: bold;
+          text-align: center;
+          line-height: 1.8;
+          border: 1px solid $green;
+          background-color: $green;
+        }
+        .selfExclusion-select {
+          width: calc(100% - 65px);
+          float: right;
+          margin: -5px 0 27px 0;
+          label {
+            position: absolute;
+          }
+        }
+
+
+        .mat-form-field {
+          .mat-input-placeholder {
+            &:before {
+              display: none!important;
+            }
+          }
+        }
+      }
+      button {
+        width: 100%!important;
+
+        &.btn {
+          padding: 15px 20px;
+          line-height: 1;
+          font-size: 18px;
+          font-family: $main-primary-ef-reg;
+          border: 1px solid transparent;
+          text-transform: capitalize;
+          border-radius: 0px;
+        }
+      }
+    }
+  }
+
+
+  modal {
+    .modal {
+      .modal-body {
+        &.suspend-account-modal {
+          text-align: center;
+          width: 400px;
+          @media screen and (max-width: 768px) {
+            width: calc(100% - 20px);
+          }
+
+          background-color: $account-status-modal-bg-color;
+          padding: 20px;
+          border-radius: 8px;
+          box-sizing: border-box;
+          .mat-form-field .mat-form-field-wrapper,
+          button {
+            width: 100% !important;
+          }
+          button {
+            margin: 0 !important;
+            margin-top: 20px!important;
+          }
+          h3 {
+            font-family: $font-secondary-SemiBold;
+            margin: 0px;
+            font-weight: normal;
+            font-size: 20px;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+
+
+  .dep_cancelbtn {
+    margin-left: auto;
+  }

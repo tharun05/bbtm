@@ -1,0 +1,85 @@
+<section class="deposit-success">
+  <div class="container">
+    <div class="transaction_fail_succes">
+      <div class="header-row">
+
+        <div class="skew-header" *ngIf="txnDetails.transactionStatus == 'FAILURE'">
+          <div class="header-bg">
+            <div class="text-container">
+              <span class="icon">
+                <i class="icon-oops"></i>
+               </span>
+              <span class="text">
+              <h1>Oops…</h1>
+              <p>Something went wrong </p>
+            </span>
+            </div>
+          </div>
+          <div class="down-arrow"></div>
+        </div>
+
+        <div class="skew-header d-success" *ngIf="txnDetails.transactionStatus != 'FAILURE'">
+          <h1 class="show-small">Receipt</h1>
+          <div class="header-bg">
+            <div class="text-container">
+              <span class="icon hide-small">
+                <i class="icon-tick-fill"></i>
+            </span>
+              <span class="text">
+              <h1 class="hide-small">Transaction Receipt</h1>
+              <p>Available Balance:  <b> {{userService.getUserCurrencySymbol()}} {{userService.getUserBalance() | number:'1.0-2' }}</b></p>
+            </span>
+            </div>
+          </div>
+          <div class="down-arrow"></div>
+        </div>
+
+      </div>
+
+      <div class="content">
+        <div class="deposit-failcase" *ngIf="txnDetails.transactionStatus == 'FAILURE' && userProfile">
+          <img class="deposit-done" src="/assets/img/error-icon.svg" alt="deposit failed" title="deposit failed" />
+          <p>We’re sorry {{userProfile.firstName}} but {{txnDetails.failiureReason ? txnDetails.failiureReason : 'something went wrong with the transaction.'}}. Please check the details and retry using the button below.</p>
+          <button id="retryPaymentButton" class="btn-new" type="button" (click)="retryPayment('retryPaymentButton')">
+          <i class="icon-lock" *ngIf="txnDetails.txnType == 'buyTicket'"></i>
+          <span>RETRY <ng-container *ngIf="txnDetails.txnType == 'buyTicket'">{{userService.getUserCurrencySymbol()}} {{txnDetails.amount | number:'1.2-2'}}</ng-container><ng-container *ngIf="txnDetails.txnType != 'buyTicket'"> DEPOSIT</ng-container></span>
+        </button>
+        </div>
+        <div class="deposit-done" *ngIf="txnDetails.transactionStatus != 'FAILURE'">
+          <h2 *ngIf="txnDetails.transactionStatus != 'FAILURE' && !txnDetails.paymentType">Deposit successful. Thank you.</h2>
+          <h2 *ngIf="txnDetails.transactionStatus == 'PENDING' && txnDetails.paymentType">Withdraw  initiated. Thank you.</h2>
+          <h2 *ngIf="txnDetails.transactionStatus == 'SUCCESS' && txnDetails.paymentType">Withdraw  successful. Thank you.</h2>
+          <img class="show-small" src="/assets/img/checkmark.svg" alt="deposit done" title="deposit done" />
+          <table>
+            <tr>
+              <td>Transaction ID:</td>
+              <td>{{txnDetails.txnId}}</td>
+            </tr>
+            <tr *ngIf="txnDetails.txnDate">
+              <td>Date & Time:</td>
+              <td>{{txnDetails.txnDate | dateSuffix : "EEE, ddoo MMM yyyy, HH:mm"}}</td>
+            </tr>
+            <tr>
+              <td>From Account:</td>
+              <td>Saving
+                <br/>{{txnDetails.accountNumber}}</td>
+            </tr>
+            <tr>
+              <td>To Account:</td>
+              <td>Player ID {{txnDetails.AccountId}}</td>
+            </tr>
+            <tr>
+              <td>Amount:</td>
+              <td>{{userService.getUserCurrencyCode()}} {{txnDetails.amount | number:'1.0-2'}}</td>
+            </tr>
+          </table>
+        </div>
+        <div *ngIf="txnDetails.transactionStatus == 'FAILURE' && !userProfile">
+          <mat-spinner></mat-spinner>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+
+</section>

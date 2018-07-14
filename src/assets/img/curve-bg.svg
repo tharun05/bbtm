@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375px" height="20px" viewBox="0 0 375 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Curved background</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Entry" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, -442.000000)">
+        <g id="Content" transform="translate(-29.000000, 59.000000)" fill="#F0F2F6">
+            <path d="M216.5,383 C294.536509,383 357.036509,389.666667 404,403 L29,403 C75.9634906,389.666667 138.463491,383 216.5,383 Z" id="Curved-background"></path>
+        </g>
+    </g>
+</svg>

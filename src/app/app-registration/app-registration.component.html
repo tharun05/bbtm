@@ -1,0 +1,22 @@
+<section class="registration ">
+  <span class="top-left-corner"></span>
+  <span class="top-left-circle"></span>
+  <span class="top-bottom-oval"></span>
+  <div class="container">
+    <div class="close-modal" (click)="goBackToHome()">
+      <svg fill="#fff" class="mdl_close" viewBox="0 0 612 612">
+        <use xlink:href="#cross_icon"></use>
+      </svg>
+    </div>
+    <div class="wrap-register">
+      <div class="ld-col-md-5">
+        <div class="image-text">
+          <p>Affiliate Image Placeholder</p>
+        </div>
+      </div>
+      <div class="ld-col-md-7">
+        <app-registration-form [regAndLogin]="regComplete" (regAndLoginComplete)="registrationComplete($event)"></app-registration-form>
+      </div>
+    </div>
+  </div>
+</section>

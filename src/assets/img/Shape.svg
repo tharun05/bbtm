@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="157px" height="183px" viewBox="0 0 157 183" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#F0F2F6" offset="100%"></stop>
+        </linearGradient>
+        <path d="M144.4279,170.242598 C130.066193,163.021 118.37033,164.3697 108.94593,163.021 C98.74123,161.5627 88.18933,160.0538 80.27493,149.2604 C74.36293,141.1987 75.72773,131.9891 77.61773,119.2403 C79.92403,103.665 83.40813,80.1439 78.65923,39.7443 C77.9344341,34.869962 79.2554883,29.9127337 82.30983,26.0455 C88.61163,18.2922 99.95083,17.2829 113.08003,16.1152 C124.53263,15.0964 137.50483,13.9418 142.62943,7.8473 L149.22873,0 L155.82813,7.8473 C160.95293,13.9421 173.92573,15.0964 185.37223,16.1143 C198.50842,17.2833 209.84723,18.2925 216.14942,26.0461 C219.202774,29.9135714 220.523366,34.8703401 219.79892,39.7443 C215.05052,80.1489 218.53282,103.6691 220.83762,119.2326 C222.72952,131.9843 224.09672,141.1954 218.18272,149.2604 C210.26792,160.0538 199.71623,161.5627 189.51062,163.021 C180.08733,164.3697 168.422572,163.021 154.0309,170.242598 L149.2289,173.460698 L144.4279,170.242598 Z" id="path-2"></path>
+        <filter x="-5.1%" y="-4.3%" width="110.2%" height="108.6%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.578842474   0 0 0 0 0.578842474   0 0 0 0 0.578842474  0 0 0 0.496716486 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="HD-Desktop-Header-White-(My-Account)" transform="translate(-71.000000, 5.000000)">
+            <g id="HD-Desktop-Header-White-(signed-in)">
+                <g id="Path">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

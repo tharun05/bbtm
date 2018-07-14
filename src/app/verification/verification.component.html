@@ -1,0 +1,246 @@
+<section class="registration">
+  <div class="container">
+    <div class="close-modal" (click)="goBackToHome()">
+      <svg fill="#fff" class="mdl_close" viewBox="0 0 612 612">
+        <use xlink:href="#cross_icon"></use>
+      </svg>
+    </div>
+    <div class="wrap-register">
+      <div class="ld-col-md-5">
+        <div class="image-text">
+          <p>Affiliate Image Placeholder</p>
+        </div>
+      </div>
+
+      <div class="ld-col-md-7">
+        <div class="reg-form">
+          <div class="header" *ngIf="callingFrom !='UpdateProfile'">
+            <div class="skew-header">
+              <div class="header-bg">
+
+                <div class="text-container">
+                  <span class="text">
+                    <h1>
+                      Open New Account
+                    </h1>
+                    <p>
+                      Sign up and claim your bonus
+                    </p>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="register-tab">
+              <div class="signup-icon step-done">
+                <div class="secure-transactions">
+                  <div class="icon">
+                    <svg viewBox="0 0 398 398" fill="#15DAA0">
+                      <use xlink:href="#tick-icon"></use>
+                    </svg>
+                  </div>
+                  <div class="text">
+                    <a href="javascript:void(0)">Sign Up</a>
+                  </div>
+
+                </div>
+              </div>
+              <div class=" confirm-icon active">
+                <div class="secure-transactions">
+                  <div class="icon">
+                    <svg viewBox="0 0 398 398" fill="#8e99bc">
+                      <use xlink:href="#tick-icon"></use>
+                    </svg>
+                  </div>
+                  <div class="text">
+                    <a href="javascript:void(0)">Confirm</a>
+                  </div>
+
+                </div>
+              </div>
+              <!-- <div class=" bonus-icon">
+                                <div class="secure-transactions">
+                                    <div class="icon">
+                                        <svg viewBox="0 0 468 478" fill="#8e99bc">
+                                        <use xlink:href="#bonus-icon"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="text">
+                                        <a href="javascript:void(0)">Select Bonus</a>
+                                    </div>
+
+                                </div>
+                            </div> -->
+            </div>
+          </div>
+          <div class="form-fields verify-method-choose " *ngIf="verificationStep === 'step-1'">
+            <div class='verification-heading'>
+              <h3>Verify your account</h3>
+              <p>
+                <b>Welcome to Bingo69 {{firstName}}!</b> You're just few step away from selecting your bonus and getting started.
+                We just need to verify your account using either SMS or email. Choose your preferred method from the below
+                and select send.
+            </div>
+            <div class='select-method'>
+              <form [formGroup]="verificationForm">
+                <div class="select-main-sms">
+                  <div class="select-mail">
+                    <div class="ld-col-md-2">
+                      <img alt="Bingo69 email" height="40" src="/assets/img/email_icon.svg" title="email icon" width="41">
+                    </div>
+                    <div class="ld-col-md-8">
+                      <span class="in_lar_v">Send an email to {{emailId}} </span>
+                      <span class="in_mob_v">Send an email</span>
+                    </div>
+                    <div class="ld-col-md-2">
+                      <div class="ld-ckbox ">
+                        <input type="checkbox" value="true" id="emailsend" (click)="isAtleastOneSelected('emailchecked')" formControlName="emailchecked">
+                        <label for="emailsend">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-sms">
+                    <div class="ld-col-md-2">
+                      <img alt="sms" height="40" src="/assets/img/SMS icon.svg" title="sms" width="41">
+                    </div>
+                    <div class="ld-col-md-8">
+                      <span class="in_lar_v">Send a verification code to via SMS to {{phoneNumber}} </span>
+                      <span class="in_mob_v">Send SMS</span>
+                    </div>
+                    <div class="ld-col-md-2">
+                      <div class="ld-ckbox ">
+                        <input type="checkbox" value="true" id="mobileverificationcode" (click)="isAtleastOneSelected('phoneNumberChecked')" formControlName="phoneNumberChecked">
+                        <label for="mobileverificationcode">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button type="button" [disabled]="isButtonDisabled1()" class="btn-new" (click)="methodChoose()">
+                  <span>{{getButtonName()}}</span>
+                </button>
+                <span class="warning-text">By continuing, you confirm that you’re authorized to use this phone number and agree to receive text messages.
+                  Mobile service provider fees may apply.</span>
+              </form>
+            </div>
+          </div>
+
+          <div class="form-fields verification-code " *ngIf="verificationStep === 'step-2'">
+            <form [formGroup]="emailOtpverifyForm">
+              <div class="verification-code-info">
+                <div class="sent-sms-icon" style="margin-top: 40px; margin-bottom: 40px;">
+                  <img _ngcontent-c13="" alt="Bingo69 email" src="/assets/img/email_icon.svg" title="email icon" width="100">
+                </div>
+                <div class="text-message">
+                  <p>We just sent you an email containing a 4 digit code. Please click the link in the email or enter the PIN
+                    below to verify your email. Please note that email delivery can take up to a minute or more.</p>
+                  <div class="verification-pin">
+                    <input _ngcontent-c14="" class="form-control verification_otp" name="otp" maxlength=4 formControlName="email_otp" placeholder="...."
+                      type="text" (keyup)="setFocusOut()">
+                  </div>
+                </div>
+                <div class="otp_error" *ngIf="invalidOTP">{{invalidOTP}}</div>
+                <button type="button" class="btn-new" [disabled]="isButtonDisabled(emailOtpverifyForm)" (click)="verifyOTP()">
+                  <span>Verify account</span>
+                </button>
+                <span class="did_nt_rec">Didn't recieve the code?
+                  <a (click)="changeMobileNumber()">Send an SMS instead.</a>
+                </span>
+              </div>
+            </form>
+          </div>
+          <div class="form-fields verification-code " *ngIf="verificationStep === 'step-3'">
+            <form [formGroup]="phoneOtpVerifyForm" name="verify_form">
+              <div class="verification-code-info">
+                <div class="sent-sms-icon" style="margin-top: 40px; margin-bottom: 40px;">
+                  <img _ngcontent-c13="" alt="Bingo69 email" src="/assets/img/SMS_icon_shadow.svg" title="email icon" width="100">
+                </div>
+                <div class="text-message">
+                  <p>We just sent you an SMS containing a 4 digit code. Please enter it below to verify your phone. Please note
+                    that SMS delivery can take up to a minute or more.</p>
+                  <div class="verification-pin" id="verification_otp">
+                    <input _ngcontent-c14="" class="form-control verification_otp" name="otp"  maxlength=4 formControlName="phone_otp"
+                      placeholder="...." type="text" (keyup)="setFocusOut()">
+                  </div>
+                </div>
+                <div class="otp_error" *ngIf="invalidOTP">{{invalidOTP}}</div>
+                <button type="button" class="btn-new verify_btn" [disabled]="isButtonDisabled(phoneOtpVerifyForm)" (click)="verifyOTP()">
+                  <span>Verify account</span>
+                </button>
+                <span class="did_nt_rec">Didn't recieve the code?
+                  <a (click)="tryAgain()">Try again.</a>
+                  <a (click)="changeMobileNumber()">Change your mobile number </a>
+                </span>
+              </div>
+            </form>
+          </div>
+          <div class="form-fields verification-code " *ngIf="verificationStep == 'step-4'">
+            <form [formGroup]="changeNumberForm">
+              <div class="verification-code-info">
+                <div class="sent-sms-icon" style="margin-top: 40px; margin-bottom: 40px;">
+                  <img _ngcontent-c13="" alt="Bingo69 email" src="/assets/img/SMS_icon_shadow.svg" title="email icon" width="100">
+                </div>
+                <div class="text-message">
+                  <p>Please confirm the mobile number below is correct then hit [Resend Code Now]</p>
+                  <div class="mobile-div resend_now">
+                    <div class="mobile-no">
+                      <i class="icon-mobile"></i>
+                      <div class="flat-tel-holder">
+                        <p class="label-text">International code</p>
+                        <div class="tel-holder">
+                          <div class="flag">
+                            <input name="phone" id="phoneNumberFlag" ng-intl-tel-input formControlName="phone">
+                            <div class="clearfix"></div>
+                          </div>
+                          <mat-form-field class="">
+                            <input name="phone" matInput placeholder="Mobile phone number" formControlName="phone" tel>
+                            <mat-error *ngIf="utils.shouldShowErrors('phone',changeNumberForm)">{{utils.getErrorMessage('phone', changeNumberForm)}}</mat-error>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn-new resend_now" [disabled]="isButtonDisabled(changeNumberForm)" (click)="updateNumberAndResendCode()">
+                  <span>Resend Code Now</span>
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="form-fields verification-code " *ngIf="verificationStep == 'step-5'">
+            <div class="verification-code-info">
+              <div class="text-message">
+                <h2>Welcome to Bingo69 {{firstName}}!</h2>
+                <p>We’re pleased to have you with us.</p>
+                <svg viewBox="0 0 512 512" fill="#80c251" class="info_icon">
+                  <use xlink:href="#reg_success"></use>
+                </svg>
+              </div>
+              <!-- <div>
+                                  Add success icon here
+                              </div>
+                              <div (click)="gotoSelectBonus()">
+                                  FINAL STEP: Select Bonus <strong>></strong>
+                              </div> -->
+            </div>
+          </div>
+          <div class="form-fields verification-code " *ngIf="verificationStep === 'step-6'">
+            <div class="verification-code-info">
+              <div class="text-message">
+                <h2>Oops…something went wrong.</h2>
+
+                <p>We’re sorry but you entered an invalid code.
+                  <a (click)="tryAgain()"> Please try again.</a>
+                </p>
+                <svg viewBox="0 0 334 334" class="info_icon">
+                  <use xlink:href="#error_info_icon"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

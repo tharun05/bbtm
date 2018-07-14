@@ -1,0 +1,102 @@
+
+<div class="account-status-type">
+    <div class="ld-ckbox load-check">
+        <input id="registered" name="account-status" value="0" type="radio" [(ngModel)]="period">
+        <label for="registered">
+            <span class="text">
+                <p><b>Registered </b>
+                    <br/>Your account is registered and active.</p></span>
+        </label>
+    </div>
+    <div class="ld-ckbox ">
+        <input id="selfExclusion" name="account-status" value="1" type="radio" [(ngModel)]="period">
+        <label for="selfExclusion">
+            <span class="text">
+                <p><b>Self Exclusion  </b>
+                    <br/> Your account will be suspended for a minimum of 6 months before you will be able to unlock it again.</p>
+                <p>You will not be able to use any products offered on the website or applications.</p>
+                <p>The account will not be automatically unlocked after the exclusion period, you will have to contact our customer service team to unlock it.</p>
+                <p>Choose how long you would like to suspend access to your account for.</p>
+            </span>
+        </label>
+        <br><br><br>
+        <div class="ld-col-md-3">
+            <mat-form-field class="selfExclusion-select">
+                <mat-select name="months" placeholder="Choose how long suspend access" [(ngModel)]="periodSelect" [disabled]="period != 1">
+                    <mat-option *ngFor="let pp of pausePeriods" [value]="pp.days">{{pp.period}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+    <div class="ld-ckbox" style="margin-bottom: 30px;">
+    <input id="permanentlyDelete" name="account-status" value="5256000" type="radio" [(ngModel)]="period">
+    <label for="permanentlyDelete">
+        <span class="text">
+            <p><b>Permanently Delete </b>
+                <br/>Warning! Your account will be closed permanently. You will not be able to use any products offered on the website or applications. </p>
+        </span>
+    </label>
+</div>
+<div class="ld-col-md-4">
+    <button id="suspendButton" class="btn btn-tertiary" [ngClass]="period > 0 ? 'btn-primary' : 'btn-additional'" (click)="suspendAccount('suspendButton')" [disabled]="period > 0 ? '' : 'true'">
+        Submit Changes<i class="fa fa-refresh fa-spin facebook-login-spinner hide"></i>
+    </button>
+</div>
+</div>
+
+
+<!-- <div id="suspendAccountModal" class="modal blowUpModal">
+  <div class="modal-container">
+    <div class="close-modal" (click)="closeModal('suspendAccountModal')"><i class="icon-cancel"></i></div>
+    <div class="modal-body">
+      <div id="suspendAccountModalContent" class="suspend-account-modal">
+        <h3>Enter your Password to suspend your account {{period > 1 ? 'Permanantly' : selectedPeriod}} {{period > 1 ? '':' Days'}}</h3>
+        <form  [formGroup]="suspendAccountForm" (ngSubmit)="confirmSuspendAccount('suspendConfirmButton')" novalidate>
+          <div id="serverError-suspendAccount" class="error-msg hide">{{serverError}}</div>
+          <mat-form-field class="hide" >
+              <input name="expire" matInput formControlName="expire">
+              <mat-error *ngIf="shouldShowErrors('expire',suspendAccountForm)">{{getErrorMessage('expire',suspendAccountForm)}}</mat-error>
+          </mat-form-field>
+          <mat-form-field >
+              <input name="confpassword" matInput placeholder="Enter your password" formControlName="confpassword" [type]="isPassword ? 'password' : 'text'">
+              <mat-icon matSuffix (click)="isPassword = !isPassword">{{isPassword ? 'show' : 'hide'}}</mat-icon>
+              <mat-error *ngIf="shouldShowErrors('confpassword',suspendAccountForm)">{{getErrorMessage('confpassword',suspendAccountForm)}}</mat-error>
+          </mat-form-field>
+          <button type="button" id="suspendConfirmButton" [ngClass]="getButtonClass(suspendAccountForm,formSubmitted)" class="btn-new"  (click)="confirmSuspendAccount('suspendConfirmButton')" [disabled]="isButtonDisabled(suspendAccountForm)">
+           <span> Submit</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<modal id="suspendAccountModal">
+    <div class="modal">
+        <div class="modal-body suspend-account-modal">
+            <div class="close-modal" (click)="closeModal('suspendAccountModal')">
+                <i class="icon-cancel"></i>
+            </div>
+            <div id="suspendAccountModalContent" class="">
+                <h3>Enter your Password to suspend your account {{period > 1 ? 'Permanantly' : selectedPeriod}} {{period > 1 ? '':' Days'}}</h3>
+                <form  [formGroup]="suspendAccountForm" (ngSubmit)="confirmSuspendAccount('suspendConfirmButton')" novalidate>
+                    <div id="serverError-suspendAccount" class="error-msg hide">{{serverError}}</div>
+                    <mat-form-field class="hide" >
+                        <input name="expire" matInput formControlName="expire">
+                        <mat-error *ngIf="shouldShowErrors('expire',suspendAccountForm)">{{getErrorMessage('expire',suspendAccountForm)}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field >
+                        <input name="confpassword" matInput placeholder="Enter your password" formControlName="confpassword" [type]="isPassword ? 'password' : 'text'">
+                        <mat-icon matSuffix (click)="isPassword = !isPassword">{{isPassword ? 'show' : 'hide'}}</mat-icon>
+                        <mat-error *ngIf="shouldShowErrors('confpassword',suspendAccountForm)">{{getErrorMessage('confpassword',suspendAccountForm)}}</mat-error>
+                    </mat-form-field>
+                    <button type="button" id="suspendConfirmButton" [ngClass]="getButtonClass(suspendAccountForm,formSubmitted)" class="btn-new"  (click)="confirmSuspendAccount('suspendConfirmButton')" [disabled]="isButtonDisabled(suspendAccountForm)">
+                        <span> Submit</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>

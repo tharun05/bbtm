@@ -1,0 +1,685 @@
+@import "~variables.scss";
+@import "~mixins.scss";
+@import "../app-txn-status/app-txn-status.component.scss";
+.myHeaderGame.sticky {
+  position: relative;
+  top: inherit;
+  background-color: $gameWindowHeaderBG;
+  border: none;
+  &.loggedInClass:after,
+  &:after {
+    width: 50%;
+  }
+  .logo-patch-my-game {
+    margin-left: 0;
+  }
+  .logo-patch {
+    .language-box {
+      background: transparent;
+      color: $white;
+      .lang-icon-h {
+        border: 1.5px solid $white;
+      }
+    }
+    .dropdown {
+      width: 150px;
+      margin-right: 0;
+      li {
+        &:first-child {
+          background: inherit;
+        }
+        &.active {
+          background: $main-primary-bg;
+        }
+      }
+      &:after {
+        border-right: 0;
+      }
+    }
+  }
+}
+.myHeaderGame .home a img {
+  margin-top: 12px;
+  max-width: 90px;
+}
+.myHeaderGame  ul.gameLinksUl {
+  margin-right: 60px;
+  min-width: 65%;
+  text-align: right;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    background: #434b66;
+    width: 45%;
+    height: 50px;
+    z-index: -1;
+  }
+  li {
+    display: inline-block;
+    vertical-align: top;
+    float: none;
+    &.toggle-games {
+      float: left;
+    }
+    &:first-child {
+      background: $gameWindowHeaderBG;
+      color: $gameWindowWhiteColor;
+      // padding-right: 16%;
+      // @media (max-width: 1199px) {
+      //   padding-right: 5%;
+      // }
+      h1.icon span {
+        color: $gameWindowGreyColor;
+        &.active {
+          color: $gameWindowpinkColor;
+        }
+        &.slider {
+          background-color: $gameWindowpinkColor;
+        }
+      }
+      &:after {
+        display: none;
+      }
+      &:before {
+        display: none;
+      }
+    }
+    &:nth-child(2):before {
+      background: $gameWindowHeaderBG;
+      border: none;
+      padding-right: 30px;
+    }
+    &:last-child {
+      padding-right: 20px;
+      // &:before {
+      //   content: "";
+      //   background: #7e69af;
+      //   top: 0;
+      //   right: 120px;
+      //   width: 80px;
+      //   position: absolute;
+      //   overflow: hidden;
+      //   height: 50px;
+      //   transform: skew(30deg);
+      //   z-index: -1;
+      // }
+    }
+    &.game-time-details {
+      margin-right: 4%;
+      min-width: 80px;
+      box-sizing: border-box;
+      text-align: center;
+      position: relative;
+      padding-right: 40px;
+      &:before {
+        content: "";
+        background: #454966;
+        top: 0;
+        left: -100px;
+        right: 0;
+        position: absolute;
+        overflow: hidden;
+        height: 50px;
+        -webkit-transform: skew(30deg);
+        transform: skew(30deg);
+        z-index: -1;
+        @media (max-width: 1200px) {
+          left: -60px;
+        }
+      }
+    }
+    // &.balane-game {
+    //   position: relative;
+    //   &:before {
+    //     content: "";
+    //     background: #7e69af;
+    //     top: 0;
+    //     left: -25px;
+    //     width: 80px;
+    //     position: absolute;
+    //     overflow: hidden;
+    //     height: 50px;
+    //     transform: skew(30deg);
+    //     z-index: -1;
+    //   }
+    // }
+  }
+  &:after {
+    content: "";
+    display: block;
+    border-right: 1px solid $gameWindowWhiteColor;
+    height: 70%;
+    top: 14%;
+    right: 0;
+    position: absolute;
+  }
+}
+.closeWindow,
+.fullScreen {
+  position: absolute;
+  top: 0;
+  right: -30px;
+  height: 50px;
+  line-height: 50px;
+  color: $gameWindowWhiteColor;
+  i,
+  img {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+  }
+}
+.fullScreen {
+  right: 10px;
+  line-height: 56px;
+}
+#gameIframeWrapper {
+  position: fixed;
+  width: 100%;
+  height: calc(100% - 120px);
+  top: 50px;
+  text-align: center;
+  background-color: $gameWindowBlackColor;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  iframe {
+    width: 80%;
+    height: calc(100% - 40px);
+    border: none;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 22px;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+  }
+}
+.gamewinFooter {
+  background-color: $gameWindowHeaderBG;
+  height: 70px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 74px;
+  .quickDepositBtn {
+    border: none;
+    height: 50px;
+    font-family: $main-primary-ef-reg;
+    font-size: 18px;
+    width: 190px;
+    line-height: 22px;
+    background: $deposit-btn-bg;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $gameWindowWhiteColor;
+    cursor: pointer;
+    margin: 10px auto;
+  }
+}
+modal {
+  &#loginModal {
+    .modal {
+      .modal-body {
+        width: 400px;
+        @media screen and (max-width: 768px) {
+          width: calc(100% - 20px);
+        }
+        .login-form {
+          input.mat-input-element {
+            margin-top: -.0625em;
+            margin-bottom: -2px;
+          }
+          .mat-input-suffix mat-icon {
+            top: 3px;
+          }
+        }
+      }
+    }
+  }
+  &#registerModal {
+    position: relative;
+    .modal {
+      .modal-body {
+        width: 700px;
+        text-align: left;
+        overflow: initial;
+        overflow-y: visible;
+        @media screen and (max-width: 767px) {
+          width: 100vw;
+        }
+
+        .close-modal{
+            width: 32px;
+    height: 32px;
+    position: absolute;
+    top: -20px;
+    right: -50px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    z-index: 9;
+        .mdl_close{
+            width: 32px;
+            height: 32px;
+            }
+        }
+      }
+    }
+  }
+}
+.user-login-modal {
+  &#loginModalSuccess {
+    /*    width: 350px;
+        height: 290px;*/
+    @media screen and (max-width: 768px) {
+      width: initial;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .otp-success-img {
+      width: 80px;
+      height: 80px;
+    }
+    p {
+      font-family: $font-secondary-SemiBold;
+      font-size: 17px;
+    }
+  }
+  text-align: center;
+  background-color: $gameWindowWhiteColor;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  h3 {
+    font-family: $font-secondary-SemiBold;
+    margin: 0;
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .icon-user {
+    font-size: 45px;
+    line-height: 1;
+    margin-bottom: 10px;
+    display: inherit;
+  }
+}
+/**starting of deposit modal **/
+#quickDepositGameModal {
+  .modal-body {
+    width: 900px;
+    background: $deposit-bg;
+    border-radius: 12px;
+    .deposit-header {
+      padding: 45px 90px 0;
+      border-bottom: 0;
+      border-top-left-radius: 12px 12px;
+      border-top-right-radius: 12px 12px;
+      position: relative;
+      text-align: center;
+      font-family: $main-primary-ef-reg;
+      color: $violet;
+      .close-modal {
+        right: 25px;
+        position: absolute;
+        top: 20px;
+        i {
+          color: $violet;
+          -webkit-text-stroke: 3.5px #ffffff;
+          font-size: 40px;
+          filter: none;
+          -webkit-filter: none;
+        }
+      }
+      .bonus-select {
+        h3 {
+          font-size: 17.03px;
+          font-weight: 900;
+          line-height: 27px;
+          margin: 0;
+        }
+        p {
+          margin: 0;
+          font-size: 14.59px;
+          letter-spacing: -0.2px;
+          line-height: 17px;
+        }
+      }
+      .payment-method {
+        h3 {
+          font-size: 17.03px;
+          font-weight: 900;
+          line-height: 27px;
+          margin: 0;
+        }
+        p {
+          margin: 0;
+          font-size: 14.59px;
+          letter-spacing: -0.2px;
+          line-height: 17px;
+        }
+      }
+    }
+    #depositModalContent {
+      padding:0 56px 20px 76px;
+      .payment-method-data {
+        .form-fields {
+          max-width: 335px;
+          width: 100%;
+          float: right;
+        }
+        .payment-btn {
+          width: 100%;
+          float: right;
+          max-width: 335px;
+        }
+        .quick-pick-holder {
+          label {
+            width: calc(33.333% - 12px);
+          }
+        }
+      }
+      .bonus-lisitng {
+        .thumb-para {
+          color: $violet;
+          .col-sm-3 {
+            max-width: 180px;
+          }
+          h5 {
+            font-size: 17.03px;
+            letter-spacing: -0.24px;
+          }
+          h6 {
+            font-size: 14.59px;
+            letter-spacing: -0.27px;
+            line-height: 18px;
+          }
+          .para {
+            font-size: 14.59px;
+            letter-spacing: -0.24px;
+            line-height: 18px;
+          }
+        }
+      }
+      .header-row {
+        display: none;
+      }
+      .payment-type-container {
+
+      }
+      .btn-new {
+        font-size: 19.46px;
+        letter-spacing: -0.24px;
+        text-transform: capitalize;
+      }
+      .no-bonus-button {
+        float: right;
+        background: transparent;
+        border: 0;
+        font-size: 20px;
+        font-family: $main-primary-ef-reg;
+        font-weight: bold;
+        width: 275px;
+        padding: 10px;
+        color: $violet;
+        margin: 30px 0;
+        cursor: pointer;
+        text-align: center;
+        i {
+          font-size: 30px;
+          top: -4px;
+          float: right;
+          position: relative;
+          font-weight: bold;
+        }
+      }
+      p.text {
+        margin-bottom: 0;
+      }
+      .bonus-heading,
+      .center-dropdown {
+        display: none;
+      }
+      span {
+        i {
+          color: $deposit-icon-color;
+        }
+      }
+      #depositButton-loginModal {
+        background: $deposit-btn-bg;
+      }
+      .mat-slide-toggle {
+        float: right;
+        margin-top: 15px;
+      }
+    }
+    #quickModalSuccess {
+      padding: 20px 42px;
+      .container {
+        width: 100%;
+        max-width: 100%;
+        .deposit-done {
+          color: $violet;
+          h2 {
+            font-size: 17px;
+            letter-spacing: -0.2px;
+            line-height: 20px;
+            font-family: $main-primary-ef-reg;
+          }
+        }
+        .quick-links {
+          margin-left: -10px;
+          margin-right: -10px;
+          .bingo-link,
+          .casino-link,
+          .sratch-link {
+            width: 33.333%;
+            float: left;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            box-sizing: border-box;
+            img {
+              max-width: 100%;
+            }
+            p {
+              position: absolute;
+              bottom: 14px;
+              max-width: 100%;
+              left: 10px;
+              right: 10px;
+              cursor: pointer;
+              letter-spacing: -0.42px;
+              font-size: 20.16px;
+              background: rgba(0, 0, 0, 0.6);
+              color: $white;
+              padding: 8px;
+              margin: 0;
+              box-sizing: border-box;
+            }
+          }
+        }
+      }
+      .header-row {
+        margin-top: 0;
+        .header-bg {
+          background: transparent;
+          .down-arrow {
+            display: none;
+          }
+          .text-container {
+            color: $violet;
+            .icon-tick-fill {
+              font-size: 2.5rem;
+              color: $green;
+            }
+            h1 {
+              font-size: 22px;
+              margin-bottom: 2px;
+              font-family: $main-primary-ef-reg;
+            }
+            p {
+              font-size: 14.4px;
+              font-family: $main-primary-ef-reg;
+              letter-spacing: -0.2px;
+              b {
+                font-weight: normal;
+              }
+            }
+          }
+        }
+      }
+    }
+    .skew-header {
+      width: 100%;
+      &:after {
+        display: none;
+      }
+      .header-bg,
+      .text-container {
+        max-width: 100%;
+      }
+      .header-bg {
+        &:after {
+          display: none;
+        }
+      }
+      .text-container {
+        padding: 24px 20px;
+        .text {
+          h1 {
+            font-size: 1.0625rem;
+            max-height: 2.375rem;
+          }
+          p {
+            font-size: 0.75rem;
+          }
+        }
+      }
+      .down-arrow {
+        &:after {
+          left: 50%;
+          width: 100%;
+        }
+        &:before {
+          width: 50%;
+        }
+      }
+    }
+    section.payment {
+      background: none;
+      .payment-container {
+        width: 100%;
+      }
+      .cart-summary,
+      .promotions,
+      .regulatory-icons {
+        display: none;
+      }
+      .show-small {
+        display: none;
+      }
+      .wrapper-box {
+        margin: 0;
+        box-shadow: none;
+      }
+      .container {
+        width: 100%;
+      }
+      .content {
+        padding: 0 0 20px;
+        margin: 0;
+        min-height: 520px;
+      }
+    }
+  }
+}
+/*switch*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 26px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 0 14px;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $gameWindowGreenColor;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  &:before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    top: 3px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: $gameWindowWhiteColor;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+}
+.slider.checked:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+@media screen and (max-width:1024px) {
+  .myHeaderGame ul {
+    margin-right: 54px;
+    li {
+      padding: 0 10px;
+      font-size: 12px;
+      &:first-child,
+      &:last-child,
+      &:nth-child(2) {
+        padding-right: 10px;
+      }
+    }
+  }
+  .fullScreen {
+    right: 20px;
+  }
+  .closeWindow {
+    right: -10px;
+  }
+  .myHeaderGame.sticky {
+    display: none !important;
+  }
+  #gameIframeWrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      padding: 0;
+    }
+  }
+}
+@media screen and (max-width:767px) {
+  #registerModal {
+    width: 100vw;
+    margin: 60px 0 0;
+  }
+}

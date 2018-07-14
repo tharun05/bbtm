@@ -1,0 +1,40 @@
+
+.select-wrapper{
+        float: left;
+        display: inline-block;
+        border: 1px solid #d8d8d8;            
+        background: url("/assets/img/dropdown-sprite.png") no-repeat right 0 transparent;
+        cursor: pointer;
+    }
+    .select-wrapper, .select-wrapper select{
+        width: 200px;
+        height: 26px;
+        line-height: 26px;
+    }
+    .select-wrapper:hover{
+        background: url("/assets/img/dropdown-sprite.png") no-repeat right -26px transparent;
+        border-color: #239fdb;
+    }
+    .select-wrapper .holder{
+        display: block;
+        margin: 0 35px 0 5px;
+        white-space: nowrap;            
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+        z-index: -1;
+    }
+    .select-wrapper select{
+        margin: 0;
+        position: absolute;
+        z-index: 2;            
+        cursor: pointer;
+        outline: none;
+        opacity: 0;
+        /* CSS hacks for older browsers */
+        _noFocusLine: expression(this.hideFocus=true); 
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        -khtml-opacity: 0;
+        -moz-opacity: 0;
+    }

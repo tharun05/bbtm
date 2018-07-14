@@ -1,0 +1,98 @@
+<div class="slotsMainWrapper featured_section">
+    <div class="container">
+
+        <div class="slotsTabsList" id="slotsTabsList">
+            <ul>
+                <div id="menuList" class="menuList">
+                    <li (click)="loadGames('featuredgames')" [ngClass]="{'active': activeTab == 'featuredgames'}">
+                        <svg width="23px" height="29px" fill="#7e69af" class="tab_hover" viewBox="0 0 515 515">
+                        <use xlink:href="#tab-star"></use>
+                        </svg>
+                        <span class="games_link">Featured Games</span></li>
+                    <li (click)="loadGames('newgames')" [ngClass]="{'active': activeTab == 'newgames'}">
+                        <svg width="38px" height="25.5px" fill="#7e69af" class="tab_hover" viewBox="0 -45 705 520">
+                        <use xlink:href="#new-game"></use>
+                        </svg>
+                        <span class="games_link">New Games</span></li>
+                    <li (click)="loadGames('tableslots')" [ngClass]="{'active': activeTab == 'tableslots'}">
+                        <svg width="30px" height="30px" fill="#7e69af" class="tab_hover" viewBox="0 0 455 455">
+                        <use xlink:href="#table-game"></use>
+                        </svg>
+                        <span class="games_link">Table Games</span></li>
+
+                    <li (click)="loadGames('videoslots')" [ngClass]="{'active': activeTab == 'videoslots'}">
+                        <svg width="25px" height="30px" fill="#7e69af" class="tab_hover" viewBox="0 0 420 500">
+                        <use xlink:href="#video-slot"></use>
+                        </svg>
+                        <span class="games_link">Video Slots</span></li>
+                    <li (click)="loadGames('videopoker')" [ngClass]="{'active': activeTab == 'videopoker'}">
+                        <svg width="29px" height="30px" fill="#7e69af" class="tab_hover" viewBox="0 0 455 455">
+                        <use xlink:href="#video-poker"></use>
+                        </svg>
+                        <span class="games_link">Video Poker</span>
+                    </li>
+                    <li routerLink="/casino">
+                        <span class="games_link">All &nbsp;</span>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <a href="javascript:void(0);"  class="icon" (click)="myFunction()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
+
+            </ul>
+            <ul class="show-active">
+                <div id="menuListNew">
+                    <li class="active-menu">
+                    </li>
+                </div>
+            </ul>
+        </div>
+ <div class="masonryLayoutWrap">
+        <div class="container">
+            <div class="slotsContentWrapper">
+                <div class="masonryContentBlock">
+                    <div class="grid-size"></div>
+                    <ng-container *ngIf="slotsData">
+                        <!-- <div class="grid-blks-2 {{slots.imageSize}}" [ngClass]="{'extra-large-blk':i == 0 || i == 5,'two-col-blk':i == 6 || i == 8,'two-row-blk':i == 4}" *ngFor="let slots of slotsData;let i = index"> -->
+                        <div class="grid-blks-2" *ngFor="let slots of slotsData;let i = index">
+                                <div class="slotsblks-inner-wrap">
+                                <img (click)="gameLauncher(isLoggedIn === true?'realgames':'freegames', slots.gameCode)" src="{{siteUrlPath}}/{{gameUrlPath}}/{{slots.gameCode}}/{{slots.gameCode}}.jpg" />
+                                    <div class="featured-mask"  (click)="gameLauncher(isLoggedIn === true?'realgames':'freegames', slots.gameCode)">
+                                    <div class="featured-mask-inn">
+                                    <h4><a>
+                                        <svg width="28px" height="33px" viewBox="0 0 59 71" fill="#00c332" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <use xlink:href="#play icon"></use>
+                                        </svg>
+                                    </a></h4>
+                                    <div class="try-games">
+                                        <span>{{isLoggedIn === true?'Play Game':'Try Game'}}</span>
+                                    </div>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="slotsData == 0">
+                        <p class="no-games">No games available</p>
+                    </ng-container>
+
+                  <ng-container *ngIf="!slotsData">
+                        <div class="grid-blks-2" *ngFor="let slots of [0,1,2,3,4,5,6,7,8,9,10,11]">
+                             <div class="slotsblks-inner-wrap "></div>
+                        </div>
+                    </ng-container>
+
+                </div>
+            </div>
+
+            <div class="button main-btn text-center">
+                <button class="btn btn-secondary" type="button" routerLink="/casino">
+                    <span class="btn-wrapper"> SEE ALL SLOT GAMES &nbsp; &nbsp;
+                        <i class="fa fa-angle-right"></i> </span></button>
+            </div>
+        </div>
+    </div>
+</div>

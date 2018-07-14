@@ -1,0 +1,410 @@
+@import "~variables.scss";
+
+
+.wager-limit {
+    .mat-form-field-underline {
+        display: none;
+    }
+    form {
+        margin-top: -5px;
+
+        .status{
+            border: 1.1px solid #D0E0EE;
+            background-color: $white;
+            height: 50px;
+            padding: 0 20px;
+            line-height: 50px;
+            width: 100%;
+            font-size: 15.4px;
+            text-align: center;
+            letter-spacing: -0.19px;
+            font-weight: bold;
+            color: $status-box-clr;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+
+        .btn-new{
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+    }
+
+    p {
+
+        color: $deposit-limit-pcolor;
+        font-weight: normal;
+        font-size: 15px;
+        font-family: $main-primary-ef-reg;
+        line-height: 18px;
+        letter-spacing: -0.2px;
+        margin:0 0px 20px;
+        @media screen and (min-width: 992px) {
+            line-height: 18px;
+            text-align: justify;
+        }
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 18px;
+        font-family: $main-primary-ef-reg;
+        color: $myaccount-tabs-accordionText-h3color;
+        margin-bottom: 35px;
+        font-weight: 500;
+        letter-spacing: -0.23px;
+        line-height: 22px;
+        @media screen and (max-width: 768px) {
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .plus-minus-input {
+        display: flex;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        align-items: center;
+        width: 100%;
+        margin: 15px auto;
+        font-family: $main-primary-ef-reg;
+
+        .input-group-field {
+            text-align: center;
+            padding: 0;
+            margin-left: auto;
+            width: 70%;
+            margin-left:0;
+            margin-right:0;
+            background: transparent;
+            border: 0px;
+            font-size: 42.86px;
+            color: $main-primary-text-color;
+            letter-spacing: -0.24px;
+
+
+            &::-webkit-inner-spin-button,
+            ::-webkit-outer-spin-button {
+                appearance: none;
+            }
+            @media only screen and (max-width:767px){
+                width: 60%;
+                font-size: 40px;
+            }
+        }
+
+        .input-group-button {
+            .circle {
+                border-radius: 4.2px;
+                width: 35px !important;
+                height: 35px !important;
+                line-height: 35px;
+                background: $secondry-dark-blue-bg;
+                color: $white;
+                margin-top: 0px !important;
+                border: 0px;
+                cursor: pointer;
+                padding: 0px !important;
+            }
+        }
+    }
+    .fields {
+        flex-direction: column;
+
+        .radio-btn {
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 35px;
+            display: flex;
+            text-align: center;
+            border: 1px solid $wager-limit-input-border-bg;
+            background: $white;
+            box-sizing: border-box;
+
+            @media screen and (max-width: 767px) {
+                border: 0px;
+                background: $radio-btn-responsive-bg;
+            }
+
+            input {
+                &[type="radio"] {
+                    display: none;
+                }
+                &:checked+label {
+                    background-color: $wager-limit-input-checked-color;
+                    color: $white;
+                    border: 0;
+                    transition: background-color .2s;
+                }
+            }
+            label {
+                font-family: $main-primary-ef-reg;
+                font-weight: normal;
+                margin-bottom: 0px;
+                font-size: 18px;
+                cursor: pointer;
+                padding: 14px 0px;
+                letter-spacing: -0.2px;
+                width: 33.333%;
+                align-items: center;
+                justify-content: center;
+                display: inline-flex;
+                color: $radio-btn-text-clr;
+                &:first-of-type {
+                    margin-left: 0;
+                }
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                @media screen and (max-width: 480px) {
+                    font-size: 16px;
+                }
+            }
+        }
+        .set-limit {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 10px;
+            p {
+                font-size: 14px;
+                font-family: $font-primary-500;
+                margin: 0;
+            }
+        }
+
+        .display-status {
+            border-radius: 0px;
+            width: calc(100% - 0px);
+            background-color: $white;
+            border: 1.12px solid #D0E0EE;
+            padding: 0 10px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+
+            @media screen and (max-width: 767px) {
+                background-color: $display-status-mobile-bg;
+            }
+
+            p {
+                font-size: 13px;
+                display: flex;
+                justify-content: space-between;
+                margin: 25px 5px;
+                letter-spacing: -0.2px;
+                color: $main-primary-text-color;
+                text-align: left;
+
+                @media screen and (min-width: 992px) {
+                    font-size: 16px;
+                }
+
+                span{
+                    &:last-child{
+                        font-size: 18px;
+                        letter-spacing: -0.18px;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+    .alert-info-box {
+        display: flex;
+        align-items: center;
+        padding: 8px 10px;
+        background-color: $deposit-limit-alert-info-box-bgcolor;
+        border: 1px solid $deposit-limit-alert-info-box-bordercolor;
+        border-radius: 4px;
+        margin-top: 20px;
+        width: calc(100% - 22px);
+        margin-bottom: 10px;
+        @media screen and (max-width:992px){
+            display: block; 
+        }
+
+        .icon {
+            transform: rotateZ(180deg);
+            i {
+                font-size: 32px;
+                color: $deposit-limit-alert-info-box-iconcolor;
+            }
+            margin-right:15px;
+            @media screen and (max-width:992px){
+                float: left;
+            }
+        }
+        .text {
+            font-family: $font-primary-500;
+            p,
+            h6 {
+                margin: 0!important;
+                color: $deposit-limit-alert-info-box-texth6color!important;
+                text-align: left;
+            }
+            h6 {
+                font-size: 12px;
+                padding-bottom: 2px;
+                font-family: $font-secondary-SemiBold;
+            }
+            p {
+                font-size: 12px!important;
+                line-height: 1;
+            }
+            .timer {
+                display: inline-flex;
+                * {
+                    font-size: 12px;
+                    color: $deposit-limit-alert-info-box-timercolor!important;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+
+    button {
+        width: 100%!important;
+        margin: 10px 0 0 0;
+        padding: 15px 20px;
+        font-size: 18px;
+        line-height: 1;
+        box-sizing: border-box;
+    }
+    .cancel-session-btn,
+    .delete-session-btn,
+    .btn-new {
+        padding: 16px 20px;
+    }
+
+    .cancel-session-btn {
+        background-color: $deposit-limit-cancel-session-btn-bgcolor;
+        color: $deposit-limit-cancel-session-btn-color;
+    }
+
+    .gaming-check {
+        align-self: flex-start;
+
+        h3 {
+            margin-bottom: 15px!important;
+        }
+    }
+}
+
+modal {
+    &#limitSetModal,
+    &#sessionLimitCancelModal,
+    &#sessionLimitDeleteModal {
+        .modal {
+            .modal-body {
+                border-radius: 12px;
+                background-color: $deposit-limit-modal-bgcolor;
+                padding: 20px 15px;
+                text-align: center;
+                width: 250px;
+                @media screen and (max-width: 768px) {
+                    width: calc(100% - 20px);
+                }
+
+                .confirm-set-limit,
+                .set-limit-updated {
+                    i {
+                        font-size: 30px;
+                    }
+                    p {
+                        font-family: $font-primary-500;
+                        font-size: 14px;
+                        text-align: center;
+                        line-height: 1.2;
+                    }
+                    .btn {
+                        font-family: $font-primary-700;
+                        font-size: 18px;
+                        padding: 16px 10px;
+                        line-height: 1;
+                        box-sizing: border-box;
+                        width: 100%;
+                        &.btn-cancel {
+                            border: 1px solid $green;
+                            color: $green;
+                            background-color: $white;
+                            padding: 15px 10px;
+                            margin-top: 20px;
+                        }
+                    }
+                }
+
+                .set-limit-updated {
+                    img {
+                        width: 75px;
+                        height: 75px;
+                    }
+                    p {
+                        font-size: 12px;
+                        margin: 10px 0;
+                    }
+                    .btn {
+                        font-family: $font-primary-700;
+                        font-size: 18px;
+                        box-sizing: border-box;
+                        border: 1px solid $deposit-limit-set-limit-updated-btnbordercolor;
+                        color: $deposit-limit-set-limit-updated-btncolor;
+                        background-color: $deposit-limit-set-limit-updated-btnbgcolor;
+                        padding: 15px 10px;
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.input-group{
+  .mat-input-placeholder-wrapper{
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.user_currency {
+    position: absolute;
+    left: 70px;
+    top: 13px;
+    font-size: 42px;
+}
+
+@media screen and (max-width: 992px) {
+    .limit-and-realitycheck {
+        flex-direction: column;
+        .col {
+            border-bottom: 1px solid $deposit-limit-limit-and-realitycheck-color!important;
+            margin-bottom: 30px !important;
+            padding-bottom: 30px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .limit-and-realitycheck {
+        .status {
+            padding: 5px 15px;
+            .text {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+
+.dep_cancelbtn {
+  margin-left: auto;
+}

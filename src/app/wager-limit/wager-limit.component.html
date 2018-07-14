@@ -1,0 +1,99 @@
+<form [formGroup]="wagerLimit" novalidate>
+    <div id="serverErrorwagerLimit" class="error-msg hide">{{serverError}}</div>
+    <div class="fields">
+        <div class="ld-col-md-12">
+            <div class="ld-col-md-4">
+                <div class="radio-btn">
+                    <input value="daily" type="radio" name="type" id="perDay" [checked]="period == 'daily'" (click)="changePeriod('daily')"/>
+                    <label for="perDay">24 hours</label>
+                    <input value="weekly" type="radio" name="type" id="perWeek" [checked]="period == 'weekly'" (click)="changePeriod('weekly')" />
+                    <label for="perWeek">7 days</label>
+                    <input value="monthly" type="radio" name="type" id="perMonth" [checked]="period == 'monthly'" (click)="changePeriod('monthly')" />
+                    <label for="perMonth">30 days</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="ld-col-md-12">
+            <div class="ld-col-md-4">
+                <div class="display-status">
+                  <p class="">
+                      <span>Current limit: </span>
+                      <span>{{currentLimit ? userService.getUserCurrencySymbol() : ''}} {{currentLimit ? currentLimit : 'NO LIMIT'}}</span>
+                  </p>
+                  <p class="">
+                      <span>Amount before limit reached: </span>
+                      <span>{{remainingLimit ? userService.getUserCurrencySymbol() : ''}} {{remainingLimit ? remainingLimit : 'NO LIMIT'}}</span>
+                  </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ld-col-md-12">
+            <div class="ld-col-xs-12  ld-col-md-4">
+                <div class="input-group plus-minus-input" [ngClass]="!hasPendingIncrease ? '': 'hide'">
+                    <div class="input-group-button">
+                        <button type="button" class="button hollow circle" data-quantity="minus" data-field="quantity" (click)="decreaseLimit()">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <mat-form-field class="input-resize-wrap">
+                     <span class="inputCurrency-prefix">{{userService.getUserCurrencySymbol()}}&nbsp;</span>
+                      <input class="input-group-field inputCurrency" matInput type="number" formControlName="limit" min="0">
+                      <mat-error *ngIf="utils.shouldShowErrors('limit',wagerLimit)">{{utils.getErrorMessage('limit', wagerLimit)}}</mat-error>
+                    </mat-form-field>
+                    <div class="input-group-button">
+                        <button type="button" class="button hollow circle" data-quantity="plus" data-field="quantity" (click)="increaseLimit()">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="alert-info-box" [ngClass]="hasPendingIncrease ? '': 'hide'">
+            <span class="icon">
+                <i class="icon-info-fill"></i>
+            </span>
+            <span class="text">
+                <h6 class="device-comp"><ng-container *ngIf="!confirmationRequired">NEW LIMIT PENDING</ng-container><ng-container *ngIf="confirmationRequired">PENDING LIMIT FOR APPROVAL</ng-container></h6>
+                <p *ngIf="!confirmationRequired"> We’ll ask you to approve your new {{pendingAmountPeriod}} wager limit of {{userService.getUserCurrencySymbol()}}{{pendingAmount | number : '1.2-2'}} in <app-timer *ngIf="!confirmationRequired" [hourGlassIcon]='true' [timedetails]="pendingTime" [isDepositLimitTimer]="'wagerLimit'"></app-timer></p>
+                <p *ngIf="confirmationRequired"> Your new {{pendingAmountPeriod}} wager limit of {{userService.getUserCurrencySymbol()}}{{pendingAmount | number : '1.2-2'}} is ready to be approved. Please click on the below button to approve.</p>
+            </span>
+            <div class="dep_cancelbtn">
+            <button type="button"  class="btn-new btn-tertiary" (click)="approveIncreaseLimit('approvelimitPopupButton',0)"> <span>Cancel Pending Limits</span></button>
+            </div>
+        </div>
+        <div class="ld-col-md-12">
+            <div class="ld-col-md-4">
+                <button *ngIf="hasPendingIncrease && confirmationRequired" class="btn btn-primary" (click)="approveIncreaseLimitOpenModal()">Approve Limit</button>
+                <button type="button" *ngIf="!hasPendingIncrease" id="setwagerButton"  class="btn-new btn-tertiary" (click)="setLossLimit('setwagerButton')" [disabled]="isButtonDisabled(wagerLimit)"> <span>Set {{periodString}} wager limit to {{userService.getUserCurrencySymbol()}} {{wagerLimit.controls["limit"].value}}</span></button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<modal id="limitSetModal">
+    <div class="modal">
+        <div class="modal-body">
+            <div class="close-modal" (click)="closeModal('limitSetModal')">
+                <i class="icon-cancel"></i>
+            </div>
+            <div class="confirm-set-limit hide">
+                <i class="icon-limits-locker"></i>
+                <p>Do you approve your recent wager limit increase?</p>
+                <div id="serverErrorWagerLimitApprove" class="error-msg hide">{{serverError}}</div>
+                <button id="approvelimitPopupButton" (click)="approveIncreaseLimit('approvelimitPopupButton',1)" class="btn-new"><span>APPROVE</span></button>
+                <button (click)="approveIncreaseLimit('approvelimitPopupButton',0)" class="btn btn-cancel">CANCEL</button>
+            </div>
+            <div class="set-limit-updated">
+                <img class="" src="/assets/img/checkmark.svg" alt="Limit set success" title="Limit set success" />
+                <p>Your limits have been successfully updated. Please note that if you are increasing your limits, there will be a wait period of 24 hours before the changes take effect. Please come back after 24 hours to approve the increased the limit.</p>
+                <button (click)="closeModal('limitSetModal')" class="btn">OK</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>

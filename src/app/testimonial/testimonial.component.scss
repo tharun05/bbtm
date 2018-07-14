@@ -1,0 +1,362 @@
+@import "~variables.scss";
+@import "~mixins.scss";
+
+
+
+.testimonials-sec {
+    position: relative;
+    margin: 40px auto;
+
+    @media (min-width: 768px) and (max-width: 1260px) {
+        margin-bottom:90px;
+    }
+
+    .container {
+        .content{
+            position: relative;
+        }
+
+        .testimonials{
+            position:relative;
+            width: 100%;
+            overflow: hidden;
+
+            @media (min-width: 812px) and (max-width: 1280px) {
+                width: 85%;
+                margin: 0 auto;
+            }
+
+            @media (min-width: 500px) and (max-width: 568px) {
+                width: 72%;
+                margin: 0 auto;
+            }
+
+            .sliderLotteryWrap{
+                min-width: 325px;
+                width: max-content;
+
+                .showSelectedLotteryPage{
+                    width: 406px;
+                    @media only screen and (max-width: 767px) {
+                        width: 292px;
+                        margin-right: 15px;
+
+                        &:first-child{
+                            margin-left: 15px;
+                        }
+
+                        .testimonials_card{
+                            background-color: #fff;
+                        }
+                    }
+                    @media (min-width: 768px) and (max-width: 1023px) {
+                        width: 370px;
+                    }
+
+                    @media (min-width: 500px) and (max-width: 568px) {
+                        width: 386px;
+                    }
+                }
+            }
+            .testimonials_card{
+                padding:20px !important;
+                display:block !important;
+
+                .testimonials_para{
+                    width: 60%;
+                    float: left;
+                    color: $chat-moderator-users-name-clr;
+                    margin-right: 4%;
+                    @media only screen and (max-width: 767px) {
+                        width: 57%;
+                        margin: 0;
+                    }
+
+                    h2{
+                        span{
+                           font-size: 24px;
+                           font-weight: bold;
+                           margin-right: 4px;
+                        }
+                        margin-bottom:10px;
+                        font-size: 16px;
+                        font-weight: bold;
+                        letter-spacing: -0.31px;                       
+                        font-family: $main-primary-ef-reg;
+
+                        @media only screen and (max-width: 767px) {
+                            font-size: 17px;
+                        }
+                    }
+
+                    p{
+                        font-family: $main-primary-ef-reg;
+                        font-size: 14px;
+                        margin-bottom: 15px;
+                        letter-spacing: -0.17px;
+                        line-height: 16px;
+                        color:$main-primary-text-color;
+                        padding-right: 26px;
+
+                        @media only screen and (max-width: 767px) {
+                            font-size: 13px;
+                        }
+                    }
+
+                    button.more-info{
+                        font-size: 16.64px;
+                        border-radius: 0px;
+                        height: 50px;
+                        font-family: $main-primary-ef-reg;
+                        letter-spacing: -0.21px;
+                        line-height: 50px;
+                        padding: 0 60.2px;
+                        -webkit-transition: all .35s;
+                        transition: all .35s;
+                        margin-top: 20px;
+
+                        &:hover{
+                            background: $chat-moderator-hover-btn-bg;
+                            border:1px solid $chat-moderator-hover-btn-border;
+                            color: $white;
+                        }
+
+                        @media only screen and (max-width: 767px) {
+                            font-size: 16px;
+                            padding: 0 33px;
+                        }
+                        @media (min-width: 768px) and (max-width: 1280px) {
+                            // font-size: 16px;
+                            padding: 0 33px;
+                        }
+                    }
+                }
+
+                .testimonials_avtar{
+                    float:left;
+                    width: 36%;
+                    @media only screen and (max-width: 767px) {
+                        width: 43%;
+                    }
+
+                    .t_inn_img{
+                        position:relative;
+                        max-height:125px;
+                        max-width:125px;
+
+                        &:before{
+                            content: "";
+                            bottom: 0;
+                            background-color: $circular-green-dot;
+                            width: 23px;
+                            height: 23px;
+                            border: 4px solid #fff;
+                            position: absolute;
+                            border-radius: 100%;
+                            right: 0;
+                        }
+
+                        .testimonials_pic{
+                            max-width: 125px;
+                            width: 100%;
+                            // max-height: 125px;
+                            // height: 100vh;
+                            border-radius: 100%;
+                            margin:25px auto;
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            
+        }
+        .pagination{
+            position: absolute;
+            top:54%;
+            width: 100%;
+
+            @media only screen and (max-width: 1260px) {
+                top: inherit;
+                bottom: -60px;
+                width: 30px;
+                left: 50%;
+                margin-left: -15px;
+            }
+
+            @media only screen and (max-width: 767px) {
+                position: unset;
+                margin: 0 auto;
+                width: 25%;
+            }
+
+            @media (min-width: 812px) and (max-width: 1280px) {
+                top: 54%;
+                bottom: -60px;
+                width: 100%;
+                left: 0;
+                margin-left: 0;
+            }
+
+            @media (min-width: 500px) and (max-width: 568px) {
+                position: absolute;
+                top: 35%;
+                bottom: -60px;
+                width: 96%;
+                left: 3%;
+                margin-left: 0;
+            }
+
+            ul{
+                margin: 0px;
+                padding: 0px;
+
+                li{
+                    width:30px;
+                    position:absolute;
+                    list-style:none;
+                    height: 55px;
+                    margin-top:-57px;
+
+                    @media only screen and (max-width: 767px) {
+                        position: unset;
+                        margin-top: 0;
+                    }
+
+                    &:first-child{
+                        left: -40px;
+                        @media only screen and (max-width: 1400px) {
+                            left: -30px;
+                        }
+                        @media only screen and (max-width: 767px) {
+                            float: left;
+                        }
+                        @media (min-width: 812px) and (max-width: 1280px){
+                            left: 0;
+                        }
+                        @media (min-width: 500px) and (max-width: 568px){
+                            left: 0;
+                        }
+                    }
+                    &:nth-child(2){
+                        right: -50px;
+
+                        @media only screen and (max-width: 1400px) {
+                            right: -40px;
+                        }
+                        @media only screen and (max-width: 767px) {
+                            float: right;
+                        }
+                        @media (min-width: 812px) and (max-width: 1280px){
+                            right: 0;
+                        }
+                        @media (min-width: 500px) and (max-width: 568px){
+                            right: 0;
+                        }
+                    }
+
+                    i{
+                        font-size: 56px;
+                        color:$main-primary-text-color;
+                    }
+                }
+            }
+
+        }
+
+
+
+    }
+
+
+    @include allLotteryDrawDetailsCards;
+    .small-screen {
+        &.lottery-name {
+            &.animated-background {
+                width: 100px;
+                height: 10px;
+            }
+        }
+    }
+    /*    .pagination {
+            width: 140px;
+            text-align: center;
+            margin: 20px auto auto;
+            ul {
+                margin: auto;
+                padding: 0;
+                li {
+                    border-radius: 50%;
+                    background-color: $pagi-dot-bg-color;
+                    width: 15px;
+                    height: 15px;
+                    display: inline-block;
+                    padding: 0;
+                    margin-right: 10px;
+                    cursor: pointer;
+                    &.selected,
+                    &:hover,
+                        &:hover.selected {
+                        background-color: $brand-ld;
+                    }
+                }
+            }
+        }*/
+
+
+    button {
+        font-family: $font-primary-700;
+        padding: 9px 20px;
+        .btn-wrapper {
+            display: flex;
+            align-items: center;
+            line-height: 1;
+        }
+        i {
+            font-size: 30px;
+            margin-left: 20px;
+            float: right;
+        }
+    }
+
+    .transparent_btn{
+        background: transparent;
+        color:$violet;
+        border:0px;
+    }
+}
+
+@media (min-width: 1199px) {
+    .ld-card-col {
+      padding: 0 18.5px !important;
+    }
+}
+@media screen and (max-width:767px) {
+
+    .testimonials-sec{
+        // margin-bottom:0px;
+        
+        .ld-card-col.showSelectedLotteryPage{
+            margin-bottom: 0px !important;
+
+            .card.testimonials_card{
+                border-radius: 0px;
+            }
+
+            &:nth-child(even){
+                .card.testimonials_card{
+                    background: #f0f2f6;
+
+                    .testimonials_avtar{
+                        .t_inn_img{
+                            &:before{
+                                border: 4px solid #f0f2f6;
+                            }
+                        }
+                    }
+                } 
+            }
+        }
+    }
+}
+

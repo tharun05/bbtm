@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50" height="50">
+	<defs>
+	</defs>
+	<g id="flash">
+		<g id="Layer">
+			<path id="Layer" style="fill: #ecc549" d="M38.7,3.2h-15.3l-10.4,25.7h16.9l-9.7,16.1l23.9,-23.9l-12.7,0.3z" />
+			<path id="Layer" style="fill: #e9a240" d="M6.7,28.9h6.3l10.4,-25.7h-6.4z" />
+			<path id="Layer" style="fill: #e9a240" d="M17.6,49.2l12.3,-20.3h-6.5z" />
+		</g>
+	</g>
+</svg>

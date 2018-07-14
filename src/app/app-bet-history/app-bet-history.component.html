@@ -1,0 +1,153 @@
+<section class="bet-history">
+    <div class="content device-comp">
+        <div class="left-section">
+            <h3>Bet History</h3>
+            <p>A record of the bets you have placed</p>
+        </div>
+        <div class="right-section">
+            <form [formGroup]="betHistoryDeatils" (ngSubmit)="applyFilter('filterButton','')" novalidate class="form-holder">
+                <mat-form-field class="">
+                    <input name="startDate" matInput [readonly]="true" (click)="startDate.open()" [matDatepicker]="startDate" placeholder="Period From:" [max]="minimumDate" formControlName="startDate">
+                           <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                    <mat-datepicker #startDate disabled="false"></mat-datepicker>
+                    <mat-error *ngIf="shouldShowErrors('startDate',betHistoryDeatils)">{{getErrorMessage('startDate',betHistoryDeatils)}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="">
+                    <input name="endDate" matInput [readonly]="true" (click)="endDate.open()" [matDatepicker]="endDate" placeholder="Period To:" [max]="minimumDate" formControlName="endDate">
+                           <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                    <mat-datepicker #endDate disabled="false"></mat-datepicker>
+                    <mat-error *ngIf="shouldShowErrors('endDate',betHistoryDeatils)">{{getErrorMessage('endDate',betHistoryDeatils)}}</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select name="items" placeholder="Number of items" formControlName="items">
+                        <mat-option value="10">10</mat-option>
+                        <mat-option value="25">25</mat-option>
+                        <mat-option value="50">50</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="shouldShowErrors('items',betHistoryDeatils)">{{getErrorMessage('items',betHistoryDeatils)}}</mat-error>
+                </mat-form-field>
+                <button id="filterButton" class="btn-new filter-btn" type="button" (click)="applyFilter('filterButton','')" [disabled]="isButtonDisabled(betHistoryDeatils)">
+                    <span>FILTER RESULTS</span>
+                </button>
+                <!-- <button id="filterButton" [ngClass]="getButtonClass(betHistoryDeatils)" class="btn filter-btn" type="button" (click)="applyFilter('filterButton')" [disabled]="isButtonDisabled(betHistoryDeatils)">
+                  FILTER RESULTS
+                  <i class="fa fa-refresh fa-spin facebook-login-spinner hide"></i>
+                </button> -->
+            </form>
+        </div>
+    </div>
+    <div class="filter-mob">
+        <button class="filter-btn-mob " [ngClass]="activeFilter == 'thirtyday' ? 'active-filter' : '' " (click)="getActiveFilter('thirtyday')">Last 30 days </button>
+        <button class="filter-btn-mob " [ngClass]="activeFilter == 'sevenday' ? 'active-filter' : '' " (click)="getActiveFilter('sevenday')">Last 7 days </button>
+        <button class="filter-btn-mob " [ngClass]="activeFilter == 'oneday' ? 'active-filter' : '' " (click)="getActiveFilter('oneday')">Last 24 hours </button>
+    </div>
+    <div id="mobAcc" class="accordionRow mobile-comp mobile-filter">
+        <div class="accordionHeadline" (click)="toggleAccordion()">
+            <h1>Filter Results</h1>
+        </div>
+        <div class="accordionText">
+            <form [formGroup]="betHistoryDeatils" (ngSubmit)="applyFilter('filterButtonMob','')" novalidate class="form-holder">
+                <div class="form-fields">
+                    <mat-form-field class="">
+                        <input name="startDate" matInput [readonly]="true" placeholder="Period From:" [max]="minimumDate" formControlName="startDate" mbsc-date [mbsc-options]="mobiDatePicker">
+                               <mat-datepicker-toggle matSuffix [for]="startDateMob">
+                               <span matPrefix>
+                                <i class="icon-date"></i>
+                            </span>
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #startDateMob disabled="false"></mat-datepicker>
+                        <mat-error *ngIf="shouldShowErrors('startDate',betHistoryDeatils)">{{getErrorMessage('startDate',betHistoryDeatils)}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="">
+                        <input name="endDate" matInput [readonly]="true" placeholder="Period To:" [max]="minimumDate" formControlName="endDate" mbsc-date [mbsc-options]="mobiDatePicker">
+                               <mat-datepicker-toggle matSuffix [for]="endDateMob"></mat-datepicker-toggle>
+                        <mat-datepicker #endDateMob disabled="false"></mat-datepicker>
+                        <mat-error *ngIf="shouldShowErrors('endDate',betHistoryDeatils)">{{getErrorMessage('endDate',betHistoryDeatils)}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-select name="items" placeholder="Number of items" formControlName="items">
+                            <mat-option value="10">10</mat-option>
+                            <mat-option value="25">25</mat-option>
+                            <mat-option value="50">50</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="shouldShowErrors('items',betHistoryDeatils)">{{getErrorMessage('items',betHistoryDeatils)}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <button id="filterButtonMob" class="btn-new filter-btn" type="button" (click)="applyFilter('filterButtonMob','')" [disabled]="isButtonDisabled(betHistoryDeatils)">
+                    <span>FILTER RESULTS</span>
+                </button>
+                <!-- <button id="filterButtonMob" [ngClass]="getButtonClass(betHistoryDeatils)" class="btn filter-btn" type="button" (click)="applyFilter('filterButtonMob')" [disabled]="isButtonDisabled(betHistoryDeatils)">
+                  FILTER RESULTS
+                  <i class="fa fa-refresh fa-spin facebook-login-spinner hide"></i>
+                </button> -->
+            </form>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="table-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Date & Time</th>
+                    <th></th>
+                    <th>Transaction Details</th>
+                    <th>Bet</th>
+                    <th>Win</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <ng-container>
+                <tbody>
+                    <tr class="group-date">
+                        <td colspan="7">YESTERDAY | Tuesday, 20th May 2018</td>
+                    </tr>
+                    <tr class="" *ngFor="let betHty of betHistory">
+                        <td class="">{{betHty.transactionTime | dateSuffix : "EEEE, ddoo MMM yyyy"}}</td>
+                        <td><span></span></td>
+                        <td>
+                                <h3>Transaction Id: {{betHty.sessionId}}</h3>
+                                <h4>{{betHty.gameName}}</h4>
+                                <div class="mobile-comp">
+                                <h5><b>Bet :  {{userDetails.getUserCurrencySymbol()}} {{betHty.betAmount | number:'.2'}}</b></h5>
+                                <h5><b>Win : {{userDetails.getUserCurrencySymbol()}} {{betHty.winAmount | number:'.2'}}</b></h5>
+                                </div>
+                            </td>
+                        <td class="bet-amount"><span>Bet&nbsp;</span> {{userDetails.getUserCurrencySymbol()}} {{betHty.betAmount | number:'.2'}}</td>
+                        <td class="win-amount"><span>Win&nbsp;</span>{{userDetails.getUserCurrencySymbol()}} {{betHty.winAmount | number:'.2'}}</td>
+                        <td class="game-category"><span>{{betHty.txnType == "BINGO_BUYIN"?"BINGO": betHty.txnType == 'CASINO_BUYIN'?"CASINO":'' }}</span></td>
+                        <td class="status"><span>{{betHty.txnStatus}}</span></td>
+                    </tr>
+                </tbody>
+            </ng-container>
+
+            <ng-container *ngIf="!betHistory">
+                <tbody>
+                    <tr>
+                        <td colspan="7">
+                <mat-spinner></mat-spinner>
+                </td>
+                </tr>
+                </tbody>
+            </ng-container>
+            <!--            <tfoot>
+                            <tr>
+                                <td colspan="6" width="100"></td>
+                            </tr>
+                        </tfoot>-->
+        </table>
+        <div class="button">
+            <button href="javascript:void(0)" [disabled]="request.index == 0 ? 'true' : ''" [ngClass]="request.index == 0 ? 'btn-disabled':''" (click)="applyFilter('','less')" class="btn">
+                <i class="icon-left-arrow"></i>
+                <span class="text">Previous page</span>
+            </button>
+            <button href="javascript:void(0)" [disabled]="betHistory && (betHistory.length > 0 && betHistory.length >= request.size) ? '' : 'true'" [ngClass]="betHistory && (betHistory.length > 0 && betHistory.length >= request.size) ? '' :'btn-disabled'" (click)="applyFilter('','more')" class="btn">
+                <span class="text">Next page</span>
+                <i class="icon-right-arrow"></i>
+            </button>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="loader-time" *ngIf="!betHistory">
+    </div>
+</section>

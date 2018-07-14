@@ -1,0 +1,399 @@
+<div class="payment-type-container" *ngIf="depositCCAvailable == 'available' || depositOtherAvailable == 'available'">
+  <div class="cashier_heading hidden-xs">
+    <h1> Add funds</h1>
+    <p>Make a secure deposit to my account.</p>
+  </div>
+  <p class="show-small" [ngClass]="paymentType == 'deposit-cashier' ? 'hide' : ''">Please select your payment method</p>
+  <ul class="payment-type-tabs">
+    <ng-container *ngFor="let type of depositData.methods">
+      <li (click)="changePaymentType(type)" [ngClass]="selectedMethod == type ? 'active active-arrow':''" *ngIf="(isSubscription == 'true' && type == 'CREDITCARD') || (isSubscription =='false' || !isSubscription)">
+        <a href="javascript:void(0)">
+          <span class="card-icon">
+            <svg viewBox="0 0 76 25" class="visa" [ngClass]="type == 'CREDITCARD' ? '':'hide'">
+              <use xlink:href="#visa"></use>
+            </svg>
+            <svg viewBox="0 0 32 25" class="mastercard" [ngClass]="type == 'CREDITCARD' ? '':'hide'">
+              <use xlink:href="#mastercard"></use>
+            </svg>
+
+            <svg viewBox="0 0 32 25" class="mastercard-w" [ngClass]="type == 'CREDITCARD' ? '':'hide'">
+              <use xlink:href="#mastercard-w"></use>
+            </svg>
+
+            <svg viewBox="0 0 526.77502 140.375" class="paypal" [ngClass]="type == 'PAYPAL' ? '':'hide'">
+              <use xlink:href="#paypal"></use>
+            </svg>
+            <svg viewBox="0 0 70 25" class="skrill" [ngClass]="type == 'SKRILL' ? '':'hide'">
+              <use xlink:href="#skrill"></use>
+            </svg>
+            <svg viewBox="0 0 145 25" class="neteller" [ngClass]="type == 'NETELLER' ? '':'hide'">
+              <use xlink:href="#neteller"></use>
+            </svg>
+            <svg viewBox="0 0 1445.09 447.61" class="trustly" [ngClass]="type == 'TRUSTLY' ? '':'hide'">
+              <use xlink:href="#trustly"></use>
+            </svg>
+            <svg viewBox="0 0 180 48" class="zimpler" [ngClass]="type == 'ZIMPLER' ? '':'hide'">
+              <use xlink:href="#zimpler-icon"></use>
+            </svg>
+            <svg viewBox="0 0 180 48" class="-w" [ngClass]="type == '' ? '':'hide'">
+              <use xlink:href="#zimpler-w"></use>
+            </svg>
+          </span>
+
+
+
+          <span class="text">
+            <h5>
+              <ng-container *ngFor="let types of availablePaymentMethodsMap[type];let l=last;let i=index;">{{types.dispalyName}}
+                <ng-container *ngIf="!l">/</ng-container>
+              </ng-container>
+            </h5>
+            <!-- <h6>€ 10 - € 10,000</h6> -->
+            <h6>
+              <ng-container *ngIf="depositLimitList && depositLimitList[type]">{{depositLimitList[type].minTxnLimit | currency :userService.getCurrencyCode():true}} - {{depositLimitList[type].maxTxnLimit
+                | currency :userService.getCurrencyCode():true}}</ng-container>
+            </h6>
+            <h6>
+              <ng-container *ngIf="!depositLimitList || (depositLimitList && !depositLimitList[type])">{{1 | currency :userService.getCurrencyCode():true}} - {{ 10000 | currency :userService.getCurrencyCode():true}}
+                </ng-container>
+            </h6>
+          </span>
+        </a>
+      </li>
+    </ng-container>
+  </ul>
+  <div class="payment-type-content mob-hide">
+    <div class="pay-display">
+      <span class="icon">
+        <svg viewBox="0 0 76 25" class="visa" [ngClass]="selectedMethod == 'CREDITCARD' ? '':'hide'">
+          <use xlink:href="#visa"></use>
+        </svg>
+        <svg viewBox="0 0 32 25" class="mastercard" [ngClass]="selectedMethod == 'CREDITCARD' ? '':'hide'">
+          <use xlink:href="#mastercard"></use>
+        </svg>
+        <svg viewBox="0 0 526.77502 140.375" class="paypal" [ngClass]="selectedMethod == 'PAYPAL' ? '':'hide'">
+          <use xlink:href="#paypal"></use>
+        </svg>
+        <svg viewBox="0 0 70 25" class="skrill" [ngClass]="selectedMethod == 'SKRILL' ? '':'hide'">
+          <use xlink:href="#skrill"></use>
+        </svg>
+        <svg viewBox="0 0 145 25" class="neteller" [ngClass]="selectedMethod == 'NETELLER' ? '':'hide'">
+          <use xlink:href="#neteller"></use>
+        </svg>
+        <svg viewBox="0 0 1445.09 447.61" class="trustly" [ngClass]="selectedMethod == 'TRUSTLY' ? '':'hide'">
+          <use xlink:href="#trustly"></use>
+        </svg>
+        <svg viewBox="0 0 180 48" class="zimpler" [ngClass]="selectedMethod == 'ZIMPLER' ? '':'hide'">
+          <use xlink:href="#zimpler-icon"></use>
+        </svg>
+      </span>
+      <span class="slideInRight" *ngIf="paymentType == 'buyTicket'">
+
+        <span class="pay-amount ">
+          <span class="slant-shape">
+            <h6>Payment Amount</h6>
+            <h3>{{userService.getUserCurrencySymbol()}} {{depositAmountModel}}</h3>
+          </span>
+        </span>
+      </span>
+    </div>
+    <section id="CREDITCARD" class="tab-content-payment" *ngIf="selectedMethod == 'CREDITCARD'">
+      <div class="form-fields master-visa-content">
+        <form [formGroup]="ccForm" (ngSubmit)="pay('payButton')" novalidate>
+          <div id="paymentError" class="error-msg hide">{{serverError}}</div>
+          <div id="paymentDepositAmountError" class="error-msg" *ngIf="paymentType == 'buyTicket' && shouldShowErrors('depositAmount',ccForm)">{{getErrorMessage('depositAmount',ccForm)}}</div>
+          <div class="quick-pick-amount" [ngClass]="paymentType == 'deposit' || paymentType == 'deposit-cashier' || paymentType == 'deposit-quick' ? 'show' : 'hide'">
+            <div class="quick-pick-holder">
+              <input [(ngModel)]="depositAmountModel" formControlName="depositAmount" value="10" type="radio" name="depositAmount" id="€10"
+                title="" [checked]="depositAmountModel == 10" />
+              <label for="€10">{{userService.getUserCurrencySymbol()}} 10</label>
+              <input [(ngModel)]="depositAmountModel" formControlName="depositAmount" value="50" type="radio" name="depositAmount" id="€50"
+                title="" [checked]="depositAmountModel == 50" />
+              <label for="€50">{{userService.getUserCurrencySymbol()}} 50</label>
+              <input [(ngModel)]="depositAmountModel" formControlName="depositAmount" value="100" type="radio" name="depositAmount" id="€100"
+                title="" [checked]="depositAmountModel == 100" />
+              <label for="€100" class="last-quickpick">{{userService.getUserCurrencySymbol()}} 100</label>
+            </div>
+            <!--                        <span class="or">OR</span>-->
+          </div>
+          <mat-form-field [ngClass]="paymentType == 'deposit' || paymentType == 'deposit-cashier' || paymentType == 'deposit-quick' ? 'show' : 'hide'">
+            <input id="priceInput" name="depositAmount" matInput placeholder="Enter Amount" [(ngModel)]="depositAmountModel" formControlName="depositAmount"
+              value="{{ccForm.controls['depositAmount'].value}}" (focus)="priceInputFocus()" type="tel">
+            <mat-error *ngIf="shouldShowErrors('depositAmount',ccForm)">{{getErrorMessage('depositAmount',ccForm)}}</mat-error>
+          </mat-form-field>
+          <div *ngIf="depositData && !addNewCard" class="saved-cards">
+            <label class="label-saved-card">Pay with saved card:</label>
+            <div class="custom-select">
+              <select id="usedCCDD" [(ngModel)]="selectedCardID" formControlName="cardId">
+                <option *ngFor="let cc of depositData.usedCC; let last = last" [value]="cc.instrumentId">
+                  <span class="select-cc">
+                    <svg viewBox="0 0 32 25" [ngClass]="cc.optionType == 'MASTERCARD' ? 'm-small':'hide'">
+                      <use xlink:href="#mastercard"></use>
+                    </svg>
+
+                    <svg viewBox="0 0 76 25" [ngClass]="cc.optionType == 'VISA' ? '':'hide'">
+                      <use xlink:href="#visa"></use>
+                    </svg>
+                  </span> xx-{{cc.ccDetails.lastDigits}} exp {{cc.ccDetails.expiry}}
+                </option>
+              </select>
+            </div>
+            <div class="payment-info-box honey-box">
+              <span class="icon">
+                <svg viewBox="0 0 510.39 416.46">
+                  <use xlink:href="#cvv-card"></use>
+                </svg>
+              </span>
+              <span class="text">
+                <h6>Please enter the CVC/CVV</h6>
+                <p> For your security we require the last 3 digits on the signature strip of this card.</p>
+              </span>
+            </div>
+            <div class="cvc-field">
+              <label class="label-saved-card">Please enter the CVC/CVV here:</label>
+              <mat-form-field class="cvv">
+                <input name="CVV" matInput placeholder="CVV/CVC" formControlName="CVV">
+                <mat-error *ngIf="shouldShowErrors('CVV',ccForm)">{{getErrorMessage('CVV',ccForm)}}</mat-error>
+              </mat-form-field>
+            </div>
+            <a href="javascript:void(0);" class="pull-right add-new-card" (click)="addNew($event)">
+              <i class="icon-plus"></i> ADD PAYMENT METHOD</a>
+          </div>
+          <div *ngIf="depositData && addNewCard">
+            <mat-form-field class="">
+              <input name="cardnumber" matInput placeholder="Enter Card number " formControlName="cardNumber" (input)="this.formatCreditCard()"
+                type="tel">
+              <mat-icon matSuffix>
+                <span class="card-type-icon">
+                  <svg viewBox="0 0 32 25" [ngClass]="selectedCardType == 'mastercard' ? 'm-small':'hide'">
+                    <use xlink:href="#mastercard"></use>
+                  </svg>
+
+                  <svg viewBox="0 0 76 25" [ngClass]="selectedCardType == 'visa' ? '':'hide'">
+                    <use xlink:href="#visa"></use>
+                  </svg>
+                </span>
+              </mat-icon>
+              <mat-error *ngIf="shouldShowErrors('cardNumber',ccForm)">{{getErrorMessage('cardNumber',ccForm)}}</mat-error>
+            </mat-form-field>
+            <div class="dob">
+              <mat-form-field class="month" formGroupName="expDate">
+                <input name="expMonth" matInput placeholder="MM" formControlName="expMonth" maxlength=2 type="tel">
+                <mat-error *ngIf="shouldShowErrors('expMonth',ccForm)">{{getErrorMessage('expMonth',ccForm)}}</mat-error>
+              </mat-form-field>
+              /
+              <mat-form-field class="year" formGroupName="expDate">
+                <input name="expYear" matInput placeholder="YYYY" formControlName="expYear" maxlength=4 type="tel">
+                <mat-error *ngIf="shouldShowErrors('expYear',ccForm)">{{getErrorMessage('expYear',ccForm)}}</mat-error>
+              </mat-form-field>
+              <mat-form-field class="cvv">
+                <input name="CVV" matInput placeholder="CVV/CVC" formControlName="CVV" type="tel">
+                <mat-error *ngIf="shouldShowErrors('CVV',ccForm)">{{getErrorMessage('CVV',ccForm)}}</mat-error>
+              </mat-form-field>
+            </div>
+            <mat-form-field class="cardholdername">
+              <input name="holderFirstName" matInput placeholder="Cardholder name" formControlName="holderFirstName">
+              <mat-error *ngIf="shouldShowErrors('holderFirstName',ccForm)">{{getErrorMessage('holderFirstName',ccForm)}}</mat-error>
+            </mat-form-field>
+            <div class="clearfix"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section id="NETELLER" class="tab-content-payment " *ngIf="selectedMethod == 'NETELLER'">
+      <div class="form-fields">
+        <form [formGroup]="netellerForm" (ngSubmit)="pay('payButton')" novalidate>
+          <div id="paymentError" class="error-msg hide">{{serverError}}</div>
+          <div id="paymentDepositAmountError" class="error-msg" *ngIf="paymentType == 'buyTicket' && shouldShowErrors('depositAmount',netellerForm)">{{getErrorMessage('depositAmount',netellerForm)}}</div>
+          <div class="quick-pick-amount" [ngClass]="paymentType == 'deposit' || paymentType == 'deposit-cashier'  || paymentType == 'deposit-quick' ? 'show' : 'hide'">
+            <div class="quick-pick-holder">
+              <input [(ngModel)]="depositAmountModel" formControlName="depositAmount" value="10" type="radio" name="depositAmount" id="€10"
+                title="" [checked]="depositAmountModel == 10" />
+              <label for="€10">{{userService.getUserCurrencySymbol()}} 10</label>
+              <input [(ngModel)]="depositAmountModel" formControlName="depositAmount" value="50" type="radio" name="depositAmount" id="€50"
+                title="" [checked]="depositAmountModel == 50" />
+              <label for="€50">{{userService.getUserCurrencySymbol()}} 50</label>
+              <input [(ngModel)]="depositAmountModel" formControlName="depositAmount" value="100" type="radio" name="depositAmount" id="€100"
+                title="" [checked]="depositAmountModel == 100" />
+              <label for="€100">{{userService.getUserCurrencySymbol()}} 100</label>
+            </div>
+            <!--<span class="or">OR</span>-->
+          </div>
+          <mat-form-field [ngClass]="paymentType == 'deposit' || paymentType == 'deposit-cashier'  || paymentType == 'deposit-quick' ? 'show' : 'hide'">
+            <input id="priceInput" name="depositAmount" matInput placeholder="Amount to deposit" [(ngModel)]="depositAmountModel" formControlName="depositAmount"
+              value="{{netellerForm.controls['depositAmount'].value}}" (focus)="priceInputFocus()" type="tel">
+            <mat-error *ngIf="shouldShowErrors('depositAmount',netellerForm)">{{getErrorMessage('depositAmount',netellerForm)}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="">
+            <input name="accountNumber" matInput placeholder="Neteller account ID" formControlName="accountNumber">
+            <mat-error *ngIf="shouldShowErrors('accountNumber',netellerForm)">{{getErrorMessage('accountNumber',netellerForm)}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="">
+            <input name="secureID" matInput placeholder="Neteller secure ID" formControlName="secureID">
+            <mat-error *ngIf="shouldShowErrors('secureID',netellerForm)">{{getErrorMessage('secureID',netellerForm)}}</mat-error>
+          </mat-form-field>
+        </form>
+      </div>
+    </section>
+    <section id="SKRILL" class="tab-content-payment " *ngIf="selectedMethod == 'SKRILL'">
+      <div class="form-fields">
+        <form [formGroup]="skrillForm" (ngSubmit)="pay('payButton')" novalidate>
+          <div id="paymentError" class="error-msg hide">{{serverError}}</div>
+          <div id="paymentDepositAmountError" class="error-msg" *ngIf="paymentType == 'buyTicket' && shouldShowErrors('depositAmount',skrillForm)">{{getErrorMessage('depositAmount',skrillForm)}}</div>
+          <div class="quick-pick-amount" [ngClass]="paymentType == 'deposit' || paymentType == 'deposit-cashier' || paymentType == 'deposit-quick'  ? 'show' : 'hide'">
+            <div class="quick-pick-holder">
+              <input [(ngModel)]="depositAmountModel" formControlName="depositAmount" value="10" type="radio" name="depositAmount" id="€10"
+                title="" [checked]="depositAmountModel == 10" />
+              <label for="€10">{{userService.getUserCurrencySymbol()}} 10</label>
+              <input [(ngModel)]="depositAmountModel" formControlName="depositAmount" value="50" type="radio" name="depositAmount" id="€50"
+                title="" [checked]="depositAmountModel == 50" />
+              <label for="€50">{{userService.getUserCurrencySymbol()}} 50</label>
+              <input [(ngModel)]="depositAmountModel" formControlName="depositAmount" value="100" type="radio" name="depositAmount" id="€100"
+                title="" [checked]="depositAmountModel == 100" />
+              <label for="€100">{{userService.getUserCurrencySymbol()}} 100</label>
+            </div>
+            <!--<span class="or">OR</span>-->
+          </div>
+          <mat-form-field [ngClass]="paymentType == 'deposit' || paymentType == 'deposit-cashier' || paymentType == 'deposit-quick' ? 'show' : 'hide'">
+            <input  id="priceInput" name="depositAmount" matInput placeholder="Enter amount to deposit" [(ngModel)]="depositAmountModel"
+              formControlName="depositAmount" value="{{skrillForm.controls['depositAmount'].value}}" (focus)="priceInputFocus()"
+              type="tel">
+            <mat-error *ngIf="shouldShowErrors('depositAmount',skrillForm)">{{getErrorMessage('depositAmount',skrillForm)}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="">
+            <input name="emailAddress" matInput placeholder="Skrill email account" formControlName="emailAddress">
+            <mat-error *ngIf="shouldShowErrors('emailAddress',skrillForm)">{{getErrorMessage('emailAddress',skrillForm)}}</mat-error>
+          </mat-form-field>
+        </form>
+      </div>
+    </section>
+    <section id="TRUSTLY" class="tab-content-payment" *ngIf="selectedMethod == 'TRUSTLY'">
+      <div class="form-fields">
+        <form [formGroup]="trustlyForm" (ngSubmit)="pay('payButton')" novalidate>
+          <div id="paymentError" class="error-msg hide">{{serverError}}</div>
+          <div id="paymentDepositAmountError" class="error-msg" *ngIf="paymentType == 'buyTicket' && shouldShowErrors('depositAmount',trustlyForm)">{{getErrorMessage('depositAmount',trustlyForm)}}</div>
+          <div class="quick-pick-amount" [ngClass]="paymentType == 'deposit' || paymentType == 'deposit-cashier' || paymentType == 'deposit-quick'  ? 'show' : 'hide'">
+            <div class="quick-pick-holder">
+              <input [(ngModel)]="depositAmountModel" formControlName="depositAmount" value="10" type="radio" name="depositAmount" id="€10"
+                title="" [checked]="depositAmountModel == 10" />
+              <label for="€10">{{userService.getUserCurrencySymbol()}} 10</label>
+              <input [(ngModel)]="depositAmountModel" formControlName="depositAmount" value="50" type="radio" name="depositAmount" id="€50"
+                title="" [checked]="depositAmountModel == 50" />
+              <label for="€50">{{userService.getUserCurrencySymbol()}} 50</label>
+              <input [(ngModel)]="depositAmountModel" formControlName="depositAmount" value="100" type="radio" name="depositAmount" id="€100"
+                title="" [checked]="depositAmountModel == 100" />
+              <label for="€100">{{userService.getUserCurrencySymbol()}} 100</label>
+            </div>
+            <span class="or">OR</span>
+          </div>
+          <mat-form-field [ngClass]="paymentType == 'deposit' || paymentType == 'deposit-cashier' || paymentType == 'deposit-quick'? 'show' : 'hide'">
+            <input id="priceInput" name="depositAmount" matInput placeholder="Enter amount to deposit" [(ngModel)]="depositAmountModel"
+              formControlName="depositAmount" value="{{trustlyForm.controls['depositAmount'].value}}" (focus)="priceInputFocus()"
+              type="tel">
+            <mat-error *ngIf="shouldShowErrors('depositAmount',trustlyForm)">{{getErrorMessage('depositAmount',trustlyForm)}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="">
+            <input name="emailAddress" matInput placeholder="Email Id" formControlName="emailAddress" readonly>
+            <mat-error *ngIf="shouldShowErrors('emailAddress',trustlyForm)">{{getErrorMessage('emailAddress',trustlyForm)}}</mat-error>
+          </mat-form-field>
+        </form>
+      </div>
+    </section>
+
+    <section id="ZIMPLER" class="tab-content-payment" *ngIf="selectedMethod == 'ZIMPLER'">
+      <div class="form-fields">
+        <form [formGroup]="zimplerForm" (ngSubmit)="pay('payButton')" novalidate>
+          <div id="paymentError" class="error-msg hide">{{serverError}}</div>
+          <div id="paymentDepositAmountError" class="error-msg" *ngIf="paymentType == 'buyTicket' && shouldShowErrors('depositAmount',zimplerForm)">{{getErrorMessage('depositAmount',zimplerForm)}}</div>
+          <div class="quick-pick-amount" [ngClass]="paymentType == 'deposit' || paymentType == 'deposit-cashier' || paymentType == 'deposit-quick' ? 'show' : 'hide'">
+            <div class="quick-pick-holder">
+              <input [(ngModel)]="depositAmountModel" formControlName="depositAmount" value="10" type="radio" name="depositAmount" id="€10"
+                title="" [checked]="depositAmountModel == 10" />
+              <label for="€10">{{userService.getUserCurrencySymbol()}} 10</label>
+              <input [(ngModel)]="depositAmountModel" formControlName="depositAmount" value="50" type="radio" name="depositAmount" id="€50"
+                title="" [checked]="depositAmountModel == 50" />
+              <label for="€50">{{userService.getUserCurrencySymbol()}} 50</label>
+              <input [(ngModel)]="depositAmountModel" formControlName="depositAmount" value="100" type="radio" name="depositAmount" id="€100"
+                title="" [checked]="depositAmountModel == 100" />
+              <label for="€100">{{userService.getUserCurrencySymbol()}} 100</label>
+            </div>
+            <span class="or">OR</span>
+          </div>
+          <mat-form-field [ngClass]="paymentType == 'deposit' || paymentType == 'deposit-cashier' || paymentType == 'deposit-quick' ? 'show' : 'hide'">
+            <input id="priceInput" name="depositAmount" matInput placeholder="Enter amount to deposit" [(ngModel)]="depositAmountModel"
+              formControlName="depositAmount" value="{{zimplerForm.controls['depositAmount'].value}}" (focus)="priceInputFocus()"
+              type="tel">
+            <mat-error *ngIf="shouldShowErrors('depositAmount',zimplerForm)">{{getErrorMessage('depositAmount',zimplerForm)}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="">
+            <input name="phone" formControlName="phone" type="number" matInput placeholder="Enter your mobile number">
+            <mat-error *ngIf="shouldShowErrors('phone',zimplerForm)">{{getErrorMessage('phone',zimplerForm)}}</mat-error>
+
+          </mat-form-field>
+        </form>
+      </div>
+    </section>
+    <section class="payment-btn">
+      <button id="payButton" class="btn-new deposit-btn" type="button" [disabled]="isButtonDisabled(activeForm)" (click)="pay('payButton');mixPanelEventCheck('transaction','DEPOSIT/PAY_CLICKED')">
+        <span>{{paymentType == 'deposit' || paymentType == 'deposit-cashier' || paymentType == 'deposit-quick' ? 'DEPOSIT' : 'PAY'}}
+          {{userService.getUserCurrencySymbol()}} {{depositAmountModel ? depositAmountModel : '0' | number:'1.2-2'}}</span>
+      </button>
+      <span class="safe-message">
+        <i class="icon-lock"></i>&nbsp;All transactions 128bit SSL encrypted</span>
+      <div class="payment-info-box blue-box" *ngIf="selectedMethod == 'CREDITCARD' && addNewCard">
+        <span class="icon">
+          <svg viewBox="0 0 980 980">
+            <use xlink:href="#positive-check"></use>
+          </svg>
+        </span>
+        <span class="text">
+          <h6>CARD DETAILS</h6>
+          <p>The card above will be stored in your account so it will be available whenever you login.</p>
+        </span>
+      </div>
+    </section>
+    <div class="back-to-cards" (click)="backToSavedCards($event)" *ngIf="availableUsedCC && addNewCard">
+      <span class="btc-inner">
+        <i class="fa fa-angle-left"></i>
+        <span>Back to Saved Cards</span>
+      </span>
+    </div>
+    <div class="cashier-back" *ngIf="!availableUsedCC || !addNewCard" (click)="goBackToPaymentTypes()">
+      <i class="fa fa-angle-left" aria-hidden="true"></i> &nbsp;
+      <span>CHANGE PAYMENT METHOD</span>
+    </div>
+  </div>
+</div>
+<div class="payment-type-container" *ngIf="depositCCAvailable == 'not-available' && depositOtherAvailable == 'not-available' && !processed">
+  <div class="cashier_heading hidden-xs">
+    <h1> Add funds</h1>
+    <p>Make a secure deposit to my account.</p>
+  </div>
+  <p class="text-no-withdraw">No Payment options available.</p>
+</div>
+<div class="payment-type-container" *ngIf="!depositCCAvailable && !depositOtherAvailable">
+  <mat-spinner></mat-spinner>
+</div>
+<!-- <div id="Modal3D" class="modal blowUpModal">
+  <div class="modal-container">
+    <div class="modal-body">
+      <div class="payment-modal" id="modal3dBody">
+      </div>
+    </div>
+  </div>
+</div> -->
+<div id="iframeContainer"></div>
+
+<modal id="Modal3D">
+  <div class="modal">
+    <div class="modal-body">
+      <div (click)="closeModal('Modal3D')">
+        <i class="icon-cancel"></i>
+      </div>
+      <div class="payment-modal" id="modal3dBody">
+      </div>
+    </div>
+  </div>
+  <div class="modal-background"></div>
+</modal>
+<app-page-loader *ngIf="loaderInit" [percentage_input]="loader_per"></app-page-loader>

@@ -1,0 +1,190 @@
+@import "~variables.scss";
+
+$payment-info-box-borderclr: #D0E0EE;
+
+.pay-methods {
+  .payment-info-box {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    background-color: $payment-methods-payment-info-box-bgcolor;
+    border: 1px solid $payment-info-box-borderclr;
+    border-radius: 4px;
+    border-sizing: border-box;
+
+    .icon {
+      svg {
+        width: 40px;
+      }
+      margin:0 30px 0 20px;
+    }
+    .text {
+      font-size: 12px;
+      font-family: $main-primary-ef-reg;
+      color: #6998C0;
+      p,
+      h6 {
+        margin: 0;
+      }
+      
+      p{
+          font-size: 13px;
+          line-height: 15px;
+          color: #6998C0;
+          
+      }
+      h6 {
+        font-size: 15px;
+        line-height: 18px;
+        padding-bottom: 2px;
+        font-family: $main-primary-ef-bd;
+        color: #437EB0;
+      }
+    }
+  }
+  .saved-cc {
+    margin-top: 20px;
+    .saved-cc-list {
+      padding: 20px 30px;
+      font-family: $main-primary-ef-reg;
+      font-size: 14px;
+      border: 2px solid $bg-grey;
+      color: $violet;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $payment-methods-savedcc-bgcolor;
+
+      .cc-logo,
+      .cc-details,
+      .user-name,
+      .last-used,
+      .modify-card {
+        display: inline-flex;
+        align-items: center;
+      }
+      .cc-logo {
+        width: 12.5%;
+        justify-content: flex-start;
+
+        svg {
+          height: 20px;
+          &.visacard {}
+          &.mastercard {
+            height: 30px;
+          }
+        }
+      }
+      .cc-details {
+        width: 26%;
+        justify-content: space-between;
+        .card-number {
+            font-size: 16px;
+        }
+        .expiry-date {}
+      }
+
+      .user-name,
+      .last-used {
+        width: 32%;
+        justify-content: flex-end;
+        overflow: hidden;
+      }
+      .modify-card {
+        width: 12.5%;
+        justify-content: flex-end;
+
+        i {
+          font-size: 20px;
+          margin-left: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .addpayment {
+    margin: 20px 0 20px 35px;
+    color: $payment-methods-savedcc-color;
+    float: left;
+    font-size: 14px;
+    font-family: $main-primary-ef-reg;
+    display: flex;
+    cursor: pointer;
+    font-weight: 500;
+    border-bottom: 1px solid $payment-methods-addpayment-borderbottomcolor;
+    line-height: 1;
+    &:hover {
+      text-decoration: none;
+    }
+    i {
+      font-size: 12px;
+      margin-right: 15px;
+    }
+  }
+}
+
+@media screen and (max-width:992px) {
+  .pay-methods {
+    .payment-info-box {
+      .icon {
+        margin: 0;
+        margin-right: 15px;
+      }
+    }
+    .saved-cc {
+      .saved-cc-list {
+        padding: 15px 0;
+        margin: 0;
+        border: 0;
+        color: $violet;
+        border-bottom: 2px solid $payment-methods-savedcc-bordercolor;
+        .cc-details {
+          flex-direction: column;
+
+          .card-number {
+            font-size: 16px;
+          }
+          .expiry-date {
+            color: $payment-methods-savedcc-expirydatecolor;
+            font-size: 12px;
+            font-family: $main-primary-ef-reg;
+          }
+        }
+        .user-name,
+        .last-used {
+          display: none!important;
+        }
+
+        .cc-details,
+        .modify-card {
+          width: auto;
+        }
+        .cc-logo {
+          width: 80px;
+        }
+      }
+    }
+    .addpayment {
+      margin: 0;
+      padding: 22.50px 0;
+      border-bottom: 2px solid $payment-methods-savedcc-expirydatecolor;
+      width: 100%;
+      position: relative;
+      &:after {
+        font-family: 'FontAwesome';
+        -webkit-font-smoothing: antialiased;
+        content: "\F105";
+        position: absolute;
+        font-size: 27px;
+        cursor: pointer;
+        transition: all .25s;
+        top: 13px;
+        right: 0;
+        color: $payment-methods-addpayment-color;
+      }
+    }
+  }
+}

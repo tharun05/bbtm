@@ -1,0 +1,49 @@
+<section class="login">
+  <div class="container">
+    <div class="login-box">
+      <div class="close-modal" (click)="goBackToCheckout()" *ngIf="isCheckoutPage">
+        <i class="icon-cancel"></i>
+      </div>
+      <div class="title">
+        <i class="icon-user"></i>
+        <h1>Login To My Account</h1>
+      </div>
+      <div class="inner-box">
+        <app-login-form [isLoginComplete]="isLogIn" (isLoginCompleteNotify)="loginCompleted($event)" [callingFrom]="callingfrom"></app-login-form>
+      </div>
+    </div>
+    <div class="login-box-promo  ">
+      <div class="header-arrow">
+        <div class="title">
+          <i class="icon-gift"></i>
+          <h1> New To Bingo69</h1>
+        </div>
+        <div class="down-arrow"></div>
+      </div>
+      <div class="inner-box">
+        <div class="align-flex">
+          <div class="ld-col-lg-6 ld-col-md-6 ld-col-sm-6">
+            <img *ngIf="loadImage" src="" title="" alt="" />
+          </div>
+          <div class="ld-col-lg-6 ld-col-md-6 ld-col-sm-6 promo-text">
+            <h2>JOIN OVER <span>250,000</span> HAPPY PLAYERS</h2>
+            <p>Open an account now, it's free and easy! Registration only takes a moment and will allow you to complete your purchase quickly and securely.</p>
+            <button class="btn btn-primary cta" (click)="openRegistration();mixPanelEventCheck('OPEN FREE ACCOUNT')">OPEN FREE ACCOUNT</button>
+            <div class="secure-transactions">
+              <div class="icon">
+                <svg viewBox="0 375 80 80">
+                  <use xlink:href="#secure-icon"></use>
+                </svg>
+              </div>
+              <div class="text">
+                <h2>Safe and Secure</h2>
+                <p>All transactions 128bit SSL encrypted</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</section>

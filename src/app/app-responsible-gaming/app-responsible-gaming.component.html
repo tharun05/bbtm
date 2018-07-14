@@ -1,0 +1,180 @@
+<div class="responsibile-gaming">
+    <div class="responsible-gaming-options">
+        <button class="btn" [ngClass]="activeTab == 'accountTab' ? 'active' : '' "(click)="openPageOrModal('accountTab','accountTabModal')">Account Status</button>
+        <button class="btn" [ngClass]="activeTab == 'realityCheck' ? 'active' : '' "(click)="openPageOrModal('realityCheck','realityCheckModal')">Reality Check</button>
+        <button class="btn" [ngClass]="activeTab == 'depositLimit' ? 'active' : '' "(click)="openPageOrModal('depositLimit','depositLimitModal')">Deposit Limit</button>
+        <button class="btn" [ngClass]="activeTab == 'sessionLimit' ? 'active' : '' "(click)="openPageOrModal('sessionLimit','sessionLimitModal')">Session Limit</button>
+        <button class="btn" [ngClass]="activeTab == 'lossLimit' ? 'active' : '' "(click)="openPageOrModal('lossLimit','lossLimitModal')">Loss Limit</button>
+        <button class="btn" [ngClass]="activeTab == 'wagerLimit' ? 'active' : '' "(click)="openPageOrModal('wagerLimit','wagerLimitModal')">Wager Limit</button>
+    </div>
+    <div class="content">
+        <div class="limit-and-realitycheck">
+            <div class="deposit-limit account-status">
+                <app-deposit-limit *ngIf="activeTab =='depositLimit'" (onDepositDataChanged)="onDepositDataChangedHandler($event)" [depositLimitAvailable]="depositlimit"></app-deposit-limit>
+            </div>
+            <div class="gaming-check account-status">
+                <app-gaming-reality-check *ngIf="activeTab =='realityCheck'" (onRealityDataChanged)="onRealityDataChangedHandler($event)" [realityDetailsAvailable]="realityDetails"></app-gaming-reality-check>
+                <div class="clearfix"></div>
+            </div>
+            <div class="account-status account-status">
+                <app-account-status *ngIf="activeTab =='accountTab'"></app-account-status>
+            </div>
+            <div class="session-limit-of-user account-status">
+                <app-session-limit *ngIf="activeTab =='sessionLimit'" (onSessionDataChanged)="onSessionDataChangedHandler($event)" [sessionLimitAvailable]="sessionlimits"></app-session-limit>
+            </div>
+            <div class="loss-limit account-status">
+                <app-loss-limit *ngIf="activeTab =='lossLimit'" (onLossDataChanged)="onLossDataChangedHandler($event)" [lossLimitAvailable]="losslimit"></app-loss-limit>
+            </div>
+            <div class="wager-limit account-status">
+                <app-wager-limit *ngIf="activeTab =='wagerLimit'" (onWagerDataChanged)="onWagerDataChangedHandler($event)" [wagerLimitAvailable]="wagerlimit"></app-wager-limit>
+            </div>
+
+        </div>
+    </div>
+</div>
+<modal id="accountTabModal" class="responsibile-gaming-modal">
+    <div class="modal">
+        <div class="modal-body">
+            <div class="account-tab-header">
+                    <div class="rep_inner_header">
+                <div class="close-modal" (click)="closeModal('accountTabModal')">
+                  <svg  fill="#fff" class="mdl_close" viewBox="0 0 612 612">
+                  <use xlink:href="#cross_icon"></use>
+                  </svg>
+                </div>
+                <h3>Account Status</h3>
+            </div>
+            </div>
+            <div id="accountTabModalContent" class="account-tab-modal">
+                <div class="account-status account-status">
+                    <app-account-status  *ngIf="activeModal =='accountTabModal'"></app-account-status>
+                </div>
+            </div>
+            <div id="accountTabSuccess" class="account-tab-modal hide">
+            </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
+<modal id="realityCheckModal" class="responsibile-gaming-modal">
+    <div class="modal">
+        <div class="modal-body">
+            <div class="reality-check-header">
+                    <div class="rep_inner_header">
+                <div class="close-modal" (click)="closeModal('realityCheckModal')">
+                  <svg  fill="#fff" class="mdl_close" viewBox="0 0 612 612">
+                  <use xlink:href="#cross_icon"></use>
+                  </svg>
+                </div>
+                <h3>Reality Check</h3>
+            </div>
+            </div>
+            <div id="realityCheckModalContent" class="reality-check-modal">
+                <div class="gaming-check account-status">
+                    <app-gaming-reality-check *ngIf="activeModal =='realityCheckModal'" (onRealityDataChanged)="onRealityDataChangedHandler($event)" [realityDetailsAvailable]="realityDetails"></app-gaming-reality-check>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div id="realityCheckSuccess" class="reality-check-modal hide">
+            </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+
+</modal>
+<modal id="depositLimitModal" class="responsibile-gaming-modal">
+    <div class="modal">
+        <div class="modal-body">
+            <div class="deposit-limit-header">
+                    <div class="rep_inner_header">
+                <div class="close-modal" (click)="closeModal('depositLimitModal')">
+                  <svg  fill="#fff" class="mdl_close" viewBox="0 0 612 612">
+                  <use xlink:href="#cross_icon"></use>
+                  </svg>
+                </div>
+                <h3>Deposit Limit</h3>
+            </div>
+            </div>
+            <div id="depositLimitModalContent" class="deposit-limit-modal">
+                <div class="deposit-limit account-status">
+                    <app-deposit-limit *ngIf="activeModal =='depositLimitModal'" (onDepositDataChanged)="onDepositDataChangedHandler($event)" [depositLimitAvailable]="depositlimit"></app-deposit-limit>
+                </div>
+            </div>
+            <div id="depositLimitSuccess" class="deposit-limit-modal hide">
+            </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
+<modal id="sessionLimitModal" class="responsibile-gaming-modal">
+    <div class="modal">
+        <div class="modal-body">
+            <div class="session-limit-header">
+                    <div class="rep_inner_header">
+                <div class="close-modal" (click)="closeModal('sessionLimitModal')">
+                  <svg  fill="#fff" class="mdl_close" viewBox="0 0 612 612">
+                  <use xlink:href="#cross_icon"></use>
+                  </svg>
+                </div>
+                <h3>Session Limit</h3>
+            </div>
+            </div>
+            <div id="sessionLimitModalContent" class="session-limit-modal">
+                <div class="session-limit-of-user account-status">
+                    <app-session-limit *ngIf="activeModal =='sessionLimitModal'" (onSessionDataChanged)="onSessionDataChangedHandler($event)" [sessionLimitAvailable]="sessionlimits"></app-session-limit>
+                </div>
+            </div>
+            <div id="sessionLimitSuccess" class="session-limit-modal hide">
+            </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
+<modal id="lossLimitModal" class="responsibile-gaming-modal">
+    <div class="modal">
+        <div class="modal-body">
+            <div class="loss-limit-header">
+                    <div class="rep_inner_header">
+                <div class="close-modal" (click)="closeModal('lossLimitModal')">
+                  <svg  fill="#fff" class="mdl_close" viewBox="0 0 612 612">
+                  <use xlink:href="#cross_icon"></use>
+                  </svg>
+                </div>
+                <h3>Loss Limit</h3>
+                </div>
+            </div>
+            <div id="lossLimitModalContent" class="loss-limit-modal">
+                <div class="loss-limit account-status">
+                    <app-loss-limit *ngIf="activeModal =='lossLimitModal'" (onLossDataChanged)="onLossDataChangedHandler($event)" [lossLimitAvailable]="losslimit"></app-loss-limit>
+                </div>
+            </div>
+            <div id="lossLimitSuccess" class="loss-limit-modal hide">
+            </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
+<modal id="wagerLimitModal" class="responsibile-gaming-modal">
+    <div class="modal">
+        <div class="modal-body">
+            <div class="wager-limit-header">
+                <div class="rep_inner_header">
+                    <div class="close-modal" (click)="closeModal('wagerLimitModal')">
+                      <svg  fill="#fff" class="mdl_close" viewBox="0 0 612 612">
+                      <use xlink:href="#cross_icon"></use>
+                      </svg>
+                    </div>
+                    <h3>Wager Limit</h3>
+                </div>
+            </div>
+            <div id="wagerLimitModalContent" class="wager-limit-modal">
+                <div class="wager-limit account-status">
+                    <app-wager-limit *ngIf="activeModal =='wagerLimitModal'" (onWagerDataChanged)="onWagerDataChangedHandler($event)" [wagerLimitAvailable]="wagerlimit"></app-wager-limit>
+                </div>
+            </div>
+            <div id="wagerLimitSuccess" class="wager-limit-modal hide">
+            </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>

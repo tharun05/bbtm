@@ -1,0 +1,52 @@
+<div class="timeTicker" *ngIf="!isBannerTimer && !isDepositLimitTimer">
+    <div *ngIf="hourGlassIcon">
+        <svg width="30px" height="30px" fill="#7e69af" class="tab_hover" viewBox="-25 0 190 190">
+        <use xlink:href="#hourglass-icon"></use>
+        </svg>
+    </div>
+    <span class="time" *ngIf="timeTicker">
+        <ng-container *ngIf="timeTicker[0] < 25">
+            <span class="days-count">{{timeTicker[0] > 0 ? timeTicker[0] :''}}  {{timeTicker[0] > 1 ? 'days:' : timeTicker[0] ==1 ?  'day:' : ''}}</span>
+            <div class="time-num-holder">
+                <span>{{timeTicker[1]}}:</span><span>{{timeTicker[2]}}:</span><span>{{timeTicker[3]}}</span>
+            </div>
+        </ng-container>
+    </span>
+
+    <span class="time" *ngIf="!timeTicker">
+        <span class="days-count">00</span>
+        <div class="time-num-holder">
+            <span>00:</span><span>00:</span><span>00</span>
+        </div>
+    </span>
+</div>
+
+<div class="timer" *ngIf="isBannerTimer && !isDepositLimitTimer">
+    <div *ngIf="timeTicker">
+        <div class="">{{'draw_closes'|translate}}: </div>
+        <ul class="ticker">
+            <li *ngIf="timeTicker[0] > 0">{{timeTicker[0]}} <span>{{timeTicker[0] > 1 ? 'days' : timeTicker[0] ==1 ?  'day' : ''}}</span></li>
+            <li>{{timeTicker[1]}} <span>HRS</span></li>
+            <li>{{timeTicker[2]}} <span>Mins</span></li>
+            <li>{{timeTicker[3]}} <span>Secs</span></li>
+        </ul>
+    </div>
+    <div *ngIf="!timeTicker ">
+        <div class="">{{'draw_closes'|translate}}: </div>
+        <ul class="ticker">
+            <li>00<span>days</span></li>
+            <li>00 <span>HRS</span></li>
+            <li>00 <span>Mins</span></li>
+            <li>00 <span>Secs</span></li>
+        </ul>
+    </div>
+</div>
+
+<div class="timer" *ngIf="!isBannerTimer && isDepositLimitTimer">
+     <span class=" time" *ngIf="timeTicker">
+        <span class="days-count">{{timeTicker[0] > 0 ? timeTicker[0] :''}}  {{timeTicker[0] > 1 ? (showText ? 'days' : '') : timeTicker[0] ==1 ?  (showText ? 'day' : '') : ''}}</span>
+        <div class="time-num-holder">
+            <span><ng-container *ngIf="timeTicker[1] > 0">{{timeTicker[1]}}{{timeTicker[1] > 1 ? (showText ? ' hours' : '') : timeTicker[1] ==1 ? (showText ? ' hour' : '') : ''}}:</ng-container></span><span><ng-container *ngIf="timeTicker[2] >= 0">{{timeTicker[2]}}{{timeTicker[2] > 1 ? showText ? ' minutes' : '' : timeTicker[2] ==1 ?  showText ? ' minute' : '' : ''}}:</ng-container></span><span>{{timeTicker[3]}}{{timeTicker[3] > 1 ? showText ? ' seconds' : '' : timeTicker[3] ==1 ? showText ? ' second' : '' : ''}}</span>
+        </div>
+    </span>
+</div>

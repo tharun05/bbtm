@@ -1,0 +1,36 @@
+<section class="pay-methods">
+  <div class="payment-info-box ">
+    <span class="icon">
+        <svg viewBox="0 0 980 980">
+            <use xlink:href="#positive-check"></use>
+        </svg>
+    </span>
+    <span class="text">
+        <h6>SAVED CARDS</h6>
+        <p>The cards below are stored in your account so they are available whenever you login.</p>
+    </span>
+  </div>
+  <div class="saved-cc">
+    <div class="saved-cc-list" *ngFor="let cc of availableCCTypes">
+      <div class="cc-logo">
+        <svg viewBox="0 0 76 25" class="visacard" *ngIf="cc.optionType == 'VISA'">
+          <use xlink:href="#visa"></use>
+        </svg>
+        <svg viewBox="0 0 76 25" class="visacard" *ngIf="cc.optionType == 'MASTERCARD'">
+          <use xlink:href="#mastercard"></use>
+        </svg>
+      </div>
+      <div class="cc-details">
+        <span class="card-number">xx - {{cc.ccDetails.lastDigits}}</span>
+        <span class="expiry-date">Expiry: {{cc.ccDetails.expiry}}expiry</span>
+      </div>
+      <div class="user-name">Cardholder: Mathilda</div>
+      <div class="last-used">Last used: 26/12/17 18:21</div>
+      <div class="modify-card">
+        <i class="icon-edit mobile-comp"></i>
+        <i class="icon-trash"></i>
+      </div>
+    </div>
+  </div>
+  <a class="addpayment"><i class="icon-plus"></i> ADD PAYMENT METHOD</a>
+</section>

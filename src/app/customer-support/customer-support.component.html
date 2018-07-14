@@ -1,0 +1,85 @@
+<section class="customer-support-intro">
+    <div class="brand-banner">
+        <div class="bg-image ">
+            <div class="container">
+                <div class="ld-col-md-8 text">
+                    <h1>Customer Support</h1>
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h4>
+                </div>
+                <div class="ld-col-md-4 text">
+                    <div class="customer-support-pic">
+                        <img alt="customer-support-pic"  src="/assets/img/customer-support-pic.png" title="customer-support-pic">    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="content">
+        <div class="container">
+            <section class="back-to-cards-customer-support" *ngIf="activeMethod=='emailUs' || activeMethod=='chatWithUs' || activeMethod=='faq'">
+                <div class="customer-support-back" (click)="goBack()">
+                    <span class="btc-inner">
+                        <i class="fa fa-angle-left"></i>
+                        <span>Go Back</span></span>
+                </div>
+            </section>
+            <div class="customer-support-tabs" *ngIf="activeMethod == 'none'">
+                <div class="customer-support-options ">
+                    <div class="addFundsTab">
+                        <div id="addFunds" class="customer-support-detail-headlines" >
+                            <div class="circular-icon">
+                                <img alt="contact us email" height="90" src="/assets/img/email_icon.svg" title="email icon" width="80">    
+                            </div>
+                            <h1>Email Us</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur</p>
+                            <button (click)="getMethod('emailUs')" type='button'>Send Email Now</button>
+                        </div>
+
+                    </div>
+                    <div class="withDrawFundsTab addFundsTab">
+                        <div id="withDrawFunds" class="customer-support-detail-headlines" >
+                            <div class="circular-icon">
+                                <img alt="Chat-with-us"  src="/assets/img/Chat-with-us.svg" title="chat with us" width="90" style="height:90px;">  
+                            </div>
+                            <h1>Chat Online</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur</p>
+                            <button (click)="getMethod('chatWithUs')" type='button'>Launch Chat Now</button>
+                        </div>
+
+                    </div>
+                    <div class="paymentMethodTab addFundsTab">
+                        <div id="paymentMethod" class="customer-support-detail-headlines" >
+                            <div class="circular-icon">
+                                <img alt="faq icon"  src="/assets/img/FAQ.svg" title="faq icon" width="90" style="height:90px;">  
+                            </div>
+                            <h1>FAQ</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur</p>
+                            <button (click)="getMethod('faq')" type='button'>Go to FAQ Page</button>
+                        </div>
+
+                    </div>
+                </div> 
+            </div>
+            <div class="customer-support-options-data" *ngIf="activeMethod=='emailUs' || activeMethod=='chatWithUs' || activeMethod=='faq'">
+                <div class="customer-support-detail-text" *ngIf="activeMethod=='emailUs'">
+                    <app-contact></app-contact>
+
+                    <section class="back-to-cards-customer-support mobile-show" *ngIf="activeMethod=='emailUs' || activeMethod=='chatWithUs' || activeMethod=='faq'">
+                        <div class="customer-support-back" (click)="goBack()">
+                            <span class="btc-inner">
+                                <i class="fa fa-angle-left"></i>
+                                <span>Go Back</span></span>
+                        </div>
+                    </section>
+                </div>
+                <div class="customer-support-detail-text" *ngIf="activeMethod=='chatWithUs'">
+                    <!--<app-faq></app-faq>-->
+                </div>
+                <div class="customer-support-detail-text" *ngIf="activeMethod=='faq'">
+                    <app-faq></app-faq>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

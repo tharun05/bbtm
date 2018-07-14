@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Bingo69 site maintenance</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+  <link rel="manifest" href="assets/img/favicons/manifest.json">
+  <link rel="mask-icon" href="assets/img/favicons/safari-pinned-tab.svg" color="#384079">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <style type="text/css">
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: 'MuseoSans';
+    src: url('assets/fonts/MuseoSans/MuseoSans-300.eot');
+    src: url('assets/fonts/MuseoSans/MuseoSans-300.eot?#iefix') format('embedded-opentype'),
+    url('assets/fonts/MuseoSans/MuseoSans-300.woff') format('woff'),
+    url('assets/fonts/MuseoSans/MuseoSans-300.ttf') format('truetype'),
+    url('assets/fonts/MuseoSans/MuseoSans-300.svg#MuseoSans-300') format('svg');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'MuseoSans500';
+    src: url('assets/fonts/MuseoSans/MuseoSans-500.eot');
+    src: url('assets/fonts/MuseoSans/MuseoSans-500.eot?#iefix') format('embedded-opentype'),
+    url('assets/fonts/MuseoSans/MuseoSans-500.woff') format('woff'),
+    url('assets/fonts/MuseoSans/MuseoSans-500.ttf') format('truetype'),
+    url('assets/fonts/MuseoSans/MuseoSans-500.svg#MuseoSans-500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'MuseoSans700';
+    src: url('assets/fonts/MuseoSans/MuseoSans-700.eot');
+    src: url('assets/fonts/MuseoSans/MuseoSans-700.eot?#iefix') format('embedded-opentype'),
+    url('assets/fonts/MuseoSans/MuseoSans-700.woff') format('woff'),
+    url('assets/fonts/MuseoSans/MuseoSans-700.ttf') format('truetype'),
+    url('assets/fonts/MuseoSans/MuseoSans-700.svg#MuseoSans-700') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+  .maintenance-overlay {
+    background: linear-gradient(161.28deg, #5E82EE 0%, #234393 100%);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+  }
+
+  .maintenance {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    position: absolute;
+  }
+
+  .content {
+    width: 80%;
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .logo {
+    float: left;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 50px;
+  }
+
+  .logo .logo-white {
+    height: 50px;
+  }
+
+  .maintenance-image {
+    width: 70%;
+  }
+
+  .text {
+    color: #fff;
+    text-align: center;
+  }
+
+  .text h1,
+  .text h3 {
+    margin: 0;
+    padding: 0;
+  }
+
+  .text h1 {
+    font-family: 'MuseoSans700';
+    font-size: 48px;
+    line-height: 1.2;
+    margin: 20px auto;
+  }
+
+
+  .text h3 {
+    color: #A4BBFF;
+    font-family: 'MuseoSans';
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1;
+  }
+
+  .early-bird {
+    color: #fff;
+    font-size: 30px;
+    font-family: 'MuseoSans';
+    border: 2px solid #fff;
+    padding: 15px 30px;
+    border-radius: 8px;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 5% auto;
+    min-width: 350px;
+    outline: none;
+  }
+
+  .early-bird:hover {
+    background-color: #fff;
+    color: #5E82EE;
+    border-color: transparent;
+  }
+
+  footer {
+    font-size: 20px;
+    padding: 20px;
+    font-family: 'MuseoSans';
+    text-align: center;
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .content {
+      width: 100%;
+    }
+    .logo {
+      text-align: center;
+      margin: 50px auto
+    }
+    .logo .logo-white {
+      height: 35px;
+    }
+    .text h1 {
+      font-size: 24px;
+    }
+
+    .text h3 {
+      font-size: 17px;
+    }
+    .early-bird {
+      font-family: 'MuseoSans700';
+      text-transform: uppercase;
+      font-size: 17px;
+      padding: 10px;
+      width: 100%;
+      border-radius: 4px;
+      min-width: auto;
+      margin: 60px auto 50%;
+    }
+    footer {
+      font-size: 14px;
+      font-family: 'MuseoSans500';
+    }
+  }
+
+  </style>
+</head>
+
+<body>
+  <section class="maintenance-overlay">
+    <div class="maintenance">
+      <div class="content">
+        <div class="logo">
+          <img src="assets/img/bingo69-logo-white.svg" class="logo-white">
+        </div>
+        <div class="text">
+          <img alt="" src="assets/img/maintenance.png" title="maintenance" class="maintenance-image">
+          <h1>We’re currently undergoing some construction and we’ll be right back!</h1>
+          <h3>Check back soon for an exciting new Bingo69 experience!</h3>
+          <button class="early-bird">Early bird access</button>
+        </div>
+      </div>
+      <footer>
+        Copyright Bingo69 2018. All Rights Reserved.
+      </footer>
+    </div>
+  </section>
+</body>
+
+</html>

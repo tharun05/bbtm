@@ -1,0 +1,28 @@
+<section class="preference-centre">
+  <div class="content">
+    <div id="errorMessagePrefCentre" class="error-msg hide">{{serverError}}</div>
+    <div class="preference-list">
+       <div class="ld-ckbox">
+        <input id="emailOnly" name="preference" type="checkbox" (click)="updatePreference('dontMissAnything')">
+        <label for="emailOnly">
+          <span class="text"><p><b>I don’t want to miss anything </b>
+            <br/>I want to receive all the latest offers, news, results and tips as well as normal account information including win notifications.</p></span>
+        </label>
+      </div>
+      <div class="ld-ckbox">
+        <input id="smsOnly" name="preference" type="checkbox" (click)="updatePreference('accountDetails')">
+        <label for="smsOnly">
+          <span class="text"> <p><b>Account Details Only</b>
+            <br/>Only send me important account related information. I understand I will miss out on promotions and discounts!</p></span>
+        </label>
+      </div>
+      <div class="ld-ckbox">
+          <input id="unsubscribeAll" name="preference" type="checkbox" (click)="updatePreference('unsubscribeAll')">
+          <label for="unsubscribeAll">
+              <span class="text"> <p><b>Unsubscribe from all</b>
+                      <br/>I don't want to receive anything form Bingo69 and I understand I could be missing important account and promotional communication.</p></span>
+          </label>
+      </div>
+    </div>
+  </div>
+</section>

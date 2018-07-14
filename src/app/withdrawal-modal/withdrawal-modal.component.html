@@ -1,0 +1,56 @@
+<modal id="quickWithdrawalModal">
+    <div class="modal withdrawmodal">
+        <div class="modal-body">
+            <div class="deposit-header">
+                <div class="close-modal" (click)="closeModal('quickWithdrawalModal')">
+                    <i class="fa fa-times-circle-o"></i>
+                </div>
+            </div>
+            <div id="depositModalContent" class="user-reg-modal">
+                <div class='payment-method-data'>
+                    <app-withdraw-funds *ngIf="availableWithdrawMethods && (withdrawCCAvailable == 'available' || withdrawOtherAvailable == 'available') && cashBalance > 0" [availableWithdrawableCC]="availableWithdrawableCC" [availableWithdrawMethods]="availableWithdrawMethods" [withdrawableBalance]="cashBalance" [withdrawLimitList]="withdrawLimitList"></app-withdraw-funds>
+                </div>
+            </div>
+            <div id="quickModalSuccess" class="user-quickdeposit-modal">
+                <section class="deposit-success" *ngIf="qDResponse">
+                    <div class="container">
+                        <app-txn-status *ngIf="qDResponse" [txnDetails]="qDResponse"></app-txn-status>
+                    </div>
+                </section>
+            </div>
+            <div id="quickModalFailure" class="user-quickdeposit-modal hide">
+                <section class="deposit-success">
+                    <div class="container">
+                        <div class="header-row">
+                            <div class="skew-header">
+                                <div class="header-bg">
+                                    <div class="text-container">
+                                        <span class="icon">
+                                            <i class="icon-oops"></i>
+                                        </span>
+                                        <span class="text">
+                                            <h1>Oops…</h1>
+                                            <p>Something went wrong </p>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="down-arrow"></div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="deposit-failcase">
+                                <img class="deposit-done" src="/assets/img/error-icon.svg" alt="deposit failed" title="deposit failed" />
+                                <p>We’re sorry.. something went wrong with the transaction. Please check the details and retry using the button below.</p>
+                                <button id="retryPaymentButton" class="btn-new" type="button" (click)="retryPayment('retryPaymentButton')">
+                                    <i class="icon-lock"></i>
+                                    <span>RETRY</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+  </modal>

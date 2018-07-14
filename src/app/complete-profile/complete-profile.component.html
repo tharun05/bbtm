@@ -1,0 +1,283 @@
+<div class="reg-form step_form" *ngIf="!step2complete">
+    <div class="header" *ngIf="callingFrom !='UpdateProfile'">
+        <div class="skew-header">
+            <div class="header-bg">
+                <div class="close-modal" (click)="goBackToCheckout()" *ngIf="isCheckoutPage">
+                    <i class="icon-cancel"></i>
+                </div>
+                <div class="text-container">
+                    <span class="text">
+                        <h1>
+                            Complete My Account
+                        </h1>
+                        <p>
+                            Just a few more details
+                        </p>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="register-tab">
+            <div class="signup-icon active">
+                <div class="secure-transactions">
+                    <div class="icon">
+                        <svg viewBox="0 0 255 255" fill="#8e99bc">
+                        <use xlink:href="#player-icon"></use>
+                        </svg>
+                    </div>
+                    <div class="text">
+                        <a href="javascript:void(0);">Sign Up</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class=" confirm-icon">
+                <div class="secure-transactions">
+                    <div class="icon">
+                        <svg viewBox="0 0 398 398" fill="#8e99bc">
+                        <use xlink:href="#tick-icon"></use>
+                        </svg>
+                    </div>
+                    <div class="text">
+                        <a href="javascript:void(0)">Confirm</a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- <div class=" bonus-icon">
+                <div class="secure-transactions">
+                    <div class="icon">
+                        <svg viewBox="0 0 468 478" fill="#8e99bc">
+                        <use xlink:href="#bonus-icon"></use>
+                        </svg>
+                    </div>
+                    <div class="text">
+                        <a href="javascript:void(0)">Select Bonus</a>
+                    </div>
+
+                </div>
+            </div> -->
+        </div> 
+
+    </div>
+    <div class="form-fields" [ngClass]="callingFrom =='UpdateProfile' ? 'update-profile-class':''">
+        <div id="serverError-updateProfile-{{callingFrom}}" class="error-msg hide">{{serverError}}</div>
+        <div class="step2">
+            <div class="infoBox aquaBlue" *ngIf="(callingFrom != 'Registration') && (callingFrom != 'UpdateProfile')">
+                <p>{{profileName}}, in order to continue, we’re required to ask you for a few more details to complete your profile. It shouldn’t take longer than a minute to complete and will ensure we can give you safe and secure access to all areas of the Lottoday experience.</p>
+            </div>
+            <form [formGroup]="profileUpdateForm" (keyup)="$event.keyCode == 13 ? callingFrom == 'UpdateProfile' ? register2('registerButton2-'+callingFrom,'editprofile') : register2('registerButton2-'+callingFrom,'signupstepTwo') : ''" novalidate>
+                <div class="row" *ngIf="callingFrom =='UpdateProfile'">
+                    <!-- first name -->
+                    <div class="ld-col-md-6">
+                        <mat-form-field class="">
+                            <input name="firstName" matInput placeholder="First name" formControlName="firstName" [readonly]="isReadOnlyAttribute()">
+                            <mat-error *ngIf="utils.shouldShowErrors('firstName',profileUpdateForm)">{{utils.getErrorMessage('firstName', profileUpdateForm)}}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <!-- last name -->
+                    <div class="ld-col-md-6">
+                        <mat-form-field class="">
+                            <input name="lastName" matInput placeholder="Last name" formControlName="lastName" [readonly]="isReadOnlyAttribute()">
+                            <mat-error *ngIf="utils.shouldShowErrors('lastName',profileUpdateForm)">{{utils.getErrorMessage('lastName', profileUpdateForm)}}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Street address -->
+                    <div class="ld-col-md-6">
+                        <mat-form-field class="">
+                            <span matPrefix *ngIf="callingFrom !='UpdateProfile'">
+                                  <i class="icon-location"></i>
+                            </span>
+                            <input formControlName="address1" name="streetAddress" matInput placeholder="Street address" [readonly]="isReadOnlyAttribute()">
+                            <mat-error *ngIf="shouldShowErrors('address1',profileUpdateForm)">{{getErrorMessage('address1', profileUpdateForm)}}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <!-- City -->
+                    <div class="ld-col-md-6">
+                        <mat-form-field class="">
+                            <input formControlName="city" name="City" matInput placeholder="City" [readonly]="isReadOnlyAttribute()">
+                            <mat-error *ngIf="shouldShowErrors('city',profileUpdateForm)">{{getErrorMessage('city', profileUpdateForm)}}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Zip/Post code -->
+                    <div class="ld-col-md-6">
+                        <mat-form-field class="">
+                            <input formControlName="zip" name="zip" matInput placeholder="Zip/Post code" [readonly]="isReadOnlyAttribute()">
+                            <mat-error *ngIf="shouldShowErrors('zip',profileUpdateForm)">{{getErrorMessage('zip', profileUpdateForm)}}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <!-- Country code -->
+                    <div class="ld-col-md-6">
+                        <mat-form-field>
+                            <mat-select name="country" formControlName="country" placeholder="Country" (change)="stateDetails('')" [disabled]="isReadOnlyAttribute()">
+                                <mat-option *ngFor="let country of countries" [value]="country.iso">
+                                    {{ country.name}}
+                            </mat-option> 
+                        </mat-select>
+                        <mat-error *ngIf="shouldShowErrors('country',profileUpdateForm)">{{getErrorMessage('country', profileUpdateForm)}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <!-- dob -->
+                <div class="ld-col-md-6">
+                    <div class="mobile-date" *ngIf="callingFrom !='UpdateProfile'">
+                        <mat-form-field class="">
+                            <span matPrefix *ngIf="callingFrom !='UpdateProfile'">
+                                  <i class="icon-cake"></i>
+                            </span>
+                            <input formControlName="dob" name="dob" matInput [readonly]="true" placeholder="Select Date of Birth" [max]="minimumDate" mbsc-date [mbsc-options]="mobiScrollSetting" class="">
+                                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker disabled="false"></mat-datepicker>
+                            <mat-error *ngIf="shouldShowErrors('dob',profileUpdateForm)">{{getErrorMessage('dob', profileUpdateForm)}}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="desktop-date" *ngIf="callingFrom !='UpdateProfile'">
+                        <mat-form-field class="">
+                            <span matPrefix *ngIf="callingFrom !='UpdateProfile'">
+                                  <i class="icon-cake"></i>
+                            </span>
+                            <input formControlName="dob" name="dob" matInput [readonly]="true" [matDatepicker]="picker" placeholder="Select Date of Birth" [max]="minimumDate" (click)="picker.open()">
+                                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker disabled="false"></mat-datepicker>
+                            <mat-error *ngIf="shouldShowErrors('dob',profileUpdateForm)">{{getErrorMessage('dob', profileUpdateForm)}}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <!-- phno -->
+                    <div class="mobile-div myaccount_pro" *ngIf="callingFrom =='UpdateProfile'">
+                        <div class="mobile-no">
+                            <div class="flat-tel-holder">
+                                <p class="label-text">International code</p>
+                                <div class="tel-holder">
+                                    <div class="flag">
+                                        <input name="phone" id="phoneNumberFlag" ng-intl-tel-input formControlName="phone" [readonly]="isReadOnlyAttribute()">
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <mat-form-field class="">
+                                        <input name="phone" matInput placeholder="Mobile phone number" formControlName="phone" tel [readonly]="isReadOnlyAttribute()">
+                                               <mat-error *ngIf="utils.shouldShowErrors('phone',profileUpdateForm)">{{utils.getErrorMessage('phone', profileUpdateForm)}}</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- State/Region -->
+                <div class="ld-col-md-6">
+                    <mat-form-field class="" *ngIf="stateCheck">
+                        <mat-select name="state" formControlName="state" placeholder="State/Region" [disabled]="isReadOnlyAttribute()">
+                            <mat-option *ngFor="let state of stateList" [value]="state.stateCode">
+                                {{ state.stateName}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="shouldShowErrors('state',profileUpdateForm)">{{getErrorMessage('state', profileUpdateForm)}}</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row flex-row" *ngIf="callingFrom =='UpdateProfile'">
+            <!-- dob update profile -->
+            <div class="ld-col-md-6">
+                <div class="mobile-date" *ngIf="!isDOBavailable  || callingFrom !='UpdateProfile'">
+                     <mat-form-field class="">
+                        <span matPrefix *ngIf="callingFrom !='UpdateProfile'">
+                              <i class="icon-cake"></i>
+                        </span>
+                        <input formControlName="dob" name="dob" matInput [readonly]="true" placeholder="Select Date of Birth" [max]="minimumDate" mbsc-date [mbsc-options]="mobiScrollSetting" class="">
+                               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker disabled="false"></mat-datepicker>
+                        <mat-error *ngIf="shouldShowErrors('dob',profileUpdateForm)">{{getErrorMessage('dob', profileUpdateForm)}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="desktop-date" *ngIf="!isDOBavailable  || callingFrom !='UpdateProfile'">
+                     <mat-form-field class="">
+                        <span matPrefix *ngIf="callingFrom !='UpdateProfile'">
+                              <i class="icon-cake"></i>
+                        </span>
+                        <input formControlName="dob" name="dob" matInput [readonly]="true" [matDatepicker]="picker" placeholder="Select Date of Birth" [max]="minimumDate" (click)="picker.open()">
+                               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker disabled="false"></mat-datepicker>
+                        <mat-error *ngIf="shouldShowErrors('dob',profileUpdateForm)">{{getErrorMessage('dob', profileUpdateForm)}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <!-- isGenderAvailable-->
+            <div class="ld-col-md-6" *ngIf="!isGenderAvailable  || callingFrom !='UpdateProfile'">
+                 <div class="gender-tab">
+                    <input value="M" type="radio" name="gender" id="male-{{callingFrom}}" title="" formControlName="gender" />
+                    <label for="male-{{callingFrom}}">Male</label>
+                    <input value="F" type="radio" name="gender" id="female-{{callingFrom}}" title="" formControlName="gender" />
+                    <label for="female-{{callingFrom}}">Female</label>
+                    <mat-error *ngIf="utils.shouldShowErrors('gender',profileUpdateForm)">{{utils.getErrorMessage('gender', profileUpdateForm)}}</mat-error>
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngIf="callingFrom !='UpdateProfile' && isMobileAvailable == false">
+             <div class="ld-col-md-6">
+                <div class="mobile-div">
+                    <div class="mobile-no">
+                        <div class="flat-tel-holder">
+                            <p class="label-text">International code</p>
+                            <div class="tel-holder">
+                                <div class="flag">
+                                    <input name="phone" id="phoneNumberFlag" ng-intl-tel-input formControlName="phone" [readonly]="isReadOnlyAttribute()">
+                                    <div class="clearfix"></div>
+                                </div>
+                                <mat-form-field class="">
+                                    <input name="phone" matInput placeholder="Mobile phone number" formControlName="phone" tel [readonly]="isReadOnlyAttribute()">
+                                           <mat-error *ngIf="utils.shouldShowErrors('phone',profileUpdateForm)">{{utils.getErrorMessage('phone', profileUpdateForm)}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row flex-row" *ngIf="callingFrom !='UpdateProfile'">
+            <!-- isGenderAvailable-->
+            <div class="ld-col-md-6" *ngIf="!isGenderAvailable  || callingFrom !='UpdateProfile'">
+                 <div class="gender-tab">
+                    <input value="M" type="radio" name="gender" id="male-{{callingFrom}}" title="" formControlName="gender" />
+                    <label for="male-{{callingFrom}}">Male</label>
+                    <input value="F" type="radio" name="gender" id="female-{{callingFrom}}" title="" formControlName="gender" />
+                    <label for="female-{{callingFrom}}">Female</label>
+                    <mat-error *ngIf="utils.shouldShowErrors('gender',profileUpdateForm)">{{utils.getErrorMessage('gender', profileUpdateForm)}}</mat-error>
+                </div>
+            </div>
+            <div class="ld-col-md-6" *ngIf="callingFrom !='UpdateProfile'">
+                <button *ngIf="!isReadOnlyAttribute()" type="button" id="registerButton2-{{callingFrom}}" class="btn-new" (click)="register2('registerButton2-'+callingFrom,'signupstepTwo')" [disabled]="isButtonDisabled(profileUpdateForm)">
+                    <span>Submit</span>
+                </button>
+            </div>
+        </div>
+        <div class="row flex-row" *ngIf="callingFrom =='UpdateProfile'">
+            <div class="ld-col-md-6">
+                <button *ngIf="!isReadOnlyAttribute()" type="button" id="registerButton2-{{callingFrom}}" class="btn-new" (click)="register2('registerButton2-'+callingFrom,'editprofile')" [disabled]="isButtonDisabled(profileUpdateForm)">
+                    <span>SAVE CHANGES</span>
+                </button>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </form>
+</div>
+<div class="mobile-comp">
+    <div class="secure-transactions ">
+        <div class="icon">
+            <svg viewBox="0 375 80 80">
+            <use xlink:href="#secure-icon"></use>
+            </svg>
+        </div>
+        <div class="text">
+            <h2>Safe and Secure</h2>
+            <p>All transactions 128bit SSL encrypted</p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!--<app-verification *ngIf="step2Complete" (verificationMethod)=verificationMethod($event) [callingFrom]="'Verification'"></app-verification>-->

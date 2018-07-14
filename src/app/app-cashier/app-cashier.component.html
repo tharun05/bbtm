@@ -1,0 +1,250 @@
+<!-- <div id="profileCompleteModal" class="modal blowUpModal">
+  <div class="modal-container">
+    <div class="close-modal" (click)="closeProfileCompleteModal('profileCompleteModal')"><i class="icon-cancel"></i></div>
+    <div class="modal-body">
+      <div class="user-reg-modal">
+        <app-complete-profile *ngIf="isProfileCompleted != undefined && !isProfileCompleted" (updateProfileComplete)="updateProfileComplete($event)"></app-complete-profile>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<modal id="profileCompleteModal">
+  <div class="modal">
+    <div class="modal-body">
+      <div class="close-modal" (click)="closeModal('profileCompleteModal')">
+        <i class="icon-cancel"></i>
+      </div>
+      <div class="user-reg-modal">
+        <app-complete-profile *ngIf="isProfileCompleted != undefined && !isProfileCompleted" (updateProfileComplete)="updateProfileComplete($event)"></app-complete-profile>
+      </div>
+    </div>
+  </div>
+  <div class="modal-background"></div>
+</modal>
+
+<section class="cashier-intro">
+  <div class="content">
+
+
+    <div class="intro-text device-comp">
+      <h3>Cashier</h3>
+      <p>Add funds, manage payment methods and withdraw funds.</p>
+    </div>
+    <div class="alert-info-box" *ngIf="!confirmIdentity">
+      <span class="icon">
+        <i class="icon-info-fill"></i>
+
+      </span>
+      <span class="text">
+        <h6 class="device-comp">CONFIRM YOUR IDENTITY</h6>
+        <p> You are required to confirm your identity before you can withdraw funds from your account.</p>
+      </span>
+      <span class="confirm-identity-button">
+        <button type="button" [routerLink]="'/confirm-identity'">Confirm Identity Now
+          <span>(90 VIP points)</span>
+        </button>
+      </span>
+    </div>
+
+    <div class="device-confirm-identity success-info-box" *ngIf="!kycVerified && confirmIdentity">
+      <span class="icon">
+        <i class="icon-info-fill"></i>
+      </span>
+      <span class="text">
+        <h6 class="device-comp">IDENTITY PENDING</h6>
+        <p> Thank you. Your documents have been uploaded successfully and our team is currently processing them.</p>
+      </span>
+    </div>
+
+    <div class="bal-types">
+      <div class="ld-col-md-7">
+        <div class="ball-types-group">
+          <div class="bal-types-list">
+            Account Balance
+            <span>{{userDetails.getUserCurrencySymbol()}} {{cashBalance | number:'1.2-2'}}</span>
+          </div>
+          <div class="bal-types-list">
+            Bonus Balance:
+            <span>{{userDetails.getUserCurrencySymbol()}} {{bonusBalance | number:'1.2-2'}}</span>
+          </div>
+          <div class="bal-types-list blue-gradient">
+            Withdrawable Balance:
+            <span>{{userDetails.getUserCurrencySymbol()}} {{cashBalance | number:'1.2-2'}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="ld-col-md-5">
+        <div class="regulatory-icons">
+          <span class="svg-icon pci">
+            <svg viewBox="0 0 852 413" width="65" height="30">
+              <use xlink:href="#pci-certificate"></use>
+            </svg>
+          </span>
+          <span class="svg-icon">
+            <svg viewBox="0 0 190.05 81.95" width="55" height="30">
+              <use xlink:href="#visa-verified"></use>
+            </svg>
+          </span>
+          <span class="svg-icon">
+            <svg viewBox="0 0 282.43 94.83" width="74" height="30">
+              <use xlink:href="#ssl-encription"></use>
+            </svg>
+          </span>
+          <span class="svg-icon">
+            <svg viewBox="0 0 594.823 181.141" width="68" height="30">
+              <use xlink:href="#mastercard-securecode"></use>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="select-payment-method-text mob-hide">
+      <p>Please select your payment method</p>
+    </div>
+    <!-- accrdion display -->
+    <div class="cashier-tabs" *ngIf="activeMethod == 'none' ">
+      <div class="cashier-options ">
+        <div class="addFundsTab">
+          <div id="addFunds" class="cashier-detail-headlines">
+            <div class="circular-icon">
+              <img alt="add Funds" src="/assets/img/add_funds_icon.svg" title="add funds" width="90">
+            </div>
+            <h1> Add funds</h1>
+            <p>Make a secure deposit to my account.</p>
+            <button (click)="getMethod('addFunds')" type='button'>Add Funds Now</button>
+          </div>
+
+        </div>
+
+        <div class="withDrawFundsTab addFundsTab" [ngClass]="{'disabled' : cashBalance=='0.00' || kycVerified == 'false'}">
+          <div id="withDrawFunds" class="cashier-detail-headlines">
+            <div [ngClass]="kycVerified == true ? '':'unavailable'">
+              <div class="circular-icon">
+                <img alt="withdraw funds" src="/assets/img/withdraw_funds_icon.svg" title="withdraw funds" width="90">
+              </div>
+              <h1>Withdraw funds</h1>
+              <p>Withdraw funds from My Account. </p>
+            </div>
+            <button (click)="getMethod('withDrawFunds')" type='button' *ngIf="kycVerified && cashBalance != 0 && confirmIdentity">Withdraw funds now</button>
+            <button type='button' class='unavailable' *ngIf="!kycVerified || !confirmIdentity || (kycVerified && cashBalance == 0)">Unavailable</button>
+            <!-- <button type='button' class='unavailable' *ngIf="">Unavailable</button> -->
+          </div>
+
+        </div>
+
+        <!-- <div class="paymentMethodTab addFundsTab">
+                    <div id="paymentMethod" class="cashier-detail-headlines" >
+                        <div class="circular-icon"><img alt="payment Method" src="/assets/img/payment_methods_icon.svg" title="payment Method" width="90"></div>
+                        <h1>Payment methods</h1>
+                        <p>Add, edit or remove a payment method.</p>
+                        <button (click)="getMethod('paymentMethods')" type='button'>Manage payment methods</button>
+                    </div>
+
+                </div> -->
+      </div>
+    </div>
+    <div class="cashier-options-data" *ngIf="activeMethod=='addFunds' || activeMethod=='withDrawFunds' || activeMethod=='paymentMethods' || confirmIdentity">
+      <div class="cashier-detail-text" *ngIf="activeMethod=='addFunds'">
+        <section class="back-to-cards-cashier  back-to-cards-cashier-2" *ngIf="!qDResponse">
+          <div class="cashier-back-btn" (click)="goBack()">
+            <span class="btc-inner">
+              <i class="fa fa-angle-left"></i>
+              <span>Go Back</span>
+            </span>
+          </div>
+        </section>
+
+        <!-- Please select your payment method -->
+        <app-payment-container-fields *ngIf="!qDResponse" [paymentType]="'deposit-cashier'" [totalPrice]="totalPrice" [isSubscription]="'false'"></app-payment-container-fields>
+        <app-txn-status *ngIf="qDResponse" [qDResponse]="qDResponse"></app-txn-status>
+        <!-- <app-upcoming-events *ngIf="qDResponse"></app-upcoming-events> -->
+      </div>
+      <div class="cashier-detail-text" *ngIf="activeMethod=='withDrawFunds'">
+        <section class="back-to-cards-cashier">
+          <div class="cashier-back-btn" (click)="goBack()">
+            <span class="btc-inner">
+              <i class="fa fa-angle-left"></i>
+              <span>Go Back</span>
+            </span>
+          </div>
+        </section>
+        <div class="cashier_heading">
+          <h1>Withdraw funds
+            <i class="icon-info" id="withdraw-info-icon" (click)="openModal('quickWithdrawInfo')"></i>
+          </h1>
+        </div>
+        <app-withdraw-funds *ngIf="availableWithdrawMethods && (withdrawCCAvailable == 'available' || withdrawOtherAvailable == 'available') && cashBalance > 0"
+          [availableWithdrawableCC]="availableWithdrawableCC" [availableWithdrawMethods]="availableWithdrawMethods" [withdrawableBalance]="cashBalance"
+          [withdrawLimitList]="withdrawLimitList"></app-withdraw-funds>
+        <mat-spinner *ngIf="!availableWithdrawMethods || cashBalance == undefined"></mat-spinner>
+        <p class="text-no-withdraw" *ngIf="availableWithdrawMethods && (withdrawCCAvailable == 'available' || withdrawOtherAvailable  == 'available') && cashBalance <=0">You dont have enough balance to Withdraw</p>
+        <p class="text-no-withdraw" *ngIf="availableWithdrawMethods && (withdrawCCAvailable  != 'available' && withdrawOtherAvailable != 'available')">No Withdraw Options available</p>
+      </div>
+      <div class="cashier-detail-text" *ngIf="activeMethod=='paymentMethods'">
+        <section class="back-to-cards-cashier">
+          <div class="cashier-back-btn" (click)="goBack()">
+            <span class="btc-inner">
+              <i class="fa fa-angle-left"></i>
+              <span>Go Back</span>
+            </span>
+          </div>
+        </section>
+        <div class="cashier_heading">
+          <h1>Payment methods</h1>
+          <p>Add, edit or remove a payment method.</p>
+        </div>
+        <app-payment-methods [availableCCTypes]="availableCCTypes"></app-payment-methods>
+      </div>
+      <!--            <div class="confirm-identity-box" *ngIf="confirmIdentity">
+                            <section class="back-to-cards-cashier">
+                                <div class="cashier-back-btn" (click)="goBack()">
+                                    <span class="btc-inner">
+                                        <i class="fa fa-angle-left"></i>
+                                        <span>Back to Cashier</span></span>
+                                </div>
+                            </section>
+                            <app-confirm-identity></app-confirm-identity>
+                        </div>-->
+    </div>
+  </div>
+</section>
+
+
+<!-- <div id="cashierPopup" class="modal blowUpModal">
+  <div class="modal-container">
+    <div class="close-modal" (click)="closeModal('cashierPopup')"><i class="icon-cancel"></i></div>
+    <div class="modal-body">
+      <div id="cashierPopupBody" class="cashier-common-modal">
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<modal id="cashierPopup">
+  <div class="modal">
+    <div class="modal-body">
+      <div class="close-modal" (click)="closeModal('cashierPopup')">
+        <i class="icon-cancel"></i>
+      </div>
+      <div id="cashierPopupBody" class="cashier-common-modal">
+      </div>
+    </div>
+  </div>
+  <div class="modal-background"></div>
+</modal>
+<modal id="quickWithdrawInfo">
+  <div class="modal">
+    <div class="modal-body">
+      <div class="deposit-header">
+        <div class="close-modal" (click)="closeModal('quickWithdrawInfo')">
+          <i class="fa fa-times-circle-o"></i>
+        </div>
+      </div>
+      <div id="withdraw_info" class="withdarw-info-container">
+      </div>
+    </div>
+  </div>
+  <div class="modal-background">
+  </div>
+</modal>

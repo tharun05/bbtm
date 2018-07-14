@@ -1,0 +1,1591 @@
+@import "custom-prefixes.scss";
+
+
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+@mixin button-variant($color, $background, $border) {
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+
+    &:focus,
+        &.focus {
+        color: $color;
+        background-color: darken($background, 10%);
+        border-color: darken($border, 25%);
+    }
+    &:hover {
+        color: $color;
+        background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+        &:disabled{
+            background-color: none;
+            border-color: none;
+        }
+
+    }
+    &:active,
+        &.active,
+        .open>&.dropdown-toggle {
+        color: $color;
+        background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+
+        &:hover,
+            &:focus,
+            &.focus {
+            color: $color;
+            background-color: darken($background, 17%);
+            border-color: darken($border, 25%);
+        }
+    }
+    &:active,
+        &.active,
+        .open>&.dropdown-toggle {
+        background-image: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover,
+            &:focus,
+            &.focus {
+            background-color: $background;
+            border-color: $border;
+        }
+    }
+
+    .badge {
+        color: $background;
+        background-color: $color;
+    }
+}
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+    padding: $padding-vertical $padding-horizontal;
+    font-size: $font-size;
+    line-height: $line-height;
+    border-radius: $border-radius;
+}
+
+// Horizontal dividers
+//
+// Dividers (basically an hr) within dropdowns and nav lists
+@mixin nav-divider($color: #e5e5e5) {
+    height: 1px;
+    margin: (($line-height-computed / 2) - 1) 0;
+    overflow: hidden;
+    background-color: $color;
+}
+
+// Reset filters for IE
+//
+// When you need to remove a gradient background, do not forget to use this to reset
+// the IE filter for IE9 and below.
+@mixin reset-filter() {
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+
+// Tables
+@mixin table-row-variant($state, $background) {
+    // Exact selectors below required to override `.table-striped` and prevent
+    // inheritance to nested tables.
+    .table>thead>tr,
+    .table>tbody>tr,
+    .table>tfoot>tr {
+        >td.#{$state},
+        >th.#{$state},
+        &.#{$state}>td,
+        &.#{$state}>th {
+            background-color: $background;
+        }
+    } // Hover states for `.table-hover`
+    // Note: this is not available for cells or rows within `thead` or `tfoot`.
+    .table-hover>tbody>tr {
+        >td.#{$state}:hover,
+            >th.#{$state}:hover,
+            &.#{$state}:hover>td,
+            &:hover>.#{$state},
+        &.#{$state}:hover>th {
+            background-color: darken($background, 5%);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Card styles*/
+
+@mixin cardBasicStyle {
+    box-shadow: $card-box-shadow;
+    /*border: $card-border;*/
+    border-radius: $card-border-radius;
+    background-color: $card-background-color;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Lottery Backgrounds images */
+
+@mixin allLotteryBackgroundImage {
+
+    &.UKThunderBall {
+        background-image: $UKThunderBall-img;
+    }
+    &.UKLotto {
+        background-image: $UKLotto-img;
+    }
+    &.SuperEnaLotto {
+        background-image: $SuperEnaLotto-img;
+    }
+    &.OzLotto {
+        background-image: $OzLotto-img;
+    }
+    &.NewYorkLotto {
+        background-image: $NewYorkLotto-img;
+    }
+    &.MegaSena {
+        background-image: $MegaSena-img;
+    }
+    &.Lotto649 {
+        background-image: $Lotto649-img;
+    }
+    &.IrishLotto {
+        background-image: $IrishLotto-img;
+    }
+    &.HotLotto {
+        background-image: $HotLotto-img;
+    }
+    &.HoosierLotto {
+        background-image: $HoosierLotto-img;
+    }
+    &.FrenchLotto {
+        background-image: $FrenchLotto-img;
+    }
+    &.FloridaLotto {
+        background-image: $FloridaLotto-img;
+    }
+    &.EuroMillions {
+        background-image: $EuroMillions-img;
+    }
+    &.EuroJackpot {
+        background-image: $EuroJackpot-img;
+    }
+    &.CaliforniaSuperLotto {
+        background-image: $CaliforniaSuperLotto-img;
+    }
+    &.PowerBall {
+        background-image: $PowerBall-img;
+    }
+    &.ElGordo {
+        background-image: $ElGordo-img;
+    }
+    &.EuroMillionsUK {
+        background-image: $EuroMillionsUK-img;
+    }
+    &.MegaMillions {
+        background-image: $MegaMillions-img;
+    }
+    &.PowerballAustralia {
+        background-image: $PowerballAustralia-img;
+    }
+    &.Tatts {
+        background-image: $Tatts-img;
+    }
+    &.LoteriaNacional {
+        background-image: $LoteriaNacional-img;
+    }
+    &.LaPrimitiva {
+        background-image: $LaPrimitiva-img;
+    }
+    &.BonoLotto {
+        background-image: $BonoLotto-img;
+    }
+}
+
+@mixin allLotteryNumberColored {
+    &.UKThunderBall {
+        .number {
+            background-color: $UKThunderBall-num-color;
+            color: $white;
+            &.spl-num {
+                background-color: $UKThunderBall-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.UKLotto {
+        .number {
+            background-color: $UKLotto-num-color;
+            color: $white;
+            &.spl-num {
+                background-color: $UKLotto-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.EuroMillionsUK {
+        .number {
+            background-color: $EuroMillionsUK-num-color;
+            color: $black;
+            &.spl-num {
+                background-color: $EuroMillionsUK-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.Tatts {
+        .number {
+            background-color: $Tatts-num-color;
+            color: $black;
+            &.spl-num {
+                background-color: $Tatts-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.CaliforniaSuperLotto {
+        .number {
+            background-color: $CaliforniaSuperLotto-num-color;
+            color: $black;
+            &.spl-num {
+                background-color: $CaliforniaSuperLotto-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.SuperEnaLotto {
+        .number {
+            background-color: $SuperEnaLotto-num-color;
+            color: $white;
+            &.spl-num {
+                background-color: $SuperEnaLotto-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.PowerBall {
+        .number {
+            background-color: $PowerBall-num-color;
+            color: $white;
+            &.spl-num {
+                background-color: $PowerBall-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.OzLotto {
+        .number {
+            background-color: $OzLotto-num-color;
+            color: $black;
+            &.spl-num {
+                background-color: $OzLotto-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.NewYorkLotto {
+        .number {
+            background-color: $NewYorkLotto-num-color;
+            color: $black;
+            &.spl-num {
+                background-color: $NewYorkLotto-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.MegaSena {
+        .number {
+            background-color: $MegaSena-num-color;
+            color: $black;
+            &.spl-num {
+                background-color: $MegaSena-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.MegaMillions {
+        .number {
+            background-color: $MegaMillions-num-color;
+            color: $white;
+            &.spl-num {
+                background-color: $MegaMillions-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.IrishLotto {
+        .number {
+            background-color: $IrishLotto-num-color;
+            color: $black;
+            &.spl-num {
+                background-color: $IrishLotto-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.FrenchLotto {
+        .number {
+            background-color: $FrenchLotto-num-color;
+            color: $white;
+            &.spl-num {
+                background-color: $FrenchLotto-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.Lotto649 {
+        .number {
+            background-color: $Lotto649-num-color;
+            color: $white;
+            &.spl-num {
+                background-color: $Lotto649-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.LoteriaNacional {
+        .number {
+            background-color: $LoteriaNacional-num-color;
+            color: $black;
+            &.spl-num {
+                background-color: $LoteriaNacional-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.LaPrimitiva {
+        .number {
+            background-color: $LaPrimitiva-num-color;
+            color: $black;
+            &.spl-num {
+                background-color: $LaPrimitiva-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.HotLotto {
+        .number {
+            background-color: $HotLotto-num-color;
+            color: $black;
+            &.spl-num {
+                background-color: $HotLotto-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.HoosierLotto {
+        .number {
+            background-color: $HoosierLotto-num-color;
+            color: $black;
+            &.spl-num {
+                background-color: $HoosierLotto-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.FloridaLotto {
+        .number {
+            background-color: $FloridaLotto-num-color;
+            color: $white;
+            &.spl-num {
+                background-color: $FloridaLotto-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.EuroMillions {
+        .number {
+            background-color: $EuroMillions-num-color;
+            color: $black;
+            &.spl-num {
+                background-color: $EuroMillions-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.EuroJackpot {
+        .number {
+            background-color: $EuroJackpot-num-color;
+            color: $black;
+            &.spl-num {
+                background-color: $EuroJackpot-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.ElGordo {
+        .number {
+            background-color: $ElGordo-num-color;
+            color: $white;
+            &.spl-num {
+                background-color: $ElGordo-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.PowerballAustralia {
+        .number {
+            background-color: $PowerballAustralia-num-color;
+            color: $white;
+            &.spl-num {
+                background-color: $PowerballAustralia-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+    &.BonoLotto {
+        .number {
+            background-color: $BonoLotto-num-color;
+            color: $white;
+            &.spl-num {
+                background-color: $BonoLotto-num-color-spl;
+                color: $white;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*all lottery draw cards radiel gradient*/
+
+@mixin allLotteryCardsRadielGradient {
+    &.UKThunderBall {
+        background: $lotttery-UKThunderBall-b-color;
+        background: radial-gradient(circle, $lotttery-UKThunderBall-b-color 0%, $lotttery-UKThunderBall-e-color 100%);
+    }
+    &.UKLotto {
+        background: $lotttery-UKLotto-b-color;
+        background: radial-gradient(circle, $lotttery-UKLotto-b-color 0%, $lotttery-UKLotto-e-color 100%);
+    }
+    &.SuperEnaLotto {
+        background: $lotttery-SuperEnaLotto-b-color;
+        background: radial-gradient(circle, $lotttery-SuperEnaLotto-b-color 0%, $lotttery-SuperEnaLotto-e-color 100%);
+    }
+    &.OzLotto {
+        background: $lotttery-OzLotto-b-color;
+        background: radial-gradient(circle, $lotttery-OzLotto-b-color 0%, $lotttery-OzLotto-e-color 100%);
+    }
+    &.NewYorkLotto {
+        background: $lotttery-NewYorkLotto-b-color;
+        background: radial-gradient(circle, $lotttery-NewYorkLotto-b-color 0%, $lotttery-NewYorkLotto-e-color 100%);
+    }
+    &.MegaSena {
+        background: $lotttery-MegaSena-b-color;
+        background: radial-gradient(circle, $lotttery-MegaSena-b-color 0%, $lotttery-MegaSena-e-color 100%);
+    }
+    &.Lotto649 {
+        background: $lotttery-Lotto649-b-color;
+        background: radial-gradient(circle, $lotttery-Lotto649-b-color 0%, $lotttery-Lotto649-e-color 100%);
+    }
+    &.IrishLotto {
+        background: $lotttery-IrishLotto-b-color;
+        background: radial-gradient(circle, $lotttery-IrishLotto-b-color 0%, $lotttery-IrishLotto-e-color 100%);
+    }
+    &.HotLotto {
+        background: $lotttery-HotLotto-b-color;
+        background: radial-gradient(circle, $lotttery-HotLotto-b-color 0%, $lotttery-HotLotto-e-color 100%);
+    }
+    &.HoosierLotto {
+        background: $lotttery-HoosierLotto-b-color;
+        background: radial-gradient(circle, $lotttery-HoosierLotto-b-color 0%, $lotttery-HoosierLotto-e-color 100%);
+    }
+    &.FrenchLotto {
+        background: $lotttery-FrenchLotto-b-color;
+        background: radial-gradient(circle, $lotttery-FrenchLotto-b-color 0%, $lotttery-FrenchLotto-e-color 100%);
+    }
+    &.FloridaLotto {
+        background: $lotttery-FloridaLotto-b-color;
+        background: radial-gradient(circle, $lotttery-FloridaLotto-b-color 0%, $lotttery-FloridaLotto-e-color 100%);
+    }
+    &.EuroMillions {
+        background: $lotttery-EuroMillions-b-color;
+        background: radial-gradient(circle, $lotttery-EuroMillions-b-color 0%, $lotttery-EuroMillions-e-color 100%);
+    }
+    &.EuroJackpot {
+        background: $lotttery-EuroJackpot-b-color;
+        background: radial-gradient(circle, $lotttery-EuroJackpot-b-color 0%, $lotttery-EuroJackpot-e-color 100%);
+    }
+    &.CaliforniaSuperLotto {
+        background: $lotttery-CaliforniaSuperLotto-b-color;
+        background: radial-gradient(circle, $lotttery-CaliforniaSuperLotto-b-color 0%, $lotttery-CaliforniaSuperLotto-e-color 100%);
+    }
+    &.PowerBall {
+        background: $lotttery-PowerBall-b-color;
+        background: radial-gradient(circle, $lotttery-PowerBall-b-color 0%, $lotttery-PowerBall-e-color 100%);
+    }
+    &.ElGordo {
+        background: $lotttery-ElGordo-b-color;
+        background: radial-gradient(circle, $lotttery-ElGordo-b-color 0%, $lotttery-ElGordo-e-color 100%);
+    }
+    &.EuroMillionsUK {
+        background: $lotttery-EuroMillionsUK-b-color;
+        background: radial-gradient(circle, $lotttery-EuroMillionsUK-b-color 0%, $lotttery-EuroMillionsUK-e-color 100%);
+    }
+    &.MegaMillions {
+        background: $lotttery-MegaMillions-b-color;
+        background: radial-gradient(circle, $lotttery-MegaMillions-b-color 0%, $lotttery-MegaMillions-e-color 100%);
+    }
+    &.PowerballAustralia {
+        background: $lotttery-PowerballAustralia-b-color;
+        background: radial-gradient(circle, $lotttery-PowerballAustralia-b-color 0%, $lotttery-PowerballAustralia-e-color 100%);
+    }
+    &.LaPrimitiva {
+        background: $lotttery-LaPrimitiva-b-color;
+        background: radial-gradient(circle, $lotttery-LaPrimitiva-b-color 0%, $lotttery-LaPrimitiva-e-color 100%);
+    }
+    &.LoteriaNacional {
+        background: $lotttery-LoteriaNacional-b-color;
+        background: radial-gradient(circle, $lotttery-LoteriaNacional-b-color 0%, $lotttery-LoteriaNacional-e-color 100%);
+    }
+    &.BonoLotto {
+        background: $lotttery-BonoLotto-b-color;
+        background: radial-gradient(circle, $lotttery-BonoLotto-b-color 0%, $lotttery-BonoLotto-e-color 100%);
+    }
+    &.Tatts {
+        background: $lotttery-Tatts-b-color;
+        background: radial-gradient(circle, $lotttery-Tatts-b-color 1.64%, $lotttery-Tatts-e-color 100%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*all lottery draw cards radiel gradient ends*/
+
+
+/*Lottery solid Background color*/
+
+@mixin allSolidLotteryBackgroundColor {
+    &.UKThunderBall {
+        background-color: $solid-UKThunderBall-color
+    }
+    &.UKLotto {
+        background-color: $solid-UKLotto-color
+    }
+    &.SuperEnaLotto {
+        background-color: $solid-SuperEnaLotto-color
+    }
+    &.OzLotto {
+        background-color: $solid-OzLotto-color
+    }
+    &.NewYorkLotto {
+        background-color: $solid-NewYorkLotto-color
+    }
+    &.MegaSena {
+        background-color: $solid-MegaSena-color
+    }
+    &.Lotto649 {
+        background-color: $solid-Lotto649-color
+    }
+    &.IrishLotto {
+        background-color: $solid-IrishLotto-color
+    }
+    &.HotLotto {
+        background-color: $solid-HotLotto-color
+    }
+    &.HoosierLotto {
+        background-color: $solid-HoosierLotto-color
+    }
+    &.FrenchLotto {
+        background-color: $solid-FrenchLotto-color
+    }
+    &.FloridaLotto {
+        background-color: $solid-FloridaLotto-color
+    }
+    &.EuroMillions {
+        background-color: $solid-EuroMillions-color
+    }
+    &.EuroJackpot {
+        background-color: $solid-EuroJackpot-color
+    }
+    &.CaliforniaSuperLotto {
+        background-color: $solid-CaliforniaSuperLotto-color
+    }
+    &.PowerBall {
+        background-color: $solid-PowerBall-color
+    }
+    &.ElGordo {
+        background-color: $solid-ElGordo-color
+    }
+    &.EuroMillionsUK {
+        background-color: $solid-EuroMillionsUK-color
+    }
+    &.MegaMillions {
+        background-color: $solid-MegaMillions-color
+    }
+    &.PowerballAustralia {
+        background-color: $solid-PowerballAustralia-color
+    }
+    &.LaPrimitiva {
+        background-color: $solid-LaPrimitiva-color
+    }
+    &.LoteriaNacional {
+        background-color: $solid-LoteriaNacional-color
+    }
+    &.BonoLotto {
+        background-color: $solid-BonoLotto-color
+    }
+    &.Tatts {
+        background-color: $solid-Tatts-color
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*all lottery draw cards*/
+
+@mixin allLotteryDrawDetailsCards {
+    .ld-card-grid {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0 -10px;
+        @media(max-width: 767px) {
+            margin: 0;
+            position: relative;
+        }
+        p,
+        h1 {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .ld-card-col {
+            display: flex;
+            margin-bottom: 15px;
+            .small-screen {
+                display: none;
+                @include loaderPlaceholderAnimation;
+            }
+            @media(min-width: 1199px) {
+                width: 33.3333%;
+                padding: 0 10px;
+            }
+
+            @media screen and (min-width: 768px) and (max-width: 1199px) {
+                width: 50%;
+                padding: 0 10px;
+            }
+
+
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                width: 100%;
+                padding: 0;
+                border-radius: $card-border-radius;
+                box-shadow: $card-box-shadow;
+                background-color: $card-background-color;
+
+                .price-details {
+                    @include loaderPlaceholderAnimation;
+                    &.animated-background {
+                        height: 30px;
+                        max-width: 70%;
+                        margin: 6px auto 0 auto;
+                    }
+                }
+                .header {
+                    position: relative;
+                    @include loaderPlaceholderAnimation;
+                    /*          display: flex;
+                    align-items: center;
+                    justify-content: space-between;*/
+                    display: block;
+                    cursor: pointer;
+                    &.animated-background {
+                        height: 70px;
+                    }
+                    .lottery-name {
+                        color: $white;
+                        font-size: 18px;
+                        font-family: $font-primary-500;
+                        float: right;
+                        padding: 10px 0;
+                        vertical-align: middle;
+                    }
+                    .lottery_1x {
+                        background-position: left center;
+                        margin: 0;
+                        float: left;
+                    }
+                    padding:10px 15px 24px;
+                    background-size: 100% 100% !important;
+                    @include allLotteryBackgroundImage;
+
+                    &:after,
+                        &:before {
+                        box-sizing: border-box;
+                        content: " ";
+                        position: absolute;
+                        top: 0;
+                        display: block;
+                        width: 50%;
+                        height: 100%;
+                        border: 15px solid transparent;
+                        border-bottom-color: $white;
+
+                        right: 0;
+                        border-left: 15px solid transparent;
+                        border-right: 0;
+                    }
+                    &:before {
+                        left: 0;
+                        border-right: 15px solid transparent;
+                        border-left: 0;
+                    }
+                }
+                .card-body {
+                    .prize-money {
+                        padding: 15px;
+                        text-align: center;
+                        border-bottom: 1px solid $border-colors;
+
+                        h1 {
+                            font-size: 32px;
+                            font-family: $font-secondary-Bold;
+                            text-transform: uppercase;
+                            line-height: 1;
+
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                        .next-draw {
+                            color: $brand-ld;
+                            font-size: 14px;
+                            font-family: $font-primary-500;
+                            line-height: 1;
+                            @include loaderPlaceholderAnimation;
+                            &.animated-background {
+                                width: 100px;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+
+                    .card-footer {
+                        padding: 10px 15px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        button {
+                            font-size: 15px;
+                            padding: 14px 10px;
+                            font-family: $font-primary-700;
+                            border-radius: 4px;
+                            border: 0px;
+                            line-height: 12px;
+                            max-width: 44%;
+                            min-width: 95px;
+                            display: inline-block;
+                            text-align: center;
+                            @include loaderPlaceholderAnimation;
+                            &.animated-background {
+                                width: 100px;
+                                height: 36px;
+                            }
+                        }
+                        .timeTicker {
+                            @include loaderPlaceholderAnimation;
+                            &.animated-background {
+                                width: 200px;
+                                height: 20px;
+                            }
+                        }
+                    }
+                }
+                /*this for small card template*/
+                &.small-card {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    .small-screen {
+                        display: block;
+                    }
+                    .big-screen {
+                        display: none;
+                    }
+                    .header {
+                        width: calc((45% + 10px) - 10px);
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 10px 23px 10px 10px;
+                        text-align: center;
+                        margin: 5px;
+                        border-radius: 4px;
+                        @include allLotteryCardsRadielGradient;
+
+
+                        &:after,
+                            &:before {
+                            position: absolute;
+                            right: 0;
+                            border-right: 13px solid $white;
+                            display: block;
+                            content: " ";
+                            height: 100%;
+                            box-sizing: border-box;
+                        }
+
+                        &:before {
+                            left: initial;
+                            border-top: 13px solid transparent;
+                            top: 50%;
+                        }
+
+                        &:after {
+                            border-bottom: 13px solid transparent;
+                            top: -50%;
+                        }
+                        .lottery_1x {
+                            margin-bottom: 10px;
+                            background-position: center center;
+                        }
+                        .prize-money {
+                            color: $white;
+                            .next-draw {
+                                font-size: 12px;
+                                font-family: $font-primary-500;
+                                padding-bottom: 2px;
+                            }
+                            h1 {
+                                font-size: 13px;
+                                font-family: $font-secondary-Bold;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                    .card-body {
+                        width: calc(55% - 10px);
+                        padding: 10px 15px 10px 10px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        .card-footer {
+                            padding: 0;
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                            align-items: flex-end;
+                            color: $brand-ld;
+                            align-self: stretch;
+
+                            .lottery-name {
+                                font-size: 14px;
+                                font-family: $font-primary-500;
+                            }
+                            .timeTicker {
+                                width: 100%;
+                                display:flex;
+                                align-items:flex-start;
+                                flex-direction: row;
+     align-items: flex-start;
+     flex-flow: row wrap;
+                                //margin-bottom: 13px;
+                                i {
+                                    font-size: 12px;
+                                    margin-right: 6px;
+                                }
+                                .time {
+                                    span {
+                                        font-size: 14px;
+                                        font-weight: normal;
+                                        line-height: 1;
+                                        font-family: $font-secondary-Medium;
+                                    }
+
+                                    .time-num-holder {
+                                        line-height: 1;
+                                        display: inline-flex;
+                                        align-items: center;
+                                        overflow: hidden;
+                                        span {
+                                            letter-spacing: -0.85px;
+                                            font-variant-numeric: tabular-nums;
+                                        }
+                                    }
+                                }
+                            }
+                            button {
+                                max-width: 100%;
+                            }
+                        }
+                        .prize-money {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            @media(max-width:767px) {
+                width: 100%;
+                .small-screen {
+                    display: block;
+                    @include loaderPlaceholderAnimation;
+                }
+                .big-screen {
+                    display: none;
+                }
+
+                .card {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    .small-screen {
+                        display: block;
+                        @include loaderPlaceholderAnimation;
+                    }
+                    .big-screen {
+                        display: none;
+                    }
+                    .header {
+                        width: calc((45% + 10px) - 10px);
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 10px 23px 10px 10px;
+                        text-align: center;
+                        margin: 5px;
+                        border-radius: 4px;
+                        border-right: 1px solid $white;
+                        @include allLotteryCardsRadielGradient;
+                        &.animated-background {
+                            height: 100px;
+                        }
+
+                        &:after,
+                            &:before {
+                            position: absolute;
+                            right: 0;
+                            border-right: 13px solid $white;
+                            display: block;
+                            content: " ";
+                            height: 100%;
+                            box-sizing: border-box;
+                        }
+
+                        &:before {
+                            left: initial;
+                            border-top: 13px solid transparent;
+                            top: 50%;
+                        }
+
+                        &:after {
+                            border-bottom: 13px solid transparent;
+                            top: -50%;
+                        }
+                        .lottery_1x {
+                            margin-bottom: 10px;
+                            background-position: center center;
+                            width: 30vw;
+                            height: 5vh;
+                            min-width: 100px;
+                            min-height: 40px;
+                        }
+                        .prize-money {
+                            color: $white;
+                            .next-draw {
+                                /*font-size: 12px;*/
+                                font-size: 2.85vw;
+                                font-family: $font-primary-500;
+                                /*   padding-bottom: 2px;*/
+                            }
+                            h1 {
+                                /*font-size: 13px;*/
+                                font-size: 4vw;
+                                font-family: $font-secondary-Bold;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                text-transform: uppercase;
+                                &.notPublished {
+                                    font-size: 3.15vw;
+                                }
+                            }
+                        }
+                    }
+                    .card-body {
+
+                        .card-footer {
+
+
+                            .lottery-name {
+                                font-size: 14px;
+                                font-family: $font-primary-500;
+                            }
+                            .timeTicker {
+                                display: inline-flex;
+                                align-items: center;
+                                &.animated-background {
+                                    width: 100px;
+                                    height: 16px;
+                                }
+                                @media(max-width: 320px) {
+                                    margin-bottom: 10px;
+                                }
+
+                                i {
+                                    font-size: 12px;
+                                    margin-right: 6px;
+                                }
+                                .time {
+                                    span {
+                                        font-size: 14px;
+                                        @media(max-width: 320px) {
+                                            font-size: 13px;
+                                        }
+
+                                        font-weight: normal;
+                                        line-height: 1;
+                                        font-family: $font-secondary-Medium;
+                                    }
+
+                                    .time-num-holder {
+                                        line-height: 1;
+                                        display: inline-flex;
+                                        align-items: center;
+                                        overflow: hidden;
+                                        span {
+                                            letter-spacing: -0.85px;
+                                            font-variant-numeric: tabular-nums;
+                                        }
+                                    }
+                                }
+                            }
+                            button {
+                                max-width: 100%;
+                            }
+                        }
+                        .prize-money {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@mixin loaderPlaceholderAnimation {
+    &.animated-background {
+        -webkit-animation-duration: 1.5s;
+        animation-duration: 1.5s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-name: placeHolderShimmer;
+        animation-name: placeHolderShimmer;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        background: #f6f7f8;
+        background: #eeeeee;
+        background: -webkit-gradient(linear, left top, right top, color-stop(8%, #eeeeee), color-stop(18%, #dddddd), color-stop(33%, #eeeeee));
+        background: -webkit-linear-gradient(left, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+        background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+        -webkit-background-size: 800px 104px !important;
+        background-size: 800px 104px !important;
+        position: relative;
+        min-height: 10px;
+        min-width: 40px;
+        margin-bottom: 2px;
+    }
+    @-webkit-keyframes placeHolderShimmer {
+        0% {
+            background-position: -468px 0
+        }
+        100% {
+            background-position: 468px 0
+        }
+    }
+
+    @keyframes placeHolderShimmer {
+        0% {
+            background-position: -468px 0
+        }
+        100% {
+            background-position: 468px 0
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+/*lotteryTypeBgGradientColors*/
+
+@mixin homeBannerLotteryGradientColors {
+    &.UKThunderBall {
+        background: $lotttery-UKThunderBall-b-color;
+        background: linear-gradient(315deg, $lotttery-UKThunderBall-b-color 0%, $lotttery-UKThunderBall-e-color 100%);
+    }
+    &.UKLotto {
+        background: $lotttery-UKLotto-b-color;
+        background: linear-gradient(315deg, $lotttery-UKLotto-b-color 0%, $lotttery-UKLotto-e-color 100%);
+    }
+    &.SuperEnaLotto {
+        background: $lotttery-SuperEnaLotto-b-color;
+        background: linear-gradient(315deg, $lotttery-SuperEnaLotto-b-color 0%, $lotttery-SuperEnaLotto-e-color 100%);
+    }
+    &.OzLotto {
+        background: #27A687;
+        background: linear-gradient(139.68deg, #27A687 0%, #55C59E 100%);
+    }
+    &.NewYorkLotto {
+        background: $lotttery-NewYorkLotto-b-color;
+        background: linear-gradient(315deg, $lotttery-NewYorkLotto-b-color 0%, $lotttery-NewYorkLotto-e-color 100%);
+    }
+    &.MegaSena {
+        background: $lotttery-MegaSena-b-color;
+        background: linear-gradient(315deg, $lotttery-MegaSena-b-color 0%, $lotttery-MegaSena-e-color 100%);
+    }
+    &.Lotto649 {
+        background: $lotttery-Lotto649-b-color;
+        background: linear-gradient(315deg, $lotttery-Lotto649-b-color 0%, $lotttery-Lotto649-e-color 100%);
+    }
+    &.IrishLotto {
+        background: $lotttery-IrishLotto-b-color;
+        background: linear-gradient(315deg, $lotttery-IrishLotto-b-color 0%, $lotttery-IrishLotto-e-color 100%);
+    }
+    &.HotLotto {
+        background: $lotttery-HotLotto-b-color;
+        background: linear-gradient(315deg, $lotttery-HotLotto-b-color 0%, $lotttery-HotLotto-e-color 100%);
+    }
+    &.HoosierLotto {
+        background: $lotttery-HoosierLotto-b-color;
+        background: linear-gradient(315deg, $lotttery-HoosierLotto-b-color 0%, $lotttery-HoosierLotto-e-color 100%);
+    }
+    &.FrenchLotto {
+        background: $lotttery-FrenchLotto-b-color;
+        background: linear-gradient(315deg, $lotttery-FrenchLotto-b-color 0%, $lotttery-FrenchLotto-e-color 100%);
+    }
+    &.FloridaLotto {
+        background: $lotttery-FloridaLotto-b-color;
+        background: linear-gradient(315deg, $lotttery-FloridaLotto-b-color 0%, $lotttery-FloridaLotto-e-color 100%);
+    }
+    &.EuroMillions {
+        background: $lotttery-EuroMillions-b-color;
+        background: linear-gradient(315deg, $lotttery-EuroMillions-b-color 0%, $lotttery-EuroMillions-e-color 100%);
+    }
+    &.EuroJackpot {
+        background: #f7c554;
+        background: linear-gradient(139.68deg, #f7c554 0%, #fde884 100%);
+    }
+    &.CaliforniaSuperLotto {
+        background: $lotttery-CaliforniaSuperLotto-b-color;
+        background: linear-gradient(315deg, $lotttery-CaliforniaSuperLotto-b-color 0%, $lotttery-CaliforniaSuperLotto-e-color 100%);
+    }
+    &.PowerBall {
+        background: #5E82EE;
+        background: linear-gradient(49.55deg, #83DEFF 0%, #C9B1FF 100%);
+    }
+    &.ElGordo {
+        background: $lotttery-ElGordo-b-color;
+        background: linear-gradient(315deg, $lotttery-ElGordo-b-color 0%, $lotttery-ElGordo-e-color 100%);
+    }
+    &.EuroMillionsUK {
+        background: $lotttery-EuroMillionsUK-b-color;
+        background: linear-gradient(315deg, $lotttery-EuroMillionsUK-b-color 0%, $lotttery-EuroMillionsUK-e-color 100%);
+    }
+    &.MegaMillions {
+        background: #5E82EE;
+        background: linear-gradient(321.56deg, #5E82EE 0%, #234393 100%);
+    }
+    &.PowerballAustralia {
+        background: $lotttery-PowerballAustralia-b-color;
+        background: linear-gradient(315deg, $lotttery-PowerballAustralia-b-color 0%, $lotttery-PowerballAustralia-e-color 100%);
+    }
+    &.LaPrimitiva {
+        background: $lotttery-LaPrimitiva-b-color;
+        background: linear-gradient(315deg, $lotttery-LaPrimitiva-b-color 0%, $lotttery-LaPrimitiva-e-color 100%);
+    }
+    &.LoteriaNacional {
+        background: $lotttery-LoteriaNacional-b-color;
+        background: linear-gradient(315deg, $lotttery-LoteriaNacional-b-color 0%, $lotttery-LoteriaNacional-e-color 100%);
+    }
+    &.BonoLotto {
+        background: $lotttery-BonoLotto-b-color;
+        background: linear-gradient(315deg, $lotttery-BonoLotto-b-color 0%, $lotttery-BonoLotto-e-color 100%);
+    }
+    &.Tatts {
+        background: $lotttery-Tatts-b-color;
+        background: linear-gradient(315deg, $lotttery-Tatts-b-color 0%, $lotttery-Tatts-e-color 100%);
+    }
+    &.default {
+        background: white;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*infoBox*/
+
+@mixin infoBox {
+    .infoBox {
+        border-radius: 4px;
+        box-sizing: border-box;
+        padding: 10px;
+        border: 1px solid;
+        width: auto;
+        @media screen and (max-width: 992px) {
+            width: 100%;
+        }
+
+
+        .icon {
+            i {
+                font-size: 32px;
+            }
+            svg {
+                width: 40px;
+            }
+            margin-right:15px;
+        }
+
+        p,
+        h6 {
+            font-size: 12px!important;
+            margin: 0!important;
+        }
+        p {
+            font-family: $font-primary-500;
+            margin: 0!important;
+        }
+        h6 {
+            padding-bottom: 2px;
+            font-family: $font-secondary-SemiBold;
+        }
+
+        &.aquaBlue {
+            border-color: $infoBoxBgColor-aquaBlue;
+            background-color: $infoBoxBorderColor-aquaBlue;
+        }
+        &.honey {
+            border-color: $infoBoxBorderColor-honey;
+            background-color: $infoBoxBgColor-honey;
+            color: $infoBoxTextColor-honey!important;
+            .icon {
+                transform: rotateZ(180deg);
+                i {
+                    color: $infoBoxTextColor-honey;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Pink header with arrow for all*/
+
+@mixin pinkSectionHeader {
+    .close-modal {
+        text-align: right;
+        top: 10px;
+        right: 10px;
+        position: absolute;
+        z-index: 2;
+    }
+    .skew-header {
+        position: relative;
+        width: 58%;
+        .header-bg {
+            background: $pink-gradient-48;
+            padding-bottom: 10px;
+
+            min-width: 40%;
+            max-width: 500px;
+            position: relative;
+            overflow: hidden;
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                right: -60px;
+                width: 60px;
+                height: 100%;
+                transform: skew(-30deg);
+                transform-origin: top right;
+                background: $white;
+                /*
+                    border-left: transparent;
+         border-right: 45px solid $white;
+              border-top: 16vw solid transparent;*/
+            }
+        }
+
+        .text-container {
+            display: flex;
+            align-items: center;
+            padding: 21.5px 20px;
+            max-width: 80%;
+            color: $white;
+
+            .text {
+                width: 100%;
+                h1,
+                p {
+                    margin: 0;
+                    display: block;
+                    display: -webkit-box;
+                    line-height: 1.1;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 98%;
+                }
+                h1 {
+                    font-family: $main-primary-ef-reg;
+                    font-size: 1.25rem;
+                    margin: 0;
+                    max-height: 2.90rem;
+                }
+                p {
+                    font-size: 0.9rem;
+                    font-family: $font-secondary;
+                    max-height: 1.875rem;
+                    padding-bottom: 1px;
+                }
+            }
+            .icon {
+                margin-right: 0.9375rem;
+                i {
+                    font-size: 2rem;
+                }
+            }
+        }
+        .down-arrow {
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+            height: 15px;
+            width: 100%;
+            overflow: hidden;
+            &:after,
+                &:before {
+                position: absolute;
+                box-sizing: border-box;
+                content: " ";
+                position: absolute;
+                display: block;
+                width: 50%;
+                height: 100%;
+                bottom: 0;
+                border-bottom: 13px solid $white;
+            }
+
+            &:before {
+                left: 0;
+                width: 75px;
+                border-right: 14px solid transparent;
+            }
+
+            &:after {
+                border-left: 14px solid transparent;
+                width: calc(100% - 75px);
+                left: 75px;
+            }
+        }
+
+        @media screen and (max-width:992px) {
+            width: 100%;
+            &:after {
+                display: none;
+            }
+            .header-bg,
+            .text-container {
+                max-width: 100%;
+            }
+            .header-bg {
+                &:after {
+                    display: none;
+                }
+            }
+            .text-container {
+                padding: 24px 20px;
+                .text {
+                    h1 {
+                        font-size: 1.0625rem;
+                        max-height: 2.375rem;
+                    }
+                    p {
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+            .down-arrow {
+                &:after {
+                    left: 50%;
+                    width: 100%;
+                }
+                &:before {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+
+.curve-bg-shape {
+    position: absolute;
+    width: 100%;
+    bottom: -4px;
+    left: 0;
+}

@@ -1,0 +1,760 @@
+<header class="device-comp device-header myHeaderGame sticky" *ngIf="isGamePage" [ngClass]="{'loggedInClass': isLoggedIn, 'show':isHeaderAollowed(),'hide':!isHeaderAollowed()}">
+        <div class="container">
+        <div class="logo-patch logo-patch-my-game" *ngIf="isLogoAllowed()">
+            <h5 class="home text" id="text">
+                <a href="javascript:void(0);" routerLink="/">
+                    <img src="/assets/img/Bella_Bingo_Logo.svg" alt="Bingo69" title="Bingo69" />
+                </a>
+            </h5>
+        </div>
+
+        <div class="logo-patch logo-patch-lang">
+            <h5 class="home text" id="text">
+                <h1 class="icon brand-ld language-selector">
+                    <div id="dd" class="wrapper-dropdown-3 language-box" tabindex="1" [ngClass]="selectLang == true ? 'active' : '' " (click)="changeLanguage(selectLang)">
+                         <span class="selected-language-h"><span class="lang-icon-h">EN</span><span class="langg-text-h"><span>English</span></span> </span>
+                    </div>
+                </h1>
+                <ul class="dropdown">
+                    <li [ngClass]="activeLang == 'EN' ? 'active' : '' " (click)="getActiveLang('EN');" id="EN"><a href="javascript:void(0);"><span class="lang-icon">EN</span><span class="langg-text"><span>English</span></span></a></li>
+                    <li [ngClass]="activeLang == 'DE' ? 'active' : '' " (click)="getActiveLang('DE');" id="DE"><a href="javascript:void(0);"><span class="lang-icon">DE</span><span class="langg-text"><span>Deutsche</span></span></a></li>
+                    <li [ngClass]="activeLang == 'NE' ? 'active' : '' " (click)="getActiveLang('NE');" id="NE"><a href="javascript:void(0);"><span class="lang-icon">NE</span><span class="langg-text"><span>Nederlands</span></span></a></li>
+                    <li [ngClass]="activeLang == 'SV' ? 'active' : '' " (click)="getActiveLang('SV');" id="SV"><a href="javascript:void(0);"><span class="lang-icon">SV</span><span class="langg-text"><span>Svenska</span></span></a></li>
+                    <li [ngClass]="activeLang == 'DN' ? 'active' : '' " (click)="getActiveLang('DN');" id="DN"><a href="javascript:void(0);"><span class="lang-icon">DN</span><span class="langg-text"><span>Dansk</span></span></a></li>
+                </ul>
+            </h5>
+        </div>
+
+        <ul class="gameLinksUl">
+            <li class="arrow_box toggle-games" [ngClass]="!getGametypeStatus() || gameType === 'freegames' ? '' : 'hidden-toggle'">
+                <h1 class="icon">
+                    <span (click)="switchButtonToggle('freegames')" [ngClass]="{'active' : getGametypeStatus() == false}">Practice</span>
+                    <label class="switch">
+                        <span class="slider" id="practiceRealToggle" (click)="switchButtonToggle('')"></span>
+                    </label>
+                    <span (click)="switchButtonToggle('realgames')" [ngClass]="{'active' : getGametypeStatus() == true}">Real Money </span>
+                </h1>
+            </li>
+            <li class="game-time-details">
+                <a href="javascript:void(0);">
+                    <h1 class="icon">
+                        <span id="timeDetails"></span>
+                    </h1>
+                </a>
+            </li>
+            <li *ngIf="!isLoggedIn" (click)="openPageOrModal('register','registerModal')">
+                <a href="javascript:void(0)">
+                    <h1 class="icon">
+                        <svg width="24px" height="24px" fill="#fff" class="tab_hover" viewBox="0 0 239 239">
+                        <use xlink:href="#player-icon"></use>
+                        </svg>
+
+                        <span>{{'signup' | translate}}</span>
+                    </h1>
+                </a>
+            </li>
+            <li *ngIf="isLoggedIn" class="balane-game">
+                <a href="javascript:void(0);">
+                    <h1 class="icon">
+                        <svg width="24px" height="24px" fill="#7e69af" class="tab_hover" viewBox="0 0 239 239">
+                        <use xlink:href="#player-icon"></use>
+                        </svg>
+                         <span>Balance: {{currency}} {{ cash | number:'1.2-2'}}</span>
+                    </h1>
+                </a>
+            </li>
+            <li *ngIf="isLoggedIn" (click)="logout()">
+                <a href="javascript:void(0);">
+                    <h1 class="icon">
+                        <svg width="23px" height="23px" fill="#7e69af" class="tab_hover" viewBox="0 0 155 155">
+                        <use xlink:href="#logout-icon"></use>
+                        </svg>
+
+                        <span>{{'logout' | translate}}</span>
+                    </h1>
+                </a>
+            </li>
+            <li *ngIf="!isLoggedIn" (click)="openModal('loginModal')">
+                <a href="javascript:void(0);">
+                    <h1 class="icon">
+                        <svg width="23px" height="23px" fill="#7e69af" class="tab_hover" viewBox="0 0 155 155">
+                        <use xlink:href="#login-icon"></use>
+                        </svg>
+                        <span>{{'login' | translate}}</span>
+                    </h1>
+                </a>
+            </li>
+        </ul>
+        <div class="fullScreen" (click)="toggleFullScreen()">
+            <img src="/assets/img/fullscreen.svg" />
+        </div>
+        <div class="closeWindow" (click)="windowClose()">
+            <i class="icon-close"></i>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</header>
+<div class="mobile-comp mobile-nav mobile-header-nav"  [ngClass]="isHeaderAollowed() && isGamePage == false ? '' :'hide'">
+     <!-- Menu Navigation -->
+     <div class="mobile-menu-items">
+        <div class="pull-right openNav-left">
+            <a href="javascript:void(0);" class="close-mobile-nav">
+                <i class="icon-close"></i>
+            </a>
+        </div>
+
+        <div class="marginT10 ac-container">
+            <input id="ac-12" name="accordion-1" type="checkbox" class="mobile-comp" />
+            <label for="ac-12" class="nav-menu-holder" (click)="mobileRouting('left','/')">
+                   <i class="nav-icon">
+                    <svg class="tab_hover" fill="#fff" height="32px" viewBox="-20 -42 485 455" width="33px">
+                    <use xlink:href="#Home-icon"></use>
+                    </svg>
+                </i>
+                <span class="nav-text">Home</span>
+            </label>
+            <input id="ac-6" name="accordion-1" type="checkbox" class="mobile-comp" />
+            <label for="ac-6" class="nav-menu-holder" (click)="mobileRouting('left','/promotion')">
+                   <i class="nav-icon">
+                    <svg class="tab_hover" fill="#fff" height="32px" viewBox="0 0 468 478" width="32px">
+                    <use xlink:href="#bonus-icon"></use>
+                    </svg>
+                </i>
+                <span class="nav-text">Promotion</span>
+            </label>
+            <input id="ac-6" name="accordion-1" type="checkbox" class="mobile-comp" />
+            <label for="ac-6" class="nav-menu-holder" (click)="mobileRouting('left','/bingo')">
+                   <i class="nav-icon">
+                    <svg class="tab_hover" fill="#fff" height="35px" viewBox="0 0 60 50" width="33px">
+                    <use xlink:href="#lottery-icon"></use>
+                    </svg>
+                </i>
+                <span class="nav-text">Bingo</span>
+            </label>
+            <input id="ac-8" name="accordion-1" type="checkbox" class="mobile-comp" />
+            <label for="ac-8" class="nav-menu-holder" (click)="mobileRouting('left','/casino')">
+                   <i class="nav-icon">
+                    <svg class="tab_hover" fill="#fff" height="32px" viewBox="0 0 50 50" width="33px">
+                    <use xlink:href="#casino-icon"></use>
+                    </svg>
+                </i>
+                <span class="nav-text">Casino</span>
+            </label>
+            <input id="ac-9" name="accordion-1" type="checkbox" class="mobile-comp" />
+            <label for="ac-9" class="nav-menu-holder" (click)="mobileRouting('left','/scratch')">
+                   <i class="nav-icon">
+                    <svg class="tab_hover" fill="#fff" height="32px" viewBox="0 0 60 50" width="32px">
+                    <use xlink:href="#scratch-icon-menu"></use>
+                    </svg>
+                </i>
+                <span class="nav-text">Scratch</span>
+            </label>
+            <input id="ac-10" name="accordion-1" type="checkbox" class="mobile-comp" />
+            <label for="ac-10" class="nav-menu-holder" (click)="mobileRouting('left','/contact-us/none')">
+                   <i class="nav-icon">
+                    <svg class="tab_hover" fill="#fff" height="32px" viewBox="0 0 85 56" width="32px">
+                    <use xlink:href="#customer-service-icon"></use>
+                    </svg>
+                </i>
+
+                <span class="nav-text">Customer Support</span>
+            </label>
+        </div>
+        <div class="nav-inner-content">
+            <div class="logo-content">
+                <div *ngIf="!isLoggedIn">
+
+                    <button class="btn btn-primary" (click)="mobileRouting('left','/register')">
+                            Sign Up
+                </button>
+            </div>
+            <button class="marginB20 btn btn-primary" *ngIf="isLoggedIn" (click)="mobileRouting('left','/payment/deposit')">
+                    Quick Deposit
+        </button>
+    </div>
+</div>
+</div>
+<div class="mobile-profile-items">
+
+    <div class="nav-inner-content">
+        <div class="user-details" *ngIf="isLoggedIn">
+            <h3>{{profileData ? profileData.firstName : ''}} {{profileData ? profileData.lastName : ''}}</h3>
+            <p>Player Id: 123456789456132</p>
+        </div>
+        <div class="user-login" *ngIf="!isLoggedIn">
+            <svg class="Bingo69" fill="#fff" height="74px" viewBox="0 0 425 425" width="100px">
+            <use xlink:href="#Bingo69"></use>
+            </svg>
+            <h3>Login to My Account</h3>
+            <app-login-form [isLoginComplete]="isLoggedIn" (isLoginCompleteNotify)="loginCompleted($event)" [callingFrom]="'header-mob'"></app-login-form>
+        </div>
+        <div class="openNav-right">
+            <a href="javascript:void(0);" class="close-mobile-nav">
+                <i class="icon-close"></i>
+            </a>
+        </div>
+    </div>
+    <!--    <div class="ac-container" [ngClass]='isLoggedIn ? "no-top-line-class" : "top-line-class"'>
+            <input id="ac-13" name="accordion-1" type="checkbox" class="mobile-comp" />
+            <label for="ac-13" class="nav-menu-holder" (click)="mobileRouting('right','checkout')">
+                <i class="nav-icon icon-cart">
+                    <span class="cart-list" *ngIf="getCartItemsCount() > 0">{{getCartItemsCount()}}</span>
+                </i>
+                <span class="nav-text">{{'cart' | translate}}</span>
+            </label>
+        </div>-->
+    <div class="ac-container" *ngIf="isLoggedIn">
+        <!--        <input id="ac-16" name="accordion-1" type="checkbox" class="mobile-comp" />
+                <label for="ac-16" class="nav-menu-holder" (click)="mobileRouting('right','/myresults')">
+                       <i class="nav-icon icon-results"></i>
+                    <span class="nav-text">My Lotto Results</span>
+                </label>-->
+        <input id="ac-14" name="accordion-1" type="checkbox" class="mobile-comp" />
+        <label for="ac-14" class="nav-menu-holder" (click)="mobileRouting('right','/myaccount')">
+               <i class="nav-icon icon-settings "></i>
+            <span class="nav-text">My Account</span>
+        </label>
+        <input id="ac-18" name="accordion-1" type="checkbox" class="mobile-comp" />
+        <label for="ac-18" class="nav-menu-holder" (click)="mobileRouting('right','/myaccount/bet-history')">
+               <i class="nav-icon icon-date"></i>
+            <span class="nav-text">Bet History</span>
+        </label>
+        <input id="ac-15" name="accordion-1" type="checkbox" class="mobile-comp" />
+        <label for="ac-15" class="nav-menu-holder" (click)="mobileRouting('right','/myaccount/transactions')">
+               <i class="nav-icon icon-list-view"></i>
+            <span class="nav-text">My Transactions</span>
+        </label>
+        <input id="ac-17" name="accordion-1" type="checkbox" class="mobile-comp" />
+        <label for="ac-17" class="nav-menu-holder" (click)="mobileRouting('right','/myaccount/cashier')">
+               <i class="nav-icon icon-bank"></i>
+            <span class="nav-text">Cashier</span>
+        </label>
+        <!-- <input id="ac-17" name="accordion-1" type="checkbox" class="mobile-comp" />
+        <label for="ac-17" class="nav-menu-holder" (click)="mobileRouting('right','/myaccount/bonus')">
+               <i class="nav-icon">
+                <svg class="tab_hover" fill="#fff" height="28px" viewBox="0 0 770 770" width="28px">
+                <use xlink:href="#vip-bronze-icon-blue"></use>
+                </svg>
+            </i>
+            <span class="nav-text">Bonus</span>
+        </label> -->
+    </div>
+    <div class="nav-inner-content" *ngIf="!isLoggedIn">
+        <div class="new-user" *ngIf="!isLoggedIn">
+            <button class="btn btn-primary" type="button" id="" (click)="mobileRouting('right','/register')">
+                    Create Account &nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>
+        </div>
+    </div>
+    <div class="nav-inner-content" *ngIf="isLoggedIn">
+        <button class="btn btn-primary" (click)="mobileRouting('right','/payment/deposit')">
+                Quick Deposit
+    </button>
+    <div class="logout-btn" (click)="mobileRouting('right','/logout')">
+         <i class="nav-icon icon-logout"></i> Logout</div>
+</div>
+</div>
+<!-- Mobile Header -->
+<div id="mobile-Header" class="mobile-menu myHeader sticky ">
+    <div class="navbar-header">
+        <div class="openNav-left menu-icon">
+            <i class="icon-menu-lines"></i>
+        </div>
+
+        <div class="logo-patch logo-patch-mobile">
+            <h5 class="home text" id="text">
+                <h1 class="icon brand-ld language-selector">
+                    <div id="dd" class="wrapper-dropdown-3 language-box" tabindex="1" [ngClass]="selectLang == true ? 'active' : '' " (click)="changeLanguage(selectLang)">
+                         <span class="selected-language-h"><span class="lang-icon-h">EN</span><span class="langg-text-h"><span>English</span></span> </span>
+                    </div>
+                </h1>
+                <ul class="dropdown">
+                    <li [ngClass]="activeLang == 'EN' ? 'active' : '' " (click)="getActiveLang('EN');" id="EN"><a href="javascript:void(0);"><span class="lang-icon">EN</span><span class="langg-text"><span>English</span></span></a></li>
+                    <li [ngClass]="activeLang == 'DE' ? 'active' : '' " (click)="getActiveLang('DE');" id="DE"><a href="javascript:void(0);"><span class="lang-icon">DE</span><span class="langg-text"><span>Deutsche</span></span></a></li>
+                    <li [ngClass]="activeLang == 'NE' ? 'active' : '' " (click)="getActiveLang('NE');" id="NE"><a href="javascript:void(0);"><span class="lang-icon">NE</span><span class="langg-text"><span>Nederlands</span></span></a></li>
+                    <li [ngClass]="activeLang == 'SV' ? 'active' : '' " (click)="getActiveLang('SV');" id="SV"><a href="javascript:void(0);"><span class="lang-icon">SV</span><span class="langg-text"><span>Svenska</span></span></a></li>
+                    <li [ngClass]="activeLang == 'DN' ? 'active' : '' " (click)="getActiveLang('DN');" id="DN"><a href="javascript:void(0);"><span class="lang-icon">DN</span><span class="langg-text"><span>Dansk</span></span></a></li>
+                </ul>
+            </h5>
+        </div>
+
+        <div class="logo">
+            <a href="javascript:void(0);" routerLink="/">
+                <svg width="220px" height="50px" fill="#61469c" class="" viewBox="0 0 425 143">
+                <use xlink:href="#bell-bingo-logo"></use>
+                </svg>
+            </a>
+        </div>
+        <div class="openNav-right m_login_icon">
+            <svg class="tab_hover" fill="#7e69af" height="30px" viewBox="0 0 255 255" width="30px">
+            <use xlink:href="#player-icon"></use>
+            </svg>
+        </div>
+    </div>
+</div>
+</div>
+<div class="logo-header" *ngIf="!isGamePage && windowType == 'device' && isLogoAllowed()" [ngClass]="{'loggedInClass': isLoggedIn}">
+     <div class="container">
+        <h1 class="logo" id="logo-image" routerLink="/">
+            <a href="javascript:void(0);">
+                <img src="/assets/img/bella-bingo-new.svg" alt="Bingo69" title="Bingo69" width="400" height="90" />
+            </a>
+        </h1>
+    </div>
+</div>
+<header class="device-comp device-header myHeader sticky" *ngIf="!isGamePage && windowType == 'device' && isHeaderAollowed()" [ngClass]="{'loggedInClass': isLoggedIn}">
+        <div class="container">
+        <div class="small-logo-patch">
+            <div class="scroll-small-logo">
+                <h5 class="home logo" id="logo-small" routerLink="/">
+                    <a href="javascript:void(0);">
+                        <span class="small-logo"><img src="/assets/img/Bella_Bingo_Logo.svg" alt="Bingo69" title="Bingo69" /></span>
+                    </a>
+                </h5>
+            </div>
+        </div>
+        <div class="home_header_top_left">
+        <div class="logo-patch">
+            <h5 class="home text" id="text">
+                <h1 class="icon brand-ld language-selector">
+                    <div id="dd" class="wrapper-dropdown-3 language-box" tabindex="1" [ngClass]="selectLang == true ? 'active' : '' " (click)="changeLanguage(selectLang)">
+                         <span class="selected-language-h"><span class="lang-icon-h">EN</span><span class="langg-text-h"><span>English</span></span> </span>
+                    </div>
+                </h1>
+                <ul class="dropdown">
+                    <li [ngClass]="activeLang == 'EN' ? 'active' : '' " (click)="getActiveLang('EN');" id="EN"><a href="javascript:void(0);"><span class="lang-icon">EN</span><span class="langg-text"><span>English</span></span></a></li>
+                    <li [ngClass]="activeLang == 'DE' ? 'active' : '' " (click)="getActiveLang('DE');" id="DE"><a href="javascript:void(0);"><span class="lang-icon">DE</span><span class="langg-text"><span>Deutsche</span></span></a></li>
+                    <li [ngClass]="activeLang == 'NE' ? 'active' : '' " (click)="getActiveLang('NE');" id="NE"><a href="javascript:void(0);"><span class="lang-icon">NE</span><span class="langg-text"><span>Nederlands</span></span></a></li>
+                    <li [ngClass]="activeLang == 'SV' ? 'active' : '' " (click)="getActiveLang('SV');" id="SV"><a href="javascript:void(0);"><span class="lang-icon">SV</span><span class="langg-text"><span>Svenska</span></span></a></li>
+                    <li [ngClass]="activeLang == 'DN' ? 'active' : '' " (click)="getActiveLang('DN');" id="DN"><a href="javascript:void(0);"><span class="lang-icon">DN</span><span class="langg-text"><span>Dansk</span></span></a></li>
+                </ul>
+            </h5>
+            <h5 class="home text customer-support">
+                <a href="javascript:void(0);" routerLink="/contact-us/none">
+                    <h1 class="icon brand-ld">
+                        <svg width="35px" height="32px" fill="#384079" class="tab_hover" viewBox="0 -5 105 76">
+                        <use xlink:href="#customer-service-icon"></use>
+                        </svg>
+                        <span>Customer Support</span>
+                    </h1>
+                </a>
+            </h5>
+        </div>
+    </div>
+
+        <!--         <h5 class="home lang">
+                  <div class="dropdown-hold">
+                    <a class="dropdown-toggle" href="javascript:void(0)" title="Menu">
+                      <div class="pull-left lang-dropdown">
+                        <span class="lang-circle">EN</span>
+                        <span class="lang-selected">English</span>
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+
+                      </div>
+
+                    </a>
+                    <ul class="dropdown">
+                      <li><a href="javascript:void(0);"><span class="icon-check-icn"></span>English</a></li>
+                      <li><a href="javascript:void(0);">Deutsch</a></li>
+                      <li><a href="javascript:void(0);">Español</a></li>
+                      <li><a href="javascript:void(0);">Pусский</a></li>
+                    </ul>
+                  </div>
+                </h5> -->
+        <ul>
+            <li *ngIf="!isLoggedIn" (click)="openRegistration()">
+                <a href="javascript:void(0)">
+                    <h1 class="icon">
+                        <svg width="24px" height="24px" fill="#fff" class="tab_hover" viewBox="0 0 239 239">
+                        <use xlink:href="#player-icon"></use>
+                        </svg>
+
+                        <span>{{'signup' | translate}}</span>
+                    </h1>
+                </a>
+            </li>
+            <!-- (click)="openModal('quickDepositModal')" -->
+            <li *ngIf="isLoggedIn"  (click)="togglemodal()">
+                <a href="javascript:void(0);">
+                    <h1 class="icon">
+                        <span>Deposit Funds</span>
+                    </h1>
+                </a>
+            </li>
+            <li *ngIf="isLoggedIn" routerLink="/myaccount/cashier">
+                <a href="javascript:void(0);">
+                    <h1 class="icon">
+                        <svg width="24px" height="24px" fill="#7e69af" class="tab_hover" viewBox="0 0 239 239">
+                        <use xlink:href="#player-icon"></use>
+                        </svg>
+
+                        <span>Balance: {{currency}} {{ cash | number:'1.2-2'}}</span>
+                    </h1>
+                </a>
+            </li>
+            <li *ngIf="isLoggedIn" (click)="logout()">
+                <a href="javascript:void(0);">
+                    <h1 class="icon">
+                        <svg width="23px" height="23px" fill="#7e69af" class="tab_hover" viewBox="0 0 155 155">
+                        <use xlink:href="#logout-icon"></use>
+                        </svg>
+
+                        <span>{{'logout' | translate}}</span>
+                    </h1>
+                </a>
+            </li>
+            <li *ngIf="!isLoggedIn" (click)="openModal('loginModal')">
+                <a href="javascript:void(0);">
+                    <h1 class="icon">
+                        <svg width="23px" height="23px" fill="#7e69af" class="tab_hover" viewBox="0 0 155 155">
+                        <use xlink:href="#login-icon"></use>
+                        </svg>
+                        <span>{{'login' | translate}}</span>
+                    </h1>
+                </a>
+            </li>
+            <!--            <li class="badget-holder" routerLink="/checkout">
+                            <a href="javascript:void(0)">
+                                <h1 class="icon">
+                                    <i class="icon-cart"></i>
+
+                                    <span>{{'cart' | translate}}</span>
+                                </h1>
+                            </a>
+                            <div class="badget" *ngIf="getCartItemsCount() > 0">{{getCartItemsCount()}}</div>
+                        </li>-->
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+</header>
+<div class="clearfix" *ngIf="!isGamePage"></div>
+<nav class="device-comp dropdown-hold device-nav device-header-nav hide-xs" [ngClass]="!isGamePage && isHeaderAollowed() ? 'show' : 'hide'">
+    <div class="device-nav-hold">
+        <div class="container">
+            <h1 class="logo" id="logo-image" routerLink="/">
+                <a href="javascript:void(0);">
+                    <img src="/assets/img/bella-bingo-new.svg" alt="Bingo69" title="Bingo69" width="180" height="40" />
+                </a>
+            </h1>
+            <ul id="ld_menu" class="ld_menu">
+                <!-- <li>
+                  <a class="nav menu-dropdown" href="javascript:void(0);" title="Lotteries">{{'lotteries' | translate}}</a>
+                  <ul class="nav menu-items menu-dropdown-content lotteries">
+                    <div class="container">
+                      <li class="ld-overlay-lottery">
+                        <div class="ld-card-grid">
+                          <div class="ld-card-col">
+                            <h3>{{'coming_up' | translate}}</h3>
+                            <div class="card" *ngFor="let u_draw of upcomingDraws | slice:0:1">
+                              <div class="header  {{u_draw.nameConstant}}">
+                                <span class="lottery_1x {{u_draw.nameConstant}} "></span>
+                                <span class="lottery-name"> {{u_draw.name}}</span>
+                              </div>
+                              <div class="card-body">
+                                <div class="prize-money">
+                                  <p class="next-draw">{{'next_draw' | translate}}</p>
+                                  <h1>
+                                    {{u_draw.prizeAmt > 0 ? u_draw.currencySymbol:''}} {{u_draw.prizeAmt > 0 ? u_draw.prizeAmt : "not_published" | translate}}
+                                    {{ u_draw.prizeAmt > 0 ? u_draw.prizeUnit : ''}}
+                                  </h1>
+                                </div>
+                                <div class="card-footer">
+                                  <app-timer [hourGlassIcon]='true' [timedetails]="u_draw.endsOn">Loading...</app-timer>
+                                  <button class="btn btn-primary" (click)="hideMenu()" routerLink="selection/standardplay/{{u_draw.lotteryId}}">{{'play' | translate}}</button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card small-card" *ngFor="let u_draw of upcomingDraws | slice:1:3">
+                              <div class="header  {{u_draw.nameConstant}}">
+                                <span class="lottery_1x {{u_draw.nameConstant}} "></span>
+                                <span class="lottery-name big-screen"> {{u_draw.name}}</span>
+                                <div class="small-screen prize-money ">
+                                  <p class="next-draw">{{'next_draw' | translate}}</p>
+                                  <h1>
+                                    {{u_draw.prizeAmt > 0 ? u_draw.currencySymbol:''}} {{u_draw.prizeAmt > 0 ? u_draw.prizeAmt : "not_published" | translate}}
+                                    {{ u_draw.prizeAmt > 0 ? u_draw.prizeUnit : ''}}
+                                  </h1>
+                                </div>
+                              </div>
+                              <div class="card-body">
+                                <div class="prize-money">
+                                  <p class="next-draw">{{'next_draw' | translate}}</p>
+                                  <h1>
+                                    {{u_draw.prizeAmt > 0 ? u_draw.currencySymbol:''}} {{u_draw.prizeAmt > 0 ? u_draw.prizeAmt : "not_published" | translate}}
+                                    {{ u_draw.prizeAmt > 0 ? u_draw.prizeUnit : ''}}
+                                  </h1>
+                                </div>
+                                <div class="card-footer">
+                                  <div class="small-screen lottery-name"> {{u_draw.name}}</div>
+                                  <app-timer [hourGlassIcon]='true' [timedetails]="u_draw.endsOn">Loading...</app-timer>
+                                  <button class="btn btn-primary" (click)="hideMenu()" routerLink="selection/standardplay/{{u_draw.lotteryId}}">{{'play' | translate}}</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ld-card-col">
+                            <h3>{{'largest_jackpot' | translate}}
+                              <a href="javascript:void(0);" (click)="hideMenu()" routerLink="/allLotteries"
+                                class="view-all">{{'view_all' | translate}}</a>
+                            </h3>
+                            <div class="card" *ngFor="let u_draw of jackpotDraws | slice:0:1">
+                              <div class="header  {{u_draw.nameConstant}}">
+                                <span class="lottery_1x {{u_draw.nameConstant}} "></span>
+                                <span class="lottery-name"> {{u_draw.name}}</span>
+                              </div>
+                              <div class="card-body">
+                                <div class="prize-money">
+                                  <p class="next-draw">{{'next_draw' | translate}}</p>
+                                  <h1>
+                                    {{u_draw.prizeAmt > 0 ? u_draw.currencySymbol:''}} {{u_draw.prizeAmt > 0 ? u_draw.prizeAmt : "not_published" | translate}}
+                                    {{ u_draw.prizeAmt > 0 ? u_draw.prizeUnit : ''}}
+                                  </h1>
+                                </div>
+                                <div class="card-footer">
+                                  <app-timer [hourGlassIcon]='true' [timedetails]="u_draw.endsOn">Loading...</app-timer>
+                                  <button class="btn btn-primary" (click)="hideMenu()" routerLink="selection/standardplay/{{u_draw.lotteryId}}">{{'play' | translate}}</button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card small-card" *ngFor="let u_draw of jackpotDraws | slice:1:3">
+                              <div class="header  {{u_draw.nameConstant}}">
+                                <span class="lottery_1x {{u_draw.nameConstant}} "></span>
+                                <span class="lottery-name big-screen"> {{u_draw.name}}</span>
+                                <div class="small-screen prize-money ">
+                                  <p class="next-draw">{{'next_draw' | translate}}</p>
+                                  <h1>
+                                    {{u_draw.prizeAmt > 0 ? u_draw.currencySymbol:''}} {{u_draw.prizeAmt > 0 ? u_draw.prizeAmt : "not_published" | translate}}
+                                    {{ u_draw.prizeAmt > 0 ? u_draw.prizeUnit : ''}}
+                                  </h1>
+                                </div>
+                              </div>
+                              <div class="card-body">
+                                <div class="prize-money big-screen">
+                                  <p class="next-draw">{{'next_draw' | translate}}</p>
+                                  <h1>
+                                    {{u_draw.prizeAmt > 0 ? u_draw.currencySymbol:''}} {{u_draw.prizeAmt > 0 ? u_draw.prizeAmt : "not_published" | translate}}
+                                    {{ u_draw.prizeAmt > 0 ? u_draw.prizeUnit : ''}}
+                                  </h1>
+                                </div>
+                                <div class="card-footer">
+                                  <div class="small-screen lottery-name"> {{u_draw.name}}</div>
+                                  <app-timer [hourGlassIcon]='true' [timedetails]="u_draw.endsOn">Loading...</app-timer>
+                                  <button class="btn btn-primary" (click)="hideMenu()" routerLink="selection/standardplay/{{u_draw.lotteryId}}">{{'play' | translate}}</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ld-card-col">
+                            <h3>Popular</h3>
+                            <div class="card" *ngFor="let u_draw of jackpotDraws | slice:0:1">
+                              <div class="header  {{u_draw.nameConstant}}">
+                                <span class="lottery_1x {{u_draw.nameConstant}} "></span>
+                                <span class="lottery-name"> {{u_draw.name}}</span>
+                              </div>
+                              <div class="card-body">
+                                <div class="prize-money">
+                                  <p class="next-draw">{{'next_draw' | translate}}</p>
+                                  <h1>
+                                    {{u_draw.prizeAmt > 0 ? u_draw.currencySymbol:''}} {{u_draw.prizeAmt > 0 ? u_draw.prizeAmt : "not_published" | translate}}
+                                    {{ u_draw.prizeAmt > 0 ? u_draw.prizeUnit : ''}}
+                                  </h1>
+                                </div>
+                                <div class="card-footer">
+                                  <app-timer [hourGlassIcon]='true' [timedetails]="u_draw.endsOn">Loading...</app-timer>
+                                  <button class="btn btn-primary" (click)="hideMenu()" routerLink="selection/standardplay/{{u_draw.lotteryId}}">{{'play' | translate}}</button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card small-card" *ngFor="let u_draw of jackpotDraws | slice:1:3">
+                              <div class="header  {{u_draw.nameConstant}}">
+                                <span class="lottery_1x {{u_draw.nameConstant}} "></span>
+                                <span class="lottery-name big-screen"> {{u_draw.name}}</span>
+                                <div class="small-screen prize-money ">
+                                  <p class="next-draw">{{'next_draw' | translate}}</p>
+                                  <h1>
+                                    {{u_draw.prizeAmt > 0 ? u_draw.currencySymbol:''}} {{u_draw.prizeAmt > 0 ? u_draw.prizeAmt : "not_published" | translate}}
+                                    {{ u_draw.prizeAmt > 0 ? u_draw.prizeUnit : ''}}
+                                  </h1>
+                                </div>
+                              </div>
+                              <div class="card-body">
+                                <div class="big-screen prize-money ">
+                                  <p class="next-draw">{{'next_draw' | translate}}</p>
+                                  <h1>
+                                    {{u_draw.prizeAmt > 0 ? u_draw.currencySymbol:''}} {{u_draw.prizeAmt > 0 ? u_draw.prizeAmt : "not_published" | translate}}
+                                    {{ u_draw.prizeAmt > 0 ? u_draw.prizeUnit : ''}}
+                                  </h1>
+                                </div>
+                                <div class="card-footer">
+                                  <div class="small-screen lottery-name"> {{u_draw.name}}</div>
+                                  <app-timer [hourGlassIcon]='true' [timedetails]="u_draw.endsOn">Loading...</app-timer>
+                                  <button class="btn btn-primary" (click)="hideMenu()" routerLink="selection/standardplay/{{u_draw.lotteryId}}">{{'play' | translate}}</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </div>
+                  </ul>
+
+                   </li> -->
+                <!-- <app-header-upcoming-draws></app-header-upcoming-draws> -->
+
+                <!--new menu -->
+                <li routerLink="/" class="no-content">
+                    <a id="headerHomeLink" class="nav menu-dropdown" href="javascript:void(0);" title="Home"><span>
+                            <svg width="34px" height="34px" fill="#384079" class="tab_hover" viewBox="-20 -42 485 455">
+                            <use xlink:href="#Home-icon"></use>
+                            </svg></span></a>
+                </li>
+                <!--                <li class="no-bg-black-overlay">
+                                    <a id="headerLottoGamesLink" class="nav menu-dropdown" href="javascript:void(0);" title="Lotto Games"><span>Lotto Games</span>
+                                        <ul class="nav menu-items lotteries ">
+                                            <div class="container contains-menu">
+                                                <li class="hover-bg">
+                                                <app-header-menu-dropdown></app-header-menu-dropdown>
+                                                </li>
+                                            </div>
+                                        </ul>
+                                    </a>
+                                </li>
+                                <li routerLink="/syndicate" class="no-content">
+                                    <a id="headerSyndicatesLink" class="nav menu-dropdown" href="javascript:void(0);" title="Syndicates"><span>{{'syndicates' | translate}}</span></a>
+                                </li>-->
+                <li routerLink="/promotion" class="no-content">
+                    <a id="headerPromotionLink" class="nav menu-dropdown" href="javascript:void(0);" title="Promotions"><span>Promotions</span></a>
+                </li>
+                <li class="no-content">
+                    <a id="headerBingoLink" class="nav menu-dropdown bingo-list-item" href="javascript:void(0);" title="Bingo"><span>Bingo</span><span class="dropdown-arrow"></span></a>
+
+                    <ul class="nav menu-items menu-dropdown-content lotteries bingo-dropdown">
+                        <div class="container">
+                            <div class="inn-dropdown">
+                                <li routerLink="/bingo" class="ld-syndicate" (click)="gotoBingoGuide('bingo')">
+                                    <a href="javascript:void(0);"  id="headerBingoRoomLink">Bingo Rooms</a>
+                                </li>
+                                <li class="ld-syndicate" (click)="gotoBingoGuide('bingoGuide')"  >
+                                    <a href="javascript:void(0);"  id="headerBingoGuideLink">Bingo Guides</a>
+                                </li>
+                                 <li routerLink="/what-75-bingo" (click)="gotoBingoGuide('bingo75')">
+                                    <a href="javascript:void(0)">What is 75 Ball Bingo?</a>
+                                </li>
+                                <li routerLink="/what-90-bingo" (click)="gotoBingoGuide('bing90')">
+                                    <a href="javascript:void(0)">What is 90 Ball Bingo?</a>
+                                </li>
+                                <li routerLink="/variant-bingo" (click)="gotoBingoGuide('variant')">
+                                    <a href="javascript:void(0)">Variant Bingo</a>
+                                </li>
+                                <!-- <li class="ld-syndicate ">
+                                    <a href="javascript:void(0);" id="headerLoyaltyLink">Loyalty</a>
+                                </li> -->
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+                <li routerLink="/casino" class="no-content">
+                    <a id="headerSlotsLink" class="nav menu-dropdown" href="javascript:void(0);" title="Casino"><span>Casino</span></a>
+                </li>
+                <li routerLink="/scratch" class="no-content">
+                    <a id="headerScratchLink" class="nav menu-dropdown" href="javascript:void(0);" title="Scratch"><span>Scratch</span></a>
+                </li>
+                <!--                <li routerLink="/results-centre" class="no-content" >
+                                    <a id="headerResultCentreLink" class="nav menu-dropdown" href="javascript:void(0);" title="Results"><span>{{'results' | translate}}</span></a>
+                                </li>
+                                <li *ngIf="isLoggedIn" routerLink="/myresults"  class="no-content">
+                                    <a id="headerMyResultsLink" class="nav menu-dropdown" href="javascript:void(0);" title="My Results"><span>My Results</span></a>
+                                </li>-->
+                <li id="myAccount"  *ngIf="isLoggedIn" class="no-content">
+                    <a id="headerMyAccountLink" class="nav menu-dropdown" href="javascript:void(0);" title="My Account" [routerLink]="isLoggedIn ? ['/myaccount'] : ['/login']"><span>{{'my_account' | translate}}</span></a>
+                </li>
+
+                <!-- <li>
+                  <a class="nav menu-dropdown" href="javascript:void(0);" title="Syndicates">{{'syndicates' | translate}}</a>
+                  <ul class="nav menu-items menu-dropdown-content lotteries">
+                    <div class="container">
+                      <li class="ld-syndicate">
+                        <h3>
+                          <i class="icon-group"></i> Play and win together with Syndicates </h3>
+                        <app-syndicate-lotteries [callingFrom]="'header'"></app-syndicate-lotteries>
+                      </li>
+                    </div>
+                  </ul>
+                </li> -->
+                <!--      <li><a class="nav menu-dropdown" href="javascript:void(0);" title="Promotions" >{{'promotions' | translate}}</a></li> -->
+
+                <!-- <li id="myAccount" (mouseenter)="mouseEnter('')" [ngClass]="{'no-content': isLoggedIn}">
+                  <a class="nav menu-dropdown" href="javascript:void(0);" title="My Account" [routerLink]="isLoggedIn ? ['/myaccount'] : ['/login']">{{'my_account' | translate}}</a>
+                  <ul class="nav menu-items menu-dropdown-content account" *ngIf="!isLoggedIn">
+                    <div class="container">
+                      <li class="login-hover">
+                        <app-app-login [(isLogIn)]="isLoggedIn" [(cashDetails)]="cash" [(currencyDetails)]="currency" [callingfrom]="'header'" [loadImage]="loadImage"></app-app-login>
+                      </li>
+                    </div>
+                  </ul>
+                </li> -->
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="white-bg"></div>
+    <!--   <div id="ld_overlay" class="ld_overlay"></div>
+    --></nav>
+
+
+
+<modal id="registerModal">
+    <div class="modal">
+        <div class="modal-body">
+            <div class="close-modal" (click)="closeModal('registerModal')">
+                    <svg  fill="#fff" class="mdl_close" viewBox="0 0 612 612">
+                            <use xlink:href="#cross_icon"></use>
+                            </svg>
+            </div>
+
+            <div class="close-modal" (click)="closeModal('registerModal')">
+                    <svg  fill="#fff" class="mdl_close" viewBox="0 0 612 612">
+                    <use xlink:href="#cross_icon"></use>
+                    </svg>
+            </div>
+
+            <div class="user-reg-modal">
+                <app-registration-form [regAndLogin]="isRegComplete" (regAndLoginComplete)="registrationComplete($event)"></app-registration-form>
+            </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
+
+<modal id="loginModal">
+    <div class="modal">
+        <div class="modal-body">
+                <div class="close-modal" (click)="closeModal('loginModal')">
+                        <svg  fill="#fff" class="mdl_close" viewBox="0 0 612 612">
+                        <use xlink:href="#cross_icon"></use>
+                        </svg>
+                </div>
+            <div class="login-header">
+                <div class="login_inner_element">
+                    <svg width="140px" height="140px" fill="#fff" class="bell-bingo-logo" viewBox="0 0 488 143">
+                    <use xlink:href="#bell-bingo-logo"></use>
+                    </svg>
+                    <h3>Login to My Account</h3>
+                </div>
+            </div>
+            <div id="loginModalContent" class="user-login-modal">
+                <app-login-form [isLoginComplete]="isUserLoggedIn" (isLoginCompleteNotify)="loginFromGameWindow($event)" [callingFrom]="'loginModal'"></app-login-form>
+            </div>
+            <div id="loginModalSuccess" class="user-login-modal hide">
+            </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
+
+<div *ngIf="isModalOpen && !isMobile && isLoggedIn ">
+    <app-deposit-modal  (messageEvent)="receiveMessage($event)" ></app-deposit-modal>
+</div>
+<div *ngIf="!isModalOpen && isMobile && isLoggedIn">
+    <app-payment-container-fields *ngIf="!qDResponse" [paymentType]="'deposit-cashier'" [totalPrice]="totalPrice" [isSubscription]="'false'"></app-payment-container-fields>
+    <app-txn-status *ngIf="qDResponse" [qDResponse]="qDResponse" ></app-txn-status>
+</div>

@@ -1,0 +1,818 @@
+@import '~variables.scss';
+@import '~mixins.scss';
+
+
+@mixin blueMoreInfoButton {
+    font-family: $font-primary-700;
+    font-size: 20px;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    color: $scratchesWColor;
+    i {
+        font-size: 30px;
+        margin-left: 20px;
+        line-height: 26px;
+        vertical-align: top;
+        @media (max-width: 767px) {
+            font-size: 25px;
+            line-height: 25px;
+        }
+    }
+}
+
+.transparentBtn {
+    background: transparent;
+    border: 1px solid $scratchesWColor;
+    color: $scratchesWColor;
+    box-sizing: border-box;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+.greenBtn {
+    background: $scratchesGColor;
+    border: 1px solid $scratchesGColor;
+    color: $scratchesWColor;
+    box-sizing: border-box;
+    cursor: pointer;
+    &:hover {
+        color: $scratchesWColor;
+        background-color: $scratchesLGColor;
+        border-color: $scratchesDGColor;
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.header-row {
+    width: 100%;
+    margin: 60px auto 30px auto;
+    background-color: $scratchesWColor;
+    min-height: 70px;
+    position: relative;
+    &:before{
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 18px solid transparent;
+        border-right: 18px solid transparent;
+        border-top: 18px solid #7E69AF;
+        left: 54px;
+        bottom: -14px;
+        display: block;
+
+        @media screen and (max-width:767px) {
+            display: none;
+        }
+    }
+
+    @include pinkSectionHeader;
+
+    @media screen and (max-width:767px) {
+        box-sizing:border-box;
+        margin-bottom:5px;
+        min-height: 60px;
+        margin-top:30px;
+        width: calc(100% - 30px);
+        margin: 20px auto;
+        float:none;
+    }
+
+    .skew-header {
+        float: left;
+        width: 32%;
+        @media screen and (min-width: 993px) and (max-width:1199px) {
+            width: 34%;
+        }
+
+        @media only screen and (max-width: 767px) {
+            Display:none;
+        }
+
+        @media only screen and (max-width: 992px) {
+            width: 36%;
+
+            .icon{
+                svg{
+                    width: 50px;
+                }
+            }
+
+        }
+
+        .header-bg {
+            max-width: 500px;
+            padding-bottom: 0px;
+            min-height: 70px;
+        }
+        .text-container {
+            padding: 10px 30px 11.5px 30px;
+
+            h1{
+                font-size: 24px !important;
+                letter-spacing: -0.22px !important;
+
+                @media only screen and (max-width: 992px) {
+                    font-size: 17.6px !important;
+                }
+            }
+        }
+        .icon-777:before {
+            font-size: 51px;
+            line-height: 46px;
+        }
+        .down-arrow {
+            &:after,
+                &:before {
+                border-bottom-color: transparent;
+            }
+        }
+    }
+    .filter-btn{
+        display: none;
+        width: 30%;
+        float: left;
+        height: 60px;
+        background: $violet;
+
+        button {
+            background: $main-primary-bg;
+            color:$white;
+            height: 60px;
+            line-height: 60px;
+            border:0px;
+            padding: 0px;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            font-family: $main-primary-ef-reg;
+            font-weight: 500;
+        }
+
+        @media only screen and (max-width: 767px) {
+            Display:none;
+        }
+    }
+
+    .search {
+        position: relative;
+        &.desktop {
+            float: right;
+            display: inline-flex;
+            align-items: center;
+            margin-right: 20px;
+            padding: 0px 0;
+            height: 70px;
+
+            @media screen and (max-width: 992px) {
+                width: 32%;
+            }
+
+            @media screen and (max-width: 767px) {
+                width: 100%;
+                float:left;
+                margin-right:0px;
+                height:60px;
+                .form-group{
+                    input{
+                        height: 60px;
+                        line-height:60px;
+                        border-radius:0px;
+                        padding-left: 70px;
+                        font-size: 18px !important;
+                        border:0px;
+
+
+                        @media screen and (max-width: 480px) {
+                            padding-left: 55px;
+                            padding-right: 10px;
+                        }
+                    }
+
+                    button{
+                        background: transparent;
+                        left: 0;
+                        width: 64px;
+
+                        @media screen and (max-width: 480px) {
+                            width: 50px;
+                        }
+
+                        &:before{
+                            content: "\f002";
+                            position: absolute;
+                            font-family: fontawesome;
+                            right: 13px;
+                            color: #e0dde8;
+                            font-size: 22px;
+                            top: 18px;
+                        }
+
+                        i{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        .form-group {
+            width: 300px;
+            position: relative;
+            input {
+                width: 100%;
+                height: 45px;
+                font-size: 18px;
+                border: 1px solid $scratchesDGreyColor;
+                -webkit-border-radius: 4px;
+                border-radius: 4px;
+                padding: 0px 20px;
+                box-sizing: border-box;
+                font-family: $main-primary-ef-reg;
+                font-weight: 400;
+
+                &:focus{
+                    border: 1px solid $search-button-focus-bg;
+                    color: $main-primary-text-color;
+                }
+
+                &:focus + button{
+                    background: $search-button-focus-bg;
+                    border: 1px solid $search-button-focus-bg;
+                }
+
+                @media screen and (max-width: 767px) {
+                    &:focus{
+                        border: 1px solid $slotsDGreyColor;
+                    }
+
+                    &:focus + button{
+                        background: transparent;
+                        border: 0;
+                    }
+                }
+
+                &::placeholder {
+                    color: $scratchesDGreyColor;
+                }
+
+                @media screen and (max-width: 992px) {
+                    font-size: 15px !important;
+                }
+            }
+            button {
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 100%;
+                background: $violet;
+                width: 45px;
+                border: none;
+                border-radius: 0 4px 4px 0;
+                i {
+                    background: url(/assets/img/search.svg) no-repeat 0 center;
+                    background-size: 100%;
+                    display: inline-block;
+                    width: 20px;
+                    height: 100%;
+                }
+            }
+        }
+        .search-results-wrap {
+            position: absolute;
+            right: 0;
+            top: 70px;
+            z-index: 2;
+            width: 300px;
+            min-height: 40px;
+            height: auto;
+            color: $slotsWColor;
+            -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 1);
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 1);
+            padding-top: 25px;
+            background: $base-blue;
+            border-radius: 5px;
+            .icon-close {
+                position: absolute;
+                right: 8px;
+                top: 8px;
+                font-size: 10px;
+                cursor: pointer;
+                &:before {
+                    font-weight: bold;
+                }
+            }
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid $base-blue;
+                top: -10px;
+                left: calc(50% - 10px);
+            }
+            .no-result {
+                text-align: center;
+                cursor: none;
+            }
+        }
+        .search-results {
+            margin: 0;
+            padding: 0 4px 10px 4px;
+            width: 100%;
+            height: 100%;
+            max-height: 300px;
+            background: $base-blue;
+            border-radius: 5px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            li {
+                margin: 0;
+                padding: 8px 10px;
+                list-style: none;
+                font-size: 14px;
+                border-bottom: 1px solid $search_boder_top;
+                border-top: 1px solid $search_boder_bottom;
+                cursor: pointer;
+                &:first-child {
+                    padding-top: 0;
+                    border-top: 0;
+                }
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}
+
+.scratchesMainWrapper {
+    position: relative;
+    z-index: 0;
+    padding-bottom: 50px;
+
+    @media (max-width: 767px) {
+        padding-bottom: 20px;
+    }
+
+    &:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top:0;
+        bottom: 0;
+        background: $scratch-page-bg;
+        opacity: 0.3;
+        z-index: -1;
+    }
+    .masonryLayoutWrap {
+        min-height: 300px;
+    }
+}
+
+.grid-blks-2 {
+    float: left;
+    box-sizing: border-box;
+    padding: 12px;
+    width: 25%;
+
+
+    @media (max-width: 992px) {
+        width: 33.333%;
+    }
+
+    @media (max-width: 767px){
+        width: 50%;
+    }
+
+
+    .scratchesblks-inner-wrap {
+        width: 100%;
+        height: 100%;
+        border-radius: 7px;
+        overflow: hidden;
+        position: relative;
+
+
+        img{
+            width: 100%;
+            border-radius: 7px;
+            max-height: 164px;
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.6);
+        }
+    }
+}
+
+.no-games {
+    text-align: center;
+    font-weight:bold;
+    height: 200px;
+    line-height: 200px;
+    float: left;
+    width: 100%;
+}
+
+.scratchesTabsList {
+    h3 {
+        font-size: 24px;
+        margin-top: 40px;
+        font-weight: 600;
+        font-family: $main-primary-ef-reg;
+    }
+    ul {
+        list-style: none;
+        margin: 20px 0;
+        li {
+            float: left;
+            color: $main-primary-text-color;
+            padding: 10px 15px;
+            border: 1px solid $scratchesTabListBorder;
+            border-radius: 10.8px;
+            background-color: $scratchesWColor;
+            cursor: pointer;
+            margin-right: 16px;
+            min-width: 110px;
+            font-size: 18px;
+            text-align: center;
+            font-family: $main-primary-ef-reg;
+            &.active {
+                background: $violet;
+                color: $scratchesWColor;
+            }
+        }
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+}
+
+.masonryLayoutWrap {
+    position: relative;
+    margin: 0 0;
+    background: transparent;
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+.grid-size {
+    width: 16.666666667%;
+}
+
+/* Main scratches Container */
+.scratchesMainWrapper .masonryContentBlock{
+    width: 100%;
+    margin: 22px 0px 40px;
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+.scratchesContentWrapper {
+    margin: 0 -8px;
+}
+.grid-blks {
+    float: left;
+    box-sizing: border-box;
+    margin: 0 0 0 0;
+    padding: 8px;
+    width: 16.666666667%;
+    height: 200px;
+    .scratchesblks-inner-wrap {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.6);
+        &:hover {
+            .sweep-to-top {
+                top: 50%;
+            }
+            .hoverImg {
+                visibility: visible;
+                top: 0;
+            }
+        }
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+    .hoverImg {
+        position: absolute;
+        visibility: hidden;
+        top: 100%;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+/* On scratches Hover */
+.sweep-to-top {
+    display: table;
+    width: 102%;
+    position: absolute;
+    top: 100%;
+    height: 50%;
+    color: $scratchesWColor;
+    background: $scratchesSweepBGColor;
+    transition: 0.3s ease-in-out all;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: $font-primary-700;
+    border-top: 1px solid $scratchesSweepTopBorder;
+    h3 {
+        font-size: 16px;
+        font-family: $font-secondary;
+        font-weight: 600;
+        margin: 0 0 10px 0;
+        line-height: 18px;
+        padding: 0 4px;
+        box-sizing: border-box;
+    }
+    .transparentBtn,
+    .greenBtn {
+        font-size: 14px;
+        padding: 10px 8px;
+        font-family: $font-primary-500;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        line-height: 12px;
+        font-weight: bold;
+        width: auto;
+    }
+    .transparentBtn {
+        margin-right: 6px;
+    }
+    .center-align-hover {
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+/* Two col block */
+.two-col-blk {
+    width: 33.33%;
+    .transparentBtn {
+        margin-right: 10px;
+    }
+}
+/* Extra large block */
+.extra-large-blk {
+    width: 33.33%;
+    height: 400px;
+    .scratches-play-btn {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .transparentBtn,
+    .greenBtn  {
+        font-size: 16px;
+        padding: 0px 8px;
+        height: 45px;
+        width: 140px;
+    }
+    .transparentBtn {
+        float: left;
+    }
+    .greenBtn {
+        float: right;
+        border: 1px solid $scratchesDGColor;
+        box-sizing: border-box;
+    }
+    .scratchesblks-inner-wrap {
+        &:hover .sweep-to-top {
+            top: 70%;
+        }
+    }
+    .sweep-to-top {
+        height: 30%;
+    }
+}
+
+/* Two row block */
+.two-row-blk {
+    // height: 400px;
+    .transparentBtn,
+    .greenBtn  {
+        width: 110px;
+    }
+    .scratchesblks-inner-wrap {
+        &:hover .sweep-to-top {
+            top: 60%;
+        }
+    }
+    .sweep-to-top {
+        height: 42%;
+    }
+    .transparentBtn {
+        margin: 0 0 10px 0;
+    }
+}
+
+
+/* Loading Animation */
+.masonryLayoutWrap {
+    .animated-background {
+        @include loaderPlaceholderAnimation;
+        box-shadow: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+
+    .header-row{
+        .skew-header{
+            .header-bg{
+                .text-container{
+                    padding: 10px 0px 11.5px 20px;
+
+                    .icon{
+                        margin-right: 5px;
+                    }
+
+                    .text{
+                        h1{
+                            font-size: 19px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .masonryContentBlock{
+        .grid-blks {
+            height: 145px;
+            border-radius: 6px;
+            &.extra-large-blk,
+            &.two-row-blk{
+                height: 290px;
+            }
+        }
+    }
+    .sweep-to-top {
+        h3 {
+            font-size: 12px;
+            margin: 0 0 6px 0;
+            line-height: 14px;
+        }
+        .transparentBtn,
+        .greenBtn {
+            font-size: 12px;
+            padding: 8px 6px;
+        }
+    }
+    .two-row-blk {
+        .sweep-to-top {
+            padding: 0;
+        }
+    }
+    .two-col-blk {
+        .sweep-to-top {
+            padding: 0 10px;
+        }
+    }
+    .extra-large-blk {
+        .scratches-play-btn {
+            padding: 0 10px;
+        }
+        .sweep-to-top {
+            padding: 10px 20px;
+            p {
+                font-size: 12px;
+                margin: 6px 0 0 0;
+            }
+            .transparentBtn,
+            .greenBtn {
+                font-size: 14px;
+                height: 35px;
+                width: 100px;
+            }
+        }
+    }
+}
+@media (max-width: 992px) {
+    .grid-size {
+        width: 25%;
+    }
+    .masonryContentBlock{
+        .grid-blks,
+        .grid-blks.extra-large-blk,
+        .grid-blks.two-row-blk,
+        .grid-blks.two-col-blk {
+            width: 25%;
+            height: 150px;
+        }
+    }
+    .extra-large-blk,
+    .two-row-blk,
+    .two-col-blk,
+    .grid-blks {
+        .sweep-to-top {
+            padding: 0;
+            h3 {
+                font-size: 12px;
+                margin-bottom: 6px;
+                min-width: auto;
+            }
+            p {
+                display: none;
+            }
+        }
+    }
+    .extra-large-blk,
+    .two-row-blk {
+        .scratchesblks-inner-wrap {
+            .sweep-to-top {
+                height: 60%;
+            }
+            &:hover,
+                &:focus {
+                .sweep-to-top {
+                    top: 40%;
+                }
+            }
+        }
+    }
+
+    .scratchesMainWrapper {
+
+        .masonryContentBlock{
+            margin: 20px 0px;
+        }
+    }
+
+    .header-row {
+
+        .search {
+            .form-group {
+                width: 100%;
+            }
+            .search-results-wrap {
+                top: 56px;
+                width: 100%;
+            }
+        }
+
+        .skew-header .text-container {
+            padding: 10px 20px 11.5px 20px;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .grid-size {
+        width: 33.33%;
+    }
+    .masonryContentBlock{
+        .grid-blks,
+        .grid-blks.extra-large-blk,
+        .grid-blks.two-row-blk,
+        .grid-blks.two-col-blk {
+            width: 33.33%;
+            height: 150px;
+        }
+    }
+    .masonryLayoutWrap {
+        margin: 0;
+        padding: 0 10px;
+    }
+    .scratchesContentWrapper {
+        margin: 0;
+        padding: 0;
+    }
+
+}
+@media (max-width: 480px) {
+    .grid-size {
+        width: 50%;
+    }
+    .masonryContentBlock{
+        .grid-blks,
+        .grid-blks.extra-large-blk,
+        .grid-blks.two-row-blk,
+        .grid-blks.two-col-blk {
+            width: 50%;
+            height: 140px;
+        }
+    }
+    .no-games {
+        height: auto;
+        line-height: auto;
+    }
+}

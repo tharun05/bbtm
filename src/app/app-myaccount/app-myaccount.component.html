@@ -1,0 +1,40 @@
+<section class="myaccount-header" *ngIf="isUserLoggedIn">
+  <div class="container">
+    <div class="header-row ">
+      <div class="skew-header">
+        <div class="fullwidth header-bg">
+          <div class="text-container device-comp">
+            <span class="icon">
+                <i class="icon-user"></i>
+              </span>
+            <span class="text">
+                <h1 *ngIf="userDeatil">{{userDeatil.firstName}} {{userDeatil.lastName}}</h1>
+                 <p *ngIf="userDeatil">Player ID: {{userDeatil.playerID}}</p>
+             </span>
+          </div>
+          <div class="text-container mobile-comp">
+            <span class="icon">
+                <i class="{{iconName}}"></i>
+            </span>
+            <span class="text">
+                 <h1 >{{sectionName}}</h1>
+                 <p>{{sectionDesc}}</p>
+            </span>
+          </div>
+        </div>
+<!--        <div class="down-arrow" [ngClass]="activeTab == 'cashier' ? 'cashier-mask' : ''"></div>-->
+      </div>
+      <div class="sorting device-comp">
+        <button class="btn" [ngClass]="activeTab == 'myAccount' ? 'active' : '' " (click)="getActiveTab('myAccount');mixPanelEventCheck('myAccount')" [routerLink]="'/myaccount'">
+        <span class="btn-wrapper"><i class="icon-settings icn"></i> <span class="text">Account Settings</span></span></button>
+        <button class="btn " [ngClass]="activeTab == 'transactions' ? 'active' : '' " (click)="getActiveTab('transactions');mixPanelEventCheck('mytransactions')" [routerLink]="'transactions'"><span class="btn-wrapper"><i class="icon-list-view icn"></i> <span class="text">My Transactions</span></span></button>
+        <button class="btn " [ngClass]="activeTab == 'betHistory' ? 'active' : '' " (click)="getActiveTab('betHistory');mixPanelEventCheck('bethistory')" [routerLink]="'bet-history'"><span class="btn-wrapper"><i class="icon-date icn"></i> <span class="text">My Gameplay</span></span></button>
+        <button class="btn " [ngClass]="activeTab == 'cashier' ? 'active' : '' " (click)="getActiveTab('cashier');mixPanelEventCheck('cashier')" [routerLink]="'cashier'"><span class="btn-wrapper"><i class="icon-bank icn"></i> <span class="text">Cashier</span></span></button>
+        <!-- <button class="btn Bonus_Rewards" [ngClass]="activeTab == 'bonus' ? 'active' : '' " (click)="getActiveTab('bonus');mixPanelEventCheck('bonus')" [routerLink]="'bonus'"><span class="btn-wrapper"><i class=""><svg class="tab_hover" height="22px" viewBox="0 0 770 770" width="22px"> 
+                        <use xlink:href="#vip-bronze-icon"></use>
+                        </svg></i> <span class="text">Bonus & Rewards</span></span></button> -->
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</section>

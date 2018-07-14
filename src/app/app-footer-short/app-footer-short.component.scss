@@ -1,0 +1,66 @@
+@import "~variables.scss";
+.pay-methods-types-small {
+  display: inline-flex;
+  align-items: center;
+  margin: auto;
+  padding: 20px;
+  justify-content: space-around;
+  width: 100%;
+  box-sizing: border-box;
+  @media screen and (min-width: 993px) {
+    display: none;
+  }
+
+  span {
+    margin: 0 15px;
+    @media screen and (max-width: 360px) {
+      margin: 0 10px;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0
+    }
+    svg {
+      width: auto;
+      height: 30px;
+      @media screen and (max-width: 480px) {
+        height: 22px;
+      }
+    }
+  }
+}
+
+.footer-terms-links {
+  padding: 15px 0px;
+  background-color: $footer-short-terms-links-bgcolor;
+  span{
+  a {
+    color: $footer-short-terms-links-acolor;
+    font-size: 17px;
+    line-height: 25px;
+    font-family: $font-primary-700;
+    text-decoration: underline;
+  }
+  margin-right: 50px;
+}
+}
+
+@media screen and (max-width:768px) {
+  .footer-terms-links {
+    padding: 20px;
+    background-color: $footer-terms-links-bgcolor;
+    position:relative;
+    bottom: 0px;
+  span{
+    margin-bottom: 15px;
+      margin-right: 0;
+      display: block;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

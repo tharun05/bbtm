@@ -1,0 +1,95 @@
+@import '~variables.scss';
+@import '~mixins.scss';
+@import '../app-slots/app-slots.component.scss';
+
+.ld-slots-container {
+  background: $slotsWColor;
+  padding: 40px 0;
+  margin-bottom: 40px;
+  position: relative;
+  &:before {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 20%;
+    border: 22px solid transparent;
+    border-top: 20px solid $slotsGreyColor;
+  }
+}
+
+/* Slots Header */
+.ld-slots-container {
+  h1 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    span {
+      font-size: 50px;
+      display: inline-block;
+      vertical-align: sub;
+      margin-right: 10px;
+    }
+  }
+}
+
+/* Slots Footer */
+.btn-field-wrapper {
+  width: 100%;
+  text-align: right;
+  margin: 30px 0 0;
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .btn {
+    @include blueMoreInfoButton;
+  }
+}
+
+@media (min-width: 993px){
+  .masonryContentBlock .grid-blk:nth-child(9) {
+    display: none;
+  }
+
+}
+@media (max-width: 992px) {
+  .ld-slots-container {
+    padding: 20px 20px 30px 20px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    &:before {
+      left: calc(50% - 14px);
+      border: 14px solid transparent;
+      border-top: 14px solid $slotsGreyColor;
+    }
+    h1 {
+      margin-bottom: 0px;
+      text-align: center;
+      span {
+        font-size: 48px;
+        vertical-align: middle;
+        margin-top: -6px;
+      }
+    }
+  }
+  .slotsContentWrapper {
+    margin: 0 -8px;
+  }
+}
+
+@media (max-width: 767px) {
+  .btn-field-wrapper {
+    margin: 20px 0 0;
+    .btn {
+      font-family: $font-primary-500;
+      font-size: 18px;
+      width: 100%;
+      padding: 12px 10px;
+      margin: 0;
+    }
+  }
+  .ld-slots-container h1 {
+    font-size: 16px;
+  }
+}

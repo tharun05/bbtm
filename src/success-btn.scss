@@ -1,0 +1,168 @@
+@import "~variables.scss";
+
+$btn-greenbg-color:#00C333;
+
+
+.btn-new {
+  border-radius: 0px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-family: $main-primary-ef-reg;
+  color: $white;
+  padding: 16px 20px;
+  letter-spacing: -0.2px;
+  width: 100%;
+  border: 0;
+  line-height: 1;
+  background: $btn-greenbg-color;
+  cursor: pointer;
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: $cursor-disabled;
+    @include opacity(.65);
+    @include box-shadow(none);
+    span {
+      cursor: $cursor-disabled;
+      @include opacity(.65);
+      @include box-shadow(none);
+    }
+  }
+  span {
+    position: relative;
+    z-index: 1;
+    /*text-shadow: 1px 2px rgba(0,0,0,0.1);*/
+    letter-spacing: -0.3px;
+  }
+}
+
+
+/*.btn-progress {
+  background: gradient(linear, left top, right top, from(#0072ff), to(#0072ff), color-stop(0.5, #00c6ff));
+  background-size: 300% 100%;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  animation: shimmer 4s ease-in-out infinite forwards;
+
+
+  @keyframes shimmer {
+    0% {
+      background-position: top right;
+    }
+    100% {
+      background-position: top left;
+    }
+  }
+}*/
+
+.btn-progress {
+  width: 100%;
+  transition: width .4s ease-in-out;
+  background: linear-gradient(to right, #16a23b, #00C333);
+  position: relative;
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: $cursor-disabled;
+    @include opacity(.65);
+    @include box-shadow(none);
+    span {
+      cursor: $cursor-disabled;
+      @include opacity(.65);
+      @include box-shadow(none);
+    }
+  }
+  &:after {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 0px;
+    animation: animate-progress 1.5s ease-out infinite;
+  }
+  @keyframes animate-progress {
+    0% {
+      opacity: 0;
+      width: 0; //background-color: #00c6ff;//: linear-gradient(to right, #56ab2f, #a8e063);
+    }
+    25% {
+      opacity: .2; //background-color: #00c6ff;//: linear-gradient(to right, #56ab2f, #a8e063);
+    }
+    50% {
+      opacity: .4; //background-color: #00c6ff;
+    }
+    100% {
+      opacity: 0;
+      width: 100%; //background: linear-gradient(to right, #0072ff, #00c6ff);
+    }
+  }
+}
+
+.btn-success {
+  position: relative;
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      cursor: $cursor-disabled;
+      @include opacity(.65);
+      @include box-shadow(none);
+    }
+  }
+  &:after {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 4px;
+    animation: animate-success 1s ease-out 1 forwards;
+  }
+  @keyframes animate-success {
+    0% {
+      width: 0;
+      opacity: 0;
+      background: linear-gradient(to right, #56ab2f, #a8e063);
+    }
+
+    100% {
+      width: 100%;
+      opacity: 1;
+      background: linear-gradient(to right, #56ab2f, #a8e063);
+    }
+  }
+}
+
+.btn-failed {
+  position: relative;
+  &:after {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 4px;
+    animation: animate-failed 1s ease-out 1 forwards;
+  }
+  @keyframes animate-failed {
+    0% {
+      width: 0;
+      opacity: 0;
+      background: linear-gradient(to right, #bb2d25, #fd746c);
+    }
+
+    100% {
+      width: 100%;
+      opacity: 1;
+      background: linear-gradient(to right, #bb2d25, #fd746c);
+    }
+  }
+}

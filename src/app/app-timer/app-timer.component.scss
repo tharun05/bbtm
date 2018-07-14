@@ -1,0 +1,173 @@
+@import "~variables.scss";
+@import "~ld-icon-font.scss";
+
+.timeTicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  i {
+    font-size: 15px;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+  .time {
+    display: inline-flex;
+    align-items: center;
+    .days-count {
+      margin-right: 5px;
+    }
+    span {
+      font-size: 18px;
+      font-family: $main-primary-ef-reg;
+      font-weight: normal;
+
+      &:after {
+        padding: 0 2px;
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+.timer {
+  div {
+    width: 100%;
+    font-size: 16px;
+    margin: 0px;
+    font-family: $font-primary-500;
+  }
+  ul {
+    background: $white;
+    padding: 2px 5px;
+    display: inline-block;
+    margin: 0 auto;
+    border-radius: 3px;
+    color: $brand-ld;
+    span {
+      display: inline-block;
+    }
+    li {
+      list-style: none;
+      display: inline-block;
+      min-width: 35px;
+      position: relative;
+      font-family: $font-secondary-Medium;
+      font-size: 20px;
+      padding: 0px 3px;
+      span:last-child {
+        display: block !important;
+        width: 100% !important;
+        font-size: 11px;
+        text-transform: uppercase;
+        font-family: $font-primary-700;
+        position: static !important;
+        margin: auto !important;
+      }
+      &:after {
+        content: ":";
+        position: absolute;
+        top: 0px;
+        left: 100%;
+        right: 0px;
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.ticket-selection-time {
+  .timeTicker {
+    @media only screen and (max-width: 600px) {
+      i {
+        font-size: 11px;
+      }
+    }
+
+    .time {
+      span {
+        font-size: 19px;
+
+        @media only screen and (max-width: 991px) {
+          font-size: 20px;
+        }
+        @media only screen and (max-width: 768px) {
+          font-size: 24px;
+        }
+        @media only screen and (max-width: 600px) {
+          font-size: 15.65px;
+        }
+        font-family: $font-secondary-SemiBold;
+      }
+      .time-num-holder {
+        span {
+
+          &:last-child {
+            letter-spacing: -1.5px;
+            font-variant-numeric: tabular-nums;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 992px) and (min-width :768px) {
+  .timer {
+    ul {
+      padding: 2px;
+
+      li {
+        font-size: 14px;
+        padding: 0px;
+        span:last-child {
+          font-size: 9px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .timer {
+    // div {
+    //   color: $white;
+    // }
+    .btn-primary {
+      font-size: 5vw;
+      min-width: 45%;
+      padding: 6px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .timer {
+    div {
+      margin: 5px 0px;
+      font-size: 14px;
+    }
+    ul {
+      padding: 2px;
+
+      li {
+        font-size: 14px;
+        padding: 0px;
+        span:last-child {
+          font-size: 9px;
+        }
+      }
+    }
+  }
+}

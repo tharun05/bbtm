@@ -1,0 +1,24 @@
+<div class="masonryLayoutWrap">
+    <ng-container *ngIf="featuredCasioGames">
+        <div class="grid-blks-2" *ngFor="let slots of featuredCasioGames;let i = index">
+            <div class="slotsblks-inner-wrap">
+                <img (click)="gameLauncher(isLoggedIn === true?'realgames':'freegames', slots.gameCode)" src="{{siteUrlPath}}/{{gameUrlPath}}/{{slots.gameCode}}/{{slots.gameCode}}.jpg"
+                />
+                <div class="featured-mask">
+                    <div class="featured-mask-inn">
+                        <h4>
+                            <a (click)="gameLauncher(isLoggedIn === true?'realgames':'freegames', slots.gameCode)">
+                                <svg width="28px" height="33px" viewBox="0 0 59 71" fill="#00c332" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <use xlink:href="#play icon"></use>
+                                </svg>
+                            </a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="featuredCasioGames == 0">
+        <p class="no-games">No games available</p>
+    </ng-container>
+</div>

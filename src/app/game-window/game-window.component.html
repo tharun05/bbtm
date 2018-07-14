@@ -1,0 +1,15 @@
+<div id="gameIframeWrapper" [ngStyle]="{'background-image': 'url(' + gamePathUrl + ')'}"></div>
+<ng-container *ngIf="windowType == 'device'">
+  <div class="gamewinFooter">
+    <button class="quickDepositBtn btn1" (click)="openQuickDeposit()">Quick Deposit</button>
+  </div>
+
+  <div *ngIf="isModalOpen && !isMobile">
+    <app-deposit-modal  (messageEvent)="receiveMessage($event)" ></app-deposit-modal>
+</div>
+<div *ngIf="!isModalOpen && isMobile">
+  <app-payment-container-fields *ngIf="!qDResponse" [paymentType]="'deposit-cashier'" [totalPrice]="totalPrice" [isSubscription]="'false'"></app-payment-container-fields>
+  <app-txn-status *ngIf="qDResponse" [qDResponse]="qDResponse" ></app-txn-status>
+</div>
+
+</ng-container>

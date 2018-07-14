@@ -1,0 +1,217 @@
+<div class="withdarw-type-container" *ngIf="withdarwData && withdarwData.methods">
+     <ul class="withdarw-type-tabs">
+        <li (click)="changeWithdrawType(type)" [ngClass]="selectedMethod == type ? 'active active-arrow':''" *ngFor="let type of withdarwData.methods">
+    <ng-container *ngIf="(type == 'CREDITCARD' && availableWithdrawableCC.length >0) || (type != 'CREDITCARD')">
+        <a href="javascript:void(0)" >
+            <span class="card-icon">
+                <svg viewBox="0 0 76 25" class="visa" [ngClass]="type == 'CREDITCARD' ? '':'hide'">
+                <use xlink:href="#visa"></use>
+                </svg>
+                <svg viewBox="0 0 32 25" class="mastercard" [ngClass]="type == 'CREDITCARD' ? '':'hide'">
+                <use xlink:href="#mastercard"></use>
+                </svg>
+                <svg viewBox="0 0 32 25" class="mastercard-w" [ngClass]="type == 'CREDITCARD' ? '':'hide'">
+                <use xlink:href="#mastercard-w"></use>
+                </svg>
+                <svg viewBox="0 0 145 25" class="neteller" [ngClass]="type == 'NETELLER' ? '':'hide'">
+                <use xlink:href="#neteller"></use>
+                </svg>
+                <svg viewBox="0 0 39 25" class="wiretransfer" [ngClass]="type == 'WIRE_TRANSFER' ? '':'hide'">
+                <use xlink:href="#wiretransfer"></use>
+                </svg>
+                <svg viewBox="0 0 1445.09 447.61" class="trustly" [ngClass]="type == 'TRUSTLY' ? '':'hide'">
+                <use xlink:href="#trustly"></use>
+                </svg>
+            </span>
+            <span class="text">
+                <h5><ng-container *ngFor="let types of availableWithdrawMethodsMap[type];let l=last;let i=index;">{{types.dispalyName}}<ng-container *ngIf="!l" >/</ng-container></ng-container></h5>
+                <h6><ng-container *ngIf="withdrawLimitList && withdrawLimitList[type]">{{withdrawLimitList[type].minTxnLimit | currency :userDetails.getCurrencyCode():true}} - {{withdrawLimitList[type].maxTxnLimit | currency :userDetails.getCurrencyCode():true}}</ng-container></h6>
+                <h6><ng-container *ngIf="!withdrawLimitList || (withdrawLimitList && !withdrawLimitList[type])">{{1 | currency :userDetails.getCurrencyCode():true}}  - {{ 10000 | currency :userDetails.getCurrencyCode():true}} </ng-container></h6>
+            </span>
+        </a>
+    </ng-container>
+    </li>
+</ul>
+<div class="withdarw-type-content mob-hide">
+    <div class="pay-display">
+        <span class="icon">
+
+            <svg viewBox="0 0 76 25" class="visa" [ngClass]="selectedMethod == 'CREDITCARD' ? '':'hide'">
+            <use xlink:href="#visa"></use>
+            </svg>
+            <svg viewBox="0 0 32 25" class="mastercard" [ngClass]="selectedMethod == 'CREDITCARD' ? '':'hide'">
+            <use xlink:href="#mastercard"></use>
+            </svg>
+            <svg viewBox="0 0 32 25" class="mastercard-w" [ngClass]="type == 'CREDITCARD' ? '':'hide'">
+            <use xlink:href="#mastercard-w"></use>
+            </svg>
+            <svg viewBox="0 0 145 25" class="neteller" [ngClass]="selectedMethod == 'NETELLER' ? '':'hide'">
+            <use xlink:href="#neteller"></use>
+            </svg>
+            <svg viewBox="0 0 39 25" class="wiretransfer" [ngClass]="selectedMethod == 'WIRE_TRANSFER' ? '':'hide'">
+            <use xlink:href="#wiretransfer"></use>
+            </svg>
+            <svg viewBox="0 0 1445.09 447.61" class="trustly" [ngClass]="type == 'TRUSTLY' ? '':'hide'">
+            <use xlink:href="#trustly"></use>
+            </svg>
+        </span>
+        <span class="slideInRight">
+            <span class="pay-amount ">
+                <span class="slant-shape ">
+                    <h6>Withdarwable Amount</h6>
+                    <h3>{{userDetails.getUserCurrencySymbol()}}{{withdrawableBalance| number : '1.2-2'}}</h3>
+                </span></span></span>
+    </div>
+    <section id="CREDITCARD-Withdraw" class="tab-content" *ngIf="selectedMethod == 'CREDITCARD'">
+        <div class="form-fields master-visa-content">
+            <form [formGroup]="ccWithdrawForm" (ngSubmit)="withdraw('withdrawButton')" novalidate>
+                <div id="serverErrorWithdraw" class="error-msg hide">{{serverError}}</div>
+                <p>Select method of payment:</p>
+                <div  class="selectWithdraw">
+                    <select id="usedCCWithdrawDD" [(ngModel)]="selectedCardID" formControlName="creditCardID">
+                        <option *ngFor="let withdrawCC of availableWithdrawableCC" [value]="withdrawCC.instrumentId">
+                    <span class="select-cc">
+                        <svg viewBox="0 0 32 25" [ngClass]="withdrawCC.optionType == 'MASTERCARD' ? 'm-small':'hide'">
+                        <use xlink:href="#mastercard"></use>
+                        </svg>
+
+                        <svg viewBox="0 0 76 25" [ngClass]="withdrawCC.optionType == 'VISA' ? '':'hide'">
+                        <use xlink:href="#visa"></use>
+                        </svg>
+                    </span>xx-{{withdrawCC.ccDetails.lastDigits}}    exp {{withdrawCC.ccDetails.expiry}}</option>
+                </select>
+            </div>
+            <div class="withdraw-fees-amount">
+                <span>Fee: $1.00</span><span>Total Debit Amount $ 51.00 </span>
+            </div>
+            <mat-form-field>
+                <input name="depositAmount" matInput placeholder="Enter amount to withdraw" formControlName="depositAmount"  [(ngModel)]="depositAmountModel" value="{{ccWithdrawForm.controls['depositAmount'].value}}">
+                <mat-error *ngIf="shouldShowErrors('depositAmount',ccWithdrawForm)">{{getErrorMessage('depositAmount',ccWithdrawForm)}}</mat-error>
+            </mat-form-field>
+            <!-- <a class="addpayment device-comp"><i class="icon-plus"></i> ADD PAYMENT METHOD</a> -->
+
+
+            <!-- <button id="withdrawButton" [ngClass]="getButtonClass(ccWithdrawForm,formSubmitted)" class="btn" (click)="withdraw('withdrawButton')" [disabled]="isButtonDisabled(ccWithdrawForm)">
+            CREDIT MY CARD NOW<i class="fa fa-refresh fa-spin facebook-login-spinner hide"></i>
+          </button> -->
+            <!-- <a class="addpayment mobile-comp"><i class="icon-plus"></i> ADD PAYMENT METHOD</a> -->
+        </form>
+    </div>
+</section>
+<section id="NETELLER-Withdraw" class="tab-content" *ngIf="selectedMethod == 'NETELLER'">
+    <div class="form-fields">
+        <form [formGroup]="netellerWithdrawForm" (ngSubmit)="withdraw('withdrawButton')" novalidate>
+            <div id="serverErrorWithdraw" class="error-msg hide">{{serverError}}</div>
+            <mat-form-field>
+                <input name="depositAmount" matInput placeholder="Enter amount to withdraw" formControlName="depositAmount" [(ngModel)]="depositAmountModel" value="{{netellerWithdrawForm.controls['depositAmount'].value}}">
+                <mat-error *ngIf="shouldShowErrors('depositAmount',netellerWithdrawForm)">{{getErrorMessage('depositAmount',netellerWithdrawForm)}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input name="accountNumber" matInput placeholder="Enter Neteller Account Number/Email" formControlName="accountNumber">
+                <mat-error *ngIf="shouldShowErrors('accountNumber',netellerWithdrawForm)">{{getErrorMessage('accountNumber',netellerWithdrawForm)}}</mat-error>
+            </mat-form-field>
+            <!-- <a class="addpayment device-comp"><i class="icon-plus"></i> ADD PAYMENT METHOD</a> -->
+
+            <!-- <button id="withdrawButton" [ngClass]="getButtonClass(ccWithdrawForm,formSubmitted)" class="btn" (click)="withdraw('withdrawButton')" [disabled]="isButtonDisabled(ccWithdrawForm)">
+            CREDIT MY CARD NOW<i class="fa fa-refresh fa-spin facebook-login-spinner hide"></i>
+          </button> -->
+            <!-- <a class="addpayment mobile-comp"><i class="icon-plus"></i> ADD PAYMENT METHOD</a> -->
+        </form>
+    </div>
+</section>
+<section id="TRUSTLY" class="tab-content" *ngIf="selectedMethod == 'TRUSTLY'">
+    <div class="form-fields">
+        <form [formGroup]="trustlyWithdrawForm" (ngSubmit)="withdraw('withdrawButton')" novalidate>
+        <div id="serverErrorWithdraw" class="error-msg hide">{{serverError}}</div> 
+        <mat-form-field>
+            <input id="priceInput" name="depositAmount" matInput placeholder="Enter amount to withdraw" [(ngModel)]="depositAmountModel" formControlName="depositAmount" value="{{trustlyWithdrawForm.controls['depositAmount'].value}}"  type="tel">
+            <mat-error *ngIf="shouldShowErrors('depositAmount',trustlyWithdrawForm)">{{getErrorMessage('depositAmount',trustlyWithdrawForm)}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="">
+            <input name="emailAddress" matInput placeholder="Email Id" formControlName="emailAddress" readonly>
+            <mat-error *ngIf="shouldShowErrors('emailAddress',trustlyWithdrawForm)">{{getErrorMessage('emailAddress',trustlyWithdrawForm)}}</mat-error>
+        </mat-form-field>
+        </form>
+    </div>
+</section>
+<section id="WIRE_TRANSFER-Withdraw" class="tab-content" *ngIf="selectedMethod == 'WIRE_TRANSFER'">
+    <div class="form-fields">
+        <form [formGroup]="wireTransferWithdrawForm" (ngSubmit)="withdraw('withdrawButton')" novalidate>
+            <div id="serverErrorWithdraw" class="error-msg hide">{{serverError}}</div>
+            <mat-form-field>
+                <input name="depositAmount" matInput placeholder="Enter amount to withdraw" formControlName="depositAmount">
+                <mat-error *ngIf="shouldShowErrors('depositAmount',wireTransferWithdrawForm)">{{getErrorMessage('depositAmount',wireTransferWithdrawForm)}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input name="beneficiaryName" matInput placeholder="Beneficiary Name" formControlName="beneficiaryName">
+                <mat-error *ngIf="shouldShowErrors('beneficiaryName',wireTransferWithdrawForm)">{{getErrorMessage('beneficiaryName',wireTransferWithdrawForm)}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input name="bankName" matInput placeholder="Bank Name" formControlName="bankName">
+                <mat-error *ngIf="shouldShowErrors('bankName',wireTransferWithdrawForm)">{{getErrorMessage('bankName',wireTransferWithdrawForm)}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input name="bankCity" matInput placeholder="City" formControlName="bankCity">
+                <mat-error *ngIf="shouldShowErrors('bankCity',wireTransferWithdrawForm)">{{getErrorMessage('bankCity',wireTransferWithdrawForm)}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input name="bankCountry" matInput placeholder="Country" value="{{countryName}}" [readonly]="true">
+            </mat-form-field>
+            <mat-form-field class="hide">
+                <input name="bankCountry" matInput placeholder="Country" formControlName="bankCountry" [readonly]="true">
+                <mat-error *ngIf="shouldShowErrors('bankCountry',wireTransferWithdrawForm)">{{getErrorMessage('bankCountry',wireTransferWithdrawForm)}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-select name="bankState" formControlName="bankState" placeholder="State/Region">
+                    <mat-option *ngFor="let state of stateList" [value]="state.stateCode">
+                        {{ state.stateName }}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="shouldShowErrors('bankState',wireTransferWithdrawForm)">{{getErrorMessage('bankState',wireTransferWithdrawForm)}}</mat-error>
+        </mat-form-field>
+        <!-- <mat-form-field>
+          <input name="bankState" matInput placeholder="State" formControlName="bankState">
+          <mat-error *ngIf="shouldShowErrors('bankState',wireTransferWithdrawForm)">{{getErrorMessage('bankState',wireTransferWithdrawForm)}}</mat-error>
+        </mat-form-field> -->
+        <mat-form-field>
+            <input name="swiftCode" matInput placeholder="Swift Code" formControlName="swiftCode">
+            <mat-error *ngIf="shouldShowErrors('swiftCode',wireTransferWithdrawForm)">{{getErrorMessage('swiftCode',wireTransferWithdrawForm)}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input name="bankAddress" matInput placeholder="Bank Address" formControlName="bankAddress">
+            <mat-error *ngIf="shouldShowErrors('bankAddress',wireTransferWithdrawForm)">{{getErrorMessage('bankAddress',wireTransferWithdrawForm)}}</mat-error>
+        </mat-form-field>
+        <mat-form-field  *ngIf="wiretransferType && wiretransferType =='SWIFT'">
+            <input name="accountNumber" matInput placeholder="Account Number" formControlName="accountNumber">
+            <mat-error *ngIf="shouldShowErrors('accountNumber',wireTransferWithdrawForm)">{{getErrorMessage('accountNumber',wireTransferWithdrawForm)}}</mat-error>
+        </mat-form-field>
+        <mat-form-field  *ngIf="wiretransferType && wiretransferType =='SWIFT'">
+            <input name="comments" matInput placeholder="Comments" formControlName="comments">
+            <mat-error *ngIf="shouldShowErrors('comments',wireTransferWithdrawForm)">{{getErrorMessage('comments',wireTransferWithdrawForm)}}</mat-error>
+        </mat-form-field>
+        <mat-form-field *ngIf="wiretransferType && wiretransferType =='SEPA'">
+            <input name="iban" matInput placeholder="IBan Number" formControlName="iban">
+            <mat-error *ngIf="shouldShowErrors('iban',wireTransferWithdrawForm)">{{getErrorMessage('iban',wireTransferWithdrawForm)}}</mat-error>
+        </mat-form-field>
+        <!-- <a class="addpayment device-comp"><i class="icon-plus"></i> ADD PAYMENT METHOD</a> -->
+
+        <!-- <button id="withdrawButton" [ngClass]="getButtonClass(ccWithdrawForm,formSubmitted)" class="btn" (click)="withdraw('withdrawButton')" [disabled]="isButtonDisabled(ccWithdrawForm)">
+        CREDIT MY CARD NOW<i class="fa fa-refresh fa-spin facebook-login-spinner hide"></i>
+      </button> -->
+        <!-- <a class="addpayment mobile-comp"><i class="icon-plus"></i> ADD PAYMENT METHOD</a> -->
+    </form>
+</div>
+</section>
+<section class="withdarw-btn">
+    <!--   -->
+    <button id="withdrawButton" class="btn-new" [disabled]="isButtonDisabled(activeForm)" type="button" (click)="withdraw('withdrawButton')" [disabled]="isButtonDisabled(ccWithdrawForm)">
+        <span>CREDIT MY {{selectedMethod == "CREDITCARD" ? 'CARD' : selectedMethod != "WIRE_TRANSFER" ? 'WALLET' : 'ACCOUNT'}} NOW</span>
+    </button>
+    <span class="safe-message"><i class="icon-lock"></i>&nbsp;All transactions 128bit SSL encrypted</span>
+</section>
+<div class="cashier-back " (click)="goBackToWithdarwTypes()"> <i class="fa fa-angle-left" aria-hidden="true"></i> <span>CHANGE PAYMENT METHOD</span></div>
+</div>
+</div>
+<div class="withdarw-type-container" *ngIf="!withdarwData || !withdarwData.methods">
+    <mat-spinner></mat-spinner>
+</div>

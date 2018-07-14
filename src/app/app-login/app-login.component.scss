@@ -1,0 +1,303 @@
+    /* Login Component */
+
+    @import "~variables.scss";
+    @import "~mixins.scss";
+
+    .login {
+      display: flex;
+      margin: 0 0 30px;
+      .container {
+        display: flex;
+      }
+
+      .title {
+        font-size: 24px;
+        line-height: 1;
+        font-family: $font-secondary-SemiBold;
+        h1 {
+          margin: 0;
+          font-size: 24px;
+        }
+        i {
+          margin-right: 20px;
+          font-size: 30px;
+        }
+        display:inline-flex;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-top: 25px;
+      }
+      .login-box {
+        margin-right: 20px;
+        flex: 0 0 400px;
+        box-sizing: border-box;
+        .close-modal {
+          text-align: right;
+          top: 30px;
+          right: 25px;
+          position: absolute;
+        }
+
+      }
+
+
+      .login-box,
+      .login-box-promo {
+
+        font-family: $font-primary;
+        font-size: $font-size-base;
+        flex-direction: column;
+        display: flex;
+        .inner-box {
+          flex: 1;
+          box-shadow: $login-innerbox-shadowcolor;
+          border-radius: $card-border-radius;
+          background-color: $login-innerbox-bgcolor;
+          padding: 25px;
+        }
+      }
+
+
+
+      .login-box-promo {
+        font-size: $font-size-base;
+        text-align: center;
+
+        .header-arrow {
+          text-align: left;
+        }
+        .align-flex {
+          display: flex;
+          align-items: center;
+        }
+      }
+      .promo-text {
+        padding: 0 20px;
+        box-sizing: border-box;
+
+        .cta {
+          font-size: 18px;
+          text-transform: uppercase;
+          font-family: $font-primary-700;
+          border: 0px;
+          margin: 20px 0;
+          padding: 16px 20px;
+          width: 100%;
+          line-height: 1;
+        }
+
+        h2 {
+
+          font-family: $font-secondary-Bold;
+          margin: 0px;
+
+          span {
+            font-size: 40px;
+            width: 100%;
+            display: block;
+          }
+        }
+
+
+        .secure-transactions {
+          display: inline-flex;
+          align-items: center;
+          margin: auto;
+          .icon {
+            margin-right: 10px;
+            svg {
+              width: 40px;
+            }
+          }
+          .text {
+            text-align: left;
+            text-transform: unset;
+
+            h2 {
+              font-size: 14px;
+              font-family: $font-primary-900;
+              margin: 0;
+              line-height: 1;
+              margin-bottom: 6px;
+            }
+            p {
+              font-size: 14px;
+              font-family: $font-primary-500;
+              margin: 0;
+              line-height: 1;
+            }
+          }
+        }
+
+        p {
+          padding: 0;
+          margin: 0;
+          font-family: $font-primary-500;
+          line-height: 19px;
+          font-size: 16px;
+          margin-top: 10px;
+        }
+      }
+    }
+
+
+
+    @media screen and (max-width: 991px) {
+
+      .login {
+        flex-direction: column;
+        .container {
+          flex-direction: column;
+        }
+        .title {
+          justify-content: center;
+          display: flex;
+        }
+        .login-box {
+          flex: 1;
+          margin-right: 0;
+        }
+
+        .login-box-promo {
+
+          .align-flex {
+            display: block;
+          }
+          .skew-header {
+            .header-bg {
+              margin: auto;
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .login {
+        .container {
+          width: 100%;
+        }
+
+        .login-box,
+        .login-box-promo {
+          box-shadow: $login-innerbox-shadowcolor;
+          border-radius: $card-border-radius;
+          background-color: $login-innerbox-bgcolor;
+          margin: 20px 15px;
+          .inner-box {
+            box-shadow: none;
+            padding: 20px;
+            padding-top: 10px;
+          }
+          .title {
+            margin: 0;
+          }
+        }
+        .login-box {
+          .title {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0 0;
+            i {
+              margin-bottom: 10px;
+              font-size: 30px;
+              margin-right: 0;
+            }
+          }
+        }
+
+        .login-box-promo {
+          margin-top: 0;
+          margin-bottom: 0;
+
+
+          .header-arrow {
+            position: relative;
+            background: $login-header-arrow-bgcolor;
+            border-radius: 4px;
+            .down-arrow {
+              position: absolute;
+              bottom: 0;
+              z-index: 1;
+              height: 15px;
+              width: 100%;
+              overflow: hidden;
+              &:after,
+              &:before {
+                position: absolute;
+                box-sizing: border-box;
+                content: " ";
+                position: absolute;
+                display: block;
+                width: 50%;
+                height: 100%;
+                bottom: 0;
+                border-bottom: 13px solid $login-borderbottom-color;
+              }
+              &:before {
+                left: 0;
+                width: 50%;
+                border-right: 14px solid transparent;
+              }
+
+              &:after {
+                border-left: 14px solid transparent;
+                left: 50%;
+                width: 100%;
+              }
+            }
+          }
+
+          .title {
+            padding: 20px 20px 30px;
+            text-align: center;
+            color: $white;
+            font-family: $font-secondary-SemiBold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        .promo-text {
+          padding: 0;
+        }
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+
+      .login {
+        .title {
+          h1 {
+            font-size: 1.0625rem;
+          }
+          i {
+            font-size: 20px;
+            margin-right: 15px;
+          }
+        }
+        .login-box-promo {
+
+          h2 {
+            font-size: 26px;
+            line-height: 33px;
+            span {
+              font-size: 36px;
+            }
+          }
+          p {
+            font-size: 14px;
+            line-height: 17px;
+          }
+          img {
+           /* margin-bottom: 20px;*/
+          }
+        }
+      }
+    }
+
+
+
+    @import "~responsive.scss";

@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'lottofaqicons';
+  src: url('/assets/fonts/lottofaqicons/lottofaqicons.eot?8324308');
+  src: url('/assets/fonts/lottofaqicons/lottofaqicons.eot?8324308#iefix') format('embedded-opentype'),
+       url('/assets/fonts/lottofaqicons/lottofaqicons.woff2?8324308') format('woff2'),
+       url('/assets/fonts/lottofaqicons/lottofaqicons.woff?8324308') format('woff'),
+       url('/assets/fonts/lottofaqicons/lottofaqicons.ttf?8324308') format('truetype'),
+       url('/assets/fonts/lottofaqicons/lottofaqicons.svg?8324308#lottofaqicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'lottofaqicons';
+    src: url('/assets/fonts/lottofaqicons/lottofaqicons.svg?8324308#lottofaqicons') format('svg');
+  }
+}
+
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "lottofaqicons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed 
+  margin-left: .2em;*/
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+
+
+.icon-faq-winnings:before { content: '\e800'; } /* '' */
+.icon-faq-syndicates:before { content: '\e801'; } /* '' */
+.icon-faq-subscriptions:before { content: '\e802'; } /* '' */
+.icon-faq-mobile:before { content: '\e803'; } /* '' */
+.icon-faq-security:before { content: '\e804'; } /* '' */
+.icon-faq-scratchcards:before { content: '\e805'; } /* '' */
+.icon-faq-responsiblegambling:before { content: '\e806'; } /* '' */
+.icon-faq-promotions:before { content: '\e807'; } /* '' */
+.icon-faq-jackpots:before { content: '\e808'; } /* '' */
+.icon-faq-kyc:before { content: '\e809'; } /* '' */
+.icon-faq-games:before { content: '\e80a'; } /* '' */
+.icon-faq-communications:before { content: '\e80b'; } /* '' */
+.icon-faq-withdrawing:before { content: '\e80c'; } /* '' */
+.icon-faq-account:before { content: '\e80d'; } /* '' */
+.icon-faq-addfunds:before { content: '\e80e'; } /* '' */
+.icon-faq-general:before { content: '\e80f'; } /* '' */
+.icon-search:before { content: '\e810'; } /* '' */

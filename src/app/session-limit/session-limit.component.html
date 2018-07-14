@@ -1,0 +1,80 @@
+
+<div class="session_limit_tab">
+
+<form [formGroup]="sessionLimitForm" novalidate>
+    <p>Utilise our Session Reminder so you will be the one in control of your play time. Don’t worry, when using this tool, you won’t lose your existing play session or be forcibly kicked out from the game. This tool will simply apprise you of the time you have spent on the website from the time you login until your session reminder is reached. Adjust the reminder time below so that your notification displays more, or less frequently.</p>
+    <div id="serverErrorSessionLimit" class="error-msg hide">{{serverError}}</div>
+    <div class="ld-col-md-4">
+        <div class="status">
+            <i class="icon-time-check"></i>
+            <span class="text" *ngIf="!availableLimit ">Current Setting: NONE</span>
+            <span class="text" *ngIf="availableLimit">Current Setting: Every {{availableLimitHour ? availableLimitHour +' Hours' : ''}} {{availableLimitMinute ? availableLimitMinute +' Minutes' : ''}}</span>
+        </div>
+    </div>
+
+    <div class="ld-col-md-12">
+      <div class="ld-col-md-4">
+          <div class="button">
+              <button *ngIf="availableLimit" class="btn-new btn-tertiary" type="button" (click)="openModal('sessionLimitDeleteModal')">
+                <span>Delete Current session limit</span>
+              </button>
+          </div>
+      </div>
+    </div>
+
+    <div class="ld-col-md-12">
+        <div class="ld-col-md-4">
+            <!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons-->
+            <div class="input-group plus-minus-input" *ngIf="!pendingLimit">
+                <div class="input-group-button">
+                    <button type="button" class="button hollow circle" data-quantity="minus" data-field="quantity" (click)="decreaseLimit()">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <mat-form-field>
+                  <span matSuffix class="custom_user_time">MINUTES</span>
+                  <input class="input-group-field" matInput type="number" formControlName="limit" min="0">
+                  <mat-error *ngIf="utils.shouldShowErrors('limit',sessionLimitForm)">{{utils.getErrorMessage('limit', sessionLimitForm)}}</mat-error>
+                </mat-form-field>
+
+                <div class="input-group-button">
+                    <button type="button" class="button hollow circle" data-quantity="plus" data-field="quantity" (click)="increaseLimit()">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="ld-col-md-4">
+        <div class="button">
+            <button *ngIf="!pendingLimit" id="setSession" class="btn-new btn-tertiary" type="button" (click)="setSessionLimit('setSession')" [disabled]="isButtonDisabled(sessionLimitForm)">
+                <span>Set session limit to {{sessionLimitForm.controls["limit"].value}} minutes</span>
+            </button>
+            <button *ngIf="pendingLimit" class="btn btn-primary" type="button" >
+                <span>Cancel Pending Limit</span>
+            </button>
+            <!-- <button *ngIf="!pendingLimit && availableLimit && availableLimit.overall.value" class="btn btn-primary delete-session-btn" type="button" (click)="openModal('sessionLimitDeleteModal')">
+          <span>Delete Session Limit</span>
+        </button> -->
+        </div>
+    </div>
+</form>
+</div>
+<modal id="sessionLimitDeleteModal">
+    <div class="modal">
+        <div class="modal-body">
+            <div class="close-modal" (click)="closeModal('sessionLimitDeleteModal')">
+                <i class="icon-cancel"></i>
+            </div>
+            <div class="confirm-set-limit">
+                <i class="icon-time-check"></i>
+                <p>Delete the session limit?</p>
+                <button id="deleteReality" (click)="deleteReality('deleteReality')" class="btn-new">YES DELETE</button>
+                <button id="deleteRealityCancel" (click)="closeModal('sessionLimitDeleteModal')" class="btn btn-cancel">NO</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>

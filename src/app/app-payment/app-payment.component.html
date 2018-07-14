@@ -1,0 +1,274 @@
+<!-- <div id="profileCompleteModal" class="modal blowUpModal">
+  <div class="modal-container">
+    <div class="close-modal" (click)="closeProfileCompleteModal('profileCompleteModal')"><i class="icon-close"></i></div>
+    <div class="modal-body">
+      <div class="user-reg-modal">
+        <app-complete-profile></app-complete-profile>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<modal id="profileCompleteModal">
+    <div class="modal">
+        <div class="modal-body">
+            <div class="close-modal" (click)="closeProfileCompleteModal('profileCompleteModal')">
+                <i class="icon-cancel"></i>
+            </div>
+            <div class="user-reg-modal">
+                <app-complete-profile (updateProfileComplete)="updateProfileComplete()"></app-complete-profile>
+            </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
+
+<section class="payment">
+    <div class="container">
+        <div class="wrapper-box">
+            <div class="payment-container">
+                <div class="header-row">
+
+                    <div class="ld-col-md-6 skew-header">
+                        <div class="header-bg">
+                            <div class="text-container">
+                                <span class="icon">
+                                    <i class="icon-secure-payment"></i>
+                                </span>
+
+                                <span class="text">
+                                    <h1>Make a payment</h1>
+                                    <p>All transactions 128bit SSL encrypted</p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="down-arrow"></div>
+                    </div>
+
+                    <div class="ld-col-md-5 regulatory-icons">
+                        <span class="svg-icon pci">
+                            <svg viewBox="0 0 852 413">
+                            <use xlink:href="#pci-certificate"></use>
+                            </svg>
+                        </span>
+                        <span class="svg-icon">
+                            <svg viewBox="0 0 190.05 81.95">
+                            <use xlink:href="#visa-verified"></use>
+                            </svg>
+                        </span>
+                        <span class="svg-icon">
+                            <svg viewBox="0 0 282.43 94.83">
+                            <use xlink:href="#ssl-encription"></use>
+                            </svg>
+                        </span>
+                        <span class="svg-icon">
+                            <svg viewBox="0 0 594.823 181.141">
+                            <use xlink:href="#mastercard-securecode"></use>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+
+
+
+
+                <!--  <div class="header-arrow">
+                <div class="header">
+                <div class="shape-fill">
+                <div class="shape-container">
+                <span class="icon"> <i class="icon-secure-payment"></i></span>
+                <span class="text">
+                <h1>Make a payment</h1>
+                <p>All transactions 128bit SSL encrypted</p>
+              </span>
+            </div>
+          </div>
+          <div class="regulatory-icons">
+          <span class="svg-icon pci">
+          <svg viewBox="0 0 852 413">
+          <use xlink:href="#pci-certificate"></use>
+        </svg>
+        </span>
+        <span class="svg-icon">
+        <svg viewBox="0 0 190.05 81.95">
+        <use xlink:href="#visa-verified"></use>
+        </svg>
+        </span>
+        <span class="svg-icon">
+        <svg viewBox="0 0 282.43 94.83">
+        <use xlink:href="#ssl-encription"></use>
+        </svg>
+        </span>
+        <span class="svg-icon">
+        <svg viewBox="0 0 594.823 181.141">
+        <use xlink:href="#mastercard-securecode"></use>
+        </svg>
+        </span>
+        </div>
+        </div>
+        </div> -->
+                <div class="content"  *ngIf=" paymentType !='withdrawal'" >
+                    <app-payment-container-fields *ngIf="callPaymentFields" [paymentType]="paymentType" [totalPrice]="totalPrice" [lotteryDeatil]="lotteryDeatil" [isSubscription]="isSubscription"></app-payment-container-fields>
+                    <div class="loader-time" *ngIf="!callPaymentFields">
+                        <mat-spinner></mat-spinner>
+                    </div>
+                </div>
+                <div class="content"  *ngIf=" paymentType =='withdrawal'">
+                        <app-withdraw-funds *ngIf="availableWithdrawMethods && (withdrawCCAvailable == 'available' || withdrawOtherAvailable == 'available') && cashBalance > 0" [availableWithdrawableCC]="availableWithdrawableCC" [availableWithdrawMethods]="availableWithdrawMethods" [withdrawableBalance]="cashBalance" [withdrawLimitList]="withdrawLimitList"></app-withdraw-funds>
+                    <div class="loader-time" *ngIf="!callPaymentFields">
+                        <mat-spinner></mat-spinner>
+                    </div>
+                </div>
+                <div class="show-small regulatory-icons">
+                    <span class="svg-icon pci">
+                        <svg viewBox="0 0 852 413">
+                        <use xlink:href="#pci-certificate"></use>
+                        </svg>
+                    </span>
+                    <span class="svg-icon">
+                        <svg viewBox="0 0 190.05 81.95">
+                        <use xlink:href="#visa-verified"></use>
+                        </svg>
+                    </span>
+                    <span class="svg-icon">
+                        <svg viewBox="0 0 282.43 94.83">
+                        <use xlink:href="#ssl-encription"></use>
+                        </svg>
+                    </span>
+                    <span class="svg-icon">
+                        <svg viewBox="0 0 594.823 181.141">
+                        <use xlink:href="#mastercard-securecode"></use>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <!-- <div class="cart-summary" *ngIf="paymentType == 'buyTicket'"> add it back once done-->
+            <div class="cart-summary" *ngIf="paymentType == 'buyTicket'">
+                <div class="card-sumary-title">
+                    <span class="text"><i class="icon-cart"></i>Cart Summary</span>
+                    <span class="cart-list" *ngIf="getCartItemsCount() > 0">{{getCartItemsCount()}}</span>
+                </div>
+                <ng-container *ngIf="cartList && cartList.length >0">
+                    <div class="ticket-cart-list" *ngFor="let ticket of cartList; let i = index">
+                         <div class="ticket-details">
+                            <span class="lottery">
+                                <span class="lotteryBall {{ticket.extraDetails.nameConstant}}"></span>
+                                <span class="lottery-name">{{ticket.extraDetails.lotteryName}}</span>
+                            </span>
+                            <span class="amount">{{userService.getUserCurrencySymbol()}} {{ticket.finalOrderPriceUC | number : '1.2-2'}}</span>
+                        </div>
+                        <div class="draw-info">
+                            <div id="{{i}}" class="draw-info-details">
+                                <p>Draw {{ticket.items[0].drawId}}</p>
+                                <p *ngIf="ticket.items[0].orderedLines">{{ticket.items[0].orderedLines.length}} lines standard entry - {{ticket.items[0].IsUnlimited ? 'Subscription' : 'Quickpick'}}</p>
+                                <p *ngIf="ticket.items[0].shares">{{ticket.items[0].shares}} lines syndicate entry - {{ticket.items[0].IsUnlimited ? 'Subscription' : 'Quickpick'}}</p>
+                                <p>{{ticket.items[0].orderedTickets}} Draw ({{ticket.extraDetails.date | dateSuffix : "EEE, ddoo MMM yyyy"}})</p>
+                            </div>
+                            <div id="summary-{{i}}" class="more-info-btn" (click)="showInfo(i)"> <span class=""><i class="icon-plus"></i> MORE INFO</span><span class="hide"><i class="icon-minus"></i> LESS INFO</span></div>
+                        </div>
+                    </div>
+                </ng-container>
+                <div class="total-amount">
+                    <div class="stake">
+                        <span class="text">Stake:</span>
+                        <span class="amount">{{userService.getUserCurrencySymbol()}} {{cartPrice | number:'1.2-2'}}</span>
+                    </div>
+                    <div class="stake">
+                        <span class="text">Payment Amount:</span>
+                        <span class="amount slant-shape">{{userService.getUserCurrencySymbol()}} {{totalPrice | number:'1.2-2'}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="promotions" style="background-color: #fff">
+                 <img src="assets/img/place-holder-info.jpg">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <modal id="quickDepositModal">
+    <div class="modal">
+        <div class="modal-body">
+            <div class="deposit-header">
+                <div class="close-modal" (click)="closeModal('quickDepositModal')">
+                    <i class="fa fa-times-circle-o"></i>
+                </div>
+                <div class='bonus-select' *ngIf="bonusSelect">
+                    <h3>Make a deposit</h3>
+                    <p>Step 1:Select Deposit Bonus</p>
+                </div>
+                <div class='payment-method' *ngIf="paymentMethod">
+                    <h3>Make a deposit</h3>
+                    <p>Step 2:Make a secure deposit to My Account</p>
+                </div>
+
+            </div>
+            <div id="depositModalContent" class="user-reg-modal">
+                <div class='bonus-select-data' *ngIf="bonusSelect">
+                    <div class='bonus-lisitng'>
+                        <app-bonus-field></app-bonus-field>
+                    </div>
+                    <button class="no-bonus-button" (click)="makePayment()">Deposit without bonus&nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>
+                </div>
+
+                <div class='payment-method-data' *ngIf="paymentMethod">
+                    <app-app-payment></app-app-payment>-->
+                    <!--                    <button (click)="paymentComplete()">Deposit&nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>-->
+               <!-- </div>
+            </div>
+            <div id="quickModalSuccess" class="user-quickdeposit-modal">
+                <section class="deposit-success" *ngIf="qDResponse">
+                    <div class="container">
+                        <app-txn-status *ngIf="qDResponse"></app-txn-status>
+                        <div class="quick-links">
+                            <div class='bingo-link' routerLink='/bingo'>
+                                <img src="/assets/img/scratch-card.jpg"/>
+                                <p>Bingo</p>
+                            </div>
+                            <div class='casino-link' routerLink='/casino'>
+                                <img src="/assets/img/scratch-card-2.jpg"/>
+                                <p>Casino</p>
+                            </div>
+                            <div class='sratch-link' routerLink='/scratch'>
+                                <img src="/assets/img/scratch-card-3.jpg"/>
+                                <p>Scratch</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div id="quickModalFailure" class="user-quickdeposit-modal hide">
+                <section class="deposit-success">
+                    <div class="container">
+                        <div class="header-row">
+                            <div class="skew-header">
+                                <div class="header-bg">
+                                    <div class="text-container">
+                                        <span class="icon">
+                                            <i class="icon-oops"></i>
+                                        </span>
+                                        <span class="text">
+                                            <h1>Oops…</h1>
+                                            <p>Something went wrong </p>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="down-arrow"></div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="deposit-failcase">
+                                <img class="deposit-done" src="/assets/img/error-icon.svg" alt="deposit failed" title="deposit failed" />
+                                <p>We’re sorry.. something went wrong with the transaction. Please check the details and retry using the button below.</p>
+                                <button id="retryPaymentButton" class="btn-new" type="button" (click)="retryPayment('retryPaymentButton')">
+                                    <i class="icon-lock"></i>
+                                    <span>RETRY</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal> -->

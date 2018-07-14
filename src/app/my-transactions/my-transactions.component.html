@@ -1,0 +1,169 @@
+<section class="my-transactions">
+    <div class="content device-comp">
+        <div class="left-section">
+            <div class="heading-para">
+                <h3>My Transactions</h3>
+                <p>View payment and transaction history</p>
+            </div>
+            <p>
+                <span class="bal-display"><a href="javascript:void(0);" type='button' routerLink="/payment/deposit"><span>Deposit</span></a></span>
+                <span class="bal-display">
+                    Account Balance <span>{{userDetails.getUserCurrencySymbol()}} {{cashBalance | number:'1.2-2' }}</span>
+                </span>
+                <span class="bal-display">
+                    Bonus Balance <span>{{userDetails.getUserCurrencySymbol()}} {{bonusBalance | number:'1.2-2' }}</span>
+                </span>
+            </p>
+        </div>
+        <div class="right-section">
+            <form [formGroup]="txnDetails" (ngSubmit)="applyFilter('filterButton','')" novalidate class="form-holder">
+                <mat-form-field class="">
+                    <input name="startDate" matInput [readonly]="true" (click)="startDate.open()" [matDatepicker]="startDate" placeholder="Period From:" [max]="minimumDate" formControlName="startDate">
+                           <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                    <mat-datepicker #startDate disabled="false"></mat-datepicker>
+                    <mat-error *ngIf="shouldShowErrors('startDate',txnDetails)">{{getErrorMessage('startDate',txnDetails)}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="">
+                    <input name="endDate" matInput [readonly]="true" (click)="endDate.open()" [matDatepicker]="endDate" placeholder="Period To:" [max]="minimumDate" formControlName="endDate">
+                           <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                    <mat-datepicker #endDate disabled="false"></mat-datepicker>
+                    <mat-error *ngIf="shouldShowErrors('endDate',txnDetails)">{{getErrorMessage('endDate',txnDetails)}}</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select name="items" placeholder="Transaction Types" formControlName="items" multiple>
+                        <!--  <mat-option *ngFor="let txnType of txnTypes" [value]="txnType" [disabled]="getOptionDisabled(txnType)">
+                           {{ txnType }}
+                         </mat-option> -->
+
+                        <mat-option *ngFor="let txnType of txnTypes" [value]="txnType.key" [disabled]="getOptionDisabled(txnType.key)">
+                            {{ txnType.value}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="shouldShowErrors('items',txnDetails)">{{getErrorMessage('items',txnDetails)}}</mat-error>
+            </mat-form-field>
+            <button id="filterButton" class="btn-new filter-btn" type="button" (click)="applyFilter('filterButton','');mixPanelEventCheck('filter')" [disabled]="isButtonDisabled(txnDetails)">
+                <span>FILTER RESULTS</span>
+            </button>
+        </form>
+    </div>
+</div>
+<div class="filter-mob">
+    <button class="filter-btn-mob " [ngClass]="activeFilter == 'thirtyday' ? 'active-filter' : '' " (click)="getActiveFilter('thirtyday')">Last 30 days </button>
+    <button class="filter-btn-mob " [ngClass]="activeFilter == 'sevenday' ? 'active-filter' : '' " (click)="getActiveFilter('sevenday')">Last 7 days </button>
+    <button class="filter-btn-mob " [ngClass]="activeFilter == 'oneday' ? 'active-filter' : '' " (click)="getActiveFilter('oneday')">Last 24 hours </button>
+</div>
+<div id="mobAcc" class="accordionRow mobile-comp mobile-filter">
+
+    <div class="accordionHeadline" (click)="toggleAccordion();mixPanelEventCheck('filter')">
+        <h1>Filter Results</h1>
+    </div>
+    <div class="accordionText">
+        <form [formGroup]="txnDetails" (ngSubmit)="applyFilter('filterButtonMob','')" novalidate class="form-holder">
+            <div class="form-fields">
+                <mat-form-field class="">
+                    <input name="startDate" matInput [readonly]="true" placeholder="Period From:" [max]="minimumDate" formControlName="startDate"  mbsc-date  [mbsc-options]="mobiDatePicker">
+                           <mat-datepicker-toggle matSuffix [for]="startDateMob"></mat-datepicker-toggle>
+                    <mat-datepicker #startDateMob disabled="false"></mat-datepicker>
+                    <mat-error *ngIf="shouldShowErrors('startDate',txnDetails)">{{getErrorMessage('startDate',txnDetails)}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="">
+                    <input name="endDate" matInput [readonly]="true"  placeholder="Period To:" [max]="minimumDate" formControlName="endDate" mbsc-date  [mbsc-options]="mobiDatePicker" class="mobile-date">
+                           <mat-datepicker-toggle matSuffix [for]="endDateMob"></mat-datepicker-toggle>
+                    <mat-datepicker #endDateMob disabled="false"></mat-datepicker>
+                    <mat-error *ngIf="shouldShowErrors('endDate',txnDetails)">{{getErrorMessage('endDate',txnDetails)}}</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select name="items" placeholder="Transaction Types" formControlName="items" multiple>
+                        <mat-option *ngFor="let txnType of txnTypes" [value]="txnType.key" [disabled]="getOptionDisabled(txnType.key)">
+                            {{ txnType.value}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="shouldShowErrors('items',txnDetails)">{{getErrorMessage('items',txnDetails)}}</mat-error>
+            </mat-form-field>
+        </div>
+        <button id="filterButtonMob" class="btn-new filter-btn" type="button" (click)="applyFilter('filterButtonMob','');mixPanelEventCheck('filter')" [disabled]="isButtonDisabled(txnDetails)">
+            <span>FILTER RESULTS</span>
+        </button>
+        <!-- <button id="filterButtonMob" [ngClass]="getButtonClass(txnDetails)" class="btn filter-btn" type="button" (click)="applyFilter('filterButtonMob','')" [disabled]="isButtonDisabled(txnDetails)">
+          FILTER RESULTS
+          <i class="fa fa-refresh fa-spin facebook-login-spinner hide"></i>
+        </button> -->
+    </form>
+</div>
+</div>
+<div class="mob-acc-bal mobile-comp">
+    <span class="bal-display">
+        Account Balance <span>{{userDetails.getUserCurrencySymbol()}} {{cashBalance | number:'1.2-2' }}</span>
+    </span>
+</div>
+<div class="clearfix"></div>
+<div class="table-content" *ngIf="transactions">
+    <table>
+        <thead>
+            <tr>
+                <th>Date & Time</th>
+                <th>Transaction Details</th>
+                <th>Type</th>
+                <th>Credit / Debit</th>
+            </tr>
+        </thead>
+        <ng-container *ngIf="transactions.length > 0">
+            <tbody *ngFor="let transaction of transactions;let i=index">
+                <tr *ngIf="showGroupDateRow(transactions,i)" class="group-date">
+                    <td colspan="4">{{transaction.time | dateSuffix : "EEEE, ddoo MMMM yyyy"}}</td>
+                </tr>
+                <tr>
+                    <td>{{transaction.time | dateSuffix : "EEEE, ddoo MMM yyyy"}}
+                    </td>
+                    <td>
+                        <p class="type mobile-comp">{{transaction.type | translate}}</p>
+                        <h3>Transaction ID: {{transaction.id}}</h3>
+                        <!--               <h4>{{transaction.type}} </h4> -->
+                        <span class="mobile-comp date">{{transaction.time | dateSuffix : "EEEE, ddoo MMM yyyy"}}</span>
+                        <!-- <h5>8 lines standard entry - Quickpick</h5> -->
+                    </td>
+                    <td class="type">{{transaction.type | translate}}</td>
+                    <td class="credit-debit">{{userDetails.getUserCurrencySymbol()}} {{transaction.amount| number : '1.2-2'}} <span>{{transaction.operation}}</span></td>
+                </tr>
+            </tbody>
+        </ng-container>
+        
+        <ng-container *ngIf="transactions && transactions.length <= 0">
+            <tbody>
+                <tr>
+                    <td colspan="4">No Transactions Available</td>
+                </tr>
+            </tbody>
+        </ng-container>
+        <ng-container *ngIf="!transactions">
+            <tbody>
+                <tr>
+                    <td colspan="4"><mat-spinner></mat-spinner></td>
+            </tr>
+            </tbody>
+
+        </ng-container>
+        <!--        <tfoot>
+                    <tr>
+                        <td colspan="3"></td>
+                    </tr>
+                </tfoot>-->
+    </table>
+    <div class="button">
+        <button href="javascript:void(0)" [disabled]="request.index == 0 ? 'true' : ''" [ngClass]="request.index == 0 ? 'btn-disabled':''" (click)="applyFilter('','less')" class="btn">
+            <i class="icon-left-arrow"></i>
+            <span class="text">Previous page</span>
+        </button>
+        <button href="javascript:void(0)" [disabled]="transactions && (transactions.length > 0 && transactions.length >= request.size) ? '' : 'true'" [ngClass]="transactions && (transactions.length > 0 && transactions.length >= request.size) ? '' :'btn-disabled'" (click)="applyFilter('','more')" class="btn">
+            <span class="text">Next page</span>
+            <i class="icon-right-arrow"></i>
+        </button>
+    </div>
+    <div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="loader-time" *ngIf="!transactions">
+    <mat-spinner></mat-spinner>
+</div>
+</section>

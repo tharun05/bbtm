@@ -1,0 +1,32 @@
+<div class="login-form">
+    <form [formGroup]="loginForm" novalidate (keyup)="$event.keyCode == 13 ? login('loginButton-'+callingFrom) : ''">
+        <div id="serverError-{{callingFrom}}" class="error-msg hide">{{serverError}}</div>
+        <mat-form-field class="">
+            <span matPrefix>
+                <svg _ngcontent-c23="" height="18" width="18" viewBox="0 0 20 16" fill="#7e69af">
+                <use _ngcontent-c23="" xlink:href="#mail-icon"></use>
+                </svg>
+            </span>
+            <input formControlName="txtEmail" name="email" matInput placeholder="Username or email address" type="text">
+            <mat-error *ngIf="shouldShowErrors('txtEmail',loginForm)">{{getErrorMessage('txtEmail',loginForm)}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <span matPrefix>
+              <svg _ngcontent-c23="" height="20" width="18" viewBox="0 0 768.3 961.37" fill="#7e69af">
+                <use _ngcontent-c23="" xlink:href="#lock-icon"></use>
+              </svg>
+            </span>
+            <input formControlName="txtPassword" name="password" matInput placeholder="Password" [type]="passwordField ? 'password' : 'text'">
+            <mat-icon matSuffix (click)="passwordField = !passwordField">{{passwordField ? 'SHOW' : 'HIDE'}}</mat-icon>
+            <mat-error *ngIf="shouldShowErrors('txtPassword',loginForm)">{{getErrorMessage('txtPassword',loginForm)}}</mat-error>
+        </mat-form-field>
+        <mat-slide-toggle class="example-margin">
+            Remember me
+        </mat-slide-toggle>
+        <button type="button" id="loginButton-{{callingFrom}}" class="btn-new" (click)="login('loginButton-'+callingFrom)" [disabled]="isButtonDisabled(loginForm)"> <span>Login</span></button>
+    </form>
+    <p class="text">
+<a (click)="openForgotPassword();mixPanelEventCheck('HAVING TROUBLE LOGGING IN')" href="javascript:void(0)">Having Trouble Logging In?</a>
+    </p>
+    <div class="clearfix"></div>
+</div>

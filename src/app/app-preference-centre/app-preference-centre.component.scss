@@ -1,0 +1,116 @@
+@import "~variables.scss";
+
+.preference-centre {
+    .preference-list {
+        display: flex;
+        align-items: flex-start;
+        @media screen and (max-width: 992px) {
+            flex-direction: column;
+        }
+
+
+
+        .ld-ckbox {
+            margin-right: 50px;
+            @media screen and (max-width: 992px) {
+                margin-right: 0px;
+                margin-bottom: 30px;
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+            }
+            input {
+                position: absolute;
+                left: -9999px;
+            }
+
+            label {
+                width: 100%;
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+                user-select: none;
+                transition: background-color .2s;
+                font-family: $font-primary-500;
+                box-sizing: border-box;
+                margin: 0;
+
+
+                &::before {
+                    content: '';
+                    display: block;
+                    float: left;
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 4px;
+                    background-color: $preference-center-label-bgcolor;
+                    border: 1px solid $preference-center-label-bordercolor;
+                    box-sizing: border-box;
+                }
+
+                .text {
+                    width: calc(100% - 65px);
+                    float: right;
+                    color: $preference-center-text-bordercolor;
+                    margin: 0 0 0 25px;
+
+
+                    p {
+                        color: $preference-center-text-bordercolor;
+
+                        font-weight: normal;
+                        font-size: 11.73px;
+                        font-family: $main-primary-ef-reg;
+                        line-height: 14px;
+                        margin: 0;
+                        letter-spacing: -0.2px;
+                        b {
+                            font-size: 16px;
+                            font-family: $main-primary-ef-reg;
+                            line-height: 19px;
+                            font-weight: bold;
+                            letter-spacing: -0.32px;
+                        }
+                    }
+                }
+            }
+
+            input:checked+label::before {
+                content: '\e80a';
+                font-family: 'lottoicons';
+                color: $white;
+                font-size: 26px;
+                font-weight: bold;
+                text-align: center;
+                line-height: 1.5;
+                border: 1px solid $green;
+                background-color: $green;
+            }
+            &.load-check {
+                input+label::before {
+                    content: url("/assets/img/loader-icon.gif");
+                    border: 1px solid $preference-center-inputchecked-bordercolor;
+                    background-color: $preference-center-inputchecked-bgcolor;
+                    text-align: center;
+                    box-sizing: border-box;
+                    vertical-align: middle;
+                    line-height: 1.9;
+                }
+            }
+
+            input:disabled+label::before {
+                cursor: not-allowed;
+            }
+
+
+
+            .mat-form-field {
+                .mat-input-placeholder {
+                    &:before {
+                        display: none!important;
+                    }
+                }
+            }
+        }
+    }
+}

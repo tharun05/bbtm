@@ -1,0 +1,82 @@
+<div class="scratchesMainWrapper">
+    <div class="container">
+        <div class="header-row">
+            <div class="skew-header">
+                <div class="header-bg">
+                    <div class="text-container">
+                        <span class="icon">
+                            <svg class="scratch icon" fill="#fff" height="44px" viewBox="5 -10 50 45" width="60px">
+                            <use _ngcontent-c24="" xlink:href="#scratch-icon"></use>
+                            </svg>
+                        </span>
+                        <span class="text">
+                            <h1>Scratches Games</h1>
+                        </span>
+                    </div>
+                </div>
+                <div class="down-arrow"></div>
+            </div>
+
+
+            <app-onlineplayers></app-onlineplayers>
+
+
+
+            <div class="search desktop">
+                <div class="form-group">
+                    <input type="text" placeholder="Search Scratch Games" [ngModel]="searchText" (ngModelChange)="valuechange($event)"/>
+                    <button type="submit">
+                        <svg width="23px" height="28px" fill="#fff" class="tab_hover" viewBox="0 0 255 235">
+                        <use xlink:href="#search-icon"></use>
+                        </svg></button>
+                    <div class="search-results-wrap" *ngIf="showResults">
+                        <i class="icon-close" (click)="showResults = false"></i>
+                        <ul class="search-results">
+                          <li class="no-result" *ngIf="(scratchesData | slotsSearch : searchText).length === 0">No Games</li>
+                          <li *ngFor="let scratches of scratchesData | slotsSearch : searchText" (click)="openSearchResultGames(scratches.gameCode)">{{scratches.name}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-btn">
+                <button type="submit">
+                    <svg  x="0px" y="0px" width="30px" height="16px"  fill="#fff" class="tab_hover" viewBox="0 0 380 380">
+                    <use xlink:href="#filter-icon"></use>
+                    </svg>
+                    &nbsp; Filter
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="masonryLayoutWrap">
+        <div class="container">
+            <div class="scratchesContentWrapper">
+                <div class="masonryContentBlock">
+                    <div class="grid-size"></div>
+                    <ng-container *ngIf="scratchesDataLength">
+                        <div detect-scroll (onScroll)="handleScroll($event)" [bottomOffset]="500">
+                          <div class="grid-blks-2" *ngFor="let scratches of scratchesData;let i = index">
+                               <div class="scratchesblks-inner-wrap">
+                                  <ng-container *ngIf="windowType == 'mobile'">
+                                      <img (click)="gameLauncher(gameType, scratches.gameCode)" src="{{siteUrlPath}}/{{gameUrlPath}}/{{scratches.gameCode}}/{{scratches.gameCode}}.jpg" />
+                                  </ng-container>
+                                  <ng-container *ngIf="windowType == 'device'">
+                                      <img (click)="gameLauncher(gameType, scratches.gameCode)" src="{{siteUrlPath}}/{{gameUrlPath}}/{{scratches.gameCode}}/{{scratches.gameCode}}.jpg" />
+                                  </ng-container>
+                              </div>
+                          </div>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="scratchesDataLength === 0">
+                        <p class="no-games">No games available</p>
+                    </ng-container>
+                    <ng-container *ngIf="!scratchesData">
+                        <div class="grid-blks" *ngFor="let scratches of [].constructor(11)">
+                             <div class="scratchesblks-inner-wrap animated-background"></div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

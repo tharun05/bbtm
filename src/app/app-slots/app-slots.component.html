@@ -1,0 +1,111 @@
+<div class="slotsMainWrapper">
+  <div class="container">
+    <div class="header-row">
+      <div class="skew-header">
+        <div class="header-bg">
+          <div class="text-container">
+            <span class="icon">
+              <svg width="60px" height="44px" fill="#fff" class="casino-icons" viewBox="0 -6 60 57">
+                <use xlink:href="#casino-icon"></use>
+              </svg>
+            </span>
+            <span class="text">
+              <h1>Casino Games</h1>
+            </span>
+          </div>
+        </div>
+        <div class="down-arrow"></div>
+      </div>
+      <app-onlineplayers></app-onlineplayers>
+      <div class="search desktop">
+        <div class="form-group">
+          <input type="text" placeholder="Search Casino Games" [ngModel]="searchText" (ngModelChange)="valuechange($event)" />
+          <button class="btn btn-default" type="submit">
+            <svg width="23px" height="28px" fill="#fff" class="tab_hover" viewBox="0 0 255 235">
+              <use xlink:href="#search-icon"></use>
+            </svg>
+          </button>
+          <div class="search-results-wrap" *ngIf="showResult">
+            <i class="icon-close" (click)="showResult = false"></i>
+            <ul class="search-results">
+              <li class="no-result" *ngIf="(allSlotsData | slotsSearch : searchText).length === 0">No Games</li>
+              <li *ngFor="let slots of allSlotsData | slotsSearch : searchText" (click)="openSearchResultGames(slots.gameCode)">{{slots.name}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-btn">
+        <button type="submit">
+          <svg x="0px" y="0px" width="30px" height="16px" fill="#fff" class="tab_hover" viewBox="0 0 380 380">
+            <use xlink:href="#filter-icon"></use>
+          </svg>
+          &nbsp; Filter
+        </button>
+      </div>
+
+    </div>
+    <div class="slotsTabsList">
+      <h3>Popular Tags</h3>
+      <ul>
+        <li (click)="loadGames('featuredgames')" [ngClass]="{'active': activeTab == 'featuredgames'}">Featured Games ({{featuredLength}})</li>
+        <li (click)="loadGames('videoslots')" [ngClass]="{'active': activeTab == 'videoslots'}">Video Slots ({{videoLength}})</li>
+        <li (click)="loadGames('classicslots')" [ngClass]="{'active': activeTab == 'classicslots'}">Classic Slots ({{classicLength}})</li>
+        <li (click)="loadGames('tableslots')" [ngClass]="{'active': activeTab == 'tableslots'}">Table Games ({{tableLength}})</li>
+        <li (click)="loadGames('videopoker')" [ngClass]="{'active': activeTab == 'videopoker'}">Video Poker ({{videoPokerLength}})</li>
+        <li (click)="loadGames('allgames')" [ngClass]="{'active': activeTab == 'allgames'}">All Games ({{allGamesLength}})</li>
+      </ul>
+    </div>
+  </div>
+  <div class="masonryLayoutWrap">
+    <div class="container">
+      <div class="slotsContentWrapper">
+        <div class="masonryContentBlock">
+          <div class="grid-size"></div>
+          <ng-container *ngIf="slotsData">
+            <div detect-scroll (onScroll)="handleScroll($event)" [bottomOffset]="500">
+              <div class="grid-blks-2" *ngFor="let slots of slotsData;let i = index">
+                <div class="slotsblks-inner-wrap">
+                  <ng-container *ngIf="windowType == 'device'">
+                    <img (click)="gameLauncher('realgames', slots.gameCode)" src="{{siteUrlPath}}/{{gameUrlPath}}/{{slots.gameCode}}/{{slots.gameCode}}.jpg"
+                    />
+                    <div class="featured-mask" (click)="gameLauncher('realgames', slots.gameCode)">
+                      <div class="featured-mask-inn">
+                        <h4>
+                          <a>
+                            <svg width="28px" height="33px" viewBox="0 0 59 71" fill="#00c332" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <use xlink:href="#play icon"></use>
+                            </svg>
+                          </a>
+                        </h4>
+                        <div class="try-games">
+                          <span>{{buttonText}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-container>
+                  <ng-container *ngIf="windowType == 'mobile'">
+                    <img (click)="gameLauncher('realgames', slots.gameCode)" src="{{siteUrlPath}}/{{gameUrlPath}}/{{slots.gameCode}}/{{slots.gameCode}}.jpg"
+                    />
+                    <!-- <div class="featured-mask" (click)="gameLauncher('realgames', slots.gameCode)">
+                    </div> -->
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+            </ng-container>
+        </div>
+      </div>
+      <ng-container *ngIf="slotsData == 0">
+        <p class="no-games">No games available</p>
+      </ng-container>
+      <ng-container *ngIf="!slotsData">
+        <div class="grid-blks-2" *ngFor="let slots of [].constructor(14)">
+          <div class="game_skl_height">
+            <div class="slotsblks-inner-wrap animated-background"></div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

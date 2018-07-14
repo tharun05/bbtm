@@ -1,0 +1,45 @@
+<div class="ld-slots-container">
+  <div class="container">
+    <h1><span class="icon-777"></span> Featured Slot Games</h1>
+    <div class="masonryLayoutWrap slotsContentWrapper">
+      <div class="masonryContentBlock">
+        <div class="grid-size"></div>
+        <ng-container *ngIf="slotsData">
+          <div class="grid-blks grid-blk {{slots.imageSize}}" [ngClass]="{'extra-large-blk':i == 0 ,'two-col-blk':i == 6 ,'two-row-blk':i == 4}" *ngFor="let slots of slotsData;let i = index">
+            <div class="slotsblks-inner-wrap">
+              <ng-container *ngIf="windowType == 'mobile'">
+                <img (click)="gameLauncher('realgames', slots.gameCode)" src="{{siteUrlPath}}/{{gameUrlPath}}/{{slots.gameCode}}/{{slots.gameCode}}.jpg" />
+              </ng-container>
+              <ng-container *ngIf="windowType == 'device'">
+                <img src="{{siteUrlPath}}/{{gameUrlPath}}/{{slots.gameCode}}/{{slots.gameCode + (i == 0 || i == 9 ? '-extralarge' : i == 6 || i == 8 ? '-horizontal' : i == 4 ? '-vertical' : '')}}.jpg" />
+                <img class="hoverImg" src="{{siteUrlPath}}/{{gameUrlPath}}/{{slots.gameCode}}/hover/{{slots.gameCode + (i == 0 || i == 9 ? '-extralarge' : i == 6 || i == 8 ? '-horizontal' : i == 4 ? '-vertical' : '')}}.jpg" />
+                <div class="sweep-to-top">
+                  <div class="center-align-hover">
+                    <h3>{{slots.name}}</h3>
+                    <div class="slots-play-btn">
+                      <button class="transparentBtn" (click)="gameLauncher('freegames', slots.gameCode)">Practice <span *ngIf="i == 0 || i == 4 || i == 6 || i == 8 || i == 9" >Play</span></button>
+                      <button class="greenBtn" (click)="gameLauncher('realgames', slots.gameCode)">Real Play</button>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="slotsData == 0">
+          <p class="no-games">No games available</p>
+        </ng-container>
+        <ng-container *ngIf="!slotsData">
+          <div class="grid-blks" *ngFor="let slots of [0,1,2,3,4,5,6,7,8,9,10,11]">
+            <div class="slotsblks-inner-wrap animated-background"></div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="btn-field-wrapper">
+      <button class="btn btn-secondary" routerLink="/casino">
+        SEE ALL SLOT GAMES <i class="fa fa-angle-right"></i>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,142 @@
+@import "~variables.scss";
+
+$contact-info-text-color: #384079;
+$Emai-text-color: #5C95FF;
+.contact-form {
+    width: 100%;
+    box-sizing: border-box;
+    p{
+        color: $contact-info-text-color;	
+        font-family: Effra-Regular;
+        font-size: 20px;
+        letter-spacing: -0.17px;
+        line-height: 24px;
+
+        &.info-title{
+            margin-top: 0px;
+            margin-bottom: 36px;
+
+            &:a{
+                color: $Emai-text-color;
+            }
+        }
+    }
+
+    .selectric-wrapper{
+        .selectric{
+            .label{
+                padding: 3px 40px 4px 12px;
+            }
+        }
+    }
+
+    .info-box {
+        padding: 10px;
+        background-color: $contact-component-infobox-bgcolor;
+        border-radius: 4px;
+        border: 1px solid $contact-component-infobox-bordercolor;
+        margin: 10px 0;
+        h6,
+        p {
+            margin: 0;
+        }
+        h6 {
+            font-family: $font-secondary-Bold;
+            margin-bottom: 2px;
+            color: darken($contact-component-infobox-h6color, 3%);
+            font-size: 14px;
+        }
+
+        p {
+            font-size: 13px;
+            color: $contact-component-infobox-pcolor;
+            font-family: $font-primary-500;
+        }
+    }
+
+    .fields {
+        display: flex;
+        justify-content: space-between;
+        i {
+            font-size: 24px;
+        }
+        .select-box {
+            width: calc(100% - 35px);
+            float: right;
+            margin-top: 20px;
+        }
+        .textarea {
+            .mat-form-field {
+                .mat-form-field-wrapper {
+                    width: 100%;
+                }
+                .mat-form-field-underline {
+                    display: none;
+                }
+                .mat-form-field-placeholder {
+                    padding: 15px 20px;
+                }
+            }
+            .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-placeholder {
+                top: 8px;
+            }
+
+            textarea {
+                border-radius: 4px;
+                border: 1px solid $contact-component-fields-textareabordercolor;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 15px 20px;
+            }
+
+            .ng-valid.ng-touched .mat-form-field-placeholder-wrapper:after,
+                .mat-form-field-invalid .mat-form-field-placeholder-wrapper:after {
+                display: none;
+            }
+            .mat-form-field-invalid {
+                textarea {
+                    border: 1px solid $contact-component-fields-textareainvalidcolor;
+                }
+            }
+            .ng-valid {
+                textarea {
+                    border: 1px solid $contact-component-fields-textareasuccesscolor;
+                }
+            }
+        }
+
+        .btn-contact {
+            font-family: $main-primary-ef-reg;
+            font-size: 20px;
+            padding: 15px 20px;
+            line-height: 1;
+            margin: 20px 0;
+            width: 240px;
+            float: right;
+
+            &[disabled],
+            &[disabled]:hover{
+                background: #C6DDCC;
+                opacity: 1 !important; 
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .contact-form {
+        .fields {
+            flex-direction: column;
+            i {
+                font-size: 22px;
+            }
+            .select-box {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            .btn-contact {
+                width: 100%;
+            }
+        }
+    }
+}

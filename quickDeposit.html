@@ -1,0 +1,255 @@
+<!Doctype html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+
+body {
+  color: #384079;
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+}
+/* header Bg */
+section.deposit-success {
+  background: #fff;
+}
+section.deposit-success .header-row {
+  position: relative;
+}
+section.deposit-success .content {
+  padding: 20px;
+}
+section.deposit-success .container .header-row .skew-header .header-bg {
+    background: -webkit-linear-gradient(41.81deg, #7B4397 0%, #B5238A 61.8%, #DC2430 100%);
+    background: linear-gradient(48.19deg, #7B4397 0%, #B5238A 61.8%, #DC2430 100%);
+    padding-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+section.deposit-success .container .header-row .skew-header .text-container {
+    padding: 21.5px 20px;
+    max-width: 100%;
+    color: #ffffff;
+}
+section.deposit-success .container .header-row .skew-header .text-container .text h1 {
+    font-size: 1.25rem;
+    margin: 0;
+    max-height: 2.90rem;
+}
+section.deposit-success .container .header-row .skew-header .text-container .text p {
+    font-size: 0.9rem;
+    max-height: 1.875rem;
+    padding-bottom: 1px;
+    margin: 0;
+    display: block;
+    display: -webkit-box;
+    line-height: 1.1;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 98%;
+}
+section.deposit-success .container .header-row .skew-header .down-arrow {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    height: 15px;
+    width: 100%;
+    overflow: hidden;
+}
+section.deposit-success .container .header-row .skew-header .down-arrow:after, section.deposit-success .container .header-row .skew-header .down-arrow:before {
+    position: absolute;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 50%;
+    height: 100%;
+    bottom: 0;
+    border-bottom: 13px solid #ffffff;
+}
+section.deposit-success .container .header-row .skew-header .down-arrow:before {
+    left: 0;
+    width: 75px;
+    border-right: 14px solid transparent;
+}
+section.deposit-success .container .header-row .skew-header .down-arrow:after {
+    border-left: 14px solid transparent;
+    width: -webkit-calc(100% - 75px);
+    width: calc(100% - 75px);
+    left: 75px;
+}
+
+section.deposit-success .container .content h2 {
+    font-size: 18px;
+    margin: 5px 0 15px;
+}
+section.deposit-success .container .show-small {
+    display: none;
+}
+table {
+    background-color: transparent;
+}
+section.deposit-success .container .content table tr td {
+    font-size: 16px;
+    vertical-align: top;
+    padding: 10px 0;
+}
+section.deposit-success .container .content table tr td:nth-child(2) {
+    padding-left: 20px;
+    font-weight: bold;
+}
+.deposit-failcase {
+  text-align: center;
+}
+.deposit-failcase img {
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.deposit-failcase button {
+  margin-top: 20px;
+}
+@media screen and (min-width:767px) {
+  .deposit-failcase button {
+    max-width: 300px;
+  }
+}
+
+#failure-header,#failure-message,#success-header,#success-message{
+  display: none
+}
+</style>
+</head>
+<body>
+
+
+  <section class="deposit-success">
+    <div class="container">
+      <div class="header-row">
+        <div class="skew-header" id="failure-header" >
+          <div class="header-bg">
+            <div class="text-container">
+              <span class="icon">
+                  <i class="icon-oops"></i>
+                 </span>
+              <span class="text">
+                <h1>Oops</h1>
+                <p>Something went wrong </p>
+              </span>
+            </div>
+          </div>
+          <div class="down-arrow"></div>
+        </div>
+
+        <div class="skew-header d-success" id="success-header">
+          <h1 class="show-small">Receipt</h1>
+          <div class="header-bg">
+            <div class="text-container">
+              <span class="icon hide-small">
+                  <i class="icon-tick-fill"></i>
+              </span>
+              <span class="text">
+                <h1 class="hide-small">Transaction Receipt</h1>
+               </span>
+            </div>
+          </div>
+          <div class="down-arrow"></div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="deposit-failcase" id="failure-message">
+          <!-- <img class="deposit-done" src="http://localhost:4200/assets/img/error-icon.svg" alt="deposit failed" title="deposit failed" /> -->
+          <p>We're sorry <span id="reason"></span>. Please check the details and retry using the button below.</p>
+          <button id="retryPaymentButton" class="btn-new" type="button" >
+            <i class="icon-lock"></i>
+            <span>RETRY AGAIN</span>
+          </button>
+        </div>
+        
+        <div class="deposit-done" id="success-message">
+          <h2>Deposit successful. Thank you.</h2>
+          <img class="show-small" src="/assets/img/checkmark.svg" alt="deposit done" title="deposit done" />
+          <table>
+            <tr>
+              <td>Transaction ID:</td>
+              <!-- <td>{{txnDetails.txnId}}</td> -->
+              <td id="txnId"></td>
+            </tr>
+            <tr>
+              <td>Date & Time:</td>
+              <!-- <td>{{txnDetails.txnDate | dateSuffix : "EEE, ddoo MMM yyyy, HH:mm"}}</td> -->
+              <td id="date"></td>
+            </tr>
+            <tr>
+              <td>From Account:</td>
+              <!-- <td>{{txnDetails.accountType}}
+                <br/>{{txnDetails.accountNumber}}</td> -->
+              <td ><span id="paymentType"></span> <br/>
+                <span id="instrument"></span></td>
+            </tr>
+           
+            <tr>
+              <td>Amount:</td>
+              <!-- <td>{{userService.getUserCurrencyCode()}} {{txnDetails.amount | number:'1.0-2'}}</td> -->
+              <td id="amount"></td>
+            </tr>
+          </table>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<script>
+$.ajax({
+            url:"http://stage.lottoday.com:8082/ajax/cashier/gettransationStatus",
+            data: {},
+            type: "POST",
+            headers:{ "content-type": "application/x-www-form-urlencoded",
+      "accept": "application/json, text/plain, */*"},
+	xhrFields: {
+        withCredentials: true
+    },
+	   success: function( data, textStatus, jQxhr ){
+        if(data.status == "SUCCESS"){
+		$("#msg").text("SUCCESS");
+     $("#success-message").show();
+    $("#success-header").show();
+    $("#failure-message").hide();
+    $("#failure-header").hide();
+
+    $("#txnId").text(data.txnId);
+    $("#date").text(new Date());
+    $("#paymentType").text(data.paymentMethod);
+    $("#instrument").text(data.cardNumber);
+    $("#amount").text(data.transactionAmount);
+
+
+	}else{
+		$("#msg").text("FAILURE");
+    $("#success-message").hide();
+    $("#success-header").hide();
+    $("#failure-message").show();
+    $("#failure-header").show();
+    if(data.status == "FAILURE" && data.errorDescription){
+      $("#reason").text(data.errorDescription);
+    }else{
+       $("#reason").text('something went wrong with the transaction.');
+    }
+
+	}
+    },
+    error: function( jqXhr, textStatus, errorThrown ){
+        console.log( errorThrown );
+    }
+        })
+</script>
+</body>
+</html>

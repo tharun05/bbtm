@@ -1,0 +1,236 @@
+@import '~variables.scss';
+@import '~mixins.scss';
+.promotions {
+  padding: 33px 0 55px 0;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: $promotion-background;
+    opacity: 0.3;
+    z-index: 0;
+  }
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+  @media (max-width: 767px) {
+    padding: 15px;
+  }
+  .promotions_inn {
+    .promo-item {
+      width: 22%;
+      @media (min-width: 992px) and (max-width:1198px) {
+        width: 46%;
+        margin-right: 0;
+        margin-left: 35px !important;
+        &:nth-child(2n + 1) {
+          margin-left: 0 !important;
+        }
+      }
+      @media (min-width:768px) and (max-width:991px) {
+        width: 44.5%;
+        margin-right: 0;
+        margin-left: 35px !important;
+        &:nth-child(2n + 1) {
+          margin-left: 0 !important;
+        }
+      }
+      @media (min-width:641px) and (max-width:767px) {
+        width: 45.2%;
+        margin-right: 20px;
+        margin-left: 0 !important;
+        &:nth-child(2n + 2) {
+            margin-right: 0px;
+        }
+        &:nth-child(2n + 1) {
+          margin-left: 0 !important;
+          
+        }
+      }
+       @media (max-width:640px) {
+         width:96%;
+         margin-right: 0 !important;
+         margin-left: 0 !important;
+         &:nth-child(2n + 2) {
+           margin-right: 0px;
+         }
+         &:nth-child(2n + 1) {
+           margin-left: 0 !important;
+         }
+       }
+      float: left;
+      background-color: #fff;
+      padding: 10px 10px 0;
+      border-radius: 6px;
+      margin: 0 10px 35px 10px;
+      &:first-child,&:nth-child(4n+1) {
+        margin-left: 0;
+      }
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+      .card {
+        img {
+          width: 100%;
+        }
+        .card-body {
+          .card-content {
+            padding: 10px 15px 15px;
+            h4 {
+              color: #384079;
+              font-weight: bold;
+              letter-spacing: -0.15px;
+              line-height: 22px;
+              font-size: 18px;
+            }
+            p {
+              font-size: 13.5px;
+              line-height: 16px;
+              letter-spacing: -0.11px;
+            }
+          }
+          .card-footer {
+            padding: 15px 10px;
+            border-top: 0.75px solid #E4E5E8;
+            @media (min-width: 1024px) and (max-width: 1280px) {
+              text-align: center;
+            }
+          }
+          button.whiteButton {
+            border: 0.75px solid #00C333;
+            border-radius: 3px;
+            background-color: #F0F2F6;
+            height: 22.5px;
+            width: 52.5px;
+            margin-top: 6px;
+            float:left;
+            @media (min-width: 1024px) and (max-width: 1280px) {
+              margin-bottom: 15px;
+            }
+          }
+          button.btn-primary {
+            float: right;
+            font-size: 13.5px;
+          }
+        }
+      }
+    }
+    @media (max-width: 767px) {
+      margin: 0 0px;
+    }
+    .promotion-data-box {
+      padding: 15px 9px;
+      width: 25%;
+      float: left;
+      box-sizing: border-box;
+      @media (max-width: 992px) {
+        width: 33.333%;
+      }
+      @media (max-width: 767px) {
+        width: 100%;
+        padding: 6px 0px;
+      }
+      .promotion-data {
+        width: 100%;
+        float: left;
+        box-shadow: 0 1px 2px 0 rgba(138, 138, 138, 0.5);
+        background: $white;
+        padding: 7px;
+        border-radius: 6px;
+        box-sizing: border-box;
+        @media (max-width: 767px) {
+          border-radius: 0px;
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          padding: 10px 10px 7px 10px;
+          .promotion-thumb {
+            max-width: 250px;
+            width: 42%;
+            float: left;
+          }
+        }
+        .promotion-info {
+          padding: 10px 20px;
+          border-bottom: 0.75px solid #E4E5E8;
+          @media (max-width: 767px) {
+            border-bottom: 0px;
+            float: left;
+            width: 58%;
+          }
+          h3 {
+            font-size: 18px;
+            color: $main-primary-text-color;
+            font-family: $main-primary-ef-bd;
+            margin-bottom: 0px;
+          }
+          p {
+            font-size: 13.5px;
+            color: $main-primary-text-color;
+            letter-spacing: -0.11px;
+            line-height: 16px;
+            max-height: 48px;
+            overflow: hidden;
+            margin-bottom: 0px;
+            @media (max-width: 767px) {
+              margin-top:5px;
+            }
+          }
+        }
+        .promotion-bt-group {
+          padding: 13px 20px 7px 20px;
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          @media (max-width: 767px) {
+            Display:none;
+          }
+          a {
+            font-family: $main-primary-ef-reg;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+          }
+          .small-btn {
+            height: 22.5px;
+            padding: 0 9px;
+            border: 0.75px solid $promotion-tag-border-color;
+            border-radius: 3px;
+            background-color: #F0F2F6;
+            color: #00C333;
+            font-size: 12px;
+            letter-spacing: -0.1px;
+            line-height: 23.5px;
+            &:hover,
+            &:focus {
+              background: $promotion-tag-button-hover-bg;
+              color: $white;
+            }
+          }
+          .read-m-btn {
+            height: 39.47px;
+            padding: 0 11px;
+            background-color: $promotion-read-more-button;
+            font-size: 13.5px;
+            float: right;
+            margin-left: auto;
+            font-family: $main-primary-ef-reg;
+            font-weight: 900;
+            color: $white;
+            line-height: 40px;
+            text-transform: uppercase;
+            &:hover,
+            &:focus {
+              background: $promotion-button-hover-bg;
+            }
+          }
+        }
+      }
+    }
+  }
+}

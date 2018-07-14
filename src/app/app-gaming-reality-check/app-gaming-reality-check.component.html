@@ -1,0 +1,131 @@
+<div class="reality-check">
+    <h3>GAMING REALITY CHECK</h3>
+    <p>A Reality Check is a pop-up message that shows up automatically after a certain amount of gameplay time from which you can:</p>
+    <p>1. Suspend play
+        <br/> 2. Find out length of gameplay
+        <br/> 3. Either end session or continue play
+        <br/> 4. View transaction history</p>
+    <form [formGroup]="realityCheckForm" novalidate>
+        <div class="ld-col-md-4">
+            <div class="status">
+                <i class="icon-time-check"></i>
+                <span class="text" *ngIf="!availableLimit || !availableLimit.overall.value">Current Setting: NONE</span>
+                <span class="text" *ngIf="availableLimit && availableLimit.overall.value">Current Setting: Every {{availableLimitHour ? availableLimitHour +' Hours' : ''}} {{availableLimitMinute ? availableLimitMinute +' Minutes' : ''}}</span>
+            </div>
+        </div>
+        <div class="alert-info-box" *ngIf="pendingLimit">
+            <span class="icon">
+                <i class="icon-info-fill"></i>
+            </span>
+            <span class="text">
+                <h6 class="device-comp">PENDING LIMIT: {{pendingLimitHour ? pendingLimitHour +' Hours' : ''}} {{pendingLimitMinute ? pendingLimitMinute +' Minutes' : ''}}</h6>
+                <p *ngIf="pendingTime"> The new Session Limit of {{pendingLimitHour ? pendingLimitHour +' Hours' : ''}} {{pendingLimitMinute ? pendingLimitMinute +' Minutes' : ''}} will be approved in <app-timer *ngIf="pendingTime" [hourGlassIcon]='true' [timedetails]="pendingTime" [isDepositLimitTimer]="'gamingReality'"></app-timer>.</p>
+            </span>
+        </div>
+        <div class="ld-col-md-12">
+          <div class="ld-col-md-4">
+              <div class="button">
+                  <button *ngIf="!pendingLimit && availableLimit && availableLimit.overall.value" class="btn-new btn-tertiary" type="button" (click)="openModal('sessionLimitDeleteModal')">
+                    <span>Delete Current reality check</span>
+                  </button>
+              </div>
+          </div>
+        </div>
+
+        <div class="ld-col-md-12">
+            <div class="ld-col-md-4">
+                <!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons-->
+                <div class="input-group plus-minus-input" *ngIf="!pendingLimit">
+                    <div class="input-group-button">
+                        <button type="button" class="button hollow circle" data-quantity="minus" data-field="quantity" (click)="decreaseLimit()">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <mat-form-field>
+                        <span matSuffix class="custom_user_time">MINUTES</span>
+                        <input class="input-group-field" matInput type="number" formControlName="limit" min="0" max="60">
+                        <mat-error *ngIf="utils.shouldShowErrors('limit',realityCheckForm)">{{utils.getErrorMessage('limit', realityCheckForm)}}</mat-error>
+                    </mat-form-field>
+                    <div class="input-group-button">
+                        <button type="button" class="button hollow circle" data-quantity="plus" data-field="quantity" (click)="increaseLimit()">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="ld-col-md-4">
+            <div class="button">
+                <button *ngIf="!pendingLimit" id="setReality" class="btn-new btn-tertiary" type="button" (click)="setReality('setReality')" [disabled]="isButtonDisabled(realityCheckForm)">
+                    <span>Set reality check to every {{realityCheckForm.controls["limit"].value}} minutes</span>
+                </button>
+                <button *ngIf="pendingLimit" class="btn btn-primary" type="button" (click)="openModal('sessionLimitCancelModal')" [disabled]="!pendingLimit">
+                    <span>Cancel Pending Limit</span>
+                </button>
+            </div>
+        </div>
+    </form>
+    <div class="clearfix"></div>
+</div>
+<!-- <div id="sessionLimitCancelModal" class="modal blowUpModal ">
+  <div class="modal-container">
+    <div class="close-modal" (click)="closeModal('sessionLimitCancelModal')"><i class="icon-cancel"></i></div>
+    <div class="modal-body set-limit-box">
+      <div class="confirm-set-limit">
+        <i class="icon-time-check"></i>
+        <p>Cancel the pending session limit?</p>
+        <button id="cancelReality" (click)="cancelReality('cancelReality')" class="btn-new">YES CANCEL</button>
+        <button id="cancelRealityCancel" (click)="closeModal('sessionLimitCancelModal')" class="btn btn-cancel">NO</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- <div id="sessionLimitDeleteModal" class="modal blowUpModal ">
+  <div class="modal-container">
+    <div class="close-modal" (click)="closeModal('sessionLimitDeleteModal')"><i class="icon-cancel"></i></div>
+    <div class="modal-body set-limit-box">
+      <div class="confirm-set-limit">
+        <i class="icon-time-check"></i>
+        <p>Delete the session limit?</p>
+        <button id="deleteReality" (click)="deleteReality('deleteReality')" class="btn-new">YES DELETE</button>
+        <button id="deleteRealityCancel" (click)="closeModal('sessionLimitDeleteModal')" class="btn btn-cancel">NO</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<modal id="sessionLimitCancelModal">
+    <div class="modal">
+        <div class="modal-body">
+            <div class="close-modal" (click)="closeModal('sessionLimitCancelModal')">
+                <i class="icon-cancel"></i>
+            </div>
+            <div class="confirm-set-limit">
+                <i class="icon-time-check"></i>
+                <p>Cancel the pending session limit?</p>
+                <button id="cancelReality" (click)="cancelReality('cancelReality')" class="btn-new">YES CANCEL</button>
+                <button id="cancelRealityCancel" (click)="closeModal('sessionLimitCancelModal')" class="btn btn-cancel">NO</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
+
+<modal id="sessionLimitDeleteModal">
+    <div class="modal">
+        <div class="modal-body">
+            <div class="close-modal" (click)="closeModal('sessionLimitDeleteModal')">
+                <i class="icon-cancel"></i>
+            </div>
+            <div class="confirm-set-limit">
+                <i class="icon-time-check"></i>
+                <p>Delete the Reality Check?</p>
+                <button id="deleteReality" (click)="deleteReality('deleteReality')" class="btn-new">YES DELETE</button>
+                <button id="deleteRealityCancel" (click)="closeModal('sessionLimitDeleteModal')" class="btn btn-cancel">NO</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>

@@ -1,0 +1,16 @@
+<!Doctype html>
+<html>
+  <head></head>
+  <body></body>
+  <script>
+    (function() {
+    	let postMessageData = {
+    		message: "CallBack",
+    		urlParams: window.location.search.substr(1)
+    	}
+      window.parent.window.postMessage(postMessageData, window.location.origin);
+      //window.parent.getTransactionResult("test Data from iframe - vb");
+      //window.parent.document.getElementById('getTransactionResultButton').click();
+    })();
+  </script>
+</html>

@@ -1,0 +1,57 @@
+<!--<section class="banner default" *ngIf="(!bannerLottery || !bannerLotteryDetails) && isLottery">
+  <div  class="mask-overlay default"></div>
+  <div class="container">
+    <div class="banner-content">
+      <ul class="lottery-info">
+        <li class="logo"><span class="lottery_2x animated-background"></span></li>
+        <li class="units">
+          <div class="amount-place-holder animated-background"></div>
+        </li>
+        <div >
+          <div class="timer-place-holder animated-background"></div>
+          <div class="timer-place-holder animated-background"></div>
+        </div>
+      </ul>
+    </div>
+
+  </div>
+  <div class="curved-bg">
+    <svg viewBox="0 0 375 20">
+      <use xlink:href="#curve-bg"></use>
+    </svg>
+  </div>
+</section>-->
+
+
+<section [ngClass]="bannerLottery ? bannerLottery.nameConstant : 'default'" class="banner">
+    <div class="mask-overlay {{bannerLottery.nameConstant}}"><span class="right_top_cirular"></span> <span class="left_bottom_oval"></span> <span class="right_top_oval"></span></div>
+    <div *ngFor="let banner of banners; let k = index" class=""  [innerHtml]="banner.content" >
+    </div>
+     <!-- <div class="container">
+        
+        <div class="banner-content">
+            <ul class="lottery-info">
+                <li class="units"><h1>
+                        This is some demo text which should be configured as an offer through the CMS
+                    </h1></li>
+                <li>
+                    <button _ngcontent-c15="" class="btn btn-primary">CMS CTA</button>
+                </li>     
+            </ul>
+        </div>
+
+    </div>
+    <div class="banner-img" *ngIf="bannerLottery && (windowType == 'device' || bannerImage)">
+         <img src="/assets/img/banner/{{bannerLottery.nameConstant}}.png"  alt="{{bannerLottery.nameConstant}}">
+    </div>
+
+    <div class="curved-bg">
+        <svg viewBox="0 0 375 20">
+        <use xlink:href="#curve-bg"></use>
+        </svg>
+    </div>  -->
+</section>
+<!--<div *ngIf="bannerLottery && bannerLotteryDetails && isLottery && cmsTemplate" id="cmsTemplateHolder">
+</div>
+
+<div *ngIf="!isLottery && cmsTemplate" id="cmsTemplateHolder"></div>-->

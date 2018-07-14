@@ -1,0 +1,37 @@
+modal {
+  &.responsibile-gaming-modal {
+    .modal-body {
+      padding: 80px 20px 20px;
+      background: #fff;
+      margin: 10px auto;
+      border-radius: 5px;
+    }
+    h3 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #7E69AF;
+      right: 0;
+      padding: 20px;
+      color: #fff;
+      font-size: 18.24px;
+    }
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      z-index: 2;
+      cursor: pointer;
+      .mdl_close {
+        width: 30px;
+        height: 40px;
+      }
+    }
+  }
+  .input-group-field + .mat-input-placeholder-wrapper {
+    display: none;
+  }
+}
+.loss-limit form .btn-new {
+  font-size: 14px;
+}

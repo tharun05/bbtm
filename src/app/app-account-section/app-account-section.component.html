@@ -1,0 +1,166 @@
+
+<section class="myaccount-tabs" >
+    <div class="accordionBox">
+        <div class="device-confirm-identity top_alert_info alert-info-box" *ngIf="!confirmIdentity">
+            <span class="icon">
+                <i class="icon-info-fill"></i>
+            </span>
+            <span class="text">
+                <h6 class="device-comp">CONFIRM YOUR IDENTITY</h6>
+                <p> We are required to confirm your identity before
+                    you can withdraw funds from your account.</p>
+            </span>
+            <span class="confirm-identity-button">
+                <button type="button" [routerLink]="'/confirm-identity'">Confirm Identity Now<span>(90 VIP points)</span></button>
+            </span>
+        </div>
+
+        <div class="device-confirm-identity success-info-box" *ngIf="confirmIdentity && !kycVerified">
+            <span class="icon">
+                <i class="icon-info-fill"></i>
+            </span>
+            <span class="text">
+                <h6 class="device-comp">IDENTITY PENDING</h6>
+                <p> Thank you. Your documents have been uploaded successfully and our team is currently processing them.</p>
+            </span>
+        </div>
+
+        <div class="account-details">
+            <div class="user-details-form ld-col-md-8">
+                <div *ngIf="userDeatil" class="my-acc-heading-info">
+                    <h1> My Profile</h1>
+                    <p>Logged in as <span class="user-email">{{userDeatil.email}}</span></p>
+                    <p class="device-comp">Update your personal details. Click field to edit.</p>
+                    <p class="mobile-comp">Update your personal details. Tap to edit.</p>
+                </div>
+                <app-update-profile></app-update-profile>
+            </div>
+            <div class="user-image ld-col-md-4">
+                <div class="input-file-grp">
+                    <input type='file' name="profile-pic" class="inputfile" id="file-5">
+                        <label for="file-5"><figure><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="#fff" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg></figure> </label>
+                        <div class="bronze_icon">
+                            <svg class="tab_hover" fill="#CD8032" height="48px" viewBox="0 0 770 770" width="48px">
+                                <use xlink:href="#vip-bronze-icon"></use>
+                            </svg>
+                        </div>
+                </div>
+                <div class="user-details-mob">
+                    <h1 *ngIf="userDeatil">{{userDeatil.firstName}} {{userDeatil.lastName}}</h1>
+                    <p *ngIf="userDeatil">Player ID: {{userDeatil.playerID}}</p>
+                    <span class="ac_b">Balance: &nbsp;</span><span class="account-balance">
+                            {{userService.getUserCurrencySymbol()}} {{ cash| number:'1.2-2'}}
+                    </span>
+                </div>
+                <span class="ac_b">Account Balance: </span><span class="account-balance">
+                        {{userService.getUserCurrencySymbol()}} {{ cash | number:'1.2-2'}}
+                </span>
+                <div class="deposit_w_btn">
+                    <a href="javascript:void(0);" type='button' (click)="toggleDepositmodal()">
+                        <h1 class="icon">
+                            <span>Deposit</span>
+                        </h1>
+                    </a>
+                    <!-- <a href="javascript:void(0);" type='button'  (click)="toggleWithdrawModal()">
+                        <h1 class="icon">
+                            <span>Withdrawal</span>
+                        </h1>
+                    </a> -->
+                </div>
+            </div>
+        </div>
+        <div class="mob-confirm-identity" *ngIf="!confirmIdentity">
+            <div class="alert-info-box" >
+                <span class="icon">
+                    <i class="icon-info-fill"></i>
+                </span>
+                <span class="text">
+                    <h6 class="device-comp">CONFIRM YOUR IDENTITY</h6>
+                    <p> We are required to confirm your identity before
+                        you can withdraw funds from your account.</p>
+                </span>
+                <span class="confirm-identity-button">
+                    <button type="button" [routerLink]="'/confirm-identity'">Confirm Identity Now<span>(90 VIP points)</span></button>
+                </span>
+            </div>
+        </div>
+            <div class="clearfix"></div>
+         <div class="mob-confirm-identity" *ngIf="confirmIdentity">
+            <div class="success-info-box">
+                    <span class="icon">
+                        <i class="icon-info-fill"></i>
+                    </span>
+                    <span class="text">
+                        <h6 class="device-comp">IDENTITY PENDING</h6>
+                        <p> Thank you. Your documents have been uploaded successfully and our team is currently processing them.</p>
+                    </span>
+                </div>
+            </div>
+        
+        <div class="accordionRow account-details-mob">
+            <div class="accordionHeadline">
+                <h1> My Profile</h1>
+                <div *ngIf="userDeatil" class="device-comp">
+                    <p>Logged in as <span class="user-email">{{userDeatil.email}}</span></p>
+                    <p class="mobile-comp">Update your personal details. Tap to edit.</p>
+                </div>
+            </div>
+            <div class="accordionText">
+                <div *ngIf="userDeatil" class="mobile-comp">
+                    <p>Logged in as <span class="user-email">{{userDeatil.email}}</span></p>
+                    <p class="mobile-comp">Update your personal details. Tap to edit.</p>
+                </div>
+                <app-update-profile></app-update-profile>
+            </div>
+        </div>
+        <div class="accordionRow">
+            <div class="accordionHeadline">
+                <h1>Account Access</h1>
+                <p class="device-comp">Change your password.</p>
+            </div>
+            <div class="accordionText">
+                <p class="mobile-comp">Change your password.</p>
+                <app-change-password></app-change-password>
+            </div>
+        </div>
+        <div class="accordionRow">
+            <div class="accordionHeadline">
+                <h1>Preference Centre</h1>
+                <p class="device-comp">Tell us which information you want to recieve and how you want to recieve it so you only get messages that are relevent and personal to you.</p>
+            </div>
+            <div class="accordionText">
+                <p class="mobile-comp">Tell us which information you want to recieve and how you want to recieve it so you only get messages that are relevent and personal to you.</p>
+                <app-preference-centre></app-preference-centre>
+            </div>
+        </div>
+        <div class="accordionRow">
+            <div class="accordionHeadline">
+                <h1>Responsible Play</h1>
+                <p class="device-comp">Bingo69 is committed to Responsible Gambling Standards and providing a safe environment for our players. Find support settings here.</p>
+            </div>
+            <div class="accordionText">
+                <p class="mobile-comp">Bingo69 is committed to Responsible Gambling Standards and providing a safe environment for our players. Find support settings here.</p>
+                <app-responsible-gaming></app-responsible-gaming>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div *ngIf="isModalOpen && !isMobile && userDeatil">
+    <app-deposit-modal  (messageEvent)="receiveMessage($event)" ></app-deposit-modal>
+</div>
+<div *ngIf="!isModalOpen && isMobile && userDeatil">
+    <app-payment-container-fields *ngIf="!qDResponse" [paymentType]="'deposit-cashier'" [totalPrice]="totalPrice" [isSubscription]="'false'"></app-payment-container-fields>
+    <app-txn-status *ngIf="qDResponse" [qDResponse]="qDResponse" ></app-txn-status>
+</div>
+
+<div *ngIf="isWithdrawalModalOpen && !isMobile && userDeatil">
+    <app-withdrawal-modal  (messageEventWithdrawal)="receiveWithdrawMessage($event)" ></app-withdrawal-modal>
+</div>
+<div *ngIf="!isWithdrawalModalOpen && isMobile && userDeatil">
+    <app-withdraw-funds *ngIf="availableWithdrawMethods && (withdrawCCAvailable == 'available' || withdrawOtherAvailable == 'available') && cashBalance > 0" [availableWithdrawableCC]="availableWithdrawableCC" [availableWithdrawMethods]="availableWithdrawMethods" [withdrawableBalance]="cashBalance" [withdrawLimitList]="withdrawLimitList"></app-withdraw-funds>
+</div>
+
+<!-- <div *ngIf="isWithdrawalModalOpen">
+    <app-withdrawal-modal  (messageEventWithdrawal)="receiveWithdrawMessage($event)" ></app-withdrawal-modal>
+</div> -->

@@ -1,0 +1,114 @@
+    .lotteryBall {
+    &.ElGordo,
+    &.EuroJackpot,
+    &.EuroMillions,
+    &.MegaMillions,
+    &.OzLotto,
+    &.PowerBall,
+    &.PowerballAustralia,
+    &.SuperEnaLotto,
+    &.UKLotto {
+      max-width: 100%;
+      background-size: 100%;
+      background-image: url('/assets/img/lotteryBall/1x.png');
+      width: 100px;
+      height: 100px;
+    }
+
+    &.ElGordo {
+      background-position: 0 0%;
+      background-size: 100%;
+    }
+
+    &.EuroJackpot {
+      background-position: 0 12.5%;
+      background-size: 100%;
+    }
+
+    &.EuroMillions {
+      background-position: 0 25%;
+      background-size: 100%;
+    }
+
+    &.MegaMillions {
+      background-position: 0 37.5%;
+      background-size: 100%;
+    }
+
+    &.OzLotto {
+      background-position: 0 50%;
+      background-size: 100%;
+    }
+
+    &.PowerBall {
+      background-position: 0 62.5%;
+      background-size: 100%;
+    }
+
+    &.PowerballAustralia {
+      background-position: 0 75%;
+      background-size: 100%;
+    }
+
+    &.SuperEnaLotto {
+      background-position: 0 87.5%;
+      background-size: 100%;
+    }
+
+    &.UKLotto {
+      background-position: 0 100%;
+      background-size: 100%;
+    }
+  }
+
+ 
+    /* @2x Images (Pixel Ratio of 1.25+) */
+  /*  @media only screen and (-o-min-device-pixel-ratio: 5/4),
+    only screen and (-webkit-min-device-pixel-ratio: 1.25),
+    only screen and (min--moz-device-pixel-ratio: 1.25),
+    only screen and (min-device-pixel-ratio: 1.25),
+    only screen and (min-resolution: 1.25dppx) {*/
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2) {
+      .lotteryBall {
+        &.ElGordo,
+        &.EuroJackpot,
+        &.EuroMillions,
+        &.MegaMillions,
+        &.OzLotto,
+        &.PowerBall,
+        &.PowerballAustralia,
+        &.SuperEnaLotto,
+        &.UKLotto {
+          background-image: url('/assets/img/lotteryBall/3x.png');
+ 
+        }
+      }
+    }
+
+
+/*    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (min--moz-device-pixel-ratio: 1.5),
+    only screen and (min-resolution: 240dpi) {
+      .lotteryBall {
+        &.ElGordo,
+        &.EuroJackpot,
+        &.EuroMillions,
+        &.MegaMillions,
+        &.OzLotto,
+        &.PowerBall,
+        &.PowerballAustralia,
+        &.SuperEnaLotto,
+        &.UKLotto {
+          background-image: url('/assets/img/lotteryBall/3x.png');
+      
+        }
+      }
+    }*/
+
+
+
+
+    

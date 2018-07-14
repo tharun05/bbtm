@@ -1,0 +1,5403 @@
+{
+    "general": {
+        "variables": {
+            "white": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "sky-blue": {
+                "value": "#028FD5",
+                "description": "",
+                "blocked": 0
+            },
+            "steel-blue": {
+                "value": "#437EB0",
+                "description": "",
+                "blocked": 0
+            },
+            "grey": {
+                "value": "#C8CFDE",
+                "description": "",
+                "blocked": 0
+            },
+            "bg-grey": {
+                "value": "#F0F2F6",
+                "description": "",
+                "blocked": 0
+            },
+            "chetwode-blue": {
+                "value": "#6974B1",
+                "description": "",
+                "blocked": 0
+            },
+            "brand-ld": {
+                "value": "#384079",
+                "description": "",
+                "blocked": 0
+            },
+            "vivid-violet": {
+                "value": "#7B4397",
+                "description": "",
+                "blocked": 0
+            },
+            "medium-red-violet": {
+                "value": "#B5238A",
+                "description": "",
+                "blocked": 0
+            },
+            "alizarin": {
+                "value": "#DC2430",
+                "description": "",
+                "blocked": 0
+            },
+            "disabled-color": {
+                "value": "#5C95FF",
+                "description": "",
+                "blocked": 0
+            },
+
+            "ld-theme-gradient-blue-313": {
+                "value": "linear-gradient(313.01deg, $chetwode-blue 0%, $brand-ld 100%)",
+                "description": "",
+                "blocked": 0
+            },
+            "ld-theme-gradient-blue-135": {
+                "value": "linear-gradient(135deg, $chetwode-blue 0%, $brand-ld 100%)",
+                "description": "",
+                "blocked": 0
+            },
+            "ld-theme-gradient-pink": {
+                "value": "linear-gradient(48.19deg, $vivid-violet 0%, $medium-red-violet 61.8%, $alizarin 100%)",
+                "description": "",
+                "blocked": 0
+            },
+            "checkbox-unchecked-bgcolor": {
+                "value": "#F0F0F0",
+                "description": "",
+                "blocked": 0
+            },
+            "checkbox-unchecked-borderColor": {
+                "value": "#D3D3D3",
+                "description": "",
+                "blocked": 0
+            },
+            "checkbox-checked-bgcolor": {
+                "value": "#244695",
+                "description": "",
+                "blocked": 0
+            },
+            "button-secondary": {
+                "value": "#244695",
+                "description": "",
+                "blocked": 0
+            },
+            "button-disabled": {
+                "value": "#F5F5F5",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-secondary-bg": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-disabled-color": {
+                "value": "#cddce4",
+                "description": "",
+                "blocked": 0
+            },
+            "mob-menu-grad-b-color": {
+                "value": "#18274D",
+                "description": "",
+                "blocked": 0
+            },
+            "mob-menu-grad-e-color": {
+                "value": "#314986",
+                "description": "",
+                "blocked": 0
+            },
+            "mob-menu-sep-one": {
+                "value": "#00154A",
+                "description": "",
+                "blocked": 0
+            },
+            "mob-menu-sep-two": {
+                "value": "#4A5F92",
+                "description": "",
+                "blocked": 0
+            },
+            "mobile-lft-mn-bg": {
+                "value": "#1f2e5c",
+                "description": "",
+                "blocked": 0
+            },
+            "mobile-rht-mn-bg": {
+                "value": "#1f2e5c",
+                "description": "",
+                "blocked": 0
+            },
+            "mobile-border-color-2": {
+                "value": "#4A5F92",
+                "description": "",
+                "blocked": 0
+            },
+            "mobile-border-color-1": {
+                "value": "#00154A",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-disabled-bg": {
+                "value": "$button-disabled",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-disabled-border": {
+                "value": "darken($btn-disabled-bg, 5%);",
+                "description": "",
+                "blocked": 0
+            },
+            "base-blue": {
+                "value": "#384079",
+                "description": "",
+                "blocked": 0
+            },
+            "menu-active-hover": {
+                "value": "#5C95FF",
+                "description": "",
+                "blocked": 0
+            },
+            "form-placeholder": {
+                "value": "#C8CFDE",
+                "description": "",
+                "blocked": 0
+            },
+            "green": {
+                "value": "00c333",
+                "description": "",
+                "blocked": 0
+            },
+            "input-focus-color": {
+                "value": "#5C95FF",
+                "description": "",
+                "blocked": 0
+            },
+            "border-colors": {
+                "value": "#EAEAEA",
+                "description": "",
+                "blocked": 0
+            },
+            "pagi-dot-bg-color": {
+                "value": "#D8D8D8",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-blue-border-color": {
+                "value": "#0FB2E1",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-blue-text-color": {
+                "value": "$btn-blue-border-color",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-blued": {
+                "value": "linear-gradient(to right, #0072ff, #00c6ff)",
+                "description": "",
+                "blocked": 0
+            },
+            "clear-day-color": {
+                "value": "#EAFAF5",
+                "description": "",
+                "blocked": 0
+            },
+            "free-speech-aquamarine-color": {
+                "value": "#02A174",
+                "description": "",
+                "blocked": 0
+            },
+            "input-invalid-color": {
+                "value": "#D0021B",
+                "description": "",
+                "blocked": 0
+            },
+            "input-success-color": {
+                "value": "#00c333",
+                "description": "",
+                "blocked": 0
+            },
+            "blue-icon": {
+                "value": "#5C95FF",
+                "description": "",
+                "blocked": 0
+            },
+            "infoBoxBgColor-aquaBlue": {
+                "value": "#D0E0EE",
+                "description": "",
+                "blocked": 0
+            },
+            "infoBoxBorderColor-aquaBlue": {
+                "value": "#EFF9FE",
+                "description": "",
+                "blocked": 0
+            },
+            "infoBoxBgColor-honey": {
+                "value": "#FFFCD6",
+                "description": "",
+                "blocked": 0
+            },
+            "infoBoxBorderColor-honey": {
+                "value": "#F0D49E",
+                "description": "",
+                "blocked": 0
+            },
+            "infoBoxTextColor-honey": {
+                "value": "#F49600",
+                "description": "",
+                "blocked": 0
+            },
+            "bg-secondary": {
+                "value": "#F8F8F8",
+                "description": "",
+                "blocked": 0
+            },
+            "card-box-shadow": {
+                "value": "0 1px 1px 0 #A8A8A8",
+                "description": "",
+                "blocked": 0
+            },
+            "card-border": {
+                "value": "1px solid #DFDFDF",
+                "description": "",
+                "blocked": 0
+            },
+            "card-background-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "card-white": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "header-blue": {
+                "value": "#4699FD",
+                "description": "",
+                "blocked": 0
+            },
+            "footer-font-color": {
+                "value": "#384079",
+                "description": "",
+                "blocked": 0
+            },
+            "black": {
+                "value": "#000",
+                "description": "",
+                "blocked": 0
+            },
+            "yellow": {
+                "value": "#F8E71C",
+                "description": "",
+                "blocked": 0
+            },
+            "pale-yellow": {
+                "value": "#FFF9D9",
+                "description": "",
+                "blocked": 0
+            },
+            "input-text-base-color": {
+                "value": "#B9BCCB",
+                "description": "",
+                "blocked": 0
+            },
+            "pink": {
+                "value": "#FC346A",
+                "description": "",
+                "blocked": 0
+            },
+            "gray-base": {
+                "value": "#000",
+                "description": "",
+                "blocked": 0
+            },
+            "gray": {
+                "value": "lighten($gray-base,33.5%)",
+                "description": "",
+                "blocked": 0
+            },
+            "gray-darker": {
+                "value": "lighten($gray-base,13.5%)",
+                "description": "",
+                "blocked": 0
+            },
+            "gray-light": {
+                "value": "lighten($gray-base,46.7%)",
+                "description": "",
+                "blocked": 0
+            },
+            "gray-lighter": {
+                "value": "lighten($gray-base,93.5%)",
+                "description": "",
+                "blocked": 0
+            },
+            "gray-dark": {
+                "value": "lighten($gray-base,20%)",
+                "description": "",
+                "blocked": 0
+            },
+            "inactive-grey": {
+                "value": "#EAEAEA",
+                "description": "",
+                "blocked": 0
+            },
+            "OzLotto-num-color": {
+                "value": "#EFD91C",
+                "description": "",
+                "blocked": 0
+            },
+            "button-additional": {
+                "value": "#C2D6CF",
+                "description": "",
+                "blocked": 0
+            },
+            "pink-gradient-48": {
+                "value": "linear-gradient(48.19deg, $vivid-violet 0%, $medium-red-violet 61.8%, $alizarin 100%)",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-default-color": {
+                "value": "#00c333",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-default-bg": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-default-border": {
+                "value": "#00c333",
+                "description": "",
+                "blocked": 0
+            },
+            "button-primary": {
+                "value": "#00c333",
+                "description": "",
+                "blocked": 0
+            },
+            "info-color": {
+                "value": "#E9A837",
+                "description": "",
+                "blocked": 0
+            },
+            "number-of-draw-color": {
+                "value": "#00c333",
+                "description": "",
+                "blocked": 0
+            },
+            "bonus-applied-bg-color": {
+                "value": "#DFF8EF",
+                "description": "",
+                "blocked": 0
+            },
+            "form-text": {
+                "value": "#C8CFDE",
+                "description": "",
+                "blocked": 0
+            },
+            "input-placeholder-color": {
+                "value": "#BCC4D6",
+                "description": "",
+                "blocked": 0
+            },
+            "input-invalid-color-light-red": {
+                "value": "#FF8C8C",
+                "description": "",
+                "blocked": 0
+            },
+            "select-dropdown-text": {
+                "value": "#3F467D",
+                "description": "",
+                "blocked": 0
+            },
+            "yellow-dark": {
+                "value": "#FFC300",
+                "description": "",
+                "blocked": 0
+            },
+            "error-color": {
+                "value": "#A20000",
+                "description": "",
+                "blocked": 0
+            },
+            "boxColor": {
+                "value": "#020438",
+                "description": "",
+                "blocked": 0
+            },
+            "waterFColor": {
+                "value": "#B5238A",
+                "description": "",
+                "blocked": 0
+            },
+            "waterbordercolor": {
+                "value": "#7B4397",
+                "description": "",
+                "blocked": 0
+            },
+            "boxcolor": {
+                "value": "#384079",
+                "description": "",
+                "blocked": 0
+            },
+            "percentColor": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "shakespeare": {
+                "value": "#6998C0",
+                "description": "",
+                "blocked": 0
+            },
+            "spin-circle-color": {
+                "value": "#939FB8",
+                "description": "",
+                "blocked": 0
+            },
+            "spinner-bg-color": {
+                "value": "#DCE0EF",
+                "description": "",
+                "blocked": 0
+            },
+            "seagull": {
+                "value": "rgba(136, 183, 213, 0)",
+                "description": "",
+                "blocked": 0
+            },
+            "light-blue": {
+                "value": "#eeeff5",
+                "description": "",
+                "blocked": 0
+            },
+            "table-head-color": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "toreabay": {
+                "value": "#394179",
+                "description": "",
+                "blocked": 0
+            },
+            "golden-yellow": {
+                "value": "#FFED00",
+                "description": "",
+                "blocked": 0
+            },
+            "deep-koamaru": {
+                "value": "#2A2E66",
+                "description": "",
+                "blocked": 0
+            },
+            "content-bg-color": {
+                "value": "#F0F2F6",
+                "description": "",
+                "blocked": 0
+            },
+            "light-grey": {
+                "value": "#F5F5F5",
+                "description": "",
+                "blocked": 0
+            },
+            "small-anchors": {
+                "value": "#3A60D7",
+                "description": "",
+                "blocked": 0
+            },
+            "maintenance-secondary": {
+                "value": "#A4BBFF",
+                "description": "",
+                "blocked": 0
+            },
+            "white-smoke": {
+                "value": "#FFF0F0",
+                "description": "",
+                "blocked": 0
+            },
+            "anchor-color": {
+                "value": "#00ADEE",
+                "description": "",
+                "blocked": 0
+            },
+            "pink-gradient-135deg": {
+                "value": "linear-gradient(135deg, $vivid-violet 0%, $medium-red-violet 61.8%, $alizarin 100%)",
+                "description": "",
+                "blocked": 0
+            },
+            "card-border-color": {
+                "value": "#D3D4D7",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-font-weight": {
+                "value": "normal",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-primary-color": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-primary-bg": {
+                "value": "$button-primary",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-primary-border": {
+                "value": "darken($btn-primary-bg,5%)",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-secondary-color": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-secondary-border": {
+                "value": "darken($btn-secondary-bg,5%)",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-additional-color": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-additional-bg": {
+                "value": "$button-additional",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-additional-border": {
+                "value": "darken($btn-additional-bg,5%)",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-special-color": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "button-special": {
+                "value": "#FC346A",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-special-bg": {
+                "value": "$button-special",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-special-border": {
+                "value": "darken($btn-special-bg,5%)",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-success-color": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "brand-success": {
+                "value": "#5cb85c",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-success-bg": {
+                "value": "$brand-success",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-success-border": {
+                "value": "darken($btn-success-bg,5%)",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-info-color": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "text-highlighter": {
+                "value": "#4B7EFF",
+                "description": "",
+                "blocked": 0
+            },
+            "brand-info": {
+                "value": "#5bc0de",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-info-bg": {
+                "value": "$brand-info",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-info-border": {
+                "value": "darken($btn-info-bg,5%)",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-warning-color": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "warning-color": {
+                "value": "#A20000",
+                "description": "",
+                "blocked": 0
+            },
+            "alert-color": {
+                "value": "#A20000",
+                "description": "",
+                "blocked": 0
+            },
+            "error-msg": {
+                "value": "#ff8c8c",
+                "description": "",
+                "blocked": 0
+            },
+            "alert-msg": {
+                "value": "#EF8308",
+                "description": "",
+                "blocked": 0
+            },
+            "honey-color": {
+                "value": "#FFFAD6",
+                "description": "",
+                "blocked": 0
+            },
+            "ld-bg-secondary": {
+                "value": "#3653A4",
+                "description": "",
+                "blocked": 0
+            },
+            "brand-warning": {
+                "value": "#f0ad4e",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-warning-bg": {
+                "value": "$brand-warning",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-warning-border": {
+                "value": "darken($btn-warning-bg,5%)",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-danger-color": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "brand-danger": {
+                "value": "#d9534f",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-danger-bg": {
+                "value": "$brand-danger",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-danger-border": {
+                "value": "darken($btn-danger-bg,5%)",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-link-disabled-color": {
+                "value": "$gray-light",
+                "description": "",
+                "blocked": 0
+            },
+            "state-success-text": {
+                "value": "#3c763d",
+                "description": "",
+                "blocked": 0
+            },
+            "state-success-bg": {
+                "value": "#dff0d8",
+                "description": "",
+                "blocked": 0
+            },
+            "state-success-border": {
+                "value": "darken(adjust-hue($state-success-bg, -10), 5%)",
+                "description": "",
+                "blocked": 0
+            },
+            "state-info-text": {
+                "value": "#31708f",
+                "description": "",
+                "blocked": 0
+            },
+            "state-info-bg": {
+                "value": "#d9edf7",
+                "description": "",
+                "blocked": 0
+            },
+            "state-info-border": {
+                "value": "darken(adjust-hue($state-info-bg,-10),7%)",
+                "description": "",
+                "blocked": 0
+            },
+            "state-warning-text": {
+                "value": "#8a6d3b",
+                "description": "",
+                "blocked": 0
+            },
+            "state-warning-bg": {
+                "value": "#fcf8e3",
+                "description": "",
+                "blocked": 0
+            },
+            "state-warning-border": {
+                "value": "darken(adjust-hue($state-warning-bg, -10),5%)",
+                "description": "",
+                "blocked": 0
+            },
+            "state-danger-text": {
+                "value": "#a94442",
+                "description": "",
+                "blocked": 0
+            },
+            "state-danger-bg": {
+                "value": "#f2dede",
+                "description": "",
+                "blocked": 0
+            },
+            "state-danger-border": {
+                "value": "darken(adjust-hue($state-danger-bg, -10), 5%)",
+                "description": "",
+                "blocked": 0
+            },
+            "tooltip-color": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "tooltip-bg": {
+                "value": "#000",
+                "description": "",
+                "blocked": 0
+            },
+            "tooltip-arrow-color": {
+                "value": "$tooltip-bg",
+                "description": "",
+                "blocked": 0
+            },
+            "alert-success-bg": {
+                "value": "$state-success-bg",
+                "description": "",
+                "blocked": 0
+            },
+            "alert-success-text": {
+                "value": "$state-success-text",
+                "description": "",
+                "blocked": 0
+            },
+            "alert-success-border": {
+                "value": "$state-success-border",
+                "description": "",
+                "blocked": 0
+            },
+            "alert-info-bg": {
+                "value": "$state-info-bg",
+                "description": "",
+                "blocked": 0
+            },
+            "alert-info-text": {
+                "value": "$state-info-text",
+                "description": "",
+                "blocked": 0
+            },
+            "alert-info-border": {
+                "value": "$state-info-border",
+                "description": "",
+                "blocked": 0
+            },
+            "alert-warning-bg": {
+                "value": "$state-warning-bg",
+                "description": "",
+                "blocked": 0
+            },
+            "alert-warning-text": {
+                "value": "$state-warning-text",
+                "description": "",
+                "blocked": 0
+            },
+            "alert-warning-border": {
+                "value": "$state-warning-border",
+                "description": "",
+                "blocked": 0
+            },
+            "alert-danger-bg": {
+                "value": "$state-danger-bg",
+                "description": "",
+                "blocked": 0
+            },
+            "alert-danger-text": {
+                "value": "$state-danger-text",
+                "description": "",
+                "blocked": 0
+            },
+            "alert-danger-border": {
+                "value": "$state-danger-border",
+                "description": "",
+                "blocked": 0
+            },
+            "badge-color": {
+                "value": "#E72B2B",
+                "description": "",
+                "blocked": 0
+            },
+            "badge-link-hover-color": {
+                "value": "#E72B2B",
+                "description": "",
+                "blocked": 0
+            },
+            "badge-bg": {
+                "value": "$gray-light",
+                "description": "",
+                "blocked": 0
+            },
+            "badge-active-bg": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "close-color": {
+                "value": "#000",
+                "description": "",
+                "blocked": 0
+            },
+            "close-text-shadow": {
+                "value": "0 1px 0 #fff",
+                "description": "",
+                "blocked": 0
+            },
+            "ld-custom--color-default": {
+                "value": "#bdc3c7",
+                "description": "",
+                "blocked": 0
+            },
+            "ld-custom--color-primary": {
+                "value": "#428bca",
+                "description": "",
+                "blocked": 0
+            },
+            "ld-custom--color-info": {
+                "value": "#5bc0de",
+                "description": "",
+                "blocked": 0
+            },
+            "ld-custom--color-success": {
+                "value": "#5cb85c",
+                "description": "",
+                "blocked": 0
+            },
+            "ld-custom--color-warning": {
+                "value": "#f0ad4e",
+                "description": "",
+                "blocked": 0
+            },
+            "ld-custom--color-danger": {
+                "value": "#d9534f",
+                "description": "",
+                "blocked": 0
+            },
+            "ld-custom--color-dark": {
+                "value": "#5a656b",
+                "description": "",
+                "blocked": 0
+            },
+            "ld-custom--colors": {
+                "value": "(primary,$ld-custom--color-primary),(info,$ld-custom--color-info),(success,$ld-custom--color-success),(warning,$ld-custom--color-warning),(danger,$ld-custom--color-danger)",
+                "description": "",
+                "blocked": 0
+            },
+            "transparent": {
+                "value": "transparent",
+                "description": "",
+                "blocked": 0
+            },
+            "table-bg": {
+                "value": "$transparent",
+                "description": "",
+                "blocked": 0
+            },
+            "table-bg-accent": {
+                "value": "#f9f9f9",
+                "description": "",
+                "blocked": 0
+            },
+            "table-bg-hover": {
+                "value": "#f5f5f5",
+                "description": "",
+                "blocked": 0
+            },
+            "table-bg-active": {
+                "value": "$table-bg-hover",
+                "description": "",
+                "blocked": 0
+            },
+            "table-border-color": {
+                "value": "#ddd",
+                "description": "",
+                "blocked": 0
+            },
+            "input-bg": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "input-bg-disabled": {
+                "value": "$gray-lighter",
+                "description": "",
+                "blocked": 0
+            },
+            "input-color": {
+                "value": "$gray",
+                "description": "",
+                "blocked": 0
+            },
+            "input-border": {
+                "value": "#ccc",
+                "description": "",
+                "blocked": 0
+            },
+            "input-border-focus": {
+                "value": "$transparent",
+                "description": "",
+                "blocked": 0
+            },
+            "input-color-placeholder": {
+                "value": "#C8CFDE",
+                "description": "",
+                "blocked": 0
+            },
+            "legend-color": {
+                "value": "$gray-dark",
+                "description": "",
+                "blocked": 0
+            },
+            "legend-border-color": {
+                "value": "#e5e5e5",
+                "description": "",
+                "blocked": 0
+            },
+            "input-group-addon-bg": {
+                "value": "$gray-lighter",
+                "description": "",
+                "blocked": 0
+            },
+            "input-group-addon-border-color": {
+                "value": "$input-border",
+                "description": "",
+                "blocked": 0
+            },
+            "dropdown-bg": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "dropdown-border": {
+                "value": "rgba(0,0,0,.15)",
+                "description": "",
+                "blocked": 0
+            },
+            "dropdown-fallback-border": {
+                "value": "#ccc",
+                "description": "",
+                "blocked": 0
+            },
+            "dropdown-divider-bg": {
+                "value": "#e5e5e5",
+                "description": "",
+                "blocked": 0
+            },
+            "dropdown-link-color": {
+                "value": "$gray-dark",
+                "description": "",
+                "blocked": 0
+            },
+            "dropdown-link-hover-color": {
+                "value": "darken($gray-dark,5%)",
+                "description": "",
+                "blocked": 0
+            },
+            "dropdown-link-hover-bg": {
+                "value": "#f5f5f5",
+                "description": "",
+                "blocked": 0
+            },
+
+            "component-active-color": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "dropdown-link-active-color": {
+                "value": "$component-active-color",
+                "description": "",
+                "blocked": 0
+            },
+            "brand-primary": {
+                "value": "darken(#428bca,6.5%)",
+                "description": "",
+                "blocked": 0
+            },
+            "component-active-bg": {
+                "value": "$brand-primary",
+                "description": "",
+                "blocked": 0
+            },
+            "dropdown-link-active-bg": {
+                "value": "$component-active-bg",
+                "description": "",
+                "blocked": 0
+            },
+            "dropdown-link-disabled-color": {
+                "value": "$gray-light",
+                "description": "",
+                "blocked": 0
+            },
+            "dropdown-header-color": {
+                "value": "$gray-light",
+                "description": "",
+                "blocked": 0
+            },
+            "dropdown-caret-color": {
+                "value": "#000",
+                "description": "",
+                "blocked": 0
+            },
+            "link-color": {
+                "value": "$brand-primary",
+                "description": "",
+                "blocked": 0
+            },
+            "badge-active-color": {
+                "value": "$link-color",
+                "description": "",
+                "blocked": 0
+            },
+            "body-bg": {
+                "value": "#fff",
+                "description": "",
+                "blocked": 0
+            },
+            "text-color": {
+                "value": "$gray-dark",
+                "description": "",
+                "blocked": 0
+            },
+            "headings-color": {
+                "value": "inherit",
+                "description": "",
+                "blocked": 0
+            },
+            "link-hover-color": {
+                "value": "darken($link-color,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "btn-bluebg-color": {
+                "value": "linear-gradient(to right, #0072ff, #00c6ff)",
+                "description": "",
+                "blocked": 0
+            },
+            "bg-blue": {
+                "value": "#4a5584",
+                "description": "",
+                "blocked": 0
+            },
+            "text-muted": {
+                "value": "$gray-light",
+                "description": "",
+                "blocked": 0
+            },
+            "abbr-border-color": {
+                "value": "$gray-light",
+                "description": "",
+                "blocked": 0
+            },
+            "headings-small-color": {
+                "value": "$gray-light",
+                "description": "",
+                "blocked": 0
+            },
+            "blockquote-small-color": {
+                "value": "$gray-light",
+                "description": "",
+                "blocked": 0
+            },
+            "blockquote-border-color": {
+                "value": "$gray-lighter",
+                "description": "",
+                "blocked": 0
+            },
+            "page-header-border-color": {
+                "value": "$gray-lighter",
+                "description": "",
+                "blocked": 0
+            },
+            "hr-border": {
+                "value": "$gray-lighter",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "Brand-Number": {
+        "variables": {
+            "UKThunderBall-num-color": {
+                "value": "#e232d1",
+                "description": "",
+                "blocked": 0
+            },
+            "UKLotto-num-color": {
+                "value": "#216ffa",
+                "description": "",
+                "blocked": 0
+            },
+            "EuroMillionsUK-num-color": {
+                "value": "#47b9fc",
+                "description": "",
+                "blocked": 0
+            },
+            "Tatts-num-color": {
+                "value": "#4bac91",
+                "description": "",
+                "blocked": 0
+            },
+            "CaliforniaSuperLotto-num-color": {
+                "value": "#f6ac00",
+                "description": "",
+                "blocked": 0
+            },
+            "SuperEnaLotto-num-color": {
+                "value": "#2fa927",
+                "description": "",
+                "blocked": 0
+            },
+            "PowerBall-num-color": {
+                "value": "#216ffa",
+                "description": "",
+                "blocked": 0
+            },
+            "NewYorkLotto-num-color": {
+                "value": "#4699fd",
+                "description": "",
+                "blocked": 0
+            },
+            "MegaSena-num-color": {
+                "value": "#fac400",
+                "description": "",
+                "blocked": 0
+            },
+            "MegaMillions-num-color": {
+                "value": "#b81924",
+                "description": "",
+                "blocked": 0
+            },
+            "IrishLotto-num-color": {
+                "value": "#bddd00",
+                "description": "",
+                "blocked": 0
+            },
+            "FrenchLotto-num-color": {
+                "value": "#d60423",
+                "description": "",
+                "blocked": 0
+            },
+            "Lotto649-num-color": {
+                "value": "#216ffa",
+                "description": "",
+                "blocked": 0
+            },
+            "LoteriaNacional-num-color": {
+                "value": "#00b5f1",
+                "description": "",
+                "blocked": 0
+            },
+            "LaPrimitiva-num-color": {
+                "value": "#33aa6c",
+                "description": "",
+                "blocked": 0
+            },
+            "HotLotto-num-color": {
+                "value": "#e38636",
+                "description": "",
+                "blocked": 0
+            },
+            "HoosierLotto-num-color": {
+                "value": "#f4aa9a",
+                "description": "",
+                "blocked": 0
+            },
+            "FloridaLotto-num-color": {
+                "value": "#027562",
+                "description": "",
+                "blocked": 0
+            },
+            "EuroMillions-num-color": {
+                "value": "#4699fd",
+                "description": "",
+                "blocked": 0
+            },
+            "EuroJackpot-num-color": {
+                "value": "#f3d900",
+                "description": "",
+                "blocked": 0
+            },
+            "ElGordo-num-color": {
+                "value": "#d61e41",
+                "description": "",
+                "blocked": 0
+            },
+            "PowerballAustralia-num-color": {
+                "value": "#6976a8",
+                "description": "",
+                "blocked": 0
+            },
+            "BonoLotto-num-color": {
+                "value": "#02572a",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "Gradient-Colors": {
+        "variables": {
+            "solid-UKThunderBall-color": {
+                "value": "#5e3790",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-UKLotto-color": {
+                "value": "#082572",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-SuperEnaLotto-color": {
+                "value": "#038448",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-OzLotto-color": {
+                "value": "#038448",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-NewYorkLotto-color": {
+                "value": "#061438",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-MegaSena-color": {
+                "value": "#005529",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-Lotto649-color": {
+                "value": "#004696",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-IrishLotto-color": {
+                "value": "#2b9935",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-HotLotto-color": {
+                "value": "#ca2d00",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-HoosierLotto-color": {
+                "value": "#B2333D",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-FrenchLotto-color": {
+                "value": "#1761C7",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-FloridaLotto-color": {
+                "value": "#FF9900",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-EuroMillions-color": {
+                "value": "#0f3791",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-EuroJackpot-color": {
+                "value": "#975703",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-CaliforniaSuperLotto-color": {
+                "value": "#E35700",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-PowerBall-color": {
+                "value": "#082572",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-ElGordo-color": {
+                "value": "#6D0101",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-EuroMillionsUK-color": {
+                "value": "#5146AF",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-MegaMillions-color": {
+                "value": "#082572",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-PowerballAustralia-color": {
+                "value": "#122158",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-LaPrimitiva-color": {
+                "value": "#086f3a",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-LoteriaNacional-color": {
+                "value": "#1761C7",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-BonoLotto-color": {
+                "value": "#005529",
+                "description": "",
+                "blocked": 0
+            },
+            "solid-Tatts-color": {
+                "value": "#32A38F",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-UKThunderBall-b-color": {
+                "value": "#9b72d8",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-UKThunderBall-m-color": {
+                "value": "#9b72d8",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-UKThunderBall-e-color": {
+                "value": "#5e3790",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-UKLotto-b-color": {
+                "value": "#4C8CF2",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-UKLotto-m-color": {
+                "value": "#4C8CF2",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-UKLotto-e-color": {
+                "value": "#082572",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-SuperEnaLotto-b-color": {
+                "value": "#63BF0C",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-SuperEnaLotto-m-color": {
+                "value": "#63BF0C",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-SuperEnaLotto-e-color": {
+                "value": "#038448",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-OzLotto-b-color": {
+                "value": "#63BF0C",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-OzLotto-m-color": {
+                "value": "#63BF0C",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-OzLotto-e-color": {
+                "value": "#038448",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-NewYorkLotto-b-color": {
+                "value": "#4979C5",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-NewYorkLotto-m-color": {
+                "value": "#4979C5",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-NewYorkLotto-e-color": {
+                "value": "#061438",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-MegaSena-b-color": {
+                "value": "#038448",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-MegaSena-m-color": {
+                "value": "#038448",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-MegaSena-e-color": {
+                "value": "#005529",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-Lotto649-b-color": {
+                "value": "#3D9FD6",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-Lotto649-m-color": {
+                "value": "#3D9FD6",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-Lotto649-e-color": {
+                "value": "#004696",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-IrishLotto-b-color": {
+                "value": "#2b9935",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-IrishLotto-m-color": {
+                "value": "#46ae21",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-IrishLotto-e-color": {
+                "value": "#2b9935",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-HotLotto-b-color": {
+                "value": "#fbbf00",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-HotLotto-m-color": {
+                "value": "#fbbf00",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-HotLotto-e-color": {
+                "value": "#ca2d00",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-HoosierLotto-b-color": {
+                "value": "#F0A89F",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-HoosierLotto-m-color": {
+                "value": "#F0A89F",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-HoosierLotto-e-color": {
+                "value": "#B2333D",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-FrenchLotto-b-color": {
+                "value": "#41AEEA",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-FrenchLotto-m-color": {
+                "value": "#41AEEA",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-FrenchLotto-e-color": {
+                "value": "#1761C7",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-FloridaLotto-b-color": {
+                "value": "#FFD100",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-FloridaLotto-m-color": {
+                "value": "#FFD100",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-FloridaLotto-e-color": {
+                "value": "#FF9900",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-EuroMillions-b-color": {
+                "value": "#4473d5",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-EuroMillions-m-color": {
+                "value": "#4473d5",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-EuroMillions-e-color": {
+                "value": "#0f3791",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-EuroJackpot-b-color": {
+                "value": "#F9CF57",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-EuroJackpot-m-color": {
+                "value": "#F9CF57",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-EuroJackpot-e-color": {
+                "value": "#975703",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-CaliforniaSuperLotto-b-color": {
+                "value": "#FFB441",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-CaliforniaSuperLotto-m-color": {
+                "value": "#FFB441",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-CaliforniaSuperLotto-e-color": {
+                "value": "#E35700",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-PowerBall-b-color": {
+                "value": "#2264CC",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-PowerBall-m-color": {
+                "value": "#2264CC",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-PowerBall-e-color": {
+                "value": "#082572",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-ElGordo-b-color": {
+                "value": "#E73131",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-ElGordo-m-color": {
+                "value": "#E73131",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-ElGordo-e-color": {
+                "value": "#6D0101",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-EuroMillionsUK-b-color": {
+                "value": "#80A3E5",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-EuroMillionsUK-m-color": {
+                "value": "#80A3E5",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-EuroMillionsUK-e-color": {
+                "value": "#5146AF",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-MegaMillions-b-color": {
+                "value": "#2264CC",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-MegaMillions-m-color": {
+                "value": "#2264CC",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-MegaMillions-e-color": {
+                "value": "#082572",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-PowerballAustralia-b-color": {
+                "value": "#8B9ACB",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-PowerballAustralia-m-color": {
+                "value": "#8B9ACB",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-PowerballAustralia-e-color": {
+                "value": "#122158",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-LaPrimitiva-b-color": {
+                "value": "#27a362",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-LaPrimitiva-m-color": {
+                "value": "#27a362",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-LaPrimitiva-e-color": {
+                "value": "#086f3a",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-LoteriaNacional-b-color": {
+                "value": "#41AEEA",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-LoteriaNacional-m-color": {
+                "value": "#41AEEA",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-LoteriaNacional-e-color": {
+                "value": "#1761C7",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-BonoLotto-b-color": {
+                "value": "#038448",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-BonoLotto-m-color": {
+                "value": "#038448",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-BonoLotto-e-color": {
+                "value": "#005529",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-Tatts-b-color": {
+                "value": "#5ACEAF",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-Tatts-m-color": {
+                "value": "#5ACEAF",
+                "description": "",
+                "blocked": 0
+            },
+            "lotttery-Tatts-e-color": {
+                "value": "#32A38F",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "Brand-Special-Number-Colors": {
+        "variables": {
+            "UKThunderBall-num-color-spl": {
+                "value": "darken(#550094,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "UKLotto-num-color-spl": {
+                "value": "darken(#141414,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "EuroMillionsUK-num-color-spl": {
+                "value": "darken(#f61f29,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "Tatts-num-color-spl": {
+                "value": "darken(#18499a,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "BonoLotto-num-color-spl": {
+                "value": "darken(#ec1c24,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "PowerballAustralia-num-color-spl": {
+                "value": "darken(#262626,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "ElGordo-num-color-spl": {
+                "value": "darken(#262626,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "EuroJackpot-num-color-spl": {
+                "value": "darken(#061b72,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "EuroMillions-num-color-spl": {
+                "value": "darken(#061b72,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "FloridaLotto-num-color-spl": {
+                "value": "darken(#eb0c6d,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "HoosierLotto-num-color-spl": {
+                "value": "darken(#db0330,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "HotLotto-num-color-spl": {
+                "value": "darken(#ec1c24,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "LaPrimitiva-num-color-spl": {
+                "value": "darken(#262626,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "LoteriaNacional-num-color-spl": {
+                "value": "darken(#0a3e94,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "Lotto649-num-color-spl": {
+                "value": "darken(#dd0b1b,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "FrenchLotto-num-color-spl": {
+                "value": "darken(#0a3e94,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "NewYorkLotto-num-color-spl": {
+                "value": "darken(#f61f29,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "MegaSena-num-color-spl": {
+                "value": "darken(#004b23,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "MegaMillions-num-color-spl": {
+                "value": "darken(#0755aa,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "IrishLotto-num-color-spl": {
+                "value": "darken(#fc7b00,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "OzLotto-num-color-spl": {
+                "value": "darken(#00924F,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "CaliforniaSuperLotto-num-color-spl": {
+                "value": "darken(#18499a,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "PowerBall-num-color-spl": {
+                "value": "darken(#f61f29,15%)",
+                "description": "",
+                "blocked": 0
+            },
+            "SuperEnaLotto-num-color-spl": {
+                "value": "darken(#f61f29,15%)",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "footer": {
+        "variables": {
+            "footer-bg-color": {
+                "value": "#F8F8F8",
+                "description": "[All] Footer section - background color",
+                "blocked": 0
+            },
+            "footer-links-list-anchor-color": {
+                "value": "#384079",
+                "description": "[All] Footer links - color of listed anchor tags",
+                "blocked": 0
+            },
+            "footer-anchor-container-color": {
+                "value": "$anchor-color",
+                "description": "DO NOT CHANGE -[REG] Footer links - For Anchor container in footer link box [All] listed anchor tags",
+                "blocked": 0
+            },
+            "responsible-link-color": {
+                "value": "$sky-blue",
+                "description": "[ALL] safety-icon - responsible list background color",
+                "blocked": 0
+            },
+            "responsible-text-color": {
+                "value": "$white",
+                "description": "[ALL] safety-icon  responsible text color",
+                "blocked": 0
+            },
+            "footer-border-colors": {
+                "value": "#DDDDDD",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "about-lottoday": {
+        "variables": {
+            "about-bg-color": {
+                "value": "$white",
+                "description": "[All] about section - background color",
+                "blocked": 0
+            },
+            "about-brand-banner-text-color": {
+                "value": "$white",
+                "description": "[All] about section - banner text color",
+                "blocked": 0
+            },
+            "about-brand-banner-bgcolor": {
+                "value": "$ld-theme-gradient-blue-313",
+                "description": "[All] about section - banner img background color",
+                "blocked": 0
+            }
+        }
+    },
+    "account-status": {
+        "variables": {
+            "account-status-checkbox-unchecked-bgcolor": {
+                "value": "$checkbox-unchecked-bgcolor",
+                "description": "[REG] Account-status- lable ",
+                "blocked": 0
+            },
+            "account-status-checkbox-unchecked-borderColor": {
+                "value": "$checkbox-unchecked-borderColor",
+                "description": "[REG] Account-status- lable Unchecked checkbox - border color",
+                "blocked": 0
+            },
+            "account-status-text-color": {
+                "value": "$brand-ld",
+                "description": "[All] Account-status- lable text color",
+                "blocked": 0
+            },
+            "account-status-p-color": {
+                "value": "$brand-ld",
+                "description": "[All] Account-status- lable paragraph color",
+                "blocked": 0
+            },
+            "account-status-input-color": {
+                "value": "$white",
+                "description": "[REG] Account-status- lable input checked color",
+                "blocked": 0
+            },
+            "account-status-input-border-color": {
+                "value": "$checkbox-checked-bgcolor",
+                "description": "Account-status- lable input checked checkbox - border color",
+                "blocked": 0
+            },
+            "account-status-input-bg-color": {
+                "value": "$checkbox-checked-bgcolor",
+                "description": "Account-status- lable input checked checkbox - border color",
+                "blocked": 0
+            },
+            "account-status-modal-bg-color": {
+                "value": "$white",
+                "description": "Account-status -modal background color",
+                "blocked": 0
+            }
+        }
+    },
+    "account-section": {
+        "variables": {
+            "myaccount-tabs-accordionBox-bgcolor": {
+                "value": "$white",
+                "description": "[All] Account-section - myaccount tabs accordion Box background color",
+                "blocked": 0
+            },
+            "myaccount-tabs-accordionRow-bgcolor": {
+                "value": "$bg-grey",
+                "description": "[All] Account-section - myaccount tabs accordion Row ordionBox background color",
+                "blocked": 0
+            },
+            "myaccount-tabs-accordionHeadline-h1color": {
+                "value": "$brand-ld",
+                "description": "[All] Account-section - myaccount tabs accordion headline header1 color",
+                "blocked": 0
+            },
+            "myaccount-tabs-accordionHeadline-pcolor": {
+                "value": "$brand-ld",
+                "description": "[All] Account-section - myaccount tabs accordion headline paragraph color",
+                "blocked": 0
+            },
+            "myaccount-tabs-accordionText-h3color": {
+                "value": "$brand-ld",
+                "description": "[All] Account-section - myaccount tabs accordion text header3 color",
+                "blocked": 0
+            },
+            "accordionText-form-field-placeholdercolor": {
+                "value": "$grey",
+                "description": "Account-section - myaccount tabs form field placeholder color",
+                "blocked": 0
+            }
+        }
+    },
+    "all-lotteries": {
+        "variables": {
+            "all-lottery-bgcolor": {
+                "value": "$white",
+                "description": "[All] all-lotteries - header row background color",
+                "blocked": 0
+            },
+            "all-lottery-down-arrowcolor": {
+                "value": "$bg-grey",
+                "description": "[All] all-lotteries - down arrow border bottom color",
+                "blocked": 0
+            },
+            "all-lottery-sorting-btn-bgcolor": {
+                "value": "$white",
+                "description": "[All] all-lotteries - sorting button background color",
+                "blocked": 0
+            },
+            "all-lottery-sorting-btn-color": {
+                "value": "$btn-secondary-bg",
+                "description": "[All] all-lotteries - sorting button background color",
+                "blocked": 0
+            },
+            "all-lottery-sorting-btn-bordercolor": {
+                "value": "$grey",
+                "description": "[All] all-lotteries - sorting button border color",
+                "blocked": 0
+            },
+            "all-lottery-headerrow-bgcontent-color": {
+                "value": "$bg-grey",
+                "description": "[All] all-lotteries - header row background content color",
+                "blocked": 0
+            }
+        }
+    },
+    "bet-history": {
+        "variables": {
+            "bet-history-bgcolor": {
+                "value": "$white",
+                "description": "[All] bet-history - content background color",
+                "blocked": 0
+            },
+            "bet-history-h3color": {
+                "value": "$brand-ld",
+                "description": "[All] bet-history - header3 color",
+                "blocked": 0
+            },
+            "bet-history-pcolor": {
+                "value": "$brand-ld",
+                "description": "[All] bet-history - paragraph color",
+                "blocked": 0
+            },
+            "bet-history-table-content-bgcolor": {
+                "value": "$white",
+                "description": "[All] bet-history - table content background color",
+                "blocked": 0
+            },
+            "bet-history-table-thead-bgcolor": {
+                "value": "$base-blue",
+                "description": "[All] bet-history - table content thead content background color",
+                "blocked": 0
+            },
+            "bet-history-table-th-color": {
+                "value": "$white",
+                "description": "[All] bet-history - table content th color",
+                "blocked": 0
+            },
+            "bet-history-table-tbodytr-borderbottomcolor": {
+                "value": "$bg-grey",
+                "description": "[All] bet-history - table content tbody tr border bottom color",
+                "blocked": 0
+            },
+            "bet-history-table-tbodytr-h3color": {
+                "value": "$menu-active-hover",
+                "description": "[All] bet-history - table content tbody tr-h3 content color",
+                "blocked": 0
+            },
+            "bet-history-table-tbodytr-pending-bets-color": {
+                "value": "$bg-grey",
+                "description": "[All] bet-history - table content tbody tr pending-bets content background color",
+                "blocked": 0
+            },
+            "bet-history-table-pending-bets-color": {
+                "value": "$white",
+                "description": "[All] bet-history - table content tbody td pending-bets color ",
+                "blocked": 0
+            },
+            "bet-history-btn-bgcolor": {
+                "value": "$button-secondary",
+                "description": "[All] bet-history - btn- bg color",
+                "blocked": 0
+            },
+            "bet-history-btn-color": {
+                "value": "$white",
+                "description": "[All] bet-history -btn- color",
+                "blocked": 0
+            },
+            "bet-history-btn-bordercolor": {
+                "value": "$button-secondary",
+                "description": "[All] bet-history - btn- bg color",
+                "blocked": 0
+            },
+            "bet-history-btn-disabled-color": {
+                "value": "$btn-disabled-color",
+                "description": "[All] bet-history - btn- disabled color",
+                "blocked": 0
+            },
+            "bet-history-btndisabled-bordercolor": {
+                "value": "$btn-disabled-border",
+                "description": "[All] bet-history - btn- border color",
+                "blocked": 0
+            },
+            "bet-history-btndisabled-bgcolor": {
+                "value": "$btn-disabled-bg",
+                "description": "[All] bet-history - btn- border color",
+                "blocked": 0
+            },
+            "bet-history-table-category-color": {
+                "value": "$brand-ld",
+                "description": "[All] bet-history - btn- border color",
+                "blocked": 0
+            },
+            "bet-history-accordionRow-bgcolor": {
+                "value": "$white",
+                "description": "[All] bet-history - btn- border color",
+                "blocked": 0
+            },
+            "bet-history-accordionHeadline-h1color": {
+                "value": "$brand-ld",
+                "description": "[All] bet-history - btn- border color",
+                "blocked": 0
+            }
+        }
+    },
+    "cashier-component": {
+        "variables": {
+            "cashier-component-bgcolor": {
+                "value": "$white",
+                "description": "[All] cashier-component- content background color",
+                "blocked": 0
+            },
+            "cashier-component-h3color": {
+                "value": "$brand-ld",
+                "description": "[All] cashier-component - header3 color",
+                "blocked": 0
+            },
+            "cashier-component-pcolor": {
+                "value": "$brand-ld",
+                "description": "[All] cashier-component - paragraph color",
+                "blocked": 0
+            },
+            "cashier-component-bal-types-color": {
+                "value": "$brand-ld",
+                "description": "[All] cashier-component - paragraph color",
+                "blocked": 0
+            },
+            "cashier-component-bal-types-bgcolor": {
+                "value": "$bg-grey",
+                "description": "[All] cashier-component - paragraph color",
+                "blocked": 0
+            },
+            "cashier-component-blue-gradient-color": {
+                "value": "$white",
+                "description": "[All] cashier-component - paragraph color",
+                "blocked": 0
+            },
+            "cashier-bal-types-list-bgcolor": {
+                "value": "$white",
+                "description": "[All] cashier-component - paragraph color",
+                "blocked": 0
+            },
+            "cashier-cashier-tabs-bgcolor": {
+                "value": "$white",
+                "description": "[All] cashier-component - paragraph color",
+                "blocked": 0
+            },
+            "cashier-content-bgcolor": {
+                "value": "$bg-grey",
+                "description": "[All] cashier-component - paragraph color",
+                "blocked": 0
+            },
+            "cashier-tabs-accordionBox-bgcolor": {
+                "value": "$white",
+                "description": "[All] cashier-tabs - myaccount tabs accordion Box background color",
+                "blocked": 0
+            },
+            "cashier-tabs-accordionRow-bgcolor": {
+                "value": "$bg-grey",
+                "description": "[All] cashier-tabs - myaccount tabs accordion row background color",
+                "blocked": 0
+            },
+            "cashier-tabs-accordionRow-h1color": {
+                "value": "$form-placeholder",
+                "description": "[All] cashier-tabs - myaccount tabs accordion row header 1 color",
+                "blocked": 0
+            },
+            "cashier-tabs-accordionHeadline-h1color": {
+                "value": "$form-placeholder",
+                "description": "[All] cashier-tabs - myaccount tabs accordion headline header 1 color",
+                "blocked": 0
+            },
+            "cashier-tabs-accordionHeadline-color": {
+                "value": "$green",
+                "description": "[All] cashier-tabs - myaccount tabs accordion headline color",
+                "blocked": 0
+            },
+            "cashier-tabs-accordionHeadline-content-color": {
+                "value": "$input-focus-color",
+                "description": "[All] cashier-tabs - myaccount tabs accordion headline content color",
+                "blocked": 0
+            },
+            "cashier-accordionHeadline-verifiedclassp-color": {
+                "value": "$green",
+                "description": "[All] cashier-tabs - myaccount tabs accordion headline- verified class pragraph color",
+                "blocked": 0
+            },
+            "cashier-accordionHeadline-verifiedinitclassp-color": {
+                "value": "$input-focus-color",
+                "description": "[All] cashier-tabs - myaccount tabs accordion headline- verified inital class pragraph color",
+                "blocked": 0
+            },
+            "cashier-accordionHeadline-h1color": {
+                "value": "$brand-ld",
+                "description": "[All] cashier-tabs - myaccount tabs accordion headline header1 color",
+                "blocked": 0
+            },
+            "cashier-accordionHeadline-pcolor": {
+                "value": "$brand-ld",
+                "description": "[All] cashier-tabs - myaccount tabs accordion headline paragraph color",
+                "blocked": 0
+            },
+            "cashier-accordionText-pcolor": {
+                "value": "$brand-ld",
+                "description": "[All] cashier-tabs - myaccount tabs accordion text paragraph color",
+                "blocked": 0
+            },
+            "cashier-accordionText-text-no-withdraw-bgcolor": {
+                "value": "$white",
+                "description": "[All] cashier-tabs - myaccount tabs accordion text no withdraw background color",
+                "blocked": 0
+            },
+            "cashier-back-to-cards-cashier-color": {
+                "value": "$brand-ld",
+                "description": "[All] cashier-tabs - myaccount tabs cashier back to cards cashier color",
+                "blocked": 0
+            },
+            "cashier-accordionRow-bgcolor": {
+                "value": "$border-colors",
+                "description": "[All] cashier-tabs - myaccount tabs cashier accordionRow background color",
+                "blocked": 0
+            }
+        }
+    },
+    "change-password": {
+        "variables": {
+            "pwd-success-pcolor": {
+                "value": "$brand-ld",
+                "description": "[All] change password - password success paragraph color",
+                "blocked": 0
+            }
+        }
+    },
+    "checkout-component": {
+        "variables": {
+            "checkout-component-downarrow-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-container-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-cart-icon-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-cart-icon-color": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-cart-icon-pcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-lottery-details-h6color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-lottery-summary-h6color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-lottery-summary-pcolor": {
+                "value": "$green",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-pay-details-h3color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-button-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-cart-suggestion-btnfil-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-cart-suggestion-btn-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-cart-payment-section-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-cart-paymentsection-totalsummary-bgcolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-cart-totalsummary-borderline-bgcolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-cart-available-funds-currency-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-secure-transactions-button-abgcolor": {
+                "value": "$green",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-secure-transactions-button-acolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-secure-transactions-button-abordercolor": {
+                "value": "$green",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-secure-transactions-btnnew-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-secure-transactions-btnblue-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-secure-transactions-btnblue-bordercolor": {
+                "value": "$btn-blue-border-color",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-secure-transactions-btnblue-color": {
+                "value": "$btn-blue-text-color",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-secure-transactions-btnblue-fbgcolor": {
+                "value": "$btn-blued",
+                "description": "",
+                "blocked": 0
+            },
+            "checkout-component-span-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "contact-component": {
+        "variables": {
+            "contact-component-infobox-bgcolor": {
+                "value": "$clear-day-color",
+                "description": "",
+                "blocked": 0
+            },
+            "contact-component-infobox-bordercolor": {
+                "value": "$free-speech-aquamarine-color",
+                "description": "",
+                "blocked": 0
+            },
+            "contact-component-infobox-h6color": {
+                "value": "$free-speech-aquamarine-color",
+                "description": "",
+                "blocked": 0
+            },
+            "contact-component-infobox-pcolor": {
+                "value": "$free-speech-aquamarine-color",
+                "description": "",
+                "blocked": 0
+            },
+            "contact-component-fields-textareabordercolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "contact-component-fields-textareainvalidcolor": {
+                "value": "$input-invalid-color",
+                "description": "",
+                "blocked": 0
+            },
+            "contact-component-fields-textareasuccesscolor": {
+                "value": "$input-success-color",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "contact-container-component": {
+        "variables": {
+            "contact-container-contactpage-bordercolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "contact-container-contactpage-bgcolor": {
+                "value": "$ld-theme-gradient-blue-313",
+                "description": "",
+                "blocked": 0
+            },
+            "contact-container-contactpage-mapcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "contact-container-contactpage-textcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "contact-container-speechicn-bordercolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "contact-container-speechicn-bgcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "contact-container-formfields-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "contact-container-formfields-acolor": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "contact-container-contactpage-bannerbgcolor": {
+                "value": "$ld-theme-gradient-blue-135",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "cookie-policy-component": {
+        "variables": {
+            "cookie-policy-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "cookie-policy-brandbanner-bgcolor": {
+                "value": "$ld-theme-gradient-blue-313",
+                "description": "",
+                "blocked": 0
+            },
+            "cookie-policy-textcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "cookie-policy-page-text-color": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "cookie-policy-page-text-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "cookie-policy-content-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "cookie-policy-download-doc-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "cookie-policy-download-doc-acolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "cookie-policy-keyvalue-info-table-bordercolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "cookie-policy-keyvalue-info-table-bgecolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "cookie-policy-keyvalue-info-table-bgocolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "deposit-limit-component": {
+        "variables": {
+            "deposit-limit-pcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "deposit-limit-status-color": {
+                "value": "$steel-blue",
+                "description": "",
+                "blocked": 0
+            },
+            "deposit-limit-status-bgcolor": {
+                "value": "$infoBoxBorderColor-aquaBlue",
+                "description": "",
+                "blocked": 0
+            },
+            "deposit-limit-status-bordercolor": {
+                "value": "$infoBoxBgColor-aquaBlue",
+                "description": "",
+                "blocked": 0
+            },
+            "deposit-limit-input-checked-bgcolor": {
+                "value": "$checkbox-checked-bgcolor",
+                "description": "Account-status- lable input checked checkbox - border color",
+                "blocked": 0
+            },
+            "deposit-limit-input-checked-color": {
+                "value": "$white",
+                "description": "Account-status- lable input checked checkbox - border color",
+                "blocked": 0
+            },
+            "deposit-limit-alert-info-box-bgcolor": {
+                "value": "$infoBoxBgColor-honey",
+                "description": "Account-status- lable input checked checkbox - border color",
+                "blocked": 0
+            },
+            "deposit-limit-alert-info-box-bordercolor": {
+                "value": "$infoBoxBorderColor-honey",
+                "description": "Account-status- lable input checked checkbox - border color",
+                "blocked": 0
+            },
+            "deposit-limit-alert-info-box-iconcolor": {
+                "value": "$infoBoxTextColor-honey",
+                "description": "Account-status- lable input checked checkbox - border color",
+                "blocked": 0
+            },
+            "deposit-limit-alert-info-box-texth6color": {
+                "value": "$infoBoxTextColor-honey",
+                "description": "Account-status- lable input checked checkbox - border color",
+                "blocked": 0
+            },
+            "deposit-limit-alert-info-box-timercolor": {
+                "value": "$infoBoxTextColor-honey",
+                "description": "Account-status- lable input checked checkbox - border color",
+                "blocked": 0
+            },
+            "deposit-limit-cancel-session-btn-bgcolor": {
+                "value": "$button-disabled",
+                "description": "Account-status- lable input checked checkbox - border color",
+                "blocked": 0
+            },
+            "deposit-limit-cancel-session-btn-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "deposit-limit-modal-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "deposit-limit-set-limit-updated-btnbordercolor": {
+                "value": "$green",
+                "description": "",
+                "blocked": 0
+            },
+            "deposit-limit-set-limit-updated-btncolor": {
+                "value": "$green",
+                "description": "",
+                "blocked": 0
+            },
+            "deposit-limit-set-limit-updated-btnbgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "deposit-limit-limit-and-realitycheck-color": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "faq-component": {
+        "variables": {
+            "faq-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "faq-brandbanner-bgcolor": {
+                "value": "$ld-theme-gradient-blue-313",
+                "description": "",
+                "blocked": 0
+            },
+            "faq-textcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "faq-page-span-color": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "faq-category-tabs-licolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "faq-category-tabicon-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "faq-category-tabtext-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "faq-category-tabactive-bgcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "faq-category-tabactivetext-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "faq-category-accordionBox-color": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "footer-short": {
+        "variables": {
+            "footer-short-terms-links-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "footer-short-terms-links-acolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "footer-terms-links-bgcolor": {
+                "value": "$bg-secondary",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "forgotpassword": {
+        "variables": {
+            "forgotpassword-inner-container-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "forgotpassword-info-box-bgcolor": {
+                "value": "$clear-day-color",
+                "description": "",
+                "blocked": 0
+            },
+            "forgotpassword-info-box-bordercolor": {
+                "value": "$free-speech-aquamarine-color",
+                "description": "",
+                "blocked": 0
+            },
+            "forgotpassword-footer-links-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "forgotpassword-inner-container-box-shadow": {
+                "value": "$card-box-shadow",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "gaming-reality-check": {
+        "variables": {
+            "gaming-reality-check-pcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "home-component": {
+        "variables": {
+            "home-banner-mask-overlay-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "home-banner-content-lottery-info-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "home-banner-content-lottery-info-timer-ulcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "home-popular-lottery-details-h3color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "home-banner-card-hold-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "home-banner-card-hold-1childcolor": {
+                "value": "$header-blue",
+                "description": "",
+                "blocked": 0
+            },
+            "home-banner-card-hold-2childcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "home-banner-card-hold-footerbgcolor": {
+                "value": "$yellow",
+                "description": "",
+                "blocked": 0
+            },
+            "home-banner-card-hold-footercolor": {
+                "value": "$black",
+                "description": "",
+                "blocked": 0
+            },
+            "home-section-ld-security-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "home-section-ld-security-bordertopcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "home-section-ld-winner-stories-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "home-section-ld-newsletter-input-color": {
+                "value": "$input-text-base-color",
+                "description": "",
+                "blocked": 0
+            },
+            "home-section-ld-newsletter-btn-special-bgcolor": {
+                "value": "$pink",
+                "description": "",
+                "blocked": 0
+            },
+            "home-section-ld-newsletter-btn-special-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "home-lottery-info-h1color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "home-lottery-info-timercolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "home-lottery-info-bottom-curve-color": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "latest-results": {
+        "variables": {
+            "latest-results-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "latest-results-header-bgcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "latest-results-text-container-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "latest-results-down-arrow-borderbottomcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "latest-results-down-arrow-brcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "sorting-desktop-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "sorting-desktop-empty-gap-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "sorting-desktop-no-fill-iconcolor": {
+                "value": "$inactive-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "sorting-desktop-no-fill-iconactivecolor": {
+                "value": "$btn-secondary-bg",
+                "description": "",
+                "blocked": 0
+            },
+            "home-check-results-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-numbers-number-color": {
+                "value": "$black",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-numbers-number-bgcolor": {
+                "value": "$OzLotto-num-color",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-btn-bgcolor": {
+                "value": "$green",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-btn-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-btn-bordercolor": {
+                "value": "$green",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "login-components": {
+        "variables": {
+            "login-innerbox-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "login-innerbox-shadowcolor": {
+                "value": "$card-box-shadow",
+                "description": "",
+                "blocked": 0
+            },
+            "login-title-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "login-header-arrow-bgcolor": {
+                "value": "$pink-gradient-48",
+                "description": "",
+                "blocked": 0
+            },
+            "login-borderbottom-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "login-form": {
+        "variables": {
+            "login-form-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "login-text-anchorcolor": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "lottery-detailed-results": {
+        "variables": {
+            "section-form-headerrow-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-winnertext-bgcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-btnreplay-bgcolor": {
+                "value": "$button-primary",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-btnreplay-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-btndisabled-bgcolor": {
+                "value": "$button-additional",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-btndisabled-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-skewheader-bgcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-textcontainer-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-winner-tropy-bgcolor": {
+                "value": "$pink-gradient-48",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-downarrow-borderbottomcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-downarrow-brcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-content-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-win-summary-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-numberlist-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-winningrow-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-prize-title-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-number-default-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-number-default-color": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-winsummaryholder-borderbottomcolor": {
+                "value": "$border-colors",
+                "description": "",
+                "blocked": 0
+            },
+            "section-form-wrapper-box-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "lottery-more-info": {
+        "variables": {
+            "lottery-more-info-headerrow-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-more-info-headerbg-bgcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-more-info-text-container-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-more-info-down-arrow-borderbottomcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-more-info-btn-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-more-info-btn-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-more-info-btn-bordercolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-more-info-btnhover-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-more-info-btnhover-bgcolor": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-more-info-btnhover-bordercolor": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-more-info-content-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-more-info-lottery-title-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-more-info-winning-numbers-color": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-bet-info-table-bordercolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-bet-info-table-trbgecolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-bet-info-table-trbgocolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-bet-info-prize-breakdown-acolor": {
+                "value": "$menu-active-hover",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "lottery-result-info": {
+        "variables": {
+            "lottery-result-lottery-details-h6color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-result-draw-details-h3color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-result-btw-hover-bgcolor": {
+                "value": "$btn-default-color",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-result-btw-hover-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-result-btw-disabled-color": {
+                "value": "$btn-disabled-color",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-result-btw-replay-bgcolor": {
+                "value": "$button-primary",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-result-btw-replay-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "myaccount-component": {
+        "variables": {
+            "myaccount-headerrow-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "myaccount-btn-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "myaccount-btn-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "myaccount-btn-bordercolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "myaccount-btn-hover-bgcolor": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "myaccount-btn-hover-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "myaccount-btn-hover-bordercolor": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "myaccount-down-arrow-borderbtncolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "selection-container": {
+        "variables": {
+            "selection-container-headerbg-h1color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-container-drawdetails-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-container-downarrow-borderbottomcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-container-infobox-bgcolor": {
+                "value": "$info-color",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-container-infobox-bordercolor": {
+                "value": "$info-color",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-container-infobox-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-container-stepsrow-icolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-container-stepsindicator-bgcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-container-stepsindicator-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-container-label-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-container-label-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-container-input-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-container-input-befourcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-container-input-bordercolor": {
+                "value": "$number-of-draw-color",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-container-input-bgcolor": {
+                "value": "$number-of-draw-color",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-ckbox-label-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-ckbox-label-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-input-ckbox-label-bgcolor": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-input-ckbox-label-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-input-ckbox-label-beforbgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-input-ckbox-label-beforcolor": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-input-ckbox-label-beforbordercolor": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-discount-tag-bgcolor": {
+                "value": "$yellow",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-discount-tag-aftercolor": {
+                "value": "$black",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-discount-tag-orcolor": {
+                "value": "$base-blue",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-discount-tag-orbgcolor": {
+                "value": "$base-blue",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-lottery-type-bgcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-draw-time-info-texth1color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-draw-time-info-texth2color": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-tabs-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-tabs-hoverbgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-shape-fill-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-tabs-content-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-tabs-content-show-numbers-color": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-tabs-content-show-numbers-borderbottomcolor": {
+                "value": "#5c95ff",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-tabs-purchase-summary-borderbottomcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-tabs-purchase-summary-title-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-bonus-bordercolor": {
+                "value": "$btn-default-color",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-bonus-bgcolor": {
+                "value": "$bonus-applied-bg-color",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-bonus-svgcolor": {
+                "value": "$green",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-bonus-svgstrokecolor": {
+                "value": "$btn-default-color",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-total-amt-btcolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "section-tabs-orcolor": {
+                "value": "$form-text",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-type-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-standard-tab-color": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-linebottom-btcolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "selection-psbg-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "registration-form": {
+        "variables": {
+            "reg-form-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-top-headingcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-anchor-active-bgcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-anchor-active-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-anchor-success-bgcolor": {
+                "value": "$green",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-anchor-success-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-password-meter-color": {
+                "value": "$input-placeholder-color",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-dob-color": {
+                "value": "$form-placeholder",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-label-bgcolor": {
+                "value": "$checkbox-unchecked-bgcolor",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-label-bordercolor": {
+                "value": "$checkbox-unchecked-borderColor",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-text-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-paragraph-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-paragraph-a-color": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-input-checked-bgcolor": {
+                "value": "$checkbox-checked-bgcolor",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-input-checked-bordercolor": {
+                "value": "$checkbox-checked-bgcolor",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-input-checked-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-mobile-div-color": {
+                "value": "$base-blue",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-otp-code-acolor": {
+                "value": "$header-blue",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-input-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-input-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-input-border-color": {
+                "value": "$input-invalid-color",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-gender-tab-input-bgcolor": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-gender-tab-input-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "reg-gender-tab-label-bordercolor": {
+                "value": "$border-colors",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "payment-container-fields": {
+        "variables": {
+            "payment-container-show-small-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-container-text-no-withdraw-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-container-type-tabs-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-container-text-h6color": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-container-a-h5color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-active-arrow-brcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-payment-type-content-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-cashier-back-btcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-quick-pick-amount-inputbgcolor": {
+                "value": "$checkbox-checked-bgcolor",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-quick-pick-amount-inputcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-label-bordercolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-add-new-card-color": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-add-new-card-borderbottomcolor": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-info-box-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-info-box-bordercolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-back-to-cards-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-back-to-cards-btcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-type-tabs-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-type-tabs-borderbottomcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-anchortext-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-amount-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "withdraw-funds": {
+        "variables": {
+            "withdraw-funds-show-small-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-funds-type-tabs-libgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-funds-text-h6color": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-funds-anchortext-h5color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-funds-activearrow-brcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-type-content-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-type-cashier-back-btcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-quick-pick-amount-checked-bgcolor": {
+                "value": "$checkbox-checked-bgcolor",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-quick-pick-amount-checked-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-label-bordercolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-add-new-card-color": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-add-new-card-borderbottomcolor": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-info-box-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-info-box-bordercolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-funds-li-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-funds-li-borderbottomcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-funds-text-h5color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-funds-anchor-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "withdraw-funds-amount-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "myresults-component": {
+        "variables": {
+            "myresults-header-row-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-skew-header-down-arrow-borderbottomcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-lottery-details-texth6-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-draw-details-h3color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-btn-bgcolor": {
+                "value": "$btn-default-color",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-btn-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-btn-bgicolor": {
+                "value": "$btn-disabled-color",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-btnreply-bgcolor": {
+                "value": "$button-primary",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-btnreply-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-btnreply-icolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-emptycartbag-carticon-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-emptycartbag-carticon-color": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-emptycartbag-paragraph-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-sectionmyresults-btn-bordercolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-sectionmyresults-btn-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-sectionmyresults-btn-color": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-sectionmyresults-btnhover-bordercolor": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-sectionmyresults-btnhover-bgcolor": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-sectionmyresults-btnhover-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-sectionmyresults-btngrp-bgcolor": {
+                "value": "$bg-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-sectionmyresults-btndis-color": {
+                "value": "$btn-disabled-color",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-sectionmyresults-btndis-bordercolor": {
+                "value": "$btn-disabled-border",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-sectionmyresults-btndis-bgcolor": {
+                "value": "$btn-disabled-bg",
+                "description": "",
+                "blocked": 0
+            },
+            "myresults-otherlotteries-arrowtop-bordercolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "selected-numbers": {
+        "variables": {
+            "selected-numbers-linenumberedit-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-numbercontainerp-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-numberroweditchoosen-bordercolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-numberrow-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-numberrowselected-bgcolor": {
+                "value": "$yellow-dark",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-numberrowselected-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-numberrowselectedsplnum-bgcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-numberrowselectedsplnum-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-numberrowselectedbtn-bordercolor": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-numberrowselectedbtn-color": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-numberrowselectedbtn-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-numberrowselectedbtn2-bgcolor": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-numberrowselectedbtn2-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-numberselected-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-header-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-button-bordercolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-button-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-button-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "selected-numbers-btnsec-bordercolor": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "page-loader": {
+        "variables": {
+            "page-loader-box-bgcolor": {
+                "value": "$boxcolor",
+                "description": "",
+                "blocked": 0
+            },
+            "page-loader-box-percent-color": {
+                "value": "$percentColor",
+                "description": "",
+                "blocked": 0
+            },
+            "page-loader-box-water-bordercolor": {
+                "value": "$waterbordercolor",
+                "description": "",
+                "blocked": 0
+            },
+            "page-loader-box-water-fcolor": {
+                "value": "$waterFColor",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "payment-component": {
+        "variables": {
+            "payment-container-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "cart-summary-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "card-sumary-title-borderbottomcolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "card-list-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "ticket-card-list-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "ticket-card-list-bscolor": {
+                "value": "$card-box-shadow",
+                "description": "",
+                "blocked": 0
+            },
+            "draw-info-color": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "draw-info-borderbottomcolor": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "total-amount-borderbottomcolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "amount-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "section-payment-show-small-color": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "section-payment-header-row-da-borderbottomcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "section-payment-header-row-daw-borderbottomcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "payment-methods": {
+        "variables": {
+            "payment-methods-payment-info-box-bgcolor": {
+                "value": "$infoBoxBorderColor-aquaBlue",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-methods-payment-info-box-bordercolor": {
+                "value": "$infoBoxBgColor-aquaBlue",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-methods-text-color": {
+                "value": "$shakespeare",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-methods-text-h6color": {
+                "value": "$steel-blue",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-methods-savedcc-bordercolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-methods-savedcc-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-methods-savedcc-bgcolor": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-methods-addpayment-borderbottomcolor": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-methods-media-addpayment-borderbottomcolor": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-methods-savedcc-expirydatecolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "payment-methods-addpayment-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "preference-center": {
+        "variables": {
+            "preference-center-label-bgcolor": {
+                "value": "$checkbox-unchecked-bgcolor",
+                "description": "",
+                "blocked": 0
+            },
+            "preference-center-label-bordercolor": {
+                "value": "$checkbox-unchecked-borderColor",
+                "description": "",
+                "blocked": 0
+            },
+            "preference-center-text-bordercolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "preference-center-inputchecked-bordercolor": {
+                "value": "$checkbox-checked-bgcolor",
+                "description": "",
+                "blocked": 0
+            },
+            "preference-center-inputchecked-bgcolor": {
+                "value": "$checkbox-checked-bgcolor",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "registration-component": {
+        "variables": {
+            "registration-container-bgcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "registration-container-img-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "responsible-gaming": {
+        "variables": {
+            "responsible-gaming-pcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "responsible-gaming-colcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "responsible-gaming-setlimitbox-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "responsible-gaming-setlimitbox-btnbordercolor": {
+                "value": "$button-primary",
+                "description": "",
+                "blocked": 0
+            },
+            "responsible-gaming-setlimitbox-btncolor": {
+                "value": "$button-primary",
+                "description": "",
+                "blocked": 0
+            },
+            "responsible-gaming-setlimitbox-btnbgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "syndicate-component": {
+        "variables": {
+            "syndicate-headerrow-downarrow-bordercolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "syndicate-headerrow-downarrow-borderbottomcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "syndicate-lotteries": {
+        "variables": {
+            "syndicate-cardgrid-card-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "syndicate-cardgrid-card-bscolor": {
+                "value": "$card-box-shadow",
+                "description": "",
+                "blocked": 0
+            },
+            "syndicate-lotterycard-cardgrid-card-bgcolor": {
+                "value": "$card-background-color",
+                "description": "",
+                "blocked": 0
+            },
+            "syndicate-shapefill-bordercolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "syndicate-shapefill-icon-bordercolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "syndicate-betsharegroup-bgcolor": {
+                "value": "$spinner-bg-color",
+                "description": "",
+                "blocked": 0
+            },
+            "syndicate-betsharegroup-btn-bgcolor": {
+                "value": "$spin-circle-color",
+                "description": "",
+                "blocked": 0
+            },
+            "syndicate-betsharegroup-btn-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "syndicate-opacq-input-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "syndicate-card-borderbottomcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "syndicate-share": {
+        "variables": {
+            "syndicate-share-ordercounterholde-bgcolor": {
+                "value": "$spinner-bg-color",
+                "description": "",
+                "blocked": 0
+            },
+            "syndicate-share-ordercounterholde-btn-bgcolor": {
+                "value": "$spin-circle-color",
+                "description": "",
+                "blocked": 0
+            },
+            "syndicate-share-ordercounterholde-btn-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "syndicate-share-opacq-input-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "ticket-selection-type": {
+        "variables": {
+            "ticketselectiontype-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "ticketselection-helpicon-icolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "ticketselection-line-bordercolor": {
+                "value": "$border-colors",
+                "description": "",
+                "blocked": 0
+            },
+            "ticketselectiontype-drawdetails-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "ticketselectiontype-downarrow-borderbottomcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "ticketselectiontype-textcontent-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "ticketselectiontype-textcontent-navtab-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "ticket-suggestions": {
+        "variables": {
+            "ticketsuggestions-card-bordercolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "ticketsuggestions-cardhighlight-bgcolor": {
+                "value": "$yellow",
+                "description": "",
+                "blocked": 0
+            },
+            "ticketsuggestions-cardlotterydetails-h6color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "ticketsuggestions-ordercounterholder-bgcolor": {
+                "value": "$spinner-bg-color",
+                "description": "",
+                "blocked": 0
+            },
+            "ticketsuggestions-ordercounterholderbtn-bgcolor": {
+                "value": "$spin-circle-color",
+                "description": "",
+                "blocked": 0
+            },
+            "ticketsuggestions-ordercounterholderbtn-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "ticketsuggestions-opacqinput-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "ticketsuggestions-paydetails-headercolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "ticketsuggestions-paydetails-btncolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "ticketsuggestions-paydetails-btnhovercolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "ticketsuggestions-cartsuggestionbtn-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "reset-password": {
+        "variables": {
+            "resetpasswordform-innercontainer-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "resetpasswordform-textinfobox-bgcolor": {
+                "value": "$clear-day-color",
+                "description": "",
+                "blocked": 0
+            },
+            "resetpasswordform-textinfobox-bordercolor": {
+                "value": "$free-speech-aquamarine-color",
+                "description": "",
+                "blocked": 0
+            },
+            "resetpasswordform-textinfobox-pcolor": {
+                "value": "$free-speech-aquamarine-color",
+                "description": "",
+                "blocked": 0
+            },
+            "resetpasswordform-footerlinks-bordertopcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "resetpasswordform-boxshadow-color": {
+                "value": "$card-box-shadow",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "privacy-policy": {
+        "variables": {
+            "privacy-policy-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "privacy-policy-brandbannercolor": {
+                "value": "$ld-theme-gradient-blue-313",
+                "description": "",
+                "blocked": 0
+            },
+            "privacy-policy-text-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "privacy-policy-pagetext-color": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "privacy-policy-pagetext-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "privacy-policy-content-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "privacy-policy-downloaddoc-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "terms-conditions": {
+        "variables": {
+            "terms-conditions-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "terms-conditions-brandbanner-bgcolor": {
+                "value": "$ld-theme-gradient-blue-313",
+                "description": "",
+                "blocked": 0
+            },
+            "terms-conditions-text-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "terms-conditions-pagetext-btncolor": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "terms-conditions-pagetext-btnbgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "terms-conditions-content-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "terms-conditions-downloaddoc-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "terms-conditions-keyvalueinfotable-bordercolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "terms-conditions-tabletreven-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "terms-conditions-tabletrodd-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "syndicate-selection": {
+        "variables": {
+            "syndicate-selection-ordercounterholder-bgcolor": {
+                "value": "$spinner-bg-color",
+                "description": "",
+                "blocked": 0
+            },
+            "syndicate-selection-ordercounterholder-btn-bgcolor": {
+                "value": "$spin-circle-color",
+                "description": "",
+                "blocked": 0
+            },
+            "syndicate-selection-ordercounterholder-btn-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "syndicate-selection-opacqinput-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "blocked-country": {
+        "variables": {
+            "blocked-country-alert-msg-bgcolor": {
+                "value": "$infoBoxBgColor-honey",
+                "description": "",
+                "blocked": 0
+            },
+            "blocked-country-alert-msg-bordercolor": {
+                "value": "$infoBoxBorderColor-honey",
+                "description": "",
+                "blocked": 0
+            },
+            "blocked-country-alert-msg-color": {
+                "value": "$infoBoxTextColor-honey",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "cookies-msg": {
+        "variables": {
+            "cookies-msg-bgcolor": {
+                "value": "$yellow",
+                "description": "",
+                "blocked": 0
+            },
+            "cookies-msg-pcolor": {
+                "value": "$black",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "confirm-identity": {
+        "variables": {
+            "confirm-identity-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "confirm-identity-bgh3color": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "confirm-identity-h3color": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "confirm-identity-h3activecolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "confirm-identity-h3activecompletedstepcolor": {
+                "value": "$green",
+                "description": "",
+                "blocked": 0
+            },
+            "confirm-identity-h3completedstepbeforecolor": {
+                "value": "$grey",
+                "description": "",
+                "blocked": 0
+            },
+            "confirm-identity-id-proof-type-iconcolor": {
+                "value": "$green",
+                "description": "",
+                "blocked": 0
+            },
+            "confirm-identity-ld-ckbox-bglabelaftercolor": {
+                "value": "$checkbox-unchecked-bgcolor",
+                "description": "",
+                "blocked": 0
+            },
+            "confirm-identity-ld-ckbox-labelafterbordercolor": {
+                "value": "$checkbox-unchecked-borderColor",
+                "description": "",
+                "blocked": 0
+            },
+            "confirm-identity-ld-ckbox-labeltextcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "confirm-identity-ld-ckbox-labeltextpcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "confirm-identity-ld-ckbox-inputcheckedlabelbeforecolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "confirm-identity-ld-ckbox-inputcheckedlabelbeforebordercolor": {
+                "value": "$checkbox-checked-bgcolor",
+                "description": "",
+                "blocked": 0
+            },
+            "confirm-identity-ld-ckbox-inputcheckedlabelbeforebgcolor": {
+                "value": "$checkbox-checked-bgcolor",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "header-comp": {
+        "variables": {
+            "header-comp-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-bordercolor": {
+                "value": "$light-blue",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-color": {
+                "value": "$base-blue",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-homelang-dropdown-togglecolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-homelang-lang-circle-boxshadow-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-deviceheader-bgcolor": {
+                "value": "$pink-gradient-48",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-homelang-lang-circle-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-homelang-dropdown-bgcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-homelang-dropdown-before-borderrgbcolor": {
+                "value": "$seagull",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-homelang-dropdown-borderbottomcolor": {
+                "value": "$toreabay",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-homelang-dropdown-li-a-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-homelang-dropdown-li-a-span-color": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-home-a-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-ul-li-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-ul-li-badget-holder-badget-bgcolor": {
+                "value": "$golden-yellow",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-ul-li-badget-holder-badget-color": {
+                "value": "$deep-koamaru",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-ul-li-h1-svg-fill-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-ul-li-h1-svg-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-ul-li-h1-span-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-ul-li-a-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-ul-li-firstchild-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-ul-li-firstchild-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-head-nav-ul-links-after-border-color": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-ul-li-firstchild-borderbotcolor": {
+                "value": "$light-blue",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-ul-li-firstchild-h1-svg-fill-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-ul-li-firstchild-h1-icon--color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-ul-li-firstchild-h1-span-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-ul-li-firstchild-a-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-ul-li-arrow_box-borderleftcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-head-bg-bal-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-head-nav-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-head-nav-ul-links-color": {
+                "value": "$menu-active-hover",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-head-nav-ul-links-after-border-colors": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-head-nav-ld-overlay-bgcolor": {
+                "value": "$black",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-head-nav-white-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-head-nav-ld-menu-selectedbordercolor": {
+                "value": "$content-bg-color",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-head-nav-ld-menu-links-color": {
+                "value": "$menu-active-hover",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-head-nav-ld-menu-dropdownbgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-head-nav-ld-menu-dropdownbordercolor": {
+                "value": "$light-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "header-comp-ld-overlay-lottery-list-color": {
+                "value": "$small-anchors",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "lottery-info": {
+        "variables": {
+            "lottery-overview-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-overview-before-bordercolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-overview-table-bordercolor": {
+                "value": "$border-colors",
+                "description": "",
+                "blocked": 0
+            },
+            "lottery-overview-table-th-bgcolor": {
+                "value": "$table-head-color",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "my-transactions": {
+        "variables": {
+            "my-transactions-content-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "my-transactions-content-h3color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "my-transactions-content-paracolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "my-transactions-content-leftsectionbgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "my-transactions-table-content-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "my-transactions-table-content-thead-bgcolor": {
+                "value": "$base-blue",
+                "description": "",
+                "blocked": 0
+            },
+            "my-transactions-table-content-thead-titlecolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "my-transactions-table-content-tbody-bordercolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "my-transactions-table-content-tbody-gdate-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "my-transactions-table-content-tbody-h3-color": {
+                "value": "$menu-active-hover",
+                "description": "",
+                "blocked": 0
+            },
+            "my-transactions-table-content-button-bgcolor": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "my-transactions-table-content-button-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "my-transactions-table-content-button-bordercolor": {
+                "value": "$button-secondary",
+                "description": "",
+                "blocked": 0
+            },
+            "my-transactions-accordionRow-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "my-transactions-accordionHeadline-h1-bgcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "my-transactions-btn-disabled-color": {
+                "value": "$btn-disabled-color",
+                "description": "",
+                "blocked": 0
+            },
+            "my-transactions-btn-disabled-bg": {
+                "value": "$btn-disabled-bg",
+                "description": "",
+                "blocked": 0
+            },
+            "my-transactions-btn-disabled-border": {
+                "value": "$btn-disabled-border",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "order-confirmation": {
+        "variables": {
+            "order-confirm-header-row-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "order-confirm-alert-infobox-container-bgcolor": {
+                "value": "$infoBoxBgColor-honey",
+                "description": "",
+                "blocked": 0
+            },
+            "order-confirm-alert-infobox-container-bordercolor": {
+                "value": "$infoBoxBorderColor-honey",
+                "description": "",
+                "blocked": 0
+            },
+            "order-confirm-alert-infobox-container-textcolor": {
+                "value": "$infoBoxTextColor-honey",
+                "description": "",
+                "blocked": 0
+            },
+            "order-confirm-failure-purchases-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "order-confirm-failure-purchases-inner-bgcolor": {
+                "value": "$white-smoke",
+                "description": "",
+                "blocked": 0
+            },
+            "order-confirm-failure-purchases-msg-color": {
+                "value": "$input-invalid-color",
+                "description": "",
+                "blocked": 0
+            },
+            "order-confirm-content-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "order-confirm-orderid-color": {
+                "value": "$anchor-color",
+                "description": "",
+                "blocked": 0
+            },
+            "order-confirm-card-innercard-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "order-confirm-lottery-details-h6-bgcolor": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "order-confirm-draw-details-h3-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "order-confirm-order-id-color": {
+                "value": "$blue-icon",
+                "description": "",
+                "blocked": 0
+            },
+            "order-confirm-btn-details-hovercolor": {
+                "value": "$button-primary",
+                "description": "",
+                "blocked": 0
+            },
+            "order-confirm-btn-details-hoverbgcolor": {
+                "value": "$button-primary",
+                "description": "",
+                "blocked": 0
+            },
+            "order-confirm-btn-details-hoverbordercolor": {
+                "value": "$button-primary",
+                "description": "",
+                "blocked": 0
+            },
+            "order-confirm-headerrowsuccess-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "lottery-prize-levels": {
+        "variables": {
+            "prize-money-levels-bordercolor": {
+                "value": "$border-colors",
+                "description": "",
+                "blocked": 0
+            },
+            "prizemoneylevels-headerrowbgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "prize-money-text-prize-row-even": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "prize-money-text-prize-row-odd": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "lotto-betting": {
+        "variables": {
+            "lotto-betting-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "lotto-betting-text-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "lotto-betting-brandbanner-bgcolor": {
+                "value": "$ld-theme-gradient-blue-313",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "standard-play-ticket": {
+        "variables": {
+            "choose-ticket-type-bgcolor": {
+                "value": "$pink-gradient-135deg",
+                "description": "",
+                "blocked": 0
+            },
+            "choose-ticket-type-tabnav-color": {
+                "value": "$brand-ld",
+                "description": "",
+                "blocked": 0
+            },
+            "choose-ticket-type-tabnav-bgcolor": {
+                "value": "$bg-grey",
+                "description": "",
+                "blocked": 0
+            },
+            "choose-ticket-type-tabnav-active-bgcolor": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            },
+            "choose-ticket-type-tab-content-color": {
+                "value": "$white",
+                "description": "",
+                "blocked": 0
+            }
+        }
+    },
+    "customer-support-component": {
+        "variables": {
+            "customer-support-component-bgcolor": {
+                "value": "$white",
+                "description": "[All] customer-support-component- content background color",
+                "blocked": 0
+            },
+            "customer-support-component-h3color": {
+                "value": "$brand-ld",
+                "description": "[All] customer-support-component - header3 color",
+                "blocked": 0
+            },
+            "customer-support-component-pcolor": {
+                "value": "$brand-ld",
+                "description": "[All] customer-support-component - paragraph color",
+                "blocked": 0
+            },
+            "customer-support-component-bal-types-color": {
+                "value": "$brand-ld",
+                "description": "[All] customer-support-component - paragraph color",
+                "blocked": 0
+            },
+            "customer-support-component-bal-types-bgcolor": {
+                "value": "$bg-grey",
+                "description": "[All] customer-support-component - paragraph color",
+                "blocked": 0
+            },
+            "customer-support-component-blue-gradient-color": {
+                "value": "$white",
+                "description": "[All] customer-support-component - paragraph color",
+                "blocked": 0
+            },
+            "customer-support-bal-types-list-bgcolor": {
+                "value": "$white",
+                "description": "[All] customer-support-component - paragraph color",
+                "blocked": 0
+            },
+            "customer-support-customer-support-tabs-bgcolor": {
+                "value": "$white",
+                "description": "[All] customer-support-component - paragraph color",
+                "blocked": 0
+            },
+            "customer-support-content-bgcolor": {
+                "value": "$bg-grey",
+                "description": "[All] customer-support-component - paragraph color",
+                "blocked": 0
+            },
+            "customer-support-tabs-accordionBox-bgcolor": {
+                "value": "$white",
+                "description": "[All] customer-support-tabs - myaccount tabs accordion Box background color",
+                "blocked": 0
+            },
+            "customer-support-tabs-accordionRow-bgcolor": {
+                "value": "$bg-grey",
+                "description": "[All] customer-support-tabs - myaccount tabs accordion row background color",
+                "blocked": 0
+            },
+            "customer-support-tabs-accordionRow-h1color": {
+                "value": "$form-placeholder",
+                "description": "[All] customer-support-tabs - myaccount tabs accordion row header 1 color",
+                "blocked": 0
+            },
+            "customer-support-tabs-accordionHeadline-h1color": {
+                "value": "$form-placeholder",
+                "description": "[All] customer-support-tabs - myaccount tabs accordion headline header 1 color",
+                "blocked": 0
+            },
+            "customer-support-tabs-accordionHeadline-color": {
+                "value": "$green",
+                "description": "[All] customer-support-tabs - myaccount tabs accordion headline color",
+                "blocked": 0
+            },
+            "customer-support-tabs-accordionHeadline-content-color": {
+                "value": "$input-focus-color",
+                "description": "[All] customer-support-tabs - myaccount tabs accordion headline content color",
+                "blocked": 0
+            },
+            "customer-support-accordionHeadline-verifiedclassp-color": {
+                "value": "$green",
+                "description": "[All] customer-support-tabs - myaccount tabs accordion headline- verified class pragraph color",
+                "blocked": 0
+            },
+            "customer-support-accordionHeadline-verifiedinitclassp-color": {
+                "value": "$input-focus-color",
+                "description": "[All] customer-support-tabs - myaccount tabs accordion headline- verified inital class pragraph color",
+                "blocked": 0
+            },
+            "customer-support-accordionHeadline-h1color": {
+                "value": "$brand-ld",
+                "description": "[All] customer-support-tabs - myaccount tabs accordion headline header1 color",
+                "blocked": 0
+            },
+            "customer-support-accordionHeadline-pcolor": {
+                "value": "$brand-ld",
+                "description": "[All] customer-support-tabs - myaccount tabs accordion headline paragraph color",
+                "blocked": 0
+            },
+            "customer-support-accordionText-pcolor": {
+                "value": "$brand-ld",
+                "description": "[All] customer-support-tabs - myaccount tabs accordion text paragraph color",
+                "blocked": 0
+            },
+            "customer-support-accordionText-text-no-withdraw-bgcolor": {
+                "value": "$white",
+                "description": "[All] customer-support-tabs - myaccount tabs accordion text no withdraw background color",
+                "blocked": 0
+            },
+            "customer-support-back-to-cards-customer-support-color": {
+                "value": "$brand-ld",
+                "description": "[All] customer-support-tabs - myaccount tabs customer-support back to cards customer-support color",
+                "blocked": 0
+            },
+            "customer-support-accordionRow-bgcolor": {
+                "value": "$border-colors",
+                "description": "[All] customer-support-tabs - myaccount tabs customer-support accordionRow background color",
+                "blocked": 0
+            }
+        }
+    },
+
+    "app-component": {
+        "variables": {
+            "app-component-bg-color": {
+                "value": "$white",
+                "description": "[All] about section - background color",
+                "blocked": 0
+            },
+            "appcomponent-alertinfobox-bgcolor": {
+                "value": "$infoBoxBgColor-honey",
+                "description": "[All] about section - banner text color",
+                "blocked": 0
+            },
+            "appcomponent-alertinfobox-bordercolor": {
+                "value": "$infoBoxBorderColor-honey",
+                "description": "[All] about section - banner img background color",
+                "blocked": 0
+            },
+            "appcomponent-alertinfobox-iconcolor": {
+                "value": "$infoBoxTextColor-honey",
+                "description": "[All] about section - banner img background color",
+                "blocked": 0
+            },
+            "appcomponent-alertinfobox-h6color": {
+                "value": "$infoBoxTextColor-honey",
+                "description": "[All] about section - banner img background color",
+                "blocked": 0
+            },
+            "appcomponent-sessionexpiryoptions-libgcolor": {
+                "value": "$white",
+                "description": "[All] about section - banner img background color",
+                "blocked": 0
+            },
+            "appcomponent-sessionexpiryoptions-liborderbottomcolor": {
+                "value": "$bg-grey",
+                "description": "[All] about section - banner img background color",
+                "blocked": 0
+            },
+            "appcomponent-sessionexpiryoptions-bgcolor": {
+                "value": "$ld-theme-gradient-pink",
+                "description": "[All] about section - banner img background color",
+                "blocked": 0
+            },
+            "appcomponent-sessionexpiryoptions-listed-bgcolor": {
+                "value": "$white",
+                "description": "[All] about section - banner img background color",
+                "blocked": 0
+            },
+            "appcomponent-sessionexpiryoptions-listed-borderbottomcolor": {
+                "value": "$bg-grey",
+                "description": "[All] about section - banner img background color",
+                "blocked": 0
+            },
+            "appcomponent-sessionexpiryoptions-listed-header5-color": {
+                "value": "$brand-ld",
+                "description": "[All] about section - banner img background color",
+                "blocked": 0
+            },
+            "appcomponent-sessionexpiryoptions-listed-header6-color": {
+                "value": "$grey",
+                "description": "[All] about section - banner img background color",
+                "blocked": 0
+            },
+            "appcomponent-sessionexpiryoptions-listed-ahchor-color": {
+                "value": "$brand-ld",
+                "description": "[All] about section - banner img background color",
+                "blocked": 0
+            }
+        }
+    }    
+}

@@ -1,0 +1,121 @@
+@import "~variables.scss";
+
+.about-lottoday {
+  background-color: $about-bg-color;
+  .banner-wrapper {
+    overflow: hidden;
+    padding-bottom: 40px;
+  }
+  .brand-banner {
+    background: $about-brand-banner-bgcolor;
+    background-size: calc(80% + 50px) 100%;
+    background-repeat: no-repeat;
+    transform: skew(-30deg);
+    left: -10%;
+    position: relative;
+    padding: 5% 0;
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      transform: skew(30deg);
+      left: 10%;
+    }
+    .text {
+      display: flex;
+      color: $about-brand-banner-text-color;
+      flex-direction: column;
+      position: relative;
+      box-sizing: border-box;
+      justify-content: center;
+      padding-right: 30px;
+
+      h1,
+      h4 {
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        font-size: 36px;
+        font-family: $font-secondary-Bold;
+        margin-bottom: 20px;
+        line-height: 1;
+      }
+      h4 {
+
+        font-size: 18px;
+        font-family: $font-secondary;
+      }
+    }
+  }
+
+
+
+  .content {
+    h2,
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+    }
+    h2 {
+      font-family: $font-secondary-SemiBold;
+      margin: 40px 0 20px 0;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    p {
+      font-family: $font-primary-500;
+      line-height: 20px;
+      &+p {
+        margin-top: 20px;
+      }
+    }
+    .headlline {
+      margin-top: 40px;
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .about-lottoday {
+    .banner-wrapper {
+      margin: 0;
+      padding: 0;
+    }
+    .brand-banner {
+      text-align: center;
+      border: 0;
+      height: auto;
+      background: $about-brand-banner-bgcolor;
+      margin: 0;
+      box-sizing: border-box;
+      transform: skew(0deg);
+      left: 0;
+      padding: 0;
+      .right-img {
+        display: none;
+      }
+      .container {
+        transform: skew(0deg);
+        left: 0;
+      }
+      .text {
+        padding: 30px 20px;
+        width: 100%;
+      }
+    }
+
+
+    .content {
+      padding: 20px;
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}

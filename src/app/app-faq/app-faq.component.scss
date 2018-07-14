@@ -1,0 +1,465 @@
+@import "~variables.scss";
+@import "~lottofaqicons.scss";
+
+$tab-active-bg: #61469C;
+
+.customer-support-intro{
+    .content{
+        &:before{
+            background: $white !important;
+            opacity: 1 !important;
+        }
+
+        .customer-support-detail-text{
+            box-sizing: border-box;
+            border-top: 3px solid #F0F2F6;
+            padding:30px 0 0px 0 !important;
+        }
+    }
+}
+.faq-page {
+    background-color: $faq-bgcolor;
+    .banner-wrapper {
+        overflow: hidden;
+        padding-bottom: 60px;
+    }
+    .brand-banner {
+
+        background: $faq-brandbanner-bgcolor;
+        background-size: calc(80% + 50px) 100%;
+        background-repeat: no-repeat;
+        transform: skew(-30deg);
+        left: -10%;
+        position: relative;
+
+        .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            transform: skew(30deg);
+            left: 10%;
+        }
+        .text {
+            display: flex;
+            color: $faq-textcolor;
+            flex-direction: column;
+            position: relative;
+            box-sizing: border-box;
+            justify-content: center;
+            padding-right: 30px;
+
+            h1,
+            h4 {
+                margin: 0;
+                padding: 0;
+            }
+
+            h1 {
+                font-size: 36px;
+                font-family: $font-secondary-Bold;
+                margin-bottom: 20px;
+            }
+            h4 {
+
+                font-size: 18px;
+                font-family: $font-secondary;
+            }
+        }
+    }
+
+    .right-img {
+        position: relative;
+        top: 25px;
+        right: 0;
+        z-index: 1;
+        img {}
+    }
+
+    .content {
+        h2,
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+        }
+        h2 {
+            font-family: $font-secondary-SemiBold;
+            margin: 40px 0 20px 0;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+        p {
+            font-family: $font-primary-500;
+            line-height: 20px;
+            margin-bottom: 20px;
+        }
+        .headlline {
+            margin-top: 40px;
+            font-size: 24px;
+        }
+    }
+}
+
+
+
+.faq-page {
+    .faq-category-container {
+        width: 100%;
+        box-sizing: border-box;
+        clear: both;
+
+        .faq-back {
+            font-family: $font-primary-500;
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: none;
+            align-items: center;
+            span {
+                color: $faq-page-span-color;
+                text-decoration: underline;
+            }
+            i {
+                font-size: 30px;
+                margin-right: 20px;
+                position: relative;
+                top: -1px;
+            }
+
+            &.mob-hide {
+                display: none !important;
+            }
+        }
+
+        .faq-category-tabs {
+            float: left;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 30%;
+
+            li {
+                background-color: $faq-category-tabs-licolor;
+                margin-bottom: 5px;
+                display: flex;
+                cursor: pointer;
+                align-items: center;
+                position: relative;
+                border-radius: 4px;
+                letter-spacing: -0.27px;
+                .tab-icon {
+                    border-radius: 4px 0 0 4px;
+                    color: $faq-category-tabicon-color;
+                    font-size: 40px;
+                    display: inline-flex;
+                    flex-direction: column;
+                    align-items: center;
+                    /*width: 70px;*/
+                    padding: 24px 25px;
+                    &.general {
+                        background-color: #4FC3BD;
+                    }
+                    &.winnings {
+                        background-color: #55ACDF;
+                    }
+                    &.subscriptions {
+                        background-color: #4FC7B9;
+                    }
+                    &.account {
+                        background-color: #56A6E8;
+                    }
+                    &.jackpots {
+                       background-color: #589FF1;
+                    }
+                    &.scratchcards {
+                        background-color: #50C0C2;
+                    }
+                    &.syndicates {
+                        background-color: #51BDC7;
+                    }
+                    &.security {
+                        background-color: #52BACC;
+                    }
+                    &.games {
+                        background-color: #53B6D0;
+                    }
+                    &.communications {
+                        background-color: #53B3D5;
+                    }
+                    &.mobile {
+                        background-color: #54B0DA;
+                    }
+                    &.withdrawing {
+                        background-color: #4FCAB4;
+                    }
+                    &.addfunds {
+                        background-color: #56A9E3;
+                    }
+                    &.responsiblegambling {
+                        background-color: #56A6E8;
+                    }
+                    &.promotions {
+                        background-color: #58A3ED;
+                    }
+                    &.kyc {
+                        background-color: #589FF1;
+                    }
+                }
+                .text {
+                    font-family: $font-primary-500;
+                    font-size: 18px;
+                    color: $faq-category-tabtext-color;
+                    width: calc(100% - 70px);
+                    padding: 24px 20px;
+                }
+                &.active {
+                    background-color: $tab-active-bg;
+                    border-radius: 4px;
+                    .text {
+                        color: $faq-category-tabactivetext-color;
+                    }
+                    .tab-icon {
+                        background-color: #A598C9   ;
+                    }
+                    &:after {
+                        color: $faq-category-tabactivetext-color;
+                    }
+                }
+                &:after {
+                    font-family: 'FontAwesome';
+                    -webkit-font-smoothing: antialiased;
+                    content: "\F105";
+                    position: absolute;
+                    font-size: 30px;
+                    cursor: pointer;
+                    transition: all .25s;
+                    top: calc(50% - 15px);
+                    right: 20px;
+                    color: $faq-category-tabtext-color;
+                }
+            }
+        }
+
+        .faq-tabs {
+            float: left;
+            background-color: $faq-bgcolor;
+            width: 70%;
+            box-sizing: border-box;
+            padding-left: 15px;
+            padding-bottom: 20px;
+            .faq-tab-content {
+                &.active {
+                    display: block;
+                }
+                &.hide {
+                    display: none;
+                }
+                .accordionBox {
+                    .accordionRow {
+                        background-color: $faq-category-accordionBox-color;
+                        padding: 27px 24px;
+                        margin: 5px auto;
+                        border-radius: 3px;
+                        &:first-child {
+                            margin-top: 0;
+                        }
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        .accordionHeadline {
+                            h1 {
+                                margin: 0;
+                                font-size: 18px;
+                                font-family: $main-primary-ef-reg;
+                                color: $faq-category-tabtext-color;
+                                letter-spacing: -0.15px;
+                            }
+                            cursor: pointer;
+                            margin: 0;
+                            padding-right: 50px;
+                            position: relative;
+
+                            &:after {
+                                font-family: 'FontAwesome';
+                                -webkit-font-smoothing: antialiased;
+                                content: "\F107";
+                                position: absolute;
+                                font-size: 30px;
+                                cursor: pointer;
+                                transition: all .25s;
+                                top: calc(50% - 15px);
+                                right: 0;
+                                color: $faq-category-tabtext-color;
+                            }
+
+                            &.flipButton {
+                                &:after {
+                                    transform: rotate(180deg);
+                                    transition: all .25s;
+                                }
+                            }
+                        }
+                        .accordionText {
+                            font-family: $main-primary-ef-reg;
+                            color: $faq-category-tabtext-color;
+                            font-size: 18px;
+                            margin: 0;
+                            display: none;
+                            transition-timing-function: ease-out;
+                            padding-top: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-tab {
+        width: 100%;
+        margin: 40px 0;
+        p {
+            font-size: 16px;
+            font-family: $font-primary-500;
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width: 991px) {
+    .faq-page {
+        .right-img {
+            display: none;
+        }
+
+        .banner-wrapper {
+            margin: 0;
+            padding: 0;
+        }
+        .brand-banner {
+            text-align: center;
+            border: 0;
+            height: auto;
+            background: $faq-brandbanner-bgcolor;
+            margin: 0;
+            box-sizing: border-box;
+            transform: skew(0deg);
+            left: 0;
+            .right-img {
+                display: none;
+            }
+            .container {
+                transform: skew(0deg);
+                left: 0;
+            }
+            .text {
+                padding: 30px 20px;
+            }
+        }
+        .faq-question-container {
+            padding: 20px;
+            
+            @media screen and (max-width: 767px) {
+              padding-top: 0px;  
+            }
+        }
+
+        .faq-category-container {
+            .faq-back {
+                display: flex;
+            }
+            .faq-category-tabs {
+                width: 100%;
+                &.mob-hide {
+                    display: none !important;
+                }
+                li {
+                    margin: 10px auto;
+                    box-sizing: border-box;
+                    float: left;
+                    width: 100%;
+                    border-radius: 4px;
+                    position: relative;
+                    &.active {
+                        background-color: $faq-category-tabs-licolor;
+                        .text {
+                            color: $faq-category-tabtext-color;
+                        }
+                        .tab-icon {
+                            &.general {
+                                background-color: #599CF6;
+                            }
+                            &.winnings {
+                                background-color: #589FF1;
+                            }
+                            &.subscriptions {
+                                background-color: #58A3ED;
+                            }
+                            &.account {
+                                background-color: #56A6E8;
+                            }
+                            &.jackpots {
+                                background-color: #56A9E3;
+                            }
+                            &.scratchcards {
+                                background-color: #55ACDF;
+                            }
+                            &.syndicates {
+                                background-color: #54B0DA;
+                            }
+                            &.security {
+                                background-color: #53B3D5;
+                            }
+                            &.games {
+                                background-color: #53B6D0;
+                            }
+                            &.communications {
+                                background-color: #52BACC;
+                            }
+                            &.mobile {
+                                background-color: #51BDC7;
+                            }
+                            &.withdrawing {
+                                background-color: #50C0C2;
+                            }
+                            &.addfunds {
+                                background-color: #4FC3BD;
+                            }
+                            &.responsiblegambling {
+                                background-color: #4FC7B9;
+                            }
+                            &.promotions {
+                                background-color: #4FCAB4;
+                            }
+                            &.kyc {
+                                background-color: #4ECEB0;
+                            }
+                        }
+                        &:after {
+                            color: $faq-category-tabtext-color;
+                        }
+                    }
+
+                    .text {
+                        margin-right: 15px;
+                        line-height: 1;
+                    }
+                }
+            }
+            .faq-tabs {
+                &.mob-hide {
+                    display: none !important;
+                }
+                width: 100%;
+                display:flex;
+                padding:0;
+
+                .accordionBox {
+                    .accordionRow {}
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,326 @@
+@import "~variables.scss";
+$slotsWColor: #fff;
+$slotsGColor: #00c333;
+$slotsLGColor: #00c333;
+$slotsDGColor: #10704d;
+$slotsGreyColor: #F0F2F6;
+$slotsDGreyColor: #E0DDE8;
+$slotsBColor: #244695;
+$slotsSearchBorderDBColor: #12295f;
+$slotsSearchBorderLBColor: #47619c;
+$slotsTabListBorder: #C8CFDE;
+$slotsSweepBGColor: rgba(19, 55, 137, 0.9);
+$slotsSweepTopBorder: #88A4FC;
+
+$featured-game-section: #bfe7ff;
+$violet:#7e69af;
+modal#sessionExpiredModal {
+    .modal {
+        z-index: 1000;
+
+        .modal-body {
+            &.session-expiry-body {
+                border-radius: 12px;
+                background-color: $white;
+                text-align: center;
+                width: 400px;
+                @media only screen and (max-width: 768px) {
+                    width: 100vw;
+                    height: 100vh;
+                    border-radius: 0;
+                }
+                &.modalOpenRight,&.modalOpenLeft {
+                    &:after{
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        background: rgba(0,0,0,0.5);
+                        z-index: 99999;
+                    }
+                }
+                .session-expiry-header {
+                    color: $white;
+                    fill: $white;
+                    font-family: $font-secondary-SemiBold;
+                    background: #7b4397;
+                    background: $pink-gradient-48;
+                    position: relative;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    padding: 15px;
+                    padding-bottom: 30px;
+                    display: flex;
+                    align-items: center;
+                    @media only screen and (max-width: 768px) {
+                        border-radius: 0;
+                    }
+                    &:after,
+                        &:before {
+                        box-sizing: border-box;
+                        content: " ";
+                        position: absolute;
+                        top: 0;
+                        display: block;
+                        width: 50%;
+                        height: 100%;
+                        border: 15px solid transparent;
+                        border-bottom-color: $white;
+
+                        right: 0;
+                        border-left: 15px solid transparent;
+                        border-right: 0;
+                    }
+                    &:before {
+                        left: 0;
+                        border-right: 15px solid transparent;
+                        border-left: 0;
+                    }
+
+                    .icon {
+                        i {
+                            font-size: 35px
+                        }
+                        margin-right:15px;
+                    }
+                    .text {
+                        text-align: left;
+                        h5,
+                        p {
+                            margin: 0;
+                        }
+                        p {
+                            font-family: $font-secondary;
+                            font-size: 12px;
+                        }
+                        h5 {
+                            font-family: $font-secondary-SemiBold;
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .session-expiry-content {
+                    padding: 20px 20px 10px;
+                    .alert-info-box {
+                        display: flex;
+                        align-items: center;
+                        padding: 8px 10px;
+                        background-color: $infoBoxBgColor-honey;
+                        border: 1px solid $infoBoxBorderColor-honey;
+                        border-radius: 4px;
+                        margin-bottom: 10px;
+                        width: calc(100% - 22px);
+
+
+                        .icon {
+                            transform: rotateZ(180deg);
+                            i {
+                                font-size: 32px;
+                                color: $infoBoxTextColor-honey;
+                            }
+                            margin-right:15px;
+                        }
+                        .text {
+                            font-size: 12px;
+                            font-family: $font-primary-500;
+                            p,
+                            h6 {
+                                margin: 0;
+                                color: $infoBoxTextColor-honey;
+                                text-align: left;
+                            }
+                            h6 {
+                                font-size: 13px;
+                                padding-bottom: 2px;
+                                font-family: $font-secondary-SemiBold;
+                            }
+                        }
+                    }
+                    .session-expiry-options {
+                        margin: 0;
+                        list-style: none;
+                        margin-left: -20px;
+                        margin-right: -20px;
+                        padding: 0;
+
+                        li {
+                            background-color: $white;
+                            border-bottom: 1px solid $bg-grey;
+                            padding: 0 20px 0 0px;
+
+                            &:last-child {
+                                border-bottom: 0;
+                            }
+                            a {
+                                position: relative;
+                                display: flex;
+                                padding: 20px 30px;
+                                align-items: center;
+                                width: 100%;
+                                box-sizing: border-box;
+
+
+                                &:hover {
+                                    text-decoration: none;
+                                }
+                                .text {
+                                    text-align: left;
+                                    h5,
+                                    h6 {
+                                        margin: 0;
+                                        font-weight: normal;
+                                    }
+                                    h5 {
+
+                                        font-family: $font-secondary-SemiBold;
+                                        font-size: 16px;
+                                        color: $brand-ld;
+                                    }
+                                    h6 {
+                                        font-size: 13px;
+                                        color: $grey;
+                                        font-family: $font-primary-500;
+                                    }
+                                }
+                                &:after {
+                                    content: '';
+                                    content: "\F105";
+                                    font-family: FontAwesome;
+                                    font-size: 30px;
+                                    color: $brand-ld;
+                                    position: absolute;
+                                    right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*
+  @media only screen and (max-width: 768px) {
+    width: 100vw;
+    height: 100vh;
+    margin: -30px auto;
+    .modal-container {
+      width: 100vw;
+    }
+    .session-expiry-body {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+      .session-expiry-header {
+        border-radius: 0;
+      }
+    }
+  }*/
+#gameIframeWrapper {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    height: calc(100% - 100px);
+}
+.slotsTabsList {
+
+    ul {
+        list-style: none;
+
+        li {
+            float: left;
+            color: #384079;
+            padding: 36px 27px;
+            border-radius: 0px;
+            background-color: $slotsWColor;
+            cursor: pointer;
+            margin-right: 0px;
+            min-width: 110px;
+            font-size: 20px;
+            letter-spacing: -0.2px;
+            font-weight: 500;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: $main-primary-ef-reg;
+            position:relative;
+
+            &:nth-child(6){
+                min-width: 70px;
+                padding:36px 10px;
+            }
+
+
+            @media screen and (max-width: 1199px) {
+                display:none; 
+
+                &.active{
+                    display: block;
+                }
+            }
+
+            svg{
+                float: left;
+                margin-right:10px;
+            }
+
+            .st0{
+                fill:#7E69AF;
+            }
+
+            &.active {
+                background: $violet;
+                color: $slotsWColor;
+
+                .tab_hover{
+                    fill:#fff;
+                }
+
+                &:before{
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    bottom: -16px;
+                    margin-left: -8px;
+                    width: 0; 
+                    height: 0; 
+                    border-left: 16px solid transparent;
+                    border-right: 16px solid transparent;
+                    border-top:16px solid $violet;  
+                } 
+            }
+
+
+        }
+
+
+
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .icon{
+            position: absolute;
+            top:20px;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border: 2px solid #ccc;
+            border-radius: 100%;
+            color: #ccc;
+            font-size: 20px;
+            text-decoration: none;
+            display: none;
+
+
+            @media screen and (max-width: 1199px) {
+                display:block;
+            } 
+        }
+
+    }
+}

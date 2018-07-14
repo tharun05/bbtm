@@ -1,0 +1,660 @@
+@import "~variables.scss";
+@import "~mixins.scss";
+
+
+$main-primary-color:#384079;
+$slotsBColor: #244695;
+$slotswColor: #fff;
+$violet:#7e69af;
+$time-line-container-promo-bg:#FFF0DA;
+$time-line-container-promo-heading:#B36E00;
+$time-line-container-promo-para:#D89428;
+$time-line-container-promo-btn-bg:#00C333;
+$time-line-container-coming-bg:#F0F2F6;
+$time-line-container-coming-text: #384079;
+$green-color:#00c333;
+$yellow-dot: #ffc930;
+section.upcoming-events{
+ .container {
+    width: 100%;
+  }
+}
+
+.upcoming-events{
+    padding: 0px 0;
+    font-family:$main-primary-ef-reg;
+
+    .inner-container{
+        background: $slotswColor;
+        width: 100%;
+        display: inline-block;
+        padding-bottom: 50px;
+    }
+
+    .transparent_btn{
+        background: transparent;
+        border:0px;
+        color:$main-primary-color;
+        margin-top:40px;
+        font-family: $font-primary-700;
+    }
+
+    .header-row {
+        width: 100%;
+        margin:0px auto 20px;
+        background-color: $latest-results-bgcolor;
+        max-height: 80px;
+        display: inline-block;
+        justify-content: space-between;
+
+
+        @include pinkSectionHeader;
+        .skew-header {
+            float: left;
+            width: 40%;
+            @media screen and (min-width: 993px) and (max-width:1199px) {
+                width: 46%;
+            }
+            .header-bg {
+                background-size: 100%; 
+                height: 85px;
+
+
+                .text-container {
+                    padding: 15px 20px;
+                    .icon {
+                        i {
+                            font-size: 45px;
+                        }
+                    }
+                    .text {
+                        h1 {
+                            font-size: 20px;
+                            line-height: 2;
+                            font-family: $font-secondary;
+                        }
+                    }
+                }
+            }
+            .down-arrow {
+                bottom: 0px;
+                &:after,
+                    &:before {
+                    border-bottom: 20px solid $slotswColor;
+                }
+                &:before {
+                    border-right-width: 22px;
+                }
+                &:after {
+                    border-left-width: 22px;
+                }
+            }
+        }
+
+        .users_online{
+            width: 20%;
+            float: left;
+            padding: 12px 5px;
+            display: block;
+            line-height: 20px;
+            font-family: $font-secondary;
+
+            p{
+                font-size:18px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .main-timeline-wrap{
+        max-width: 760px;
+        width:100%;
+        margin:20px auto;
+        position:relative;
+        left:7%;
+
+        .verticle-left-line{
+            border: 2.5px dashed $time-line-container-coming-bg;
+            position: absolute;
+            left: -55px;
+            top: 57px;
+            bottom: 0;
+            height: 610px;
+        }
+
+        .timeline-item{
+            float: left;
+            width:100%;
+            position: relative;
+
+            .play_now_btn{
+                margin-top: 17px;
+            }
+            button{
+                font-size: 18px;
+                border-radius: 0px;
+                width: 180px;
+                text-align: center;
+                height: 50px;
+                border:0px;
+            }
+
+            .pre-buy-btn{
+                button{
+                    position: absolute;
+                    right:20px;
+                    top: 35px;
+                }
+            }
+
+            .left-verticle{
+                content: "";
+                display: block;
+                width: 0;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: -50px;
+
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    background: $violet;
+                    border: 2px solid #fff;
+                    position: absolute;
+                    left: -15.5px;
+                    top:50%;
+                    margin-top: -25px;
+                }
+
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 34px;
+                    height: 34px;
+                    border-radius: 50%;
+                    background: $violet;
+                    border: 2px solid #fff;
+                    position: absolute;
+                    left: -20.5px;
+                    top: 50%;
+                    margin-top: -30px;
+                }
+            }
+
+            .date_time{
+                position: absolute;
+                left: -240px;
+                color: $violet;
+                top:50%;
+                font-weight: bold;
+                line-height: 27px;
+                font-size: 22px;
+                margin-top: -23px;
+                min-width: 156px;
+                text-align: right;
+                color:$time-line-container-coming-text;
+            }
+
+        }
+
+        .timeline-item:last-child{
+            margin-bottom: 0px;
+        }
+
+        .timeline-item_y{
+            .left-verticle{
+                &:before,
+                    &:after{
+                    background: $yellow-dot;
+                }
+            }
+        }
+
+        .timeline-item_s{
+            .left-verticle{
+                &:after{
+                    width: 17px;
+                    height: 17px;
+                    left: -11.5px;
+                }
+
+                &:before{
+                    width: 27px;
+                    height: 27px;
+                    left: -16.5px;
+                }
+            }
+
+            .date_time{
+                margin-top: -27px;
+            }
+        }
+
+        .timeline-item_big{
+
+            &:before{
+                content: "";
+                position: absolute;
+                background: $time-line-container-coming-bg;
+                width: 5.5px;
+                left: -55px;
+                height: 350px;
+                top: 50%;
+            }
+        }
+
+        .time-line-container-promo{
+            padding: 20px;
+            border-radius: 15px;
+            background-color: $time-line-container-promo-bg;
+            color:$time-line-container-promo-para;
+            position: relative;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 2px 0 rgba(134,134,134,0.5);
+
+            .left-icon{
+                width:70px;
+                display: inline-block;
+            }
+
+            .para-info{
+                width: 50%;
+                display: inline-block;
+
+                h2{
+                    margin: 0px;
+                    font-family: $main-primary-ef-reg;
+                    font-weight: 800;
+                    color: $time-line-container-promo-heading;
+                    font-size: 24px;
+                }
+                p{
+                    color: $time-line-container-promo-para;
+                    font-size: 18px;
+                    margin: 0px;
+                }
+            }
+
+            .pre-buy-btn{
+                width: 38%;
+                display: inline-block;
+
+                .points{
+                    color: $time-line-container-coming-text;
+                    font-size: 22px;
+                    font-weight: 800;
+                    float:right;
+
+                    span{
+                        float: left;
+                        line-height: 30px;
+
+                        &:first-child{
+                            margin-right: 12px;
+                        }
+
+                        svg{
+                            circle{
+                                fill:$violet;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .time-line-container-coming{
+            background:$time-line-container-coming-bg;
+            h2,
+            p{
+                color:$time-line-container-coming-text !important;
+            }
+        }
+
+        .time-line-container-event-expa{
+            overflow:hidden;
+
+            .right-top-circle{
+                position: absolute;
+                height: 300px;
+                top: -120px;
+                right: -110px;
+                width: 300px;
+                border-radius: 100%;
+                background: linear-gradient(139.55deg, #83DEFF 0%, #C9B1FF 100%);
+                opacity: 0.14;
+            }
+
+            &:before{
+                content: "";
+                background-color:  $violet;
+                position:absolute;
+                width: 57%;
+                right:0;
+                top:0;
+                bottom: 0;
+                border-radius: 0 15px 15px 0;
+            }
+
+            &:after{
+                content: "";
+                background-color:  $violet;
+                position:absolute;
+                width: 65%;
+                height:400px;
+                background: rgba(127,117,183,1);
+                background: linear-gradient(139.55deg, #83DEFF 0%, #C9B1FF 100%);
+                right: -30%;
+                top: 80px;
+                opacity: 0.1;
+                bottom: 0;
+                border-radius: 100%;
+            }
+
+            .left-aside{
+                width: 45%;
+                display: inline-block;
+                text-align: center;
+                position: relative;
+                z-index: 2;
+                color:$time-line-container-coming-text; 
+
+                span{
+                    width: 100%;
+                    display: block;
+                }
+
+                .starting_in{
+                    font-size: 22px;
+                    line-height: 22px;
+                }
+                .start-time{
+                    font-size: 80px;	
+                    font-weight: bold;
+                    line-height: 95px;
+
+                }
+
+                ::ng-deep .timeTicker{
+                    .time{
+                        span{
+                            font-size: 50px !important;
+                        }
+                    }
+                }
+
+                .bitmap{
+                    width: 70px;
+                    height: 70px;
+                    position: relative;
+                    margin: 0px auto 4px;
+                    display: block;
+
+                    &:before{
+                        content: "";
+                        bottom: 0;
+                        background-color: $green-color;
+                        width: 14px;
+                        height: 14px;
+                        border: 2px solid #fff;
+                        position: absolute;
+                        border-radius: 12px;
+                        right: 0;
+                    }
+
+                    img{
+                        border-radius:40px;
+                        width: 70px;
+                        height: 70px;
+                    }
+                }
+
+                .chat-moderator{
+                    font-size: 16px;
+                    line-height:19px;
+                }
+            }
+
+            .right-aside{
+                width: 51%;
+                display: inline-block;
+                position: absolute;
+                right:0;
+                top:20px;
+                z-index:2;
+
+
+                .close-icon{
+                    position: absolute;
+                    right: 20px;
+                    top: 0px;
+                    height: 24px;
+                    width: 24px;
+                    border: 2px solid #fff;
+                    border-radius: 30px;
+                    text-align: center;
+                    line-height: 25px;
+                    color: #fff;
+                    font-size: 11px;
+                }
+
+                .top-heading{
+                    width: 100%;
+                    display: block;
+                    float:left;
+                    margin-bottom:30px;
+                    margin-top:14px;
+
+                    .circular-var{
+                        width: 48px;
+                        height: 48px;
+                        border: 2px solid $slotswColor;
+                        text-align: center;
+                        color: $slotswColor;
+                        font-size: 16px;
+                        float: left;
+                        margin-right: 15px;
+                        border-radius: 100%;
+
+                        span{
+                            display: block;
+                            width: 100%;
+                            text-align: center;
+                            line-height: 15px;
+                        }
+
+                        .c_digit{
+                            font-size: 22px;
+                            margin-top: 10px;
+                        }
+
+
+                    }
+
+                    .mad_visit{
+                        width: left;
+
+                        h4,
+                        p{
+                            color: $slotswColor !important;
+                            margin:0px;
+                            font-size: 24px;
+                        }
+
+                        p{
+                            font-size: 16px;
+                            font-weight: normal;
+                        }
+                    }
+                }
+
+                .card-footer{
+                    padding-left: 4px;
+                    width: 45%;
+                    float: left;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start !important;
+
+                    div span{
+                        font-size:13px;
+                        color:$main-primary-color;
+                        font-family: $main-primary-ef-reg;
+                    }
+
+                    .timeTicker,
+                    .users_login,
+                    .Bingo_card,
+                    .cup_wrap{
+                        margin-bottom: 10px;
+
+                        svg{
+                            float: left;
+                        }
+
+                        .card_info,
+                        .time-num-holder span.time{
+                            float: left;
+                            padding-left: 10px;
+                            line-height: 30px;
+                            color: $slotswColor;
+                            font-size: 22px;
+                            letter-spacing: -0.2px;
+                        }
+
+                    }
+
+                    .timeTicker{
+                        .timeTicker{
+                            margin-bottom: 0px;
+                        }
+                    }
+
+                }
+
+                .card-footer-2{
+                    height: 170px;
+
+                    .cup_wrap{
+                        position: absolute;
+                        bottom:45px;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+@media (max-width: 1200px) {
+
+    .upcoming-events{
+        .main-timeline-wrap{
+            max-width: 680px;
+            left:11%;
+
+            .date_time{
+                .date_text{
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+
+    .upcoming-events{
+        .main-timeline-wrap{
+            max-width: 530px;
+            left: 10%;
+
+            .timeline-item{
+                .left-icon{
+                    width: 55px;
+                    .tab_hover{
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+
+                .para-info{
+                    h2{
+                        font-size:19px;
+                    }
+                    p{
+                        font-size: 14px;
+                    }
+                }
+
+                .pre-buy-btn{
+                    width: 36%;
+                    .points{
+                        font-size: 18px;
+
+                        span:first-child{
+                            margin-right: 8px;
+                        }
+                    }
+                }
+            }
+
+            .date_time{
+                font-size: 16px !important;
+                line-height: 19px !important;
+            }
+
+            .pre-buy-btn,
+            .play_now_btn{
+                button{
+                    height: 45px;
+                    width: 140px;
+                }
+            }
+
+            .left-aside{
+                width: 40% !important;
+            }
+
+            .right-aside{
+                width: 54% !important;
+
+                .circular-var{
+                    width: 40px !important;
+                    height: 40px !important;
+                    margin-right: 10px !important;
+
+                    .c_digit{
+                        font-size: 20px !important;
+                        margin-top: 6px !important;
+                    }
+                }
+
+                .mad_visit{
+                    h4{
+                        font-size: 18px !important;
+                    }
+                    p{
+                        font-size: 15px !important;
+                    }
+                }
+
+                .card-footer{
+                    .tab_hover{
+                        width: 30px;
+                        height: 30px;
+                    }
+
+                    .card_info{
+                        font-size: 18px !important;
+                    }
+                }
+            }
+        }
+    }
+}

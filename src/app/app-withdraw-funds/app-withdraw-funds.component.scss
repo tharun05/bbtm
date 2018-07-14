@@ -1,0 +1,767 @@
+@import "~variables.scss";
+$withdraw-fees-amount-clr: #F49600;
+
+
+.cashier_heading{
+    h1{
+        max-width: 335px;
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+
+        i{
+            float: right;
+            font-size: 24px;
+            margin-top: -5px;
+        }
+    }
+}
+@media screen and(max-width:992px){
+           
+
+.withdarw-type-container {
+    margin-top: 20px;
+}
+}
+.withdarw-type-container {
+    * {
+        box-sizing: border-box;
+        
+    }
+    .selectWithdraw {
+        float: left;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+
+
+    .withdraw-fees-amount{
+        float: left;
+        width: 100%;
+        margin: 20px 0;
+        background-color: #FFFCD6;
+        border: 1px solid #F0D49E;
+        color: $withdraw-fees-amount-clr;
+        line-height: 15px;
+        font-size: 13px;
+        font-family: $main-primary-ef-reg;
+        padding:7px 15px;
+        text-transform: uppercase;
+
+        span{
+            &:last-child{
+                float: right;
+            }
+        }       
+    }
+
+    .mat-form-field {
+        .mat-input-element{
+            font-size: 24px;
+            letter-spacing: -0.51px;
+
+        }  
+    }
+
+    .show-small {
+        display: none;
+        font-family: $font-primary-500;
+        font-size: 16px;
+        text-align: center;
+        padding: 30px 20px 20px;
+        background-color: $withdraw-funds-show-small-bgcolor;
+        margin: 0;
+        width: 100%;
+    }
+    .pay-display {
+        display: none;
+    }
+    .withdarw-type-tabs {
+        float: left;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        width: 40%;
+        max-width: 310px;
+
+        @media screen and (max-width:767px) {
+            width: 100%;
+            max-width: 100%;   
+        }
+
+        @media screen and (min-width: 769px) and (max-width:1199px) {
+            width:47%;
+        }
+        li {
+            background-color: $withdraw-funds-type-tabs-libgcolor;
+            margin-bottom: 1px;
+            display: flex;
+            a {
+                color: #fff;
+                display: flex;
+                padding: 15px 0;
+                align-items: center;
+                width: 100%;
+
+                &:hover {
+                    text-decoration: none;
+                }
+                .card-icon {
+                    margin: 0 15px;
+                    width: 100px;
+                    display: inline-flex;
+                    align-items: flex-start;
+                    justify-content: center;
+                    /*          @media screen and (min-width: 769px) and (max-width:1199px) {
+                      margin: 0 20px;
+                    }*/
+                    svg {
+                        width: 50px;
+                    }
+
+                    svg {
+                        &.visa {
+                            width: 48px;
+                        }
+                        &.mastercard-w {
+                            display: none;
+                        }
+                        &.mastercard,
+                        &.mastercard-w {
+                            height: 22px;
+                        }
+                        &.trustly {
+                            width: 70px;
+                        }
+                        &.paypal,
+                        &.neteller {
+                            width: 75px;
+                        }
+                        &.wiretransfer {
+                            width: 45px;
+                        }
+                    }
+                }
+                .text {
+                    h5,
+                    h6 {
+                        margin: 0;
+                        font-weight: normal;
+                    }
+                    h5 {
+                        font-size: 16px;
+                        color: #48508A;
+                        font-family: $main-primary-ef-reg;
+                        margin-bottom: 2px;
+                    }
+                    h6 {
+                        font-size: 12px;
+                        color: $withdraw-funds-text-h6color;
+                        font-family: $main-primary-ef-reg;
+                    }
+                }
+            }
+            &.active {
+                background-color: #5E577B;
+                a {
+                    .text {
+                        h5 {
+                            color: $withdraw-funds-anchortext-h5color;
+                        }
+                    }
+                    .card-icon {
+                        svg {
+                            filter: brightness(0) invert(1);
+
+                            &.mastercard-w {
+                                filter: none;
+                                display: block;
+                            }
+                            &.mastercard {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            &.active-arrow {
+                position: relative;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    border-top: 12px solid transparent;
+                    border-bottom: 12px solid transparent;
+                    border-left: 12px solid #5E577B;
+                    right: -12px;
+                    top:50%;
+                    margin-top: -12px;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .withdarw-type-content {
+        .withdarw-btn {
+            width: 65%;
+
+            .safe-message{
+                font-size: 14px;
+                text-align: center;
+                letter-spacing: -0.14px;
+                line-height: 17px;
+                color: $violet;
+                width: 100%;
+                float: left;
+                display: block;
+                margin-bottom: 30px;
+
+                i{
+                    font-size: 15px;
+                    padding-right: 15px;
+                    color: $violet !important;
+                }
+            }
+
+            button {
+                border: 0;
+                align-items: center;
+                display: flex;
+                float: left;
+                margin: 30px auto 10px;
+                span {
+                    flex: 1 1 0px;
+                    overflow: hidden;
+                    i {
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            @media screen and (min-width: 769px) and (max-width:1199px) {
+                width: 85%;
+            }
+            margin: auto;
+            @media screen and (max-width:768px) {
+                width: 100%;
+            }
+        }
+
+
+        float: left;
+        background-color: $withdraw-type-content-bgcolor;
+        width: 60%;
+        @media screen and (min-width: 768px) and (max-width:1199px) {
+            width: 55%;
+            float:right;
+          margin-right: 15px;
+        }
+        .cashier-back {
+            display: none;
+            font-family: $main-primary-ef-reg;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            padding: 20px 20px 0px 20px;
+            margin-left: -20px;
+            margin-right: -20px;
+            border-top: 1px solid $withdraw-type-cashier-back-btcolor;
+            color: $violet;
+
+            i {
+                font-size: 27px;
+            }
+            span {
+                flex: 1 1 0px;
+                display: inline-flex;
+                justify-content: center;
+            }
+        }
+        .form-fields {
+            width: 100%;
+        }
+        /*    .tab-content {
+          &.active {
+            display: block;
+          }
+          &.hide {
+            display: none;
+          }
+        }*/
+        .tab-content {
+            .form-fields {
+                width: 65%;
+                @media screen and (min-width: 769px) and (max-width:1199px) {
+                    width: 85%;
+                }
+                margin: auto;
+                .selectric-items {
+                    .card-type-icon {
+                        svg {
+                            width: 32px;
+                            margin: 0;
+                            position: relative;
+                            top: 2px;
+                            &.m-small {
+                                width: 20px;
+                            }
+                        }
+                    }
+                }
+                .mat-form-field {
+                    /*margin: 15px 0;*/
+                    float: left;
+                    &.cardholdername {
+                        /*     margin-top: 15px;*/
+                    }
+                    .mat-form-field-wrapper {
+                        width: 100%;
+                        * {
+                            box-sizing: content-box;
+                        }
+                    }
+                    /*.mat-form-field-underline {
+                      background-color: $grey;
+                    }*/
+                    .card-type-icon {
+                        svg {
+                            width: 40px;
+                            margin: 0;
+                            position: relative;
+                            top: 2px;
+                            &.m-small {
+                                width: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+            .quick-pick-amount {
+                width: 100%;
+                text-align: center;
+                input {
+                    &[type="radio"] {
+                        display: none;
+                    }
+                    &:checked+label {
+                        background-color: $withdraw-quick-pick-amount-checked-bgcolor;
+                        color: $withdraw-quick-pick-amount-checked-color;
+                        border: 0;
+                        transition: background-color .2s;
+                    }
+                }
+                label {
+                    margin: 0 5px 5px;
+                    font-family: $font-primary-700;
+                    font-size: 15px;
+                    border: 1px solid $withdraw-label-bordercolor;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    padding: 10px 10px;
+                    min-width: 80px;
+                }
+                .or {
+                    display: flex;
+                    align-items: center;
+                    color: #B6BDCA;
+                    font-size: 10px;
+                    font-family: $font-primary-500;
+                    margin: auto;
+                    width: 70%;
+                    box-sizing: border-box;
+                    margin: 10px auto;
+                    &:after,
+                        &:before {
+                        content: '';
+                        flex: 1;
+                        background-color: #C3C9D4;
+                        margin: 5px auto;
+                        height: 1px;
+                    }
+                    &:after {
+                        margin-left: 10px;
+                    }
+                    &:before {
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+
+            .saved-cards {
+                clear: both;
+                float: left;
+                margin-top: 20px;
+                .label-saved-card {
+                    margin: 0;
+                    font-size: 16px;
+                    font-family: $main-primary-ef-reg;
+                    margin-bottom: 10px;
+                    font-weight: normal;
+                    letter-spacing: -0.34px;
+                    line-height: 19px;
+                }
+                .custom-select {
+                    float: left;
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+            .select-cc {
+                margin-right: 10px;
+                svg {
+                    width: 38px;
+                    &.m-small {
+                        width: 20px;
+                        position: relative;
+                        top: 3px;
+                    }
+                }
+            }
+            .selectric-wrapper {
+
+                .selectric{
+                    .label{
+                        padding: 16px 40px 16px 12px;
+                        line-height: 50px;
+                        height: 50px;
+                        color: $violet;
+                    } 
+                }
+            }
+            .cvc-field {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                float: left;
+                margin-bottom: 20px;
+                label {
+                    flex: 0 0 calc(100% - 100px);
+                    margin: 0!important;
+                }
+                .mat-form-field {}
+            }
+            .add-new-card {
+                color: $withdraw-add-new-card-color;
+                font-family: $font-primary-700;
+                font-size: 13px;
+                display: flex;
+                align-self: center;
+                border-bottom: 1px solid $withdraw-add-new-card-color;
+                line-height: 1;
+                &:hover {
+                    text-decoration: none;
+                }
+                i {
+                    margin-right: 10px;
+                    font-size: 10px;
+                }
+            }
+
+            .dob {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                align-items: center;
+                mat-form-field {
+                    width: calc(100%/3);
+                    box-sizing: border-box;
+                    margin: 0 10px;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.withdarw-info-box {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    background-color: $withdraw-info-box-bgcolor;
+    border: 1px solid $withdraw-info-box-bordercolor;
+    border-radius: 4px;
+    margin-top: 25px;
+    width: 100%;
+    float: left;
+
+    .icon {
+        svg {
+            width: 40px;
+        }
+        margin-right:15px;
+    }
+    .text {
+        font-size: 11px;
+        font-family: $font-primary-500;
+        p,
+        h6 {
+            margin: 0;
+        }
+        h6 {
+            font-size: 12px;
+            padding-bottom: 2px;
+            font-family: $font-secondary-SemiBold;
+        }
+    }
+    &.blue-box {
+        background-color: #EFF9FE;
+        border-color: #D0E0EE;
+        .text {
+            p {
+                color: #6998C0;
+            }
+            h6 {
+                color: #437EB0;
+            }
+        }
+    }
+    &.honey-box {
+        background-color: #FFFCD6;
+        border-color: #F0D49E;
+        .text {
+            p {
+                color: #F49600;
+            }
+            h6 {
+                color: #F49600;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:767px) {
+    .withdarw-type-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        .show-small,
+        .withdarw-type-tabs,
+        .withdarw-type-content {
+            flex: 1;
+        }
+        p.show-small {
+            &.mob-hide {
+                display: none !important;
+            }
+            &.cashier-page {
+                font-size: 16px;
+            }
+        }
+        .withdarw-type-tabs {
+            &.mob-hide {
+                display: none !important;
+            }
+            display: block;
+            float: none;
+            width: 100%;
+            order: 3;
+            li {
+                background-color: $withdraw-funds-li-bgcolor;
+                border-bottom: 1px solid $withdraw-funds-li-borderbottomcolor;
+                padding: 0 20px 0 0px;
+                &.active-arrow {
+                    &:after {
+                        display: none;
+                    }
+                    &.active {
+                        background-color: $withdraw-funds-li-bgcolor;
+                        a {
+                            .text {
+                                h5 {
+                                    color: $withdraw-funds-text-h5color;
+                                }
+                            }
+                            .card-icon {
+                                svg {
+                                    filter: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                /*                &:last-child {
+                                    border-bottom: 0;
+                                }*/
+                a {
+                    position: relative;
+                    &:after {
+                        content: '';
+                        content: "\F105";
+                        font-family: FontAwesome;
+                        font-size: 34px;
+                        color: $withdraw-funds-anchor-color;
+                        position: absolute;
+                        right: 0;
+                    }
+                    .card-icon {
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: row;
+                        align-items: center;
+                        width: 25vw;
+                        margin: 0 20px;
+                    }
+                }
+            }
+        }
+        .withdarw-type-content {
+            &.mob-hide {
+                display: none !important;
+            }
+            width: 100%;
+            display: flex;
+            order: 1;
+            padding:30px 20px 20px;
+            flex-direction: column;
+            overflow: hidden;
+
+            .tab-content {
+                .form-fields {
+                    width: 100%;
+                }
+            }
+            .cashier-back {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @media screen and (max-width:767px) {
+                    display: block;
+                    width: 100%;
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid #F0F2F6;
+                }
+            }
+        }
+
+        .show-small {
+            display: flex;
+            order: 2;
+            justify-content: center;
+        }
+        .pay-display {
+            display: flex;
+            width: 100%;
+            padding: 0 10px 0 0;
+            align-items: center;
+            justify-content: space-between;
+            /*margin-bottom: 20px;*/
+
+            @media screen and (max-width:767px) {
+                display: block;
+               // width: auto;
+                margin: 20px auto;
+            }
+
+            .icon {
+                align-items: center;
+                justify-content: center;
+                display: inline-flex;
+                width: 100%;
+                svg {
+                    height: 5vw;
+                    margin-right: 15px;
+                    &.mastercard {
+                        height: 5.8vw;
+                    }
+                    &.skrill {
+                        height: 6.2vw;
+                    }
+                    &.wiretransfer {
+                        /* height: 6vw;*/
+                        height: 32px;
+                    }
+                }
+            }
+
+            .pay-amount {
+                transform: skew(45deg);
+                background: linear-gradient(90deg, #6974B1 0%, #384079 100%);
+                min-width: 100px;
+                justify-content: flex-end;
+                align-items: flex-end;
+                display: inline-flex;
+                min-height: 25px;
+                box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+                color: $withdraw-funds-amount-color;
+                position: relative;
+                margin-right: -60px;
+                overflow: hidden;
+                @media screen and(max-width:767px){
+                    background: #7e69af;
+                    width: 80%;
+                    color: #ffffff;
+                    position: relative;
+                    margin-left: -50px;
+                    margin-top: 15px;
+                    overflow: hidden;
+                    text-align: center;
+                    box-shadow: none;
+                }
+                .slant-shape {
+                    transform: skew(-45deg);
+                    padding: 8px 35px 5px 30px;
+                    text-align: center;
+                    margin: 0px auto;
+                }
+                h6,
+                h3 {
+                    margin: 0;
+                    font-weight: normal;
+                }
+                h6 {
+                    font-family: $font-primary-500;
+                    font-size: 13px;
+                }
+                h3 {
+                    font-family: $font-primary-700;
+                    font-size: 23px;
+                    color:#fff;
+                }
+            }
+
+            .slideInRight {
+                -webkit-animation-name: slideInRight;
+                animation-name: slideInRight;
+                -webkit-animation-duration: 1s;
+                animation-duration: 1s;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+            }
+            @-webkit-keyframes slideInRight {
+                0% {
+                    -webkit-transform: translateX(100%);
+                    transform: translateX(100%);
+                    visibility: visible;
+                }
+                100% {
+                    -webkit-transform: translateX(0);
+                    transform: translateX(0);
+                }
+            }
+            @keyframes slideInRight {
+                0% {
+                    -webkit-transform: translateX(100%);
+                    transform: translateX(100%);
+                    visibility: visible;
+                }
+                100% {
+                    -webkit-transform: translateX(0);
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+}

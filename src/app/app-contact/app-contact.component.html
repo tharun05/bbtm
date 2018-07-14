@@ -1,0 +1,72 @@
+<div class="contact-form">
+    <div class="info-box" *ngIf="success">
+        <h6> Thank you for getting in touch! </h6>
+        <p>We appreciate you contacting us about {{contactReason}}. One of our colleagues will get back to you shortly.
+        </p>
+    </div>
+    <p class="info-title">Contact us directly using the form below. Alternatively, you can email us at <a href="mailto:support@bingo69.com">support@bingo69.com</a>.</p>
+    <form [formGroup]="contactForm" (ngSubmit)="contact('contactButton')" novalidate class="fields">
+        <div class="ld-col-md-4">
+            <!--firstname-->
+            <mat-form-field class="">
+                <span matPrefix>
+                    <i class="icon-user-fill"></i>
+                </span>
+                <input formControlName="firstName" name="firstName" matInput placeholder="Your first name" type="text">
+                <mat-error *ngIf="shouldShowErrors('firstName',contactForm)">{{getErrorMessage('firstName',contactForm)}}</mat-error>
+            </mat-form-field>
+            <!--lastname-->
+            <mat-form-field class="">
+                <input formControlName="lastName" name="lastName" matInput placeholder="Your last name" type="text">
+                <mat-error *ngIf="shouldShowErrors('lastName',contactForm)">{{getErrorMessage('lastName',contactForm)}}</mat-error>
+            </mat-form-field>
+            <!--email-->
+            <mat-form-field class="">
+                <span matPrefix>
+                    <i class="icon-mail"></i>
+                </span>
+                <input formControlName="email" name="email" matInput placeholder="Enter your email address" type="email">
+                <mat-error *ngIf="shouldShowErrors('email',contactForm)">{{getErrorMessage('email',contactForm)}}</mat-error>
+            </mat-form-field>
+            <div class="select-box">
+                <!--enquiry-->
+                <select placeholder="Enquiry" formControlName="enquiry" name="enquiry" id="enquiry">
+                    <option>Type of enquiry:</option>
+                    <option value="About Bingo69">About Bingo69</option>
+                    <option value="Payment">Payment</option>
+                    <option value="Promotions">Promotions</option>
+                    <option value="Registration & Account">Registration & Account</option>
+                    <option value="Results & Alerts">Results & Alerts</option>
+                    <option value="Scam Letters">Scam Letters</option>
+                    <option value="Subscriptions">Subscriptions</option>
+                    <option value="Syndicates">Syndicates</option>
+                    <option value="Scanned Ticket Service">Scanned Ticket Service</option>
+                    <option value="Troubleshooting">Troubleshooting</option>
+                    <option value="VIP Club">VIP Club</option>
+                    <option value="Winning">Winning</option>
+                    <option value="Withdrawals">Withdrawals</option>
+                    <option value="Refund">Refund</option>
+                    <option value="Others">Others</option>
+                </select>
+                <mat-error *ngIf="shouldShowErrors('enquiry',contactForm)">{{getErrorMessage('enquiry',contactForm)}}</mat-error>
+                <!--description-->
+            </div>
+        </div>
+        <div class="ld-col-md-7 ">
+            <!--       <div class="textarea">
+              <textarea formControlName="description" name="description" placeholder="Your message.." rows="9" cols="30"> </textarea>
+              <mat-error *ngIf="shouldShowErrors('description',contactForm)">{{getErrorMessage('description',contactForm)}}</mat-error>
+            </div> -->
+            <div class="textarea">
+                <mat-form-field class="">
+                    <textarea formControlName="description" name="description" matInput placeholder="Your message.." rows="7" cols="30">
+                    </textarea>
+                    <mat-error *ngIf="shouldShowErrors('description',contactForm)">{{getErrorMessage('description',contactForm)}}</mat-error>
+                </mat-form-field>
+            </div>
+            <button type="button" id="contactButton" class="btn-new btn-secondary btn-contact" (click)="contact('contactButton');mixPanelEventCheck('contactus')" [disabled]="isButtonDisabled(contactForm)">
+                <span>SEND</span>
+            </button>
+        </div>
+    </form>
+</div>

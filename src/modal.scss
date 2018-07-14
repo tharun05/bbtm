@@ -1,0 +1,171 @@
+@import "~variables.scss";
+
+/* MODAL STYLES
+-------------------------------*/
+
+modal {
+  /* modals are hidden by default */
+  display: none;
+
+  .modal {
+    /* modal container fixed across whole screen */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* z-index must be higher than .modal-background */
+    z-index: 999;
+
+    /* enables scrolling for tall modals */
+    overflow: auto;
+
+    .modal-body {
+      /* padding: 20px;
+      background: #fff;*/
+      /* margin exposes part of the modal background */
+      margin: 40px auto;
+      position: relative;
+      transition-duration: 0.5s;
+      transition-timing-function: swing;
+      overflow-y: auto;
+      box-sizing: border-box;
+
+      .close-modal {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 2;
+        cursor: pointer;
+
+        i {
+          color: #fff;
+          -webkit-filter: invert(100%);
+          filter: invert(100%);
+        }
+      }
+
+      &.modalOpenRight {
+        transform: translateX(-300px) translateY(0px);
+        -webkit-transform: translateX(-300px) translateY(0px);
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+        position: fixed;
+      }
+
+      &.modalOpenLeft {
+        transform: translateX(300px) translateY(0px);
+        -webkit-transform: translateX(300px) translateY(0px);
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+        position: fixed;
+      }
+    }
+  }
+
+  .modal-background {
+    /* modal background fixed across whole screen */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* semi-transparent black  */
+    background-color: #000;
+    opacity: 0.75;
+
+    /* z-index must be below .modal and above everything else  */
+    z-index: 900;
+  }
+}
+
+body.modal-open {
+  /* body overflow is hidden to hide main scrollbar when modal window is open */
+  overflow: hidden;
+}
+
+@media screen and (max-width:768px) {
+  modal {
+    .modal {
+      top: 0;
+      padding-top: 10px;
+      background: rgba(0,0,0,0.5);
+      .modal-body {
+        margin: auto;
+        width: calc(100% - 20px);
+      }
+    }
+  }
+}
+
+// .modal {
+//   display: none;
+//   z-index: 100;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   overflow: hidden;
+//   position: fixed;
+//
+//   width: 100%;
+//   height: 100%;
+//   text-align: center;
+//   background-color: rgb(0, 0, 0);
+//   background-color: rgba(0, 0, 0, 0.7);
+//   overflow: auto;
+//   &.blowUpModal {
+//     transform: scale(1);
+//     .modal-container {
+//       animation: blowUpModal .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+//     }
+//   }
+//   .modal-container {
+//     margin: auto;
+//     max-width: 100%;
+//     width: auto;
+//     display: inline-block;
+//     padding: 30px 0;
+//     position: relative;
+//
+//
+//     .modal-body {}
+//     .close-modal {
+//       color: $brand-ld;
+//       filter: brightness(3);
+//       font-size: 18px;
+//       font-weight: bold;
+//       text-align: right;
+//       padding: 10px;
+//       position: absolute;
+//       z-index: 2;
+//       right: 0;
+//       &:hover,
+//       &:focus {
+//         filter: contrast(4);
+//         text-decoration: none;
+//         cursor: pointer;
+//       }
+//     }
+//   }
+//   @keyframes blowUpModal {
+//     0% {
+//       transform: scale(0);
+//     }
+//     100% {
+//       transform: scale(1);
+//     }
+//   }
+// }
+//
+// @media screen and (max-width:768px) {
+//   .modal {
+//     position: fixed;
+//     top: 50px;
+//     height: 100%;
+//     z-index: 999;
+//     .modal-container {
+//       width: calc(100% - 20px);
+//     }
+//   }
+// }

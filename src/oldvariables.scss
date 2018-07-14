@@ -1,0 +1,1115 @@
+/*@import'~fonts.scss';*/
+@use autoprefixer(browsers: ['Firefox > 20','not ie <= 9', 'iOS > 6', 'Safari > 2']);
+$maintenance-overlay-bgcolor:linear-gradient(161.28deg, #5E82EE 0%, #234393 100%);
+
+//== Basic & Primary Colors
+$transparent: transparent;
+$btn-bluebg-color:linear-gradient(to right, #0072ff, #00c6ff);
+$btn-blue-border-color:#0FB2E1;
+$btn-blue-text-color:$btn-blue-border-color;
+$pink-gradient:linear-gradient(48.19deg, #7B4397 0%, #B5238A 61.8%, #DC2430 100%);
+$blue-theme-gradient:linear-gradient(313.01deg, #6974B1 0%, #384079 100%);
+$btn-disabled-color:#CDDCE4;
+$white: #fff;
+$black: #000;
+$green: #00c333;
+$bg-grey: #F0F2F6;
+$light-grey: #F5F5F5;
+$inactive-grey: #EAEAEA;
+$grey: #C8CFDE;
+$light-blue: #eeeff5;
+$sky-blue: #028FD5;
+$pale-yellow: #FFF9D9;
+$yellow: #F8E71C;
+$yellow-dark: #FFC300;
+$error-color: #A20000;
+$warning-color: #A20000;
+$alert-color: #A20000;
+$error-msg :#ff8c8c;
+$alert-msg:#EF8308;
+$honey-color:#FFFAD6;
+$ld-bg-secondary: #3653A4;
+
+$brand-ld: #384079;
+$bg-blue: #4a5584;
+$base-blue: #384079;
+$small-anchors: #3A60D7;
+$maintenance-secondary:#A4BBFF;
+
+$footer-border-colors: #DDDDDD;
+$border-colors: #EAEAEA;
+$anchor-color: #00ADEE;
+$header-blue: #4699FD;
+$footer-font-color: #384079;
+
+$bg-secondary: #F8F8F8;
+$blue-icon: #5C95FF;
+
+/*infoBox*/
+$infoBoxBgColor-aquaBlue:#D0E0EE;
+$infoBoxBorderColor-aquaBlue: #EFF9FE;
+
+$infoBoxBgColor-honey:#FFFCD6;
+$infoBoxBorderColor-honey: #F0D49E;
+$infoBoxTextColor-honey: #F49600;
+
+
+
+//== Spinner Colors
+$spin-circle-color: #939FB8;
+$spinner-bg-color: #DCE0EF;
+
+//== Info Colors
+$info-color: #E9A837;
+
+//== Text Highlighter Colors
+$text-highlighter: #4B7EFF;
+
+
+//== Secondary Colors
+$menu-active-hover: #5C95FF;
+
+//== Seperator, Lines and Disabled Colors
+$disabled-color: #5C95FF;
+
+//== Borders Colors
+$border-color: #EAEAEA;
+
+//== Pagination Colors
+$pagi-dot-bg-color: #D8D8D8;
+
+//== Content Background Colors
+$content-bg-color: #F0F2F6;
+
+//== Footer Background Colors
+$footer-bg-color: #F8F8F8;
+
+
+
+/* Form Shades */
+
+$form-placeholder: #C8CFDE;
+$form-text: #C8CFDE;
+
+$input-placeholder-color: #BCC4D6;
+$input-focus-color: #5C95FF;
+$input-success-color: #00c333;
+$input-invalid-color: #D0021B;
+$input-invalid-color-light-red:#FF8C8C;
+$select-dropdown-text: #3F467D;
+
+
+
+
+/*Mat checkBox color*/
+
+$mat-checkbox-checked-bgcolor: #244695;
+$mat-checkbox-unchecked-bgcolor:#F0F0F0;
+$mat-checkbox-unchecked-borderColor:#D3D3D3;
+
+
+
+/* Mobile Shades */
+
+//== Mobile Menu Gradient Colors
+$mob-menu-grad-b-color: #18274D;
+$mob-menu-grad-e-color: #314986;
+
+//== Mobile menu Seperator, Alert Indicator text and Scarcity text
+$mob-menu-sep-one: #00154A;
+$mob-menu-sep-two: #4A5F92;
+
+$mobile-lft-mn-bg: #1f2e5c;
+$mobile-rht-mn-bg: #1f2e5c;
+
+
+
+/*$mobile-border-color-1 : #0e1e53;
+$mobile-border-color-2 : #475a8e;
+*/
+
+$mobile-border-color-1: #00154A;
+$mobile-border-color-2: #4A5F92;
+
+
+// Brand Gradients
+//$grad-solid-color: #7b4397; // Old browsers
+
+/*
+@include brand-gradient-ie {
+    .brand-gradient-iex {
+        filter-gradient(#7b4397, #dc2430, horizontal);
+    }
+}
+@include brand-gradient-webkit {
+    .brand-gradient-wk {
+        background-image(radial-gradient(center, ellipse cover, #7b4397 0%,#b5238a 61%,#dc2430 100%));
+    }
+}
+*/
+
+
+/*card default styles starts*/
+
+
+/*   $card-box-shadow: 0 1px 2px 0 rgba(213, 213, 213, 0.5);*/
+
+$card-box-shadow:0 1px 1px 0 #A8A8A8;
+$card-border: 1px solid #DFDFDF;
+$card-border-radius: 4px;
+$card-background-color:$white;
+
+$spl-num-radius:9px;
+
+
+/*card default styles ends*/
+
+//General Components
+$card-white: #fff;
+$card-border-color: #D3D4D7;
+$card-border-radius: 4px;
+$pink: #FC346A;
+
+
+// Background Images
+//$icons-sprite-blue : url('/assets/img/blue-sprite-icons.svg') left top no-repeat;
+//$icons-sprite-white : url('/assets/img/white-sprite-icons.svg') left top no-repeat;
+//$lottery-bg-img : url('/assets/img/sprite-game-cards_bg.png') left top no-repeat;
+// Lottery bg image position
+$UKThunderBall-img-pos: left top;
+$UKLotto-img-pos: left -80px;
+$EuroMillionsUK-img-pos: left -145px;
+$Tatts-img-pos: left -215px;
+$CaliforniaSuperLotto-img-pos: left -290px;
+$SuperEnaLotto-img-pos: left -360px;
+$PowerBall-img-pos: left -430px;
+$OzLotto-img-pos: left -505px;
+$NewYorkLotto-img-pos: left -575px;
+$MegaSena-img-pos: left -650px;
+$MegaMillions-img-pos: left -720px;
+$IrishLotto-img-pos: left -790px;
+$FrenchLotto-img-pos: left -865px;
+$Lotto649-img-pos: left -935px;
+$LoteriaNacional-img-pos: left -1005px;
+$LaPrimitiva-img-pos: left -1080px;
+$HotLotto-img-pos: left -1150px;
+$HoosierLotto-img-pos: left -1225px;
+$FloridaLotto-img-pos: left -1295px;
+$EuroMillions-img-pos: left -1365px;
+$EuroJackpot-img-pos: left -1440px;
+$ElGordo-img-pos: left -1510px;
+$PowerballAustralia-img-pos: left -1580px;
+$BonoLotto-img-pos: left -1655px;
+
+// Lottery bg images
+$EuroMillionsUK-img: url('/assets/img/lottery_logo_bgs/EuroMillionsUK.jpg')  ;
+$Tatts-img: url('/assets/img/lottery_logo_bgs/Tatts.jpg')  ;
+$CaliforniaSuperLotto-img: url('/assets/img/lottery_logo_bgs/CaliforniaSuperLotto.jpg') ;
+$NewYorkLotto-img: url('/assets/img/lottery_logo_bgs/NewYorkLotto.jpg')  ;
+$MegaSena-img: url('/assets/img/lottery_logo_bgs/MegaSena.jpg') ;
+$IrishLotto-img: url('/assets/img/lottery_logo_bgs/IrishLotto.jpg')  ;
+$FrenchLotto-img: url('/assets/img/lottery_logo_bgs/FrenchLotto.jpg')  ;
+$Lotto649-img: url('/assets/img/lottery_logo_bgs/Lotto649.jpg')  ;
+$LoteriaNacional-img: url('/assets/img/lottery_logo_bgs/LoteriaNacional.jpg')  ;
+$LaPrimitiva-img: url('/assets/img/lottery_logo_bgs/LaPrimitiva.jpg')  ;
+$HotLotto-img: url('/assets/img/lottery_logo_bgs/HotLotto.jpg')  ;
+$HoosierLotto-img: url('/assets/img/lottery_logo_bgs/HoosierLotto.jpg')  ;
+$FloridaLotto-img: url('/assets/img/lottery_logo_bgs/FloridaLotto.jpg')  ;
+$EuroMillions-img: url('/assets/img/lottery_logo_bgs/EuroMillions.jpg') ;
+$EuroJackpot-img: url('/assets/img/lottery_logo_bgs/EuroJackpot.png')  ;
+$ElGordo-img: url('/assets/img/lottery_logo_bgs/ElGordo.png')  ;
+$MegaMillions-img: url('/assets/img/lottery_logo_bgs/MegaMillions.png')  ;
+$OzLotto-img: url('/assets/img/lottery_logo_bgs/OzLotto.png')  ;
+$PowerBall-img: url('/assets/img/lottery_logo_bgs/PowerBall.jpg')  ;
+$SuperEnaLotto-img: url('/assets/img/lottery_logo_bgs/SuperEnaLotto.png')  ;
+$UKLotto-img: url('/assets/img/lottery_logo_bgs/UKLotto.png')  ;
+$UKThunderBall-img: url('/assets/img/lottery_logo_bgs/UKThunderBall.png')  ;
+
+
+/*$UKThunderBall-img :  url('/assets/img/lottery_logo_bgs/UKThunderBall.jpg') left top no-repeat;
+$UKLotto-img :  url('/assets/img/lottery_logo_bgs/UKLotto.jpg') left top no-repeat;
+$SuperEnaLotto-img :  url('/assets/img/lottery_logo_bgs/SuperEnaLotto.jpg') left top no-repeat;
+$PowerBall-img :  url('/assets/img/lottery_logo_bgs/PowerBall.jpg') left top no-repeat;
+$OzLotto-img :  url('/assets/img/lottery_logo_bgs/OzLotto.jpg') left top no-repeat;
+$MegaMillions-img :  url('/assets/img/lottery_logo_bgs/MegaMillions.jpg') left top no-repeat;
+$EuroJackpot-img :  url('/assets/img/lottery_logo_bgs/EuroJackpot.jpg') left top no-repeat;
+$ElGordo-img :  url('/assets/img/lottery_logo_bgs/ElGordo.jpg') left top no-repeat;
+$PowerballAustralia-img :  url('/assets/img/lottery_logo_bgs/PowerballAustralia.jpg') left top no-repeat;*/
+
+$PowerballAustralia-img: url('/assets/img/lottery_logo_bgs/PowerballAustralia.png') ;
+$BonoLotto-img: url('/assets/img/lottery_logo_bgs/BonoLotto.jpg') ;
+
+
+// Lottery Solid Colors
+$solid-UKThunderBall-color: #5e3790;
+$solid-UKLotto-color: #082572;
+$solid-SuperEnaLotto-color: #038448;
+$solid-OzLotto-color: #038448;
+$solid-NewYorkLotto-color: #061438;
+$solid-MegaSena-color: #005529;
+$solid-Lotto649-color: #004696;
+$solid-IrishLotto-color: #2b9935;
+$solid-HotLotto-color: #ca2d00;
+$solid-HoosierLotto-color: #B2333D;
+$solid-FrenchLotto-color: #1761C7;
+$solid-FloridaLotto-color: #FF9900;
+$solid-EuroMillions-color: #0f3791;
+$solid-EuroJackpot-color: #975703;
+$solid-CaliforniaSuperLotto-color: #E35700;
+$solid-PowerBall-color: #082572;
+$solid-ElGordo-color: #6D0101;
+$solid-EuroMillionsUK-color: #5146AF;
+$solid-MegaMillions-color: #082572;
+$solid-PowerballAustralia-color: #122158;
+$solid-LaPrimitiva-color: #086f3a;
+$solid-LoteriaNacional-color: #1761C7;
+$solid-BonoLotto-color: #005529;
+ $solid-Tatts-color: #32A38F;
+
+// Lottery Gradient Colors
+$lotttery-UKThunderBall-b-color: #9b72d8;
+$lotttery-UKThunderBall-m-color: #9b72d8;
+$lotttery-UKThunderBall-e-color: #5e3790;
+
+$lotttery-UKLotto-b-color: #4C8CF2;
+$lotttery-UKLotto-m-color: #4C8CF2;
+$lotttery-UKLotto-e-color: #082572;
+
+$lotttery-SuperEnaLotto-b-color: #63BF0C;
+$lotttery-SuperEnaLotto-m-color: #63BF0C;
+$lotttery-SuperEnaLotto-e-color: #038448;
+
+$lotttery-OzLotto-b-color: #63BF0C;
+$lotttery-OzLotto-m-color: #63BF0C;
+$lotttery-OzLotto-e-color: #038448;
+
+$lotttery-NewYorkLotto-b-color: #4979C5;
+$lotttery-NewYorkLotto-m-color: #4979C5;
+$lotttery-NewYorkLotto-e-color: #061438;
+
+$lotttery-MegaSena-b-color: #038448;
+$lotttery-MegaSena-m-color: #038448;
+$lotttery-MegaSena-e-color: #005529;
+
+$lotttery-Lotto649-b-color: #3D9FD6;
+$lotttery-Lotto649-m-color: #3D9FD6;
+$lotttery-Lotto649-e-color: #004696;
+
+$lotttery-IrishLotto-b-color: #2b9935;
+$lotttery-IrishLotto-m-color: #46ae21;
+$lotttery-IrishLotto-e-color: #2b9935;
+
+$lotttery-HotLotto-b-color: #fbbf00;
+$lotttery-HotLotto-m-color: #fbbf00;
+$lotttery-HotLotto-e-color: #ca2d00;
+
+$lotttery-HoosierLotto-b-color: #F0A89F;
+$lotttery-HoosierLotto-m-color: #F0A89F;
+$lotttery-HoosierLotto-e-color: #B2333D;
+
+$lotttery-FrenchLotto-b-color: #41AEEA;
+$lotttery-FrenchLotto-m-color: #41AEEA;
+$lotttery-FrenchLotto-e-color: #1761C7;
+
+$lotttery-FloridaLotto-b-color: #FFD100;
+$lotttery-FloridaLotto-m-color: #FFD100;
+$lotttery-FloridaLotto-e-color: #FF9900;
+
+$lotttery-EuroMillions-b-color: #4473d5;
+$lotttery-EuroMillions-m-color: #4473d5;
+$lotttery-EuroMillions-e-color: #0f3791;
+
+$lotttery-EuroJackpot-b-color: #F9CF57;
+$lotttery-EuroJackpot-m-color: #F9CF57;
+$lotttery-EuroJackpot-e-color: #975703;
+
+$lotttery-CaliforniaSuperLotto-b-color: #FFB441;
+$lotttery-CaliforniaSuperLotto-m-color: #FFB441;
+$lotttery-CaliforniaSuperLotto-e-color: #E35700;
+
+$lotttery-PowerBall-b-color: #2264CC;
+$lotttery-PowerBall-m-color: #2264CC;
+$lotttery-PowerBall-e-color: #082572;
+
+$lotttery-ElGordo-b-color: #E73131;
+$lotttery-ElGordo-m-color: #E73131;
+$lotttery-ElGordo-e-color: #6D0101;
+
+$lotttery-EuroMillionsUK-b-color: #80A3E5;
+$lotttery-EuroMillionsUK-m-color: #80A3E5;
+$lotttery-EuroMillionsUK-e-color: #5146AF;
+
+$lotttery-MegaMillions-b-color: #2264CC;
+$lotttery-MegaMillions-m-color: #2264CC;
+$lotttery-MegaMillions-e-color: #082572;
+
+$lotttery-PowerballAustralia-b-color: #8B9ACB;
+$lotttery-PowerballAustralia-m-color: #8B9ACB;
+$lotttery-PowerballAustralia-e-color: #122158;
+
+$lotttery-LaPrimitiva-b-color: #27a362;
+$lotttery-LaPrimitiva-m-color: #27a362;
+$lotttery-LaPrimitiva-e-color: #086f3a;
+
+$lotttery-LoteriaNacional-b-color: #41AEEA;
+$lotttery-LoteriaNacional-m-color: #41AEEA;
+$lotttery-LoteriaNacional-e-color: #1761C7;
+
+$lotttery-BonoLotto-b-color: #038448;
+$lotttery-BonoLotto-m-color: #038448;
+$lotttery-BonoLotto-e-color: #005529;
+
+$lotttery-Tatts-b-color: #5ACEAF;
+$lotttery-Tatts-m-color: #5ACEAF;
+$lotttery-Tatts-e-color: #32A38F;
+
+
+// input
+$input-text-base-color: #B9BCCB;
+
+//## Gray and brand colors for use across.
+$gray-base: #000 !default;
+$gray-darker: lighten($gray-base,
+13.5%) !default; // #222
+$gray-dark: lighten($gray-base,
+20%) !default; // #333
+$gray: lighten($gray-base,
+33.5%) !default; // #555
+$gray-light: lighten($gray-base,
+46.7%) !default; // #777
+$gray-lighter: lighten($gray-base,
+93.5%) !default; // #eee
+$button-primary: #00c333 !default;
+$button-secondary: #244695 !default;
+$button-disabled: #F5F5F5 !default;
+$button-additional: #C2D6CF !default;
+$button-special: #FC346A !default;
+$brand-primary: darken(#428bca,
+6.5%) !default; // #337ab7
+$brand-success: #5cb85c !default;
+$brand-info: #5bc0de !default;
+$brand-warning: #f0ad4e !default;
+$brand-danger: #d9534f !default;
+
+
+// Lottery brand num colors
+$UKThunderBall-num-color: #e232d1;
+$UKLotto-num-color: #216ffa;
+$EuroMillionsUK-num-color: #47b9fc;
+$Tatts-num-color: #4bac91;
+$CaliforniaSuperLotto-num-color: #f6ac00;
+$SuperEnaLotto-num-color: #2fa927;
+$PowerBall-num-color: #216ffa;
+$OzLotto-num-color: #EFD91C;
+$NewYorkLotto-num-color: #4699fd;
+$MegaSena-num-color: #fac400;
+$MegaMillions-num-color: #b81924;
+$IrishLotto-num-color: #bddd00;
+$FrenchLotto-num-color: #d60423;
+$Lotto649-num-color: #216ffa;
+$LoteriaNacional-num-color: #00b5f1;
+$LaPrimitiva-num-color: #33aa6c;
+$HotLotto-num-color: #e38636;
+$HoosierLotto-num-color: #f4aa9a;
+$FloridaLotto-num-color: #027562;
+$EuroMillions-num-color: #4699fd;
+$EuroJackpot-num-color: #f3d900;
+$ElGordo-num-color: #d61e41;
+$PowerballAustralia-num-color: #6976a8;
+$BonoLotto-num-color: #02572a;
+
+// Lottery brand special num colors
+$UKThunderBall-num-color-spl: darken(#550094,15%);
+$UKLotto-num-color-spl: darken(#141414,15%);
+$EuroMillionsUK-num-color-spl: darken(#f61f29,15%);
+$Tatts-num-color-spl: darken(#18499a,15%);
+$CaliforniaSuperLotto-num-color-spl: darken(#18499a,15%);
+$SuperEnaLotto-num-color-spl: darken(#f61f29,15%);
+$PowerBall-num-color-spl: darken(#f61f29,15%);
+$OzLotto-num-color-spl: darken(#00924F,15%);
+$NewYorkLotto-num-color-spl: darken(#f61f29,15%);
+$MegaSena-num-color-spl: darken(#004b23,15%);
+$MegaMillions-num-color-spl: darken(#0755aa,15%);
+$IrishLotto-num-color-spl: darken(#fc7b00,15%);
+$FrenchLotto-num-color-spl: darken(#0a3e94,15%);
+$Lotto649-num-color-spl: darken(#dd0b1b,15%);
+$LoteriaNacional-num-color-spl: darken(#0a3e94,15%);
+$LaPrimitiva-num-color-spl: darken(#262626,15%);
+$HotLotto-num-color-spl: darken(#ec1c24,15%);
+$HoosierLotto-num-color-spl: darken(#db0330,15%);
+$FloridaLotto-num-color-spl: darken(#eb0c6d,15%);
+$EuroMillions-num-color-spl: darken(#061b72,15%);
+$EuroJackpot-num-color-spl: darken(#061b72,15%);
+$ElGordo-num-color-spl: darken(#262626,15%);
+$PowerballAustralia-num-color-spl: darken(#262626,15%);
+$BonoLotto-num-color-spl: darken(#ec1c24,15%);
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+//** Background color for `<body>`.
+$body-bg: #fff !default;
+//** Global text color on `<body>`.
+$text-color: $gray-dark !default;
+
+//** Global textual link color.
+$link-color: $brand-primary !default;
+//** Link hover color set via `darken()` function.
+$link-hover-color: darken($link-color,
+15%) !default;
+//** Link hover decoration.
+$link-hover-decoration: underline !default;
+
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+// Fonts
+$font-primary: 'MuseoSans';
+$font-primary-500: 'MuseoSans500';
+$font-primary-700: 'MuseoSans700';
+$font-primary-900: 'MuseoSans900';
+$font-secondary: 'Montserrat';
+
+// Font-secondary - style and weight
+$font-secondary-black: 'Montserrat-Black'; // 900
+$font-secondary-BlackItalic: 'Montserrat-BlackItalic'; // 900
+$font-secondary-Bold: 'Montserrat-Bold'; // Bold
+$font-secondary-BoldItalic: 'Montserrat-BoldItalic';
+$font-secondary-ExtraBold: 'Montserrat-ExtraBold'; // 800
+$font-secondary-ExtraBoldItalic: 'Montserrat-ExtraBoldItalic'; // 800
+$font-secondary-ExtraLight: 'Montserrat-ExtraLight'; // 200
+$font-secondary-ExtraLightItalic: 'Montserrat-ExtraLightItalic'; // 200
+$font-secondary-Italic: 'Montserrat-Italic';
+$font-secondary-Light: 'Montserrat-Light'; // 300
+$font-secondary-LightItalic: 'Montserrat-LightItalic'; // 300
+$font-secondary-Medium: 'Montserrat-Medium'; //500
+$font-secondary-MediumItalic: 'Montserrat-MediumItalic'; // 500
+$font-secondary-SemiBold: 'Montserrat-SemiBold'; // 600
+$font-secondary-SemiBoldItalic: 'Montserrat-SemiBoldItalic'; // 600
+$font-secondary-Thin: 'Montserrat-Thin'; // 100
+$font-secondary-ThinItalic: 'Montserrat-ThinItalic'; // 100
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-size-base: 14px !default;
+$font-size-large: ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small: ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-h1: floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2: floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3: ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4: ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5: $font-size-base !default;
+$font-size-h6: ceil(($font-size-base * 0.85)) !default; // ~12px
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base: 1.428571429 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed: floor(($font-size-base * $line-height-base)) !default; // ~20px
+//** By default, this inherits from the `<body>`.
+$headings-font-family: inherit !default;
+$headings-font-weight: 500 !default;
+$headings-line-height: 1.1 !default;
+$headings-color: inherit !default;
+
+
+// Gutter
+$gutter: 15px;
+$grid-columns: 12;
+$grid-gutter-width: 0px;
+$grid-margin-width: 20px;
+$grid-float-breakpoint: 768px;
+
+$grid-breakpoints: ( // Extra small screen / phone
+xs: 0, // Small screen / phone
+sm: 576px, // Medium screen / tablet
+md: 768px, // Large screen / desktop
+lg: 992px, // Extra large screen / wide desktop
+xl: 1200px);
+
+$container-max-widths: ( sm: 540px,
+md: 720px,
+lg: 960px,
+xl: 1140px);
+
+//** Unit-less `line-height` for use in components like buttons.
+@line-height-base: 1.428571429; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+@line-height-computed: floor((@font-size-base * @line-height-base)); // ~20px
+// ┌─────────────┐
+// │ Iconography │
+// └─────────────┘
+//== Iconography
+//** Load fonts from this directory.
+$icon-font-path: '/assets/fonts/icons/';
+
+//** File name for all font files.
+$icon-font-name: "glyphicons-halflings-regular" !default;
+//** Element ID within SVG icon file.
+$icon-font-svg-id: "glyphicons_halflingsregular" !default;
+
+
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+$padding-base-vertical: 6px !default;
+$padding-base-horizontal: 12px !default;
+
+$padding-large-vertical: 10px !default;
+$padding-large-horizontal: 16px !default;
+
+$padding-small-vertical: 5px !default;
+$padding-small-horizontal: 10px !default;
+
+$padding-xs-vertical: 1px !default;
+$padding-xs-horizontal: 5px !default;
+
+$line-height-large: 1.3333333 !default; // extra decimals for Win 8.1 Chrome
+$line-height-small: 1.5 !default;
+
+$border-radius-base: 4px !default;
+$border-radius-large: 6px !default;
+$border-radius-small: 3px !default;
+
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color: #fff !default;
+//** Global background color for active items (e.g., navs or dropdowns).
+$component-active-bg: $brand-primary !default;
+
+//** Width of the `border` for generating carets that indicate dropdowns.
+$caret-width-base: 4px !default;
+//** Carets increase slightly in size for larger components.
+$caret-width-large: 5px !default;
+
+
+//== Tables
+//
+//## Customizes the `.table` component with basic values, each used across all table variations.
+//** Padding for `<th>`s and `<td>`s.
+$table-cell-padding: 8px !default;
+//** Padding for cells in `.table-condensed`.
+$table-condensed-cell-padding: 5px !default;
+
+//** Default background color used for all tables.
+$table-bg: transparent !default;
+//** Background color used for `.table-striped`.
+$table-bg-accent: #f9f9f9 !default;
+//** Background color used for `.table-hover`.
+$table-bg-hover: #f5f5f5 !default;
+$table-bg-active: $table-bg-hover !default;
+
+//** Border color for table and cell borders.
+$table-border-color: #ddd !default;
+
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+$btn-font-weight: normal !default;
+
+$btn-default-color: #00c333 !default;
+$btn-default-bg: #fff !default;
+$btn-default-border: #00c333 !default;
+
+$btn-primary-color: #fff !default;
+$btn-primary-bg: $button-primary !default;
+$btn-primary-border: darken($btn-primary-bg,
+5%) !default;
+
+$btn-secondary-color: #fff !default;
+$btn-secondary-bg: $button-secondary !default;
+$btn-secondary-border: darken($btn-secondary-bg,
+5%) !default;
+
+// $btn-disabled-color: #C9CACE !default;
+$btn-disabled-bg: $button-disabled !default;
+$btn-disabled-border: darken($btn-disabled-bg,
+5%) !default;
+
+$btn-additional-color: #fff !default;
+$btn-additional-bg: $button-additional !default;
+$btn-additional-border: darken($btn-additional-bg,
+5%) !default;
+
+$btn-special-color: #fff !default;
+$btn-special-bg: $button-special !default;
+$btn-special-border: darken($btn-special-bg,
+5%) !default;
+
+$btn-success-color: #fff !default;
+$btn-success-bg: $brand-success !default;
+$btn-success-border: darken($btn-success-bg,
+5%) !default;
+
+$btn-info-color: #fff !default;
+$btn-info-bg: $brand-info !default;
+$btn-info-border: darken($btn-info-bg,
+5%) !default;
+
+$btn-warning-color: #fff !default;
+$btn-warning-bg: $brand-warning !default;
+$btn-warning-border: darken($btn-warning-bg,
+5%) !default;
+
+$btn-danger-color: #fff !default;
+$btn-danger-bg: $brand-danger !default;
+$btn-danger-border: darken($btn-danger-bg,
+5%) !default;
+
+$btn-link-disabled-color: $gray-light !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius-base: $border-radius-base !default;
+$btn-border-radius-large: $border-radius-large !default;
+$btn-border-radius-small: $border-radius-small !default;
+
+
+//== Forms
+//
+//##
+//** `<input>` background color
+$input-bg: #fff !default;
+//** `<input disabled>` background color
+$input-bg-disabled: $gray-lighter !default;
+
+//** Text color for `<input>`s
+$input-color: $gray !default;
+//** `<input>` border color
+$input-border: #ccc !default;
+
+// TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
+//** Default `.form-control` border radius
+// This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
+$input-border-radius: $border-radius-base !default;
+//** Large `.form-control` border radius
+$input-border-radius-large: $border-radius-large !default;
+//** Small `.form-control` border radius
+$input-border-radius-small: $border-radius-small !default;
+
+//** Border color for inputs on focus
+$input-border-focus:             /*#66afe9*/ transparent !default;
+
+//** Placeholder text color
+$input-color-placeholder: #C8CFDE !default;
+
+//** Default `.form-control` height
+$input-height-base: ($line-height-computed+($padding-base-vertical * 2)+2) !default;
+//** Large `.form-control` height
+$input-height-large: (ceil($font-size-large * $line-height-large)+($padding-large-vertical * 2)+2) !default;
+//** Small `.form-control` height
+$input-height-small: (floor($font-size-small * $line-height-small)+($padding-small-vertical * 2)+2) !default;
+
+//** `.form-group` margin
+$form-group-margin-bottom: 0 !default;
+
+$legend-color: $gray-dark !default;
+$legend-border-color: #e5e5e5 !default;
+
+//** Background color for textual input addons
+$input-group-addon-bg: $gray-lighter !default;
+//** Border color for textual input addons
+$input-group-addon-border-color: $input-border !default;
+
+//** Disabled cursor for form controls and buttons.
+$cursor-disabled: not-allowed !default;
+
+
+//== Dropdowns
+//
+//## Dropdown menu container and contents.
+//** Background for the dropdown menu.
+$dropdown-bg: #fff !default;
+//** Dropdown menu `border-color`.
+$dropdown-border: rgba(0,
+0,
+0,
+.15) !default;
+//** Dropdown menu `border-color` **for IE8**.
+$dropdown-fallback-border: #ccc !default;
+//** Divider color for between dropdown items.
+$dropdown-divider-bg: #e5e5e5 !default;
+
+//** Dropdown link text color.
+$dropdown-link-color: $gray-dark !default;
+//** Hover color for dropdown links.
+$dropdown-link-hover-color: darken($gray-dark,
+5%) !default;
+//** Hover background for dropdown links.
+$dropdown-link-hover-bg: #f5f5f5 !default;
+
+//** Active dropdown menu item text color.
+$dropdown-link-active-color: $component-active-color !default;
+//** Active dropdown menu item background color.
+$dropdown-link-active-bg: $component-active-bg !default;
+
+//** Disabled dropdown menu item background color.
+$dropdown-link-disabled-color: $gray-light !default;
+
+//** Text color for headers within dropdown menus.
+$dropdown-header-color: $gray-light !default;
+
+//** Deprecated `$dropdown-caret-color` as of v3.1.0
+$dropdown-caret-color: #000 !default;
+
+
+//-- Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+//
+// Note: These variables are not generated into the Customizer.
+$zindex-navbar: 1000 !default;
+$zindex-dropdown: 1000 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
+$zindex-navbar-fixed: 1030 !default;
+$zindex-modal-background: 1040 !default;
+$zindex-modal: 1050 !default;
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+// Extra small screen / phone
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs: 480px !default;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min: $screen-xs !default;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone: $screen-xs-min !default;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm: 768px !default;
+$screen-sm-min: $screen-sm !default;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet: $screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md: 992px !default;
+$screen-md-min: $screen-md !default;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop: $screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg: 1200px !default;
+$screen-lg-min: $screen-lg !default;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop: $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+//** Number of columns in the grid.
+$grid-columns: 12 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width: 30px !default;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint: $screen-sm-min !default;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+$state-success-text: #3c763d !default;
+$state-success-bg: #dff0d8 !default;
+$state-success-border: darken(adjust-hue($state-success-bg,
+-10),
+5%) !default;
+
+$state-info-text: #31708f !default;
+$state-info-bg: #d9edf7 !default;
+$state-info-border: darken(adjust-hue($state-info-bg,
+-10),
+7%) !default;
+
+$state-warning-text: #8a6d3b !default;
+$state-warning-bg: #fcf8e3 !default;
+$state-warning-border: darken(adjust-hue($state-warning-bg,
+-10),
+5%) !default;
+
+$state-danger-text: #a94442 !default;
+$state-danger-bg: #f2dede !default;
+$state-danger-border: darken(adjust-hue($state-danger-bg,
+-10),
+5%) !default;
+
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+// Small screen / tablet
+$container-tablet: (720px+$grid-gutter-width) !default;
+//** For `$screen-sm-min` and up.
+$container-sm: $container-tablet !default;
+
+// Medium screen / desktop
+$container-desktop: (940px+$grid-gutter-width) !default;
+//** For `$screen-md-min` and up.
+$container-md: $container-desktop !default;
+
+// Large screen / wide desktop
+$container-large-desktop: (1140px+$grid-gutter-width) !default;
+//** For `$screen-lg-min` and up.
+$container-lg: $container-large-desktop !default;
+
+
+//== Tooltips
+//
+//##
+//** Tooltip max width
+$tooltip-max-width: 200px !default;
+//** Tooltip text color
+$tooltip-color: #fff !default;
+//** Tooltip background color
+$tooltip-bg: #000 !default;
+$tooltip-opacity: .9 !default;
+
+//** Tooltip arrow width
+$tooltip-arrow-width: 5px !default;
+//** Tooltip arrow color
+$tooltip-arrow-color: $tooltip-bg !default;
+
+
+
+//== Alerts
+//
+//## Define alert colors, border radius, and padding.
+$alert-padding: 15px !default;
+$alert-border-radius: $border-radius-base !default;
+$alert-link-font-weight: bold !default;
+
+$alert-success-bg: $state-success-bg !default;
+$alert-success-text: $state-success-text !default;
+$alert-success-border: $state-success-border !default;
+
+$alert-info-bg: $state-info-bg !default;
+$alert-info-text: $state-info-text !default;
+$alert-info-border: $state-info-border !default;
+
+$alert-warning-bg: $state-warning-bg !default;
+$alert-warning-text: $state-warning-text !default;
+$alert-warning-border: $state-warning-border !default;
+
+$alert-danger-bg: $state-danger-bg !default;
+$alert-danger-text: $state-danger-text !default;
+$alert-danger-border: $state-danger-border !default;
+
+
+//== Badges
+//
+//##
+$badge-color: #E72B2B !default;
+//** Linked badge text color on hover
+$badge-link-hover-color: #E72B2B !default;
+$badge-bg: $gray-light !default;
+
+//** Badge text color in active nav link
+$badge-active-color: $link-color !default;
+//** Badge background color in active nav link
+$badge-active-bg: #fff !default;
+
+$badge-font-weight: bold !default;
+$badge-line-height: 1 !default;
+$badge-border-radius: 10px !default;
+
+
+//== Close
+//
+//##
+$close-font-weight: bold !default;
+$close-color: #000 !default;
+$close-text-shadow: 0 1px 0 #fff !default;
+
+
+
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin hide-text() {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+// New mixin to use as of v3.0.1
+@mixin text-hide() {
+  @include hide-text;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity; // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: alpha(opacity=$opacity-ie);
+}
+
+// WebKit-style focus
+@mixin tab-focus() {
+  // Default
+  outline: thin dotted; // WebKit
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+
+// Text overflow
+// Requires inline-block or block for proper styling
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Box sizing
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+  -moz-box-sizing: $boxmodel;
+  box-sizing: $boxmodel;
+}
+
+// Only display content to screen readers
+//
+// See: http://a11yproject.com/posts/how-to-hide-content/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+// Use in conjunction with .sr-only to only display content when it's focused.
+// Useful for "Skip to main content" links; see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+// Credit: HTML5 Boilerplate
+.sr-only-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+
+// iOS "clickable elements" fix for role="button"
+//
+// Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+// for traditionally non-focusable elements with role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+[role="button"] {
+  cursor: pointer;
+}
+
+
+//
+//##
+//** Horizontal offset for forms and lists.
+$component-offset-horizontal: 180px !default;
+//** Text muted color
+$text-muted: $gray-light !default;
+//** Abbreviations and acronyms border color
+$abbr-border-color: $gray-light !default;
+//** Headings small color
+$headings-small-color: $gray-light !default;
+//** Blockquote small color
+$blockquote-small-color: $gray-light !default;
+//** Blockquote font size
+$blockquote-font-size: ($font-size-base * 1.25) !default;
+//** Blockquote border color
+$blockquote-border-color: $gray-lighter !default;
+//** Page header border color
+$page-header-border-color: $gray-lighter !default;
+//** Width of horizontal description list titles
+$dl-horizontal-offset: $component-offset-horizontal !default;
+//** Point at which .dl-horizontal becomes horizontal
+$dl-horizontal-breakpoint: $grid-float-breakpoint !default;
+//** Horizontal line color.
+$hr-border: $gray-lighter !default;
+//** Table head color.
+$table-head-color: $bg-grey !default;
+
+
+//** LottoDay Checkbox
+$ld-custom--class-name: ld-custom !default;
+
+// colors
+$ld-custom--color-default: #bdc3c7 !default;
+$ld-custom--color-primary: #428bca !default;
+$ld-custom--color-info: #5bc0de !default;
+$ld-custom--color-success: #5cb85c !default;
+$ld-custom--color-warning: #f0ad4e !default;
+$ld-custom--color-danger: #d9534f !default;
+$ld-custom--color-dark: #5a656b !default;
+
+// z-index
+$ld-custom--z-index-back: 0 !default;
+$ld-custom--z-index-between: 1 !default;
+$ld-custom--z-index-front: 2 !default;
+
+// box
+$ld-custom--curve-radius: 20% !default;
+$ld-custom--box-size: calc(1em+2px) !default;
+
+// text
+$ld-custom--label-text-offset: 1.5em !default;
+$ld-custom--label-text-offset-switch: 2.5em !default;
+
+// scale
+$ld-custom--2x: 1.2em !default;
+
+// color set
+$ld-custom--colors: (primary,
+$ld-custom--color-primary),
+(info,
+$ld-custom--color-info),
+(success,
+$ld-custom--color-success),
+(warning,
+$ld-custom--color-warning),
+(danger,
+$ld-custom--color-danger) !default;
+
+// position
+$ld-custom-top: 8;
+$ld-custom-top-switch: ($ld-custom-top * 2) * 1%;
+$ld-custom-top-offset: calc((0% - (100% - 1em)) - #{$ld-custom-top * 1%});
+$ld-custom-top-offset-switch: calc((0% - (100% - 1em)) - #{$ld-custom-state-success-bg;
+
+$ld-custom--debug: false !default;
+$ld-custom--err-message: 'Error: Invalid input type!' !default;
+$number-of-draw-color: #00c333;
+$bonus-applied-bg-color: #DFF8EF;

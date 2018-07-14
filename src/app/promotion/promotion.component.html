@@ -1,0 +1,288 @@
+<div id="bannerFromCMS">
+        <section class="banner">
+            <div class="mask-overlay "><span class="right_top_cirular"></span> <span class="left_bottom_oval"></span> <span class="right_top_oval"></span></div>
+            <div *ngFor="let bannerpromo of bannersPromotion; let k = index" class=""  [innerHtml]="bannerpromo.content" >
+            </div>
+        </section>
+
+</div>
+<section class="promotions">
+    <div class="container">
+
+        <div class="promotions_inn"> 
+            <div class="promo-item" *ngFor="let promotion of promotions">
+                <div class="card">
+                    <img src="{{tempImagePath}}{{promotion.image}}" alt="">
+                    <div class="card-body clearfix">
+                            <div class="card-content">
+                                    <h4>{{promotion.title}}</h4>
+                                    <p>{{promotion.snippet}}</p>
+                                </div>
+                    <div class="card-footer clearfix">
+                        <button class="whiteButton" routerLink='/bingo' >Bingo</button>
+                        <button class="btn btn-primary" (click)="loadPromoContent(promotion.id)">Read More</button>
+                    </div>
+                    
+                    </div>
+                </div>
+            </div>
+<!-- 
+            <div class="promo-item" *ngFor="let promotion of promotions">
+                    <div class="card">
+                        <img src="{{tempImagePath}}{{promotion.image}}" alt="">
+                        <div class="card-body clearfix">
+                        <div class="card-content">
+                            <h4>{{promotion.title}}</h4>
+                            <p>{{promotion.snippet}}</p>
+                        </div>
+                        <div class="card-footer clearfix">
+                            <button class="whiteButton" routerLink='/bingo' >Bingo</button>
+                            <button class="btn btn-primary" (click)="loadPromoContent(promotion.id)">Read More</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="promo-item" *ngFor="let promotion of promotions">
+                        <div class="card">
+                            <img src="{{tempImagePath}}{{promotion.image}}" alt="">
+                            <div class="card-body clearfix">
+                                <div class="card-content">
+                                    <h4>{{promotion.title}}</h4>
+                                    <p>{{promotion.snippet}}</p>
+                                </div>
+                            <div class="card-footer clearfix">
+                                    <button class="whiteButton" routerLink='/bingo' >Bingo</button>
+                                    <button class="btn btn-primary" (click)="loadPromoContent(promotion.id)">Read More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="promo-item" *ngFor="let promotion of promotions">
+                            <div class="card">
+                                <img src="{{tempImagePath}}{{promotion.image}}" alt="">
+                                <div class="card-body clearfix">
+                                    <div class="card-content">
+                                        <h4>{{promotion.title}}</h4>
+                                        <p>{{promotion.snippet}}</p>
+                                    </div>
+                                    
+                                <div class="card-footer clearfix">
+                                        <button class="whiteButton" routerLink='/bingo' >Bingo</button>
+                                        <button class="btn btn-primary" (click)="loadPromoContent(promotion.id)">Read More</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+             <!-- <div class="promotion-data-box"> 
+                <div class="promotion-data">
+                    <div class="promotion-thumb"> 
+                        <img src="/assets/img/promotions-pic.jpg" />
+                    </div>
+                    <div class="promotion-info"> 
+                        <h3>Promotion 1</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    </div>
+                    <div class="promotion-bt-group"> 
+                        <a href="javascript:void(0)" routerLink="/bingo" class="small-btn">Bingo</a>
+                        <a href="javascript:void(0)" class="read-m-btn">Read More</a>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="promotion-data-box"> 
+                <div class="promotion-data">
+                    <div class="promotion-thumb"> 
+                        <img src="/assets/img/promotions-pic.jpg" />
+                    </div>
+                    <div class="promotion-info"> 
+                        <h3>Promotion 1</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    </div>
+                    <div class="promotion-bt-group"> 
+                        <a href="javascript:void(0)" routerLink="/bingo" class="small-btn">Bingo</a>
+                        <a href="javascript:void(0)" class="read-m-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promotion-data-box"> 
+                <div class="promotion-data">
+                    <div class="promotion-thumb"> 
+                        <img src="/assets/img/promotions-pic-2.jpg" />
+                    </div>
+                    <div class="promotion-info"> 
+                        <h3>Promotion 1</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    </div>
+                    <div class="promotion-bt-group"> 
+                        <a href="javascript:void(0)" routerLink="/bingo" class="small-btn">Bingo</a>
+                        <a href="javascript:void(0)" class="read-m-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promotion-data-box"> 
+                <div class="promotion-data">
+                    <div class="promotion-thumb"> 
+                        <img src="/assets/img/promotions-pic-3.jpg" />
+                    </div>
+                    <div class="promotion-info"> 
+                        <h3>Promotion 1</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    </div>
+                    <div class="promotion-bt-group"> 
+                        <a href="javascript:void(0)" routerLink="/bingo" class="small-btn">Bingo</a>
+                        <a href="javascript:void(0)" class="read-m-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promotion-data-box"> 
+                <div class="promotion-data">
+                    <div class="promotion-thumb"> 
+                        <img src="/assets/img/promotions-pic-4.jpg" />
+                    </div>
+                    <div class="promotion-info"> 
+                        <h3>Promotion 1</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    </div>
+                    <div class="promotion-bt-group"> 
+                        <a href="javascript:void(0)" routerLink="/bingo" class="small-btn">Bingo</a>
+                        <a href="javascript:void(0)" class="read-m-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promotion-data-box"> 
+                <div class="promotion-data">
+                    <div class="promotion-thumb"> 
+                        <img src="/assets/img/promotions-pic-4.jpg" />
+                    </div>
+                    <div class="promotion-info"> 
+                        <h3>Promotion 1</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    </div>
+                    <div class="promotion-bt-group"> 
+                        <a href="javascript:void(0)" routerLink="/bingo" class="small-btn">Bingo</a>
+                        <a href="javascript:void(0)" class="read-m-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promotion-data-box"> 
+                <div class="promotion-data">
+                    <div class="promotion-thumb"> 
+                        <img src="/assets/img/promotions-pic.jpg" />
+                    </div>
+                    <div class="promotion-info"> 
+                        <h3>Promotion 1</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    </div>
+                    <div class="promotion-bt-group"> 
+                        <a href="javascript:void(0)" routerLink="/bingo" class="small-btn">Bingo</a>
+                        <a href="javascript:void(0)" class="read-m-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promotion-data-box"> 
+                <div class="promotion-data">
+                    <div class="promotion-thumb"> 
+                        <img src="/assets/img/promotions-pic-2.jpg" />
+                    </div>
+                    <div class="promotion-info"> 
+                        <h3>Promotion 1</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    </div>
+                    <div class="promotion-bt-group"> 
+                        <a href="javascript:void(0)" routerLink="/bingo" class="small-btn">Bingo</a>
+                        <a href="javascript:void(0)" class="read-m-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promotion-data-box"> 
+                <div class="promotion-data">
+                    <div class="promotion-thumb"> 
+                        <img src="/assets/img/promotions-pic-3.jpg" />
+                    </div>
+                    <div class="promotion-info"> 
+                        <h3>Promotion 1</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    </div>
+                    <div class="promotion-bt-group"> 
+                        <a href="javascript:void(0)" routerLink="/bingo" class="small-btn">Bingo</a>
+                        <a href="javascript:void(0)" class="read-m-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promotion-data-box"> 
+                <div class="promotion-data">
+                    <div class="promotion-thumb"> 
+                        <img src="/assets/img/promotions-pic.jpg" />
+                    </div>
+                    <div class="promotion-info"> 
+                        <h3>Promotion 1</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    </div>
+                    <div class="promotion-bt-group"> 
+                        <a href="javascript:void(0)" routerLink="/bingo" class="small-btn">Bingo</a>
+                        <a href="javascript:void(0)" class="read-m-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promotion-data-box"> 
+                <div class="promotion-data">
+                    <div class="promotion-thumb"> 
+                        <img src="/assets/img/promotions-pic-5.jpg" />
+                    </div>
+                    <div class="promotion-info"> 
+                        <h3>Promotion 1</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    </div>
+                    <div class="promotion-bt-group"> 
+                        <a href="javascript:void(0)" routerLink="/bingo" class="small-btn">Bingo</a>
+                        <a href="javascript:void(0)" class="read-m-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promotion-data-box"> 
+                <div class="promotion-data">
+                    <div class="promotion-thumb"> 
+                        <img src="/assets/img/promotions-pic.jpg" />
+                    </div>
+                    <div class="promotion-info"> 
+                        <h3>Promotion 1</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    </div>
+                    <div class="promotion-bt-group"> 
+                        <a href="javascript:void(0)" routerLink="/bingo" class="small-btn">Bingo</a>
+                        <a href="javascript:void(0)" class="read-m-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promotion-data-box"> 
+                <div class="promotion-data">
+                    <div class="promotion-thumb"> 
+                        <img src="/assets/img/promotions-pic-3.jpg" />
+                    </div>
+                    <div class="promotion-info"> 
+                        <h3>Promotion 1</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    </div>
+                    <div class="promotion-bt-group"> 
+                        <a href="javascript:void(0)" routerLink="/bingo" class="small-btn">Bingo</a>
+                        <a href="javascript:void(0)" class="read-m-btn">Read More</a>
+                    </div>
+                </div>
+            </div> -->
+
+
+        </div>
+    </div>
+</section>

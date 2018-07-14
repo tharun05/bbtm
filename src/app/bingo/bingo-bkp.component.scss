@@ -1,0 +1,1858 @@
+@import "~variables.scss";
+@import "~mixins.scss";
+.bingo-testimonials {
+  background: $bingo-testimonial-bg;
+  padding: 20px 0 8px 0;
+  @media only screen and (max-width: 1260px) {
+    background: transparent;
+    padding: 20px 0 78px 0;
+  }
+  @media only screen and (max-width: 767px) {
+    padding: 25px 0 18px 0;
+  }
+   ::ng-deep .testimonials-sec {
+    margin: 0px;
+    .pagination {
+      li {
+         ::ng-deep i {
+          color: #fff !important;
+          @media only screen and (max-width: 1260px) {
+            color:#49526e !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ld-upcoming-lottery {
+  position: relative;
+  margin: 10px auto 65px;
+  .container {
+    .sorting_wrap {
+      background: #fff;
+      margin-bottom: 20px;
+      border: 1px solid #E2DFE9;
+      box-sizing: border-box;
+      ul {
+        margin: 0px auto;
+        padding: 10px 0;
+        list-style: none;
+        display: table;
+        vertical-align: middle;
+        width: calc(100% - 193px);
+        li {
+          display: table-cell;
+          text-align: center;
+          cursor: pointer;
+          padding: 0;
+          line-height: 1;
+          vertical-align: middle;
+          transition: all .25s ease;
+
+          i {
+            font-size: 26px;
+            line-height: 0px;
+            vertical-align: middle;
+            margin-left: 5px;
+            transition: all .25s ease;
+          }
+          &.active {
+            color: $main-theme-header-bg;
+            font-weight: 700;
+            i {
+              transform: rotate(180deg);
+            }
+          }
+
+          a {
+            display: block;
+            color: $main-primary-text-color;
+            font-size: 17px;
+            font-family: $main-primary-ef-reg;
+            font-weight: 500;
+            letter-spacing: -0.2px;
+            cursor: not-allowed;
+
+
+            @media only screen and (max-width: 1199px) {
+              font-size: 16px;
+            }
+          }
+          &:first-child {
+            width: 24%;
+            text-align: center;
+            @media only screen and (max-width: 1199px) {
+              width:24%;
+            }
+          }
+          &:nth-child(2) {
+            width: 7%;
+            text-align: center;
+            @media only screen and (max-width: 1199px) {
+              width:7%;
+            }
+          }
+          &:nth-child(3) {
+            width: 10%;
+            @media only screen and (max-width: 1199px) {
+              width:12%;
+            }
+          }
+          &:nth-child(4) {
+            width: 6%;
+            @media only screen and (max-width: 1199px) {
+              width:11%;
+            }
+          }
+          &:nth-child(5) {
+            width: 10%;
+            @media only screen and (max-width: 1199px) {
+              width:7%;
+              text-align: center;
+            }
+          }
+          &:nth-child(6) {
+            width: 10%;
+            @media only screen and (max-width: 1199px) {
+              width:12%;
+            }
+          }
+          &:nth-child(7) {
+            width: 10%;
+            @media only screen and (max-width: 1199px) {
+              width:11%;
+            }
+          }
+          &:nth-child(8) {
+            width: 10%;
+            @media only screen and (max-width: 1199px) {}
+          }
+          &:nth-child(9) {
+            width: 10%;
+            @media only screen and (max-width: 1199px) {}
+          }
+        }
+      }
+    }
+    .svg path {
+      fill: red;
+    }
+    .sliderLotteryWrap {
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+    .mat-form-field {
+      .mat-form-field-wrapper {
+        width: 100%;
+      }
+    }
+    .card-body {
+      .big-screen.prize-money {
+        width: 55%;
+        margin-right: 7%;
+        float: left;
+        border-bottom: 0px !important;
+        @media only screen and (max-width: 991px) {
+          width: 48%;
+          margin-right: 9%;
+        }
+        @media only screen and (max-width: 768px) {
+          width: 52%;
+          max-width: 162px;
+          margin-right: 8%;
+        }
+        @media only screen and (min-width: 420px)and (max-width: 767px) {
+          width: 50%;
+        } // @media only screen and (max-width: 370px) {
+        //     min-width: 150px;
+        //     width: 45%;
+        // }
+        @media only screen and (max-width: 414px) {
+          //min-width: 135px;
+          width: 50%;
+          margin-right: 0px;
+        }
+        h2 {
+          font-size: 18px;
+          letter-spacing: -0.2px;
+          font-weight: bold;
+          text-align: left;
+          font-family: $main-primary-ef-reg;
+          color: $main-primary-text-color;
+          text-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.5);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .games-thumb {
+          position: relative;
+          margin-top: 30px;
+          max-width: 182px;
+          max-height: 101px;
+          @media only screen and (max-width: 370px) {
+            max-height: 83.5px;
+          }
+          .games_logo {
+            max-height: 121px;
+            max-width: 182px;
+            width: 100%;
+            border-radius: 4px;
+          }
+          .games-thumb-mask {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0px;
+            top: 0;
+            background: $games-thumb-mask-bg;
+            text-align: center;
+            color: $white;
+            border-radius: 4px;
+            transition: all .35s;
+            opacity: 0;
+            visibility: hidden;
+            .games-thumb-mask-inn {
+              position: absolute;
+              top: 50%;
+              max-height: 101px;
+              width: 100%;
+              text-align: center;
+              transform: translateY(-50%);
+              h4 {
+                margin-bottom: 3px;
+                a {
+                  color: $white;
+                  font-size: 20px;
+                  text-transform: uppercase;
+                  font-family: $main-primary-ef-reg;
+                  font-weight: 500;
+                  &:hover {
+                    text-decoration: none;
+                  }
+                  i {
+                    font-size: 40px;
+                    color: $games-thumb-mask-player-clr;
+                  }
+                }
+              }
+              .hourglass-icon.card_info {
+                font-size: 20px;
+                font-family: $main-primary-ef-reg;
+                letter-spacing: -0.2px;
+                line-height: 24px;
+                font-weight: 500;
+                text-transform: capitalize;
+                .time {
+                  color: #f00;
+                }
+              }
+            }
+          }
+          &:hover {
+            .games-thumb-mask {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+        .games_moderator {
+          position: relative;
+          z-index: 1;
+          max-width: 180px;
+          width: 100%;
+          .games_circular {
+            width: 54px;
+            height: 54px;
+            border: 5px solid #fff;
+            border-radius: 100%;
+            position: absolute;
+            top: -12px;
+            right: -27px;
+            border-radius: 100%;
+            position: absolute;
+            background: #1192bf;
+            display: block;
+            color: #fff;
+            text-align: center;
+            border-radius: 100%;
+            margin: 0 auto;
+            line-height: 43px;
+            &:before {
+              content: "";
+              position: absolute;
+              width: 34px;
+              top: 3px;
+              left: 3px;
+              height: 34px;
+              border: 2px solid #fff;
+              -webkit-border-radius: 100%;
+              border-radius: 100%;
+            }
+            @media only screen and(max-width:767px) {
+              top: -5px;
+              right: -2px;
+            }
+          }
+        }
+      }
+      .card-footer {
+        width: 38%;
+        float: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+        div span {
+          font-size: 13px;
+          color: $main-primary-text-color;
+          font-family: $main-primary-ef-reg;
+        }
+        .timeTicker,
+        .users_login,
+        .Bingo_card,
+        .cup_wrap,
+        .jackpot_box {
+          margin-bottom: 7px;
+          @media screen and (min-width: 993px) and (max-width:1199px) {
+            margin-top: 4px;
+          }
+          @media screen and (max-width: 440px) {
+            margin-bottom: 3px;
+          }
+          @media screen and (max-width: 370px) {
+            margin-bottom: 0px;
+          }
+          svg {
+            float: left;
+            margin-right: 5px;
+          }
+          .card_info,
+          .time-num-holder span.time,
+          .jackpot_box_inn {
+            float: left;
+            padding-left: 0;
+            line-height: 27px;
+            color: $main-primary-text-color;
+            font-size: 18px;
+            letter-spacing: -0.2px;
+          }
+          .card_info {
+            padding-left: 0px;
+            line-height: 18px;
+            margin-top: 5px;
+          }
+        }
+        .timeTicker {
+          margin-bottom: 16px;
+          min-width: 130px;
+          width: 130px;
+          margin-left: 0px;
+          span {
+            padding-left: 0px;
+          }
+          .highlight_timer {
+            background: $bingo-highlight-timer-bg;
+            border-radius: 3.6px;
+            width: 100%;
+            float: left;
+            padding: 5px 9px 3px 1px;
+            @media only screen and (max-width: 778px) {
+              padding: 5px 9px 3px 1px;
+            }
+            svg.tab_hover {
+              fill: #fff !important;
+            }
+            span {
+              color: #fff !important;
+              padding-left: 0px !important;
+              margin-top: -1px;
+              @media only screen and (max-width: 778px) {
+                line-height: 18px;
+              }
+            }
+          }
+          .normal_timer {
+            width: 100%;
+            float: left;
+            padding: 6px 9px 4px 1px;
+            @media only screen and (max-width: 778px) {
+              padding: 5px 9px 3px 1px;
+            }
+            .card_info {
+              margin-top: 0px;
+            } // svg.tab_hover{
+            //     margin-top: 10px;
+            // }
+          }
+        }
+        .type-var {
+          //max-width:66px;
+          width: 11%;
+          float: left;
+          @media (max-width: 1199px) {
+            max-width:60px;
+          }
+          .type-var-inn {
+            width: 50px;
+            height: 50px;
+            background: $ball-bingo-90-icon-bg;
+            display: block;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            border-radius: 100%;
+            margin: 0 auto;
+            margin-top: -9px;
+            &.var-bingo-75 {
+              background: $var-bingo-75-icon-bg;
+            }
+            &.var-bingo-70 {
+              background: $ball-bingo-70-icon-bg;
+            }
+            &:before {
+              content: "";
+              position: absolute;
+              width: 40px;
+              top: 3px;
+              left: 3px;
+              height: 40px;
+              border: 2px solid #fff;
+              border-radius: 100%;
+            }
+            span {
+              color: #fff;
+              letter-spacing: -0.32px;
+              font-size: 17px;
+              line-height: 50px;
+            }
+          }
+        }
+        .timeTicker {
+          .timeTicker {
+            margin-bottom: 0px;
+          }
+        }
+        @media screen and (max-width:991px) {
+          width: 42%;
+        }
+        @media screen and (max-width:768px) {
+          min-width: 125px;
+          float: right;
+          width: 38%;
+          margin-left: 0px;
+        }
+        @media screen and (max-width:768px) {
+          float: left;
+          margin-left: 0px;
+        }
+        @media screen and (max-width:480px) {
+          float: right;
+        }
+      }
+    }
+    .header-row {
+      width: 100%;
+      margin: 20px auto 40px;
+      background-color: $latest-results-bgcolor;
+      max-height: 70px;
+      display: inline-block;
+      justify-content: space-between;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 17px solid transparent;
+        border-right: 17px solid transparent;
+        border-top: 17px solid $main-primary-bg;
+        left: 54px;
+        bottom: -14px;
+        display: block;
+        @media screen and (max-width: 767px) {
+          bottom: 4px;
+        }
+      }
+      @media screen and (max-width:767px) {
+        margin-bottom: 0px;
+      }
+      @include pinkSectionHeader;
+      .skew-header {
+        float: left;
+        width: 32%;
+        @media screen and (max-width: 992px) {
+          width:38%;
+        }
+        @media screen and (max-width:767px) {
+          width: 100%;
+          margin-top: 10px;
+        }
+        @media screen and (min-width: 993px) and (max-width:1199px) {
+          width: 37%;
+          svg.Popular-bingo-rooms {
+            width: 50px;
+          }
+          .text {
+            h1 {
+              font-size: 18px;
+            }
+          }
+        }
+        .header-bg {
+          background-size: 100%;
+          height: 70px;
+          padding-bottom: 0px;
+          @media only screen and (max-width: 767px) {
+            height:60px;
+            padding-bottom: 0px;
+            margin-bottom: 20px;
+            overflow: visible;
+            &:after {
+              display: none !important;
+            }
+          }
+          .text-container {
+            padding: 12px 20px;
+            @media only screen and (max-width: 767px) {
+              padding: 8px 13px;
+            }
+            .icon {
+              i {
+                font-size: 45px;
+              }
+            }
+            .text {
+              h1 {
+                font-size: 22px;
+                line-height: 24px;
+                letter-spacing: -0.2px;
+                font-family: $main-primary-ef-reg;
+                @media only screen and (max-width: 767px) {
+                  font-size:20px !important;
+                }
+              }
+            }
+          }
+        }
+      }
+      .upcoming_search {
+        float: left;
+        width: 25%;
+        padding: 13px 0;
+        @media only screen and (max-width: 767px) {
+          Display:none;
+        }
+        .footer-search-form {
+          max-width: 300px;
+          width: 100%;
+          position: relative;
+          float: right;
+          input {
+            width: 100%;
+            height: 45px;
+            font-size: 18px;
+            border: 1px solid $slotsDGreyColor;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            padding: 0px 20px;
+            box-sizing: border-box;
+            font-family: $main-primary-ef-reg;
+            font-weight: 400;
+            &:focus {
+              border: 1px solid $search-button-focus-bg;
+              color: $main-primary-text-color;
+            }
+            &:focus+button {
+              background: $search-button-focus-bg;
+              border: 1px solid $search-button-focus-bg;
+            }
+            @media screen and (max-width: 767px) {
+              &:focus {
+                border: 0px;
+              }
+              &:focus+button {
+                background: transparent;
+                border: 0;
+              }
+            }
+            @media only screen and (max-width: 992px) {
+              padding: 0 10px 0 10px;
+            }
+          }
+           ::-webkit-input-placeholder {
+            /* Chrome/Opera/Safari */
+            color: $upcoming-search-placeholder-clr;
+          }
+           ::-moz-placeholder {
+            /* Firefox 19+ */
+            color: $upcoming-search-placeholder-clr;
+          }
+           :-ms-input-placeholder {
+            /* IE 10+ */
+            color: $upcoming-search-placeholder-clr;
+          }
+           :-moz-placeholder {
+            /* Firefox 18- */
+            color: $upcoming-search-placeholder-clr;
+          }
+          button {
+            border: 1px solid $main-primary-bg;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            background: $main-primary-bg;
+            width: 45px;
+            border-radius: 0 4px 4px 0;
+            padding: 7px 2px;
+            i {
+              margin-left: 0px;
+              font-size: 22px;
+            }
+          }
+        }
+      }
+      .filter-btn {
+        display: none;
+        width: 30%;
+        float: left;
+        height: 60px;
+        background: $main-primary-bg;
+        @media screen and (max-width: 767px) {
+          position: absolute;
+          ;
+          right: 0px;
+          top: 0px;
+        }
+        button {
+          background: $main-primary-bg;
+          color: $white;
+          height: 60px;
+          line-height: 60px;
+          border: 0px;
+          padding: 0px;
+          width: 100%;
+          text-align: center;
+          font-size: 18px;
+          font-family: $main-primary-ef-reg;
+          font-weight: 500;
+          i {
+            margin-left: 0px !important;
+            float: inherit !important;
+            font-size: 22px;
+            top: 0px;
+          }
+        }
+      }
+      .search {
+        position: relative;
+        &.desktop {
+          //float: right;
+          display: inline-flex;
+          align-items: center;
+          margin-right: 20px;
+          padding: 0px 0;
+          height: 70px;
+          @media screen and (max-width: 992px) {
+            width: 32%;
+          }
+          @media screen and (max-width: 767px) {
+            width: 100%;
+            float: left;
+            margin-right: 0px;
+            height: 60px;
+            .form-group {
+              input {
+                height: 60px;
+                line-height: 60px;
+                border-radius: 0px;
+                padding-left: 70px;
+                font-size: 18px !important;
+                border: 0px;
+                @media screen and (max-width: 480px) {
+                  padding-left: 55px;
+                  padding-right: 10px;
+                }
+              }
+              button {
+                background: transparent;
+                left: 0;
+                width: 64px;
+                @media screen and (max-width: 480px) {
+                  width: 50px;
+                }
+                &:before {
+                  content: "\f002";
+                  position: absolute;
+                  font-family: fontawesome;
+                  right: 13px;
+                  color: #e0dde8;
+                  font-size: 22px;
+                  top: 14px;
+                }
+                i {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+        .form-group {
+          width: 300px;
+          position: relative;
+          input {
+            width: calc(100% - 45px);
+            height: 45px;
+            font-size: 18px;
+            border: 1px solid $slotsDGreyColor;
+            border-radius: 4px 0 0 4px;
+            padding: 0px 20px;
+            box-sizing: border-box;
+            font-family: $main-primary-ef-reg;
+            font-weight: 400;
+            &::placeholder {
+              color: $slotsDGreyColor;
+            }
+            &:focus {
+              border: 1px solid $search-button-focus-bg;
+              color: $main-primary-text-color;
+            }
+            &:focus+button {
+              background: $search-button-focus-bg;
+              border: 1px solid $search-button-focus-bg;
+            }
+            @media screen and (max-width: 992px) {
+              font-size: 15px !important;
+            }
+            @media screen and (max-width: 767px) {
+              &:focus {
+                border: 0px;
+              }
+              &:focus+button {
+                background: transparent;
+                border: 0;
+              }
+            }
+          }
+          @media only screen and (max-width:767px) {
+            width: 100%;
+          }
+          button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            background: $main-primary-bg;
+            width: 45px;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            padding: 0;
+            svg {
+              position: relative;
+              top: 4px;
+            }
+            i {
+              background: url(/assets/img/search.svg) no-repeat 0 center;
+              background-size: 100%;
+              display: inline-block;
+              width: 20px;
+              height: 100%;
+            }
+          }
+        }
+        .search-results-wrap {
+          position: absolute;
+          right: 0;
+          top: 70px;
+          z-index: 2;
+          width: 300px;
+          min-height: 40px;
+          height: auto;
+          color: $slotsWColor;
+          -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 1);
+          box-shadow: 0px 0px 6px rgba(0, 0, 0, 1);
+          padding-top: 25px;
+          background: $base-blue;
+          border-radius: 5px;
+          @media only screen and(max-width: 767px) {
+            position: absolute;
+            left: 0;
+            top: 70px;
+            width: calc(100% - 30px);
+            margin: 0px auto;
+          }
+          .icon-close {
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            font-size: 10px;
+            cursor: pointer;
+            &:before {
+              font-weight: bold;
+            }
+          }
+          &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid $base-blue;
+            top: -10px;
+            left: calc(50% - 10px);
+          }
+          .no-result {
+            text-align: center;
+            cursor: none;
+          }
+        }
+        .search-results {
+          margin: 0;
+          padding: 0 4px 10px 4px;
+          width: 100%;
+          height: 100%;
+          max-height: 300px;
+          background: $base-blue;
+          border-radius: 5px;
+          overflow-y: auto;
+          overflow-x: hidden;
+          box-sizing: border-box;
+          li {
+            margin: 0;
+            padding: 8px 10px;
+            list-style: none;
+            font-size: 14px;
+            border-bottom: 1px solid $search_boder_top;
+            border-top: 1px solid $search_boder_bottom;
+            cursor: pointer;
+            &:first-child {
+              padding-top: 0;
+              border-top: 0;
+            }
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+      .sorting {
+        float: right;
+        align-self: center;
+        margin-right: 20px;
+        padding: 15px 0;
+        @media only screen and (max-width: 991px) {
+          Display:none;
+        }
+        @media only screen and (min-width: 1000px) and (max-width:1200px) {
+          margin-right: 0px;
+          padding: 3px 0;
+          position: absolute;
+          right: 18px;
+          top: 70px;
+        }
+        .btn-group {
+          display: flex;
+          align-items: center;
+          box-sizing: border-box;
+        }
+        .no-fill {
+          background-color: transparent;
+          border: 0;
+          margin: 0 5px;
+          cursor: pointer;
+          outline: none;
+          padding: 5px 0;
+          .icon {
+            &.active {
+              svg.tab_hover {
+                fill: $grid-list-active-clr;
+              }
+            }
+          }
+          &:first-child {
+            margin-right: 15px;
+          }
+        }
+      }
+      @media screen and (min-width: 993px) and (max-width:1199px) {
+        .upcoming_search {
+          .footer-search-form {
+            input {
+              font-size: 15px;
+            }
+          }
+        }
+        .users_online {
+          font-size: 15px;
+          width: 19%;
+          margin-left: 2%;
+        }
+      }
+    }
+    .filter-tab {
+      width: 100%;
+      background: #fff;
+      margin-bottom: 30px;
+      border: 1px solid #E2DFE9;
+      box-sizing: border-box;
+      height: 90px;
+      margin-top: -45px;
+      padding-top: 10px;
+      .form-holder {
+        display: inline-block;
+        align-items: flex-end;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        .mat-form-field {
+          font-size: 15.6px;
+          display: inline-flex;
+          flex-direction: column;
+          width: 14%;
+          align-items: flex-end;
+          color: $main-primary-text-color;
+        }
+      }
+      .mat-form-field-wrapper {
+        padding-bottom: 5px;
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      .header-row.search_filter {
+        background: $white;
+        height: 60px;
+        padding: 0px;
+        margin: 5px 15px 6px;
+        width: calc(100% - 30px);
+        &:before {
+          display: none;
+        }
+        .users_online,
+        .skew-header {
+          display: none;
+        }
+        .upcoming_search {
+          display: block;
+          padding: 0px;
+          width: 70% !important;
+          float: left !important;
+          margin-right: 0px;
+          .footer-search-form {
+            max-width: 100%;
+            input {
+              height: 60px;
+              line-height: 60px;
+              border-radius: 0px;
+              border: 0px;
+              padding-left: 70px;
+              font-size: 18px !important;
+              @media screen and (max-width: 480px) {
+                padding-left: 55px;
+                padding-right: 10px;
+              }
+            }
+            button {
+              height: 60px;
+              background: transparent;
+              border: 0px;
+              left: 0;
+              width: 64px;
+              @media screen and (max-width: 480px) {
+                width: 50px;
+              }
+              svg {
+                display: none;
+              }
+              &:before {
+                content: "\f002";
+                position: absolute;
+                font-family: fontawesome;
+                right: 13px;
+                color: #e0dde8;
+                font-size: 22px;
+                top: 14px;
+                font-weight: normal;
+              }
+            }
+          }
+        }
+        .filter-btn {
+          display: none;
+        }
+      }
+    }
+    .content {
+      margin: 20px auto 0;
+    }
+    .mobile-header {
+      h2 {
+        font-family: $font-secondary-SemiBold;
+        margin: 10px 0;
+        text-align: center;
+        @media screen and (max-width: 480px) {
+          font-size: 18px;
+        }
+      }
+    }
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      @media (min-width: 1200px) {
+        margin: 0 -15px;
+      }
+      @media (max-width: 1200px) {
+        margin: 0 -8px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .card-col {
+        /*    display: flex;*/
+        flex-direction: column;
+        margin-bottom: 20px;
+        width: 100%;
+        @media (min-width: 1200px) {
+          padding: 0 15px;
+          width: 33.333%
+        }
+        @media (max-width: 1200px) {
+          padding: 0 8px;
+          width: 50%
+        }
+        @media (max-width: 767px) {
+          width: 100%;
+          margin-bottom: 10px;
+          padding: 0px 15px;
+        }
+        .card {
+          @include cardBasicStyle;
+          width: 100%;
+          height: 100%;
+          padding: 15px 18px;
+          display: inline-block;
+          @media (max-width: 767px) {
+            padding:15px 17px;
+            min-height: 210px;
+            height: 100%;
+          }
+          .card-body {
+            width: 100%;
+            position: relative;
+          }
+          .result-info-holder {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            .lotteryBall {
+              width: 85px;
+              min-width: 85px;
+              height: 85px;
+              @include loaderPlaceholderAnimation;
+            }
+            .lottery-title {
+              text-align: right;
+              h5,
+              h4 {
+                margin: 0;
+                font-weight: normal;
+                @include loaderPlaceholderAnimation;
+                &.animated-background {
+                  height: 16px;
+                  width: 160px;
+                  margin: 10px 0;
+                }
+              }
+              h5 {
+                font-family: $font-primary-500;
+                font-size: 18px;
+              }
+              h4 {
+                font-family: $font-primary-700;
+                font-size: 20px;
+              }
+            }
+          }
+          .lottery-numbers {
+            width: 100%;
+            display: flex;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            .number {
+              @include loaderPlaceholderAnimation;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              text-align: center;
+              font-family: $font-primary-500;
+              background-color: $lottery-numbers-number-bgcolor;
+              font-size: 19px;
+              color: $lottery-numbers-number-color;
+              float: left;
+              margin-right: 6px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              &.spl-num {
+                border-radius: $spl-num-radius;
+              }
+            }
+            @include allLotteryNumberColored;
+          }
+          .btn-group {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .button {
+              @include loaderPlaceholderAnimation;
+              &.animated-background {
+                width: 150px;
+                height: 40px;
+                margin: 0px 0px;
+                border-radius: 4px;
+                &:first-child {
+                  margin-right: 20px;
+                }
+              }
+            }
+            .btn.more-info {
+              float: left;
+              font-family: $font-primary-500;
+              padding: 6px 12px;
+              line-height: 24px;
+              font-size: 20px;
+              text-align: center;
+              .btn-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+              i {
+                font-size: 30px;
+                margin-left: 30px;
+                float: right;
+                position: relative;
+                top: -2px;
+              }
+              &:hover {
+                background-color: $lottery-btn-bgcolor;
+                color: $lottery-btn-color;
+                border-color: $lottery-btn-bordercolor;
+              }
+            }
+            .btn.place-bet {
+              float: right;
+              font-family: $font-primary-700;
+              font-size: 18px;
+              line-height: 22px;
+              padding: 11px 12px;
+              border: 0px;
+              min-width: 95px;
+            }
+          }
+        }
+      }
+    }
+    /* list view styles below*/
+    .card-grid {
+      .card-col {
+        &.list-view:last-child {
+          margin-bottom: 35px;
+        }
+        &.list-view {
+          width: 100% !important;
+          margin-bottom: 10px;
+          .card {
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            .result-info-holder {
+              width: 30%;
+              align-items: center;
+              justify-content: flex-start;
+              margin-right: 20px;
+              @media screen and (min-width: 993px) and (max-width:1199px) {
+                width: 32%;
+              }
+              .lotteryBall {
+                margin-right: 15px;
+              }
+              .lottery-title {
+                text-align: left;
+                h4 {
+                  margin: 0;
+                  font-size: 18px;
+                }
+              }
+            }
+            .big-screen.prize-money {
+              width: 24%;
+              margin-right: 0px;
+              position: relative;
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              overflow: hidden;
+              .games_moderator {
+                width: 22%;
+                height: 70px;
+                position: absolute;
+                right: 0;
+                @media screen and (max-width: 1199px) {
+                  height: 50px;
+                }
+                &:before {
+                  content: "";
+                  position: absolute;
+                  width: 13px;
+                  height: 13px;
+                  border-radius: 100px;
+                  border: 2px solid #fff;
+                  background-color: $primary-green-bg;
+                  right: 17%;
+                  bottom: 0;
+                  z-index: 1;
+                }
+                img {
+                  position: relative;
+                  right: 0;
+                  top: 0;
+                  display: block;
+                  margin: 0 auto;
+                  height: 70px;
+                  width: 70px;
+                  border: 0px;
+                  @media screen and (max-width: 1199px) {
+                    height: 50px;
+                    width: 50px;
+                  }
+                }
+              }
+              h2 {
+                left: 170px;
+                width: 115px;
+                font-size: 17px;
+                max-width: 175px;
+                position: absolute;
+                margin-bottom: 0px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+              .games-thumb {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin-top: 0;
+                max-width: 160px;
+                max-height: 90px;
+                overflow: hidden;
+              }
+            }
+            .moderator {
+              text-align: center;
+              width: 7%;
+              float: left;
+              vertical-align: middle;
+              display: table-cell;
+              margin-top: 30px;
+              @media only screen and (max-width: 1199px) {
+                margin-top:20px;
+              }
+            }
+            .card-footer {
+              display: block;
+              width: 57%;
+              max-width: 58%;
+              float: left;
+              margin-top: 30px;
+              margin-left: 0%;
+              .timeTicker,
+              .users_login,
+              .Bingo_card,
+              .cup_wrap,
+              .jackpot_box {
+                display: inline-block;
+                float: left;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                span {
+                  float: inherit;
+                }
+              }
+              .timeTicker {
+                max-width: 130px;
+                width: 130px;
+                margin-bottom: 0px;
+                margin-top: -3px;
+                svg.tab_hover {
+                  height: 18px;
+                  width: 18px;
+                  margin-right: 0px;
+                  fill: $list-view-hourglass-icon-clr;
+                  /*margin-top: 5px;*/
+                }
+                .hourglass-icon.card_info {
+                  line-height: 19px;
+                }
+                .highlight_timer {
+                  display: inline-block;
+                  width: 90px;
+                  display: inline-flex;
+                  align-items: center;
+                  height: 35px;
+                  
+                  .hourglass-icon.card_info {
+                    font-size: 18px;
+                  }
+                }
+                .show-timer {
+                  display: inline-flex;
+                  align-items: center;
+                 
+                  
+                /*  width: 120px;
+                  min-width: 120px;
+                  padding: 5px 9px 5px 6px;*/
+                  &.normal_timer {
+                    .hourglass-icon.card_info {
+                      font-size: 17px;
+                    }
+                    .timer {
+                      span {
+                        color: #f00;
+                      }
+                    }
+                  }
+                }
+              }
+              .users_login {
+                max-width: 90px;
+                width: 100%;
+                span {
+                  width: 100%;
+                  text-align: center;
+                  padding-left: 0px;
+                }
+              }
+              .Bingo_card {
+                //max-width:120px;
+                width: 18%;
+                span {
+                  width: 100%;
+                  text-align: center;
+                  padding-left: 0px;
+                }
+              }
+              .cup_wrap {
+                width: 18%;
+                span {
+                  width: 100%;
+                  text-align: center;
+                  padding-left: 0px;
+                }
+              }
+              .jackpot_box {
+                width: 18%;
+                span {
+                  width: 100%;
+                  text-align: center;
+                  padding-left: 0px;
+                }
+              }
+              .timeTicker {
+                .time-num-holder {
+                  .timeTicker {
+                    div {
+                      float: left;
+                      svg {
+                        width: 22px;
+                        height: 30px;
+                        margin-right: 0px;
+                      }
+                    }
+                  }
+                }
+              }
+              .users_login,
+              .Bingo_card,
+              .cup_wrap {
+                .tab_hover {
+                  display: none;
+                }
+              }
+            }
+            .play_btn {
+              width: 100%;
+              max-width: 133px;
+              float: left;
+              text-align: right;
+              button {
+                border: 0px;
+                border-radius: 0px;
+                width: 133px;
+                padding: 0px;
+                height: 50px;
+                margin-top: 20px;
+                font-size: 18px;
+                font-family: $main-primary-ef-reg;
+              }
+              @media (max-width: 1199px) {
+                max-width: 100%;
+                text-align: center;
+                width: 100% !important;
+                button {
+                  width: 100% !important;
+                  margin-top: 5px !important;
+                }
+              }
+            }
+            .lottery-numbers {
+              width: 40%;
+              margin: 0;
+              @media screen and (min-width: 993px) and (max-width:1199px) {
+                width: 44%;
+              }
+            }
+            .btn-group {
+              width: 30%;
+              justify-content: flex-end;
+              .btn {
+                margin-left: 20px;
+              }
+              .button.animated-background {
+                margin: 6px 10px;
+              }
+              @media screen and (min-width: 993px) and (max-width:1199px) {
+                width: 24%;
+                display: inline-flex;
+                flex-direction: column;
+                .btn {
+                  margin-left: 0;
+                }
+                .btn:first-child {
+                  margin: 0 0 10px 0
+                }
+              }
+            }
+          }
+          @media only screen and (max-width: 1199px) and (min-width :992px) {
+            .card-body {
+              .big-screen.prize-money {
+                .games-thumb {
+                  max-width: 120px;
+                  max-height: 68px;
+                }
+                h2 {
+                  left: 138px;
+                  font-size: 16px;
+                  max-width: 165px;
+                }
+              }
+              .card-footer {
+                //width: 48%;
+                margin-top: 23px;
+                @media (max-width: 1199px) {
+                  width: 69%;
+                  max-width: 69%;
+                  margin-top: 17px;
+                }
+                .users_login {
+                  max-width: 75px;
+                  span {
+                    font-size: 15px;
+                  }
+                }
+                .Bingo_card {
+                  max-width: 110px;
+                  span {
+                    font-size: 15px;
+                  }
+                }
+                .cup_wrap {
+                  max-width: 100px;
+                  span {
+                    font-size: 15px;
+                  }
+                }
+                .jackpot_box {
+                  max-width: 126px;
+                  span {
+                    font-size: 15px;
+                  }
+                }
+              }
+              .play_btn {
+                width: 11%;
+                button {
+                  width: 100px;
+                  height: 40px;
+                  margin-top: 15px;
+                  font-size: 13px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .load_card_list {
+    display: block;
+    .card-col {
+      /*    display: flex;*/
+      flex-direction: column;
+      margin-bottom: 20px;
+      width: 100%;
+      .card {
+        -webkit-box-shadow: 0 1px 1px 0 #A8A8A8;
+        box-shadow: 0 1px 1px 0 #A8A8A8;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        background-color: #ffffff;
+        width: 97%;
+        height: 100%;
+        padding: 15px 18px;
+        display: inline-block;
+        .load_block {
+          height: 0px;
+        }
+      }
+    }
+  }
+  @include allLotteryDrawDetailsCards;
+  .small-screen {
+    &.lottery-name {
+      &.animated-background {
+        width: 100px;
+        height: 10px;
+      }
+    }
+  }
+  .pagination {
+    width: 140px;
+    text-align: center;
+    margin: 20px auto auto;
+    ul {
+      margin: auto;
+      padding: 0;
+      li {
+        border-radius: 50%;
+        background-color: $pagi-dot-bg-color;
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        padding: 0;
+        margin-right: 10px;
+        cursor: pointer;
+        &.selected,
+        &:hover,
+        &:hover.selected {
+          background-color: $brand-ld;
+        }
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    .sliderLotteryWrap {
+      position: relative;
+      overflow: hidden;
+      .showSelectedLotteryPage {
+        visibility: visible;
+        transition: .5s ease-in-out all;
+      }
+      .hideSelectedLotteryPage {
+        position: absolute;
+        visibility: hidden;
+      }
+      .card-group-1.hideSelectedLotteryPage {
+        transform: translateX(-1200px);
+      }
+      .card-group-2.hideSelectedLotteryPage {
+        transform: translateX(1200px);
+      }
+    }
+  }
+  button {
+    font-family: $main-primary-ef-reg;
+    padding: 9px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    .btn-wrapper {
+      display: flex;
+      align-items: center;
+      line-height: 1;
+    }
+    i {
+      font-size: 30px;
+      margin-left: 30px;
+      float: right;
+      position: relative;
+      top: -3px;
+    }
+  }
+  .transparent_btn {
+    background: transparent;
+    color: $main-primary-text-color;
+    border: 0px;
+    margin-top: 10px;
+  }
+  .bingo-pagination {
+    text-align: center;
+    button {
+      width: 35px !important;
+      height: 35px;
+      text-align: center;
+      border-radius: 100%;
+      padding: 0px !important;
+      margin: 0 10px;
+      border: 1px solid #D3D4D7;
+      background-color: $pagination-btn-bg;
+      position: relative;
+      i {
+        position: absolute;
+        float: inherit;
+        color: #D3D4D7;
+        font-size: 26px;
+        top: 50%;
+        height: 26px;
+        margin-top: -14px;
+        left: 50%;
+        margin-left: -6px;
+      }
+      &:last-child {
+        i {
+          margin-left: -4px;
+        }
+      }
+      &:hover,
+      &:focus {
+        background-color: $pagination-btn-active-bg;
+        border: 1px solid $pagination-btn-active-bg;
+        i {
+          color: #fff;
+        }
+      }
+    }
+    .btn-wrapper {
+      line-height: 35px;
+      color: $main-primary-text-color;
+      font-size: 16px;
+      font-weight: 500;
+      font-family: $main-primary-ef-reg;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .ld-upcoming-lottery {
+    .upcoming_search {
+      width: 30% !important;
+      float: right !important;
+      margin-right: 15px;
+      .footer-search-form {
+        input {
+          font-size: 15px !important;
+        }
+      }
+    }
+    .users_online {
+      width: 26% !important;
+      font-size: 13.6px !important;
+      margin-left: 0px !important;
+    }
+    .Popular-bingo-rooms {
+      width: 40px;
+      @media screen and (max-width: 767px) {
+        width: 50px;
+      }
+    }
+    .text {
+      h1 {
+        font-size: 17.6px !important;
+      }
+    }
+    .card-footer {
+      svg.tab_hover {
+        width: 28px !important;
+        @media screen and (max-width: 370px) {
+          width: 26px !important;
+        }
+      }
+      .users_login,
+      .Bingo_card,
+      .cup_wrap,
+      .timeTicker {
+        span {
+          font-size: 18px !important;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+    }
+    .button.main-btn {
+      text-align: center;
+      .transparent_btn {
+        float: inherit !important;
+        background-color: $more-bingo-btn-bg;
+        color: #fff;
+        padding: 9px 30px;
+        font-size: 15pt;
+        max-width: 320px;
+        height: 50px;
+        border-radius: 0px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:767px) {
+  section.ld-upcoming-lottery {
+    margin: 0 auto;
+    margin-top: 10px;
+    .container {
+      padding: 0 0px;
+      .button.main-btn {
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      .header-row {
+        background: transparent;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+        max-height: 100%;
+        height: auto;
+      }
+      .card-grid {
+        margin: 0px !important;
+        .card {
+          border-radius: 0px !important;
+        }
+      }
+      .card-body {
+        .card-footer {
+          .timeTicker {
+            svg {
+              margin: 0px;
+              padding: 0px;
+            }
+          }
+        }
+      }
+    }
+    /*    &:before {
+              content: '';
+              display: block;
+              background: #f0f2f6;
+              width: 110%;
+              min-height: 100px;
+              left: -3%;
+              position: absolute;
+              border-radius: 100%;
+              top: -55px;
+              z-index: 0;
+            }*/
+    .pagination {
+      display: none;
+    }
+    .button {
+      width: 100%;
+      margin: auto;
+      button {
+        width: 100%;
+        padding: 12px 10px;
+        .btn-wrapper {
+          justify-content: center;
+        }
+        i {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {}
+
+.animated-background {
+  @include loaderPlaceholderAnimation;
+  box-shadow: none;
+}
+
+
+
+
+
+
+
+/* nagesh bingo demo*/
+
+.cards_demo {
+  width: auto;
+  display: flex;
+  background: #fff; // height: 150px;
+  margin: 20px auto;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+  text-align: center;
+  align-self: flex-start;
+  align-content: center;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px 0 #A8A8A8;
+  .first_box {
+    width: 23%;
+    align-self: auto;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    .column2 {
+      width: 100%;
+      display: inline-flex; // align-items: stretch;
+      // flex-direction:column;
+      // column-count: 2;
+      // align-items: flex-start;
+      // flex-flow: row wrap;
+      .column1 {
+        //width: 50%;
+        overflow: hidden;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: left;
+        text-overflow: ellipsis;
+        flex: 1;
+        width: 130px;
+        padding-top: 35px;
+        white-space: nowrap;
+      }
+      .imgcolumn {
+        width: 160px;
+        max-width: 160px;
+        padding-right: 10px;
+        display: table-cell; //display: flex;
+      }
+    }
+  }
+  .second_box,
+  .third_box {
+    width: 10%;
+    padding: 10px;
+    align-self: auto
+  }
+  .third_box {}
+  .foutth_box {
+    width: 6%;
+  }
+}
+
+.moder_icon {
+  width: 30px
+}
+
+.bing_filter_time_error {
+  font-size: 12px;
+}

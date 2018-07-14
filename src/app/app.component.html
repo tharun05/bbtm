@@ -1,0 +1,83 @@
+<!-- <div [ngClass]="bannerAvailable == 'true' ? 'show' : 'hide'"> -->
+
+
+<div [ngClass]="isCountryBlocked == false ? 'show' :'hide'">
+  <app-icon-svg></app-icon-svg>
+  <app-footer-svg></app-footer-svg>
+<app-ld-header [isGamePage]="isGameLaunch" [class.reg-logo]="isLogoAllowed()"></app-ld-header>
+</div>
+
+<div class="wrapper" [ngClass]="isCountryBlocked == false ? 'show' :'hide'">
+  <router-outlet ></router-outlet>
+  <app-ld-footer *ngIf="!footerDisable" [ngClass]="isGameLaunch == false ? 'show' :'hide'"></app-ld-footer>
+  <app-footer-short *ngIf="footerDisable" [ngClass]="isGameLaunch == false ? 'show' :'hide'"></app-footer-short>
+</div>
+<modal id="sessionExpiredModal">
+    <div class="modal">
+        <div class="modal-body session-expiry-body">
+          <!-- <div (click)="closeModal('sessionExpiredModal')">
+            <i class="icon-cancel"></i>
+          </div> -->
+          <div class="session-expiry-header">
+            <span class="icon">
+              <i class="icon-time-check"></i>
+            </span>
+            <span class="text">
+              <h5> Gaming Reality Check</h5>
+              <p>Your reminder of the time playing at Bingo69</p>
+            </span>
+
+          </div>
+          <div class="session-expiry-content">
+            <div class="alert-info-box">
+              <span class="icon">
+                <i class="icon-info-fill"></i>
+              </span>
+              <span class="text">
+                <h6>TIME'S UP {{name}}!</h6>
+                <p> You've been playing at Bingo69 for {{sessionLimit}} minutes</p>
+              </span>
+            </div>
+            <ul class="session-expiry-options">
+              <li (click)="sessionContinue()">
+                <a href="javascript:void(0)">
+                  <span class="text">
+                    <h5>Continue session</h5>
+                  </span>
+                </a>
+              </li>
+              <li (click)="moveToTransaction()">
+                <a href="javascript:void(0)">
+                  <span class="text">
+                    <h5>View my transactions</h5>
+                    <h6>Available balance {{balance}}</h6>
+                  </span>
+                </a>
+              </li>
+              <li (click)="moveToRealityCheck()">
+                <a href="javascript:void(0)">
+                  <span class="text">
+                    <h5>Reality check settings</h5>
+                  </span>
+                </a>
+              </li>
+              <li (click)="logout()">
+                <a href="javascript:void(0)">
+                  <span class="text">
+                    <h5>Logout</h5>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
+<!-- </div>
+<div [ngClass]="bannerAvailable != 'true' ? 'show' : 'hide'">
+  <app-loading-screen></app-loading-screen>
+</div> -->
+<ng-container *ngIf="isCountryBlocked != undefined && isCountryBlocked == true && isGameLaunch == false">
+  <app-blocked-country [countryCode]="countryCode"></app-blocked-country>
+</ng-container>

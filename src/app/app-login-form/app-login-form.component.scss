@@ -1,0 +1,45 @@
+/* Login Form Component */
+
+@import "~variables.scss";
+
+.login-box,
+.login-box-promo {
+
+  .text {
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+}
+
+.login-form {
+  input.mat-input-element {
+    margin-top: 7px;
+    margin-bottom: -1px;
+  }
+  .mat-input-suffix mat-icon {
+    top: 0;
+    cursor: pointer;
+  }
+  .ng-valid .mat-form-field-placeholder-wrapper:after {
+    margin-top: 17px;
+  }
+
+  button {
+    margin-top: 40px;
+  }
+
+
+  .text {
+
+    text-align: right;
+    a {
+      font-size: 12px;
+      font-family: $font-primary-500;
+      color: $login-text-anchorcolor;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+@import "~responsive.scss";

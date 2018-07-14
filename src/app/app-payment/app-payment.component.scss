@@ -1,0 +1,624 @@
+@import "~variables.scss";
+@import "~mixins.scss";
+$deposit-bg: #fff;
+$deposit-header-color: #fff;
+$deposit-header-bg:linear-gradient(180deg, #7853CC 0%, #65D5FF 100%);
+$deposit-header-border: #6AB6F3;
+$deposit-btn-bg:#00C333;
+$deposit-icon-color:#7e69af;
+section.payment {
+  background: url(/assets/img/payment_bg.jpg) center center no-repeat;
+  background-size: cover;
+  transition: all 500ms ease-out;
+  .wrapper-box {
+    box-shadow: 0 2px 4px 0 rgba(118, 118, 118, 0.5);
+    margin: 40px auto;
+    display: flex;
+  }
+  .show-small {
+    display: none !important;
+  }
+  .payment-container {
+    width: 74%;
+    background-color: $payment-container-bgcolor;
+    * {
+      box-sizing: border-box;
+    }
+  }
+  .header-row {
+    @include pinkSectionHeader;
+  }
+  .regulatory-icons {
+    float: right;
+    padding: 20px 0;
+    /*    display: inline-flex;
+        align-self: center;
+        justify-content: space-between;
+        margin-right: 20px;*/
+    .svg-icon {
+      margin: 0 10px;
+      svg {
+        height: 20px;
+      }
+      &.pci {
+        svg {
+          height: 27px;
+        }
+      }
+    }
+    /*    @media screen and (min-width: 993px) and (max-width:1199px) {
+          display: flex;
+          flex-wrap: wrap;
+          .svg-icon {
+            display: inline-flex;
+            width: 50%;
+            margin: 5px 0px;
+            justify-content: flex-end;
+          }
+        }*/
+    @media screen and (max-width:340px) {
+      .svg-icon {
+        svg {
+          height: 20px;
+        }
+      }
+    }
+  }
+  .content {
+    /*    padding: 20px 60px 40px;*/
+    padding: 20px 20px 40px 60px;
+    @media screen and (min-width: 769px) and (max-width:1199px) {
+      padding: 20px 20px 40px;
+    }
+    float: left;
+    width: 100%;
+  }
+  .cart-summary {
+    * {
+      box-sizing: border-box;
+    }
+    width: 26%;
+    background-color: $cart-summary-bgcolor;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    .card-sumary-title {
+      border-bottom: 1px solid $card-sumary-title-borderbottomcolor;
+      width: 100%;
+      display: flex;
+      align-self: center;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+      .text {
+        font-size: 16px;
+        font-family: $font-secondary-Medium;
+        display: inline-flex;
+        align-items: center;
+        i {
+          margin-right: 10px;
+        }
+      }
+      .cart-list {
+        background-color: #DB2430;
+        width: 20px;
+        height: 20px;
+        box-sizing: border-box;
+        font-size: 12px;
+        font-family: $font-primary-900;
+        color: $card-list-color;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .ticket-cart-list {
+      background-color: $ticket-card-list-bgcolor;
+      box-shadow: $card-box-shadow;
+      border-radius: $card-border-radius;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      .ticket-details {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        .lottery {
+          display: flex;
+          align-items: center;
+        }
+        .lotteryBall {
+          margin-right: 20px;
+          width: 45px;
+          height: 45px;
+        }
+        .lottery-name {
+          font-family: $font-secondary-Bold;
+          font-size: 14px;
+        }
+        .amount {
+          font-size: 14px;
+          font-family: $font-primary-700;
+        }
+      }
+      .draw-info {
+        .more-info-btn {
+          font-size: 10px;
+          font-family: $font-primary-700;
+          text-align: right;
+          color: $draw-info-color;
+          border-bottom: 1px solid $draw-info-borderbottomcolor;
+          cursor: pointer;
+          display: inline-flex;
+          float: right;
+          i {
+            font-size: 7px;
+          }
+        }
+        .draw-info-details {
+          display: none;
+          margin-top: 10px;
+          p {
+            font-size: 11px;
+            font-family: $font-primary-500;
+            margin: 0;
+            padding-bottom: 3px;
+          }
+        }
+      }
+    }
+    .total-amount {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      flex-grow: 1;
+      .stake {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 15px 0;
+        line-height: 1;
+        padding-right: 10px;
+        &:last-child {
+          position: relative;
+          padding-top: 25px;
+          margin-top: 0px;
+          &:before {
+            content: '';
+            display: block;
+            border-bottom: 1px solid $total-amount-borderbottomcolor;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            right: 0;
+            top: 0;
+          }
+        }
+        .text,
+        .amount {
+          font-size: 14px;
+          font-family: $font-primary-700;
+        }
+        .text {
+          display: inline-flex;
+          align-items: flex-start;
+        }
+        .amount {
+          display: inline-flex;
+          align-items: flex-end;
+          font-size: 16px;
+          &.slant-shape {
+            background: linear-gradient(90deg, #6974B1 0%, #384079 100%);
+            color: $amount-color;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 27% 100%);
+            min-width: 100px;
+            justify-content: flex-end;
+            padding: 5px 10px 5px 40px;
+            align-items: center;
+            margin-right: -10px;
+            min-height: 30px;
+          }
+        }
+      }
+    }
+  }
+  .promotions {
+    width: 26%;
+    flex: 1;
+    display: flex;
+    align-self: stretch;
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width:992px) {
+  section.payment {
+    .payment-container {
+      width: 100%;
+    }
+    .promotions,
+    .cart-summary,
+    .regulatory-icons {
+      display: none;
+    }
+    .show-small {
+      display: flex !important;
+      background-color: $section-payment-show-small-color;
+      float: left;
+      width: 100%;
+      margin: auto;
+      text-align: center;
+      padding: 20px;
+      align-items: center;
+      justify-content: space-between;
+      @media screen and (max-width: 360px) {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:768px) {
+  section.payment {
+    background: none;
+    .wrapper-box {
+      margin: 0;
+      box-shadow: none;
+    }
+    .container {
+      width: 100%;
+    }
+    .header-row {
+      .skew-header {
+        .down-arrow {
+          &:after,
+          &:before {
+            border-bottom-color: $section-payment-header-row-da-borderbottomcolor;
+          }
+        }
+        &.down-arrow-white {
+          .down-arrow {
+            &:after,
+            &:before {
+              border-bottom-color: $section-payment-header-row-daw-borderbottomcolor;
+            }
+          }
+        }
+      }
+    }
+    .content {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+/**starting of deposit modal **/
+
+#quickDepositModal {
+  .payment-type-container {
+    .cashier_heading {
+      text-align: center;
+      max-width: auto;
+      margin: 0 auto 50px;
+      display: block;
+      h1 {
+        margin-bottom: 5px;
+        font-size: 20px;
+        color: #384079;
+      }
+      p {
+        font-size: 14px;
+        letter-spacing: -0.2px;
+        margin-top:0px;
+      }
+    }
+  }
+}
+
+#quickDepositModal {
+  .modal-body {
+    width: 900px;
+    margin: 20x auto;
+    background: $deposit-bg;
+    border-radius: 12px;
+  }
+  .deposit-header {
+    padding: 45px 90px 0px;
+    border-bottom: 0px;
+    border-top-left-radius: 12px 12px;
+    border-top-right-radius: 12px 12px;
+    position: relative;
+    text-align: center;
+    font-family: $main-primary-ef-reg;
+    color: $main-primary-text-color;
+    .close-modal {
+      right: 25px;
+      position: absolute;
+      top: 20px;
+      i {
+        color: $main-primary-text-color;
+        -webkit-text-stroke: 3.5px #ffffff;
+        font-size: 40px;
+        filter: none;
+        -webkit-filter: none;
+      }
+    }
+    .bonus-select {
+      h3 {
+        font-size: 17.03px;
+        font-weight: 900;
+        line-height: 27px;
+        margin: 0;
+      }
+      p {
+        margin: 0px;
+        font-size: 14.59px;
+        letter-spacing: -0.2px;
+        line-height: 17px;
+      }
+    }
+    .payment-method {
+      h3 {
+        font-size: 17.03px;
+        font-weight: 900;
+        line-height: 27px;
+        margin: 0;
+      }
+      p {
+        margin: 0px;
+        font-size: 14.59px;
+        letter-spacing: -0.2px;
+        line-height: 17px;
+      }
+    }
+  }
+  #depositModalContent {
+    padding: 0 56px 20px 76px;
+    .payment-method-data {
+      .form-fields {
+        max-width: 335px;
+        width: 100%;
+        float: right;
+      }
+      .payment-btn {
+        width: 100%;
+        float: right;
+        max-width: 335px;
+      }
+      .quick-pick-holder {
+        label {
+          width: calc(33.333% - 12px);
+        }
+      }
+    }
+    .bonus-lisitng {
+      .thumb-para {
+        color: $main-primary-text-color;
+        .col-sm-3 {
+          max-width: 180px;
+        }
+        h5 {
+          font-size: 17.03px;
+          letter-spacing: -0.24px;
+        }
+        h6 {
+          font-size: 14.59px;
+          letter-spacing: -0.27px;
+          line-height: 18px;
+        }
+        .para {
+          font-size: 14.59px;
+          letter-spacing: -0.24px;
+          line-height: 18px;
+        }
+      }
+    }
+    .header-row {
+      display: none;
+    }
+    .btn-new {
+      font-size: 19.46px;
+      letter-spacing: -0.24px;
+      text-transform: capitalize;
+    }
+    .no-bonus-button {
+      float: right;
+      background: transparent;
+      border: 0px;
+      font-size: 20px;
+      font-family: $main-primary-ef-reg;
+      font-weight: bold;
+      width: 275px;
+      padding: 10px;
+      color: $main-primary-text-color;
+      margin: 30px 0;
+      cursor: pointer;
+      text-align: center;
+      i {
+        font-size: 30px;
+        top: -4px;
+        float: right;
+        position: relative;
+        font-weight: bold;
+      }
+    }
+    p.text {
+      margin-bottom: 0px;
+    }
+    .bonus-heading,
+    .center-dropdown {
+      display: none;
+    }
+    span {
+      i {
+        color: $deposit-icon-color;
+      }
+    }
+    #depositButton-loginModal {
+      background: $deposit-btn-bg;
+    }
+    .mat-slide-toggle {
+      float: right;
+      margin-top: 15px;
+    }
+  }
+  #quickModalSuccess {
+    padding: 20px 42px;
+    .container {
+      width: 100%;
+      max-width: 100%;
+      .deposit-done {
+        color: $main-primary-text-color;
+        h2 {
+          font-size: 17px;
+          letter-spacing: -0.2px;
+          line-height: 20px;
+          font-family: $main-primary-ef-reg;
+        }
+      }
+      .quick-links {
+        margin-left: -10px;
+        margin-right: -10px;
+        .bingo-link,
+        .casino-link,
+        .sratch-link {
+          width: 33.333%;
+          float: left;
+          padding: 10px;
+          text-align: center;
+          position: relative;
+          box-sizing: border-box;
+          img {
+            max-width: 100%;
+          }
+          p {
+            position: absolute;
+            bottom: 14px;
+            max-width: 100%;
+            left: 10px;
+            right: 10px;
+            cursor: pointer;
+            letter-spacing: -0.42px;
+            font-size: 20.16px;
+            background: rgba(0, 0, 0, 0.6);
+            color: $white;
+            padding: 8px;
+            margin: 0;
+            box-sizing: border-box;
+          }
+        }
+      }
+    }
+    .header-row {
+      margin-top: 0px;
+      .header-bg {
+        background: transparent;
+        .down-arrow {
+          display: none;
+        }
+        .text-container {
+          color: $main-primary-text-color;
+          .icon-tick-fill {
+            font-size: 2.5rem;
+            color: $green;
+          }
+          h1 {
+            font-size: 22px;
+            margin-bottom: 2px;
+            font-family: $main-primary-ef-reg;
+          }
+          p {
+            font-size: 14.4px;
+            font-family: $main-primary-ef-reg;
+            letter-spacing: -0.2px;
+            b {
+              font-weight: normal;
+            }
+          }
+        }
+      }
+    }
+  }
+  .skew-header {
+    width: 100%;
+    &:after {
+      display: none;
+    }
+    .header-bg,
+    .text-container {
+      max-width: 100%;
+    }
+    .header-bg {
+      &:after {
+        display: none;
+      }
+    }
+    .text-container {
+      padding: 24px 20px;
+      .text {
+        h1 {
+          font-size: 1.0625rem;
+          max-height: 2.375rem;
+        }
+        p {
+          font-size: 0.75rem;
+        }
+      }
+    }
+    .down-arrow {
+      &:after {
+        left: 50%;
+        width: 100%;
+      }
+      &:before {
+        width: 50%;
+      }
+    }
+  }
+  section.payment {
+    background: none;
+    .payment-container {
+      width: 100%;
+    }
+    .promotions,
+    .cart-summary,
+    .regulatory-icons {
+      display: none;
+    }
+    .show-small {
+      display: none;
+    }
+    .wrapper-box {
+      margin: 0;
+      box-shadow: none;
+    }
+    .container {
+      width: 100%;
+    }
+    .content {
+      padding: 0 0 20px 0;
+      margin: 0;
+      min-height: 520px;
+    }
+  }
+}
+
+
+
+modal {
+  &#profileCompleteModal {
+    .modal {
+      .modal-body {
+        width: 700px;
+        text-align: left;
+        @media screen and (max-width: 767px) {
+          width: 100vw;
+        }
+      }
+    }
+  }
+}

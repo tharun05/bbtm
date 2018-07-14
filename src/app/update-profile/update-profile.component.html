@@ -1,0 +1,85 @@
+<app-complete-profile [callingFrom]="'UpdateProfile'"></app-complete-profile>
+<!-- <div class="content" [ngClass]="userDeatil ? 'show' : 'hide'">
+  <form [formGroup]="myAccountForm" (ngSubmit)="saveDetails('saveDetails')" novalidate>
+    <div id="serverErrorUpdateProfile" class="error-msg hide">{{serverError}}</div>
+    <mat-form-field class="">
+      <input name="firstName" matInput placeholder="First name" formControlName="firstName" [readonly]="isRealUser">
+      <mat-error *ngIf="shouldShowErrors('firstName',myAccountForm)">{{getErrorMessage('firstName',myAccountForm)}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="">
+      <input name="lastName" matInput placeholder="Last name" formControlName="lastName" [readonly]="isRealUser">
+      <mat-error *ngIf="shouldShowErrors('lastName',myAccountForm)">{{getErrorMessage('lastName',myAccountForm)}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="">
+      <input name="address1" matInput placeholder="Street address" formControlName="address1" [readonly]="isRealUser">
+      <mat-error *ngIf="shouldShowErrors('address1',myAccountForm)">{{getErrorMessage('address1',myAccountForm)}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="">
+      <input name="city" matInput placeholder="City" formControlName="city" [readonly]="isRealUser">
+      <mat-error *ngIf="shouldShowErrors('city',myAccountForm)">{{getErrorMessage('city',myAccountForm)}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="">
+      <input name="zip" matInput placeholder="Zip/Postal code" formControlName="zip" [readonly]="isRealUser">
+      <mat-error *ngIf="shouldShowErrors('zip',myAccountForm)">{{getErrorMessage('zip',myAccountForm)}}</mat-error>
+    </mat-form-field> -->
+
+    <!-- <mat-form-field class="">
+      <mat-select name="country" formControlName="country" placeholder="Country" (change)="stateDetails('')" [disabled]="isRealUser">
+        <mat-option *ngFor="let country of countries" [value]="country.iso"  >
+          {{ country.name }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="shouldShowErrors('country',myAccountForm)">{{getErrorMessage('country',myAccountForm)}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="" *ngIf="stateCheck">
+      <mat-select name="state" formControlName="state" placeholder="State/Region" [disabled]="isRealUser">
+        <mat-option *ngFor="let state of stateList" [value]="state.stateCode">
+          {{ state.stateName }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="shouldShowErrors('state',myAccountForm)">{{getErrorMessage('state',myAccountForm)}}</mat-error>
+    </mat-form-field>
+
+    <div class="mobile-div">
+      <div class="mobile-no">
+        <div class="flat-tel-holder">
+          <p class="label-text">International code</p>
+          <div class="tel-holder">
+            <div class="flag">
+              <input name="phone" id="phoneNumberFlag" ng-intl-tel-input formControlName="phone" [readonly]="isRealUser">
+              <div class="clearfix"></div>
+            </div>
+            <mat-form-field class="">
+              <input name="phone" matInput placeholder="Mobile phone number" formControlName="phone" tel [readonly]="isRealUser">
+              <mat-error *ngIf="shouldShowErrors('phone',myAccountForm)">{{getErrorMessage('phone',myAccountForm)}}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <p class="bigwin">
+              <ng-container *ngIf="!shouldShowErrors('phone',myAccountForm)">In case we need to contact you after a big win!</ng-container>
+          </p>
+        </div>
+      </div>
+    </div>
+    <mat-form-field class="dob-box" *ngIf="!isDOBavailable"> -->
+      <!-- <span matPrefix>
+        <i class="icon-cake"></i>
+      </span> -->
+      <!-- <input formControlName="dob" name="dob" matInput [readonly]="true" (click)="picker.open()" [matDatepicker]="picker" placeholder="Select Date of Birth" [max]="minimumDate" (click)="picker.open()">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker [disabled]="isRealUser"></mat-datepicker>
+      <mat-error *ngIf="shouldShowErrors('dob',myAccountForm)">{{getErrorMessage('dob',myAccountForm)}}</mat-error>
+    </mat-form-field>
+    <div class="gender-tab" *ngIf="!isGenderAvailable">
+      <input value="M" type="radio" name="gender" id="male" title="" formControlName="gender" checked/>
+      <label for="male">Male</label>
+      <input value="F" type="radio" name="gender" id="female" title="" formControlName="gender" />
+      <label for="female">Female</label>
+      <mat-error *ngIf="shouldShowErrors('gender',myAccountForm)">{{getErrorMessage('gender',myAccountForm)}}</mat-error>
+    </div>
+    <div class="clearfix"></div>
+    <button *ngIf="!isRealUser" type="button" id="saveDetails" class="btn-new" (click)="saveDetails('saveDetails')" [disabled]="isButtonDisabled(myAccountForm)"> <span>Save Changes</span></button>
+  </form>
+  <div class="clearfix"></div>
+</div> -->

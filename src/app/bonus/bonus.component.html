@@ -1,0 +1,79 @@
+<section class="registration">
+    <div class="container">
+        <div class="wrap-register">
+        <div class="ld-col-md-5">
+            <div class="image-text">
+                <p>Affiliate Image Placeholder</p>
+            </div>
+        </div>
+
+        <div class="ld-col-md-7">
+            <div class="reg-form" >
+                <div class="header">
+                    <div class="skew-header">
+                        <div class="header-bg">
+                            <div class="close-modal" (click)="goBackToCheckout()" *ngIf="isCheckoutPage">
+                                <i class="icon-cancel"></i>
+                            </div>
+                            <div class="text-container">
+                                <span class="text">
+                                    <h1>
+                                        Open New Account
+                                    </h1>
+                                    <p>
+                                        Sign up and claim your bonus
+                                    </p>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="register-tab">
+                        <div class="signup-icon step-done">
+                            <div class="secure-transactions">
+                                <div class="icon">
+                                  <svg fill="#8e99bc" viewBox="0 0 398 398" width="34" height="34">
+                                    <use xlink:href="#tick-icon"></use>
+                                  </svg>
+                                </div>
+                                <div class="text">
+                                    <a href="javascript:void(0);"  ng-reflect-router-link="">Sign Up</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class=" confirm-icon step-done">
+                            <div class="secure-transactions">
+                                <div class="icon">
+                                  <svg fill="#8e99bc" viewBox="0 0 398 398" width="34" height="34">
+                                    <use xlink:href="#tick-icon"></use>
+                                  </svg>
+                                </div>
+                                <div class="text">
+                                    <a href="javascript:void(0);" ng-reflect-router-link="/verification">Confirm</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class=" bonus-icon active">
+                            <div class="secure-transactions">
+                                <div class="icon">
+                                    <svg fill="#8e99bc" viewBox="0 0 468 478" width="34" height="34">
+                                    <use xlink:href="#bonus-icon"></use>
+                                    </svg>
+                                </div>
+                                <div class="text">
+                                    <a href="javascript:void(0);" ng-reflect-router-link="/bonus">Select Bonus</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <app-bonus-field></app-bonus-field>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
